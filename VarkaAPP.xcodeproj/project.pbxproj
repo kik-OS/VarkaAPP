@@ -7,25 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92DF0E837979D9BE1CA2995C /* Pods_VarkaAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7260218810D9C9E8CAE94BC3 /* Pods_VarkaAPP.framework */; };
 		E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627725F20F2A0068F15A /* AppDelegate.swift */; };
 		E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627925F20F2A0068F15A /* SceneDelegate.swift */; };
-		E495627C25F20F2A0068F15A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627B25F20F2A0068F15A /* ViewController.swift */; };
 		E495627F25F20F2A0068F15A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495627D25F20F2A0068F15A /* Main.storyboard */; };
 		E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E495628025F20F2A0068F15A /* VarkaAPP.xcdatamodeld */; };
 		E495628425F20F2D0068F15A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E495628325F20F2D0068F15A /* Assets.xcassets */; };
 		E495628725F20F2D0068F15A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495628525F20F2D0068F15A /* LaunchScreen.storyboard */; };
+		E495629625F20FDF0068F15A /* InfoAboutProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495629525F20FDF0068F15A /* InfoAboutProductViewController.swift */; };
+		E495629925F20FED0068F15A /* InfoAboutProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495629825F20FED0068F15A /* InfoAboutProductViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		279C6D49F0CF92B4F622ED1B /* Pods-VarkaAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarkaAPP.debug.xcconfig"; path = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.debug.xcconfig"; sourceTree = "<group>"; };
+		3D2706771555FB2F0FF1CADB /* Pods-VarkaAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarkaAPP.release.xcconfig"; path = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.release.xcconfig"; sourceTree = "<group>"; };
+		7260218810D9C9E8CAE94BC3 /* Pods_VarkaAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarkaAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495627425F20F2A0068F15A /* VarkaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VarkaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495627725F20F2A0068F15A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E495627925F20F2A0068F15A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E495627B25F20F2A0068F15A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E495627E25F20F2A0068F15A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E495628125F20F2A0068F15A /* VarkaAPP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VarkaAPP.xcdatamodel; sourceTree = "<group>"; };
 		E495628325F20F2D0068F15A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E495628625F20F2D0068F15A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E495628825F20F2D0068F15A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E495629525F20FDF0068F15A /* InfoAboutProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAboutProductViewController.swift; sourceTree = "<group>"; };
+		E495629825F20FED0068F15A /* InfoAboutProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAboutProductViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DF0E837979D9BE1CA2995C /* Pods_VarkaAPP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E65FE99C103A7E9EA7ACDF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7260218810D9C9E8CAE94BC3 /* Pods_VarkaAPP.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79D81D43AA5EFD42FF24CC98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				279C6D49F0CF92B4F622ED1B /* Pods-VarkaAPP.debug.xcconfig */,
+				3D2706771555FB2F0FF1CADB /* Pods-VarkaAPP.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E495626B25F20F2A0068F15A = {
 			isa = PBXGroup;
 			children = (
 				E495627625F20F2A0068F15A /* VarkaAPP */,
 				E495627525F20F2A0068F15A /* Products */,
+				79D81D43AA5EFD42FF24CC98 /* Pods */,
+				6E65FE99C103A7E9EA7ACDF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +85,49 @@
 		E495627625F20F2A0068F15A /* VarkaAPP */ = {
 			isa = PBXGroup;
 			children = (
-				E495627725F20F2A0068F15A /* AppDelegate.swift */,
-				E495627925F20F2A0068F15A /* SceneDelegate.swift */,
-				E495627B25F20F2A0068F15A /* ViewController.swift */,
-				E495627D25F20F2A0068F15A /* Main.storyboard */,
-				E495628325F20F2D0068F15A /* Assets.xcassets */,
-				E495628525F20F2D0068F15A /* LaunchScreen.storyboard */,
-				E495628825F20F2D0068F15A /* Info.plist */,
-				E495628025F20F2A0068F15A /* VarkaAPP.xcdatamodeld */,
+				E495629225F20F7B0068F15A /* StoryBoard */,
+				E495629125F20F5E0068F15A /* Resources */,
+				E495629025F20F510068F15A /* SupportingFiles */,
+				E495628F25F20F3D0068F15A /* InfoAboutProducts */,
 			);
 			path = VarkaAPP;
+			sourceTree = "<group>";
+		};
+		E495628F25F20F3D0068F15A /* InfoAboutProducts */ = {
+			isa = PBXGroup;
+			children = (
+				E495629525F20FDF0068F15A /* InfoAboutProductViewController.swift */,
+				E495629825F20FED0068F15A /* InfoAboutProductViewModel.swift */,
+			);
+			path = InfoAboutProducts;
+			sourceTree = "<group>";
+		};
+		E495629025F20F510068F15A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E495628025F20F2A0068F15A /* VarkaAPP.xcdatamodeld */,
+				E495628825F20F2D0068F15A /* Info.plist */,
+				E495627925F20F2A0068F15A /* SceneDelegate.swift */,
+				E495627725F20F2A0068F15A /* AppDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E495629125F20F5E0068F15A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E495628325F20F2D0068F15A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E495629225F20F7B0068F15A /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				E495627D25F20F2A0068F15A /* Main.storyboard */,
+				E495628525F20F2D0068F15A /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E495628B25F20F2D0068F15A /* Build configuration list for PBXNativeTarget "VarkaAPP" */;
 			buildPhases = (
+				EBDCA4FF7B0A9CCE5A244963 /* [CP] Check Pods Manifest.lock */,
 				E495627025F20F2A0068F15A /* Sources */,
 				E495627125F20F2A0068F15A /* Frameworks */,
 				E495627225F20F2A0068F15A /* Resources */,
+				DD5253A20179738CED755E98 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,15 +197,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DD5253A20179738CED755E98 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBDCA4FF7B0A9CCE5A244963 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VarkaAPP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E495627025F20F2A0068F15A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E495627C25F20F2A0068F15A /* ViewController.swift in Sources */,
 				E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
+				E495629625F20FDF0068F15A /* InfoAboutProductViewController.swift in Sources */,
 				E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */,
+				E495629925F20FED0068F15A /* InfoAboutProductViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,12 +392,13 @@
 		};
 		E495628C25F20F2D0068F15A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 279C6D49F0CF92B4F622ED1B /* Pods-VarkaAPP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58287L88KM;
-				INFOPLIST_FILE = VarkaAPP/Info.plist;
+				INFOPLIST_FILE = VarkaAPP/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,12 +412,13 @@
 		};
 		E495628D25F20F2D0068F15A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D2706771555FB2F0FF1CADB /* Pods-VarkaAPP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58287L88KM;
-				INFOPLIST_FILE = VarkaAPP/Info.plist;
+				INFOPLIST_FILE = VarkaAPP/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
