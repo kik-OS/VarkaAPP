@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c95-0Q-cnR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C3u-R3-MZb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,56 +8,66 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="n9l-Yn-Y0v">
+        <!--Custom Tab Bar Controller-->
+        <scene sceneID="mpw-V2-NPN">
             <objects>
-                <navigationController id="c95-0Q-cnR" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WCM-sP-1rR">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                <tabBarController id="C3u-R3-MZb" customClass="CustomTabBarController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ccC-ff-bsM" customClass="CustomTabBar" customModule="VarkaAPP" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z8R-tb-Dbr"/>
+                        <segue destination="5fI-hc-nbu" kind="relationship" relationship="viewControllers" id="rns-K8-HTT"/>
+                        <segue destination="NLH-E7-4kJ" kind="relationship" relationship="viewControllers" id="DSd-zb-1p4"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b6s-Cr-kPO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UIE-Fl-ZVU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-949" y="87"/>
+            <point key="canvasLocation" x="-1068" y="90"/>
         </scene>
-        <!--Info About Product View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Как Варить-->
+        <scene sceneID="PEf-60-GMR">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="InfoAboutProductViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="hb4-h5-zqZ">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="BPV-3F-Xyo">
-                            <connections>
-                                <segue destination="NLH-E7-4kJ" kind="show" id="eOu-CK-tIJ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                <viewController id="5fI-hc-nbu" customClass="InfoAboutProductViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wbc-QK-p7d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tee-QP-f9D"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Как Варить" image="shippingbox" catalog="system" id="xF4-qd-BWs"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bRF-PW-jJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-91" y="86"/>
+            <point key="canvasLocation" x="-266" y="91"/>
         </scene>
-        <!--View Controller-->
+        <!--Недавние-->
         <scene sceneID="ITO-eJ-sYf">
             <objects>
-                <viewController id="NLH-E7-4kJ" sceneMemberID="viewController">
+                <viewController id="NLH-E7-4kJ" customClass="RecentProductsViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HB2-L1-lvR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="c6D-oO-Hxt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Недавние" image="rectangle.3.offgrid" catalog="system" id="9SD-Ef-C3M"/>
                     <navigationItem key="navigationItem" id="Jec-Vl-Rol"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7C-I3-ms0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="707" y="86"/>
+            <point key="canvasLocation" x="523" y="90"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="ccC-ff-bsM">
+            <size key="intrinsicContentSize" width="-1" height="83"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="rectangle.3.offgrid" catalog="system" width="128" height="81"/>
+        <image name="shippingbox" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
