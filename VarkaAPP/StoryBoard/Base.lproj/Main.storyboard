@@ -60,11 +60,6 @@
             <point key="canvasLocation" x="523" y="90"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="ccC-ff-bsM">
-            <size key="intrinsicContentSize" width="-1" height="83"/>
-        </designable>
-    </designables>
     <resources>
         <image name="rectangle.3.offgrid" catalog="system" width="128" height="81"/>
         <image name="shippingbox" catalog="system" width="128" height="124"/>

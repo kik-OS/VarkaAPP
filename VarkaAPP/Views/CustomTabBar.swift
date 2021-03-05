@@ -17,7 +17,7 @@ class CustomTabBar: UITabBar {
         shapeLayer.path = createPath()
         shapeLayer.strokeColor = UIColor.lightGray.cgColor
         shapeLayer.fillColor = UIColor.white.cgColor
-        shapeLayer.lineWidth = 1.0
+        shapeLayer.lineWidth = 0.2
 
         //The below 4 lines are for shadow above the bar. you can skip them if you do not want a shadow
         shapeLayer.shadowOffset = CGSize(width:0, height:0)
@@ -56,16 +56,18 @@ class CustomTabBar: UITabBar {
         return path.cgPath
     }
 
+    
+    //Нужно разобраться
 
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        guard !clipsToBounds && !isHidden && alpha > 0 else { return nil }
-        for member in subviews.reversed() {
-            let subPoint = member.convert(point, from: self)
-            guard let result = member.hitTest(subPoint, with: event) else { continue }
-            return result
-        }
-        return nil
-    }
+//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+//        guard !clipsToBounds && !isHidden && alpha > 0 else { return nil }
+//        for member in subviews.reversed() {
+//            let subPoint = member.convert(point, from: self)
+//            guard let result = member.hitTest(subPoint, with: event) else { continue }
+//            return result
+//        }
+//        return nil
+//    }
 
 
     

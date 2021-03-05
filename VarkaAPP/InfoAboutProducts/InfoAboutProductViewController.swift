@@ -8,18 +8,21 @@
 import UIKit
 
 
-class InfoAboutProductViewController: UIViewController {
-    
-    
-    private var viewModel: InfoAboutProductViewMOdelProtocol!
-    
 
+class InfoAboutProductViewController: UIViewController {
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray6
     }
-
-
     
     
+    
+    
+
 }
+
+
+
+
