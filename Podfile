@@ -6,4 +6,8 @@ target 'VarkaAPP' do
   use_frameworks!
 
   pod 'BarcodeScanner'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Analytics'
+
 end

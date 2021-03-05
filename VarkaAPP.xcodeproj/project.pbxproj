@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		92DF0E837979D9BE1CA2995C /* Pods_VarkaAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7260218810D9C9E8CAE94BC3 /* Pods_VarkaAPP.framework */; };
+		CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02B9EC25F2ACA000788EE3 /* Product.swift */; };
+		CE02B9F025F2B2F900788EE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE02B9EF25F2B2F900788EE3 /* GoogleService-Info.plist */; };
 		E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627725F20F2A0068F15A /* AppDelegate.swift */; };
 		E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627925F20F2A0068F15A /* SceneDelegate.swift */; };
 		E495627F25F20F2A0068F15A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495627D25F20F2A0068F15A /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 		279C6D49F0CF92B4F622ED1B /* Pods-VarkaAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarkaAPP.debug.xcconfig"; path = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		3D2706771555FB2F0FF1CADB /* Pods-VarkaAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarkaAPP.release.xcconfig"; path = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.release.xcconfig"; sourceTree = "<group>"; };
 		7260218810D9C9E8CAE94BC3 /* Pods_VarkaAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarkaAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE02B9EC25F2ACA000788EE3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		CE02B9EF25F2B2F900788EE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E495627425F20F2A0068F15A /* VarkaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VarkaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495627725F20F2A0068F15A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E495627925F20F2A0068F15A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +75,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE02B9EB25F2AC6200788EE3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE02B9EC25F2ACA000788EE3 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E495626B25F20F2A0068F15A = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +104,7 @@
 		E495627625F20F2A0068F15A /* VarkaAPP */ = {
 			isa = PBXGroup;
 			children = (
+				CE02B9EB25F2AC6200788EE3 /* Models */,
 				E49562CB25F246A90068F15A /* Views */,
 				E49562C925F245B40068F15A /* RecentProducts */,
 				E495629225F20F7B0068F15A /* StoryBoard */,
@@ -116,6 +129,7 @@
 			children = (
 				E495628025F20F2A0068F15A /* VarkaAPP.xcdatamodeld */,
 				E495628825F20F2D0068F15A /* Info.plist */,
+				CE02B9EF25F2B2F900788EE3 /* GoogleService-Info.plist */,
 				E495627925F20F2A0068F15A /* SceneDelegate.swift */,
 				E495627725F20F2A0068F15A /* AppDelegate.swift */,
 			);
@@ -217,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E495628725F20F2D0068F15A /* LaunchScreen.storyboard in Resources */,
+				CE02B9F025F2B2F900788EE3 /* GoogleService-Info.plist in Resources */,
 				E495628425F20F2D0068F15A /* Assets.xcassets in Resources */,
 				E495627F25F20F2A0068F15A /* Main.storyboard in Resources */,
 			);
@@ -278,6 +293,7 @@
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
 				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,
 				E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */,
+				CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */,
 				E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */,
 				E495629925F20FED0068F15A /* InfoAboutProductViewModel.swift in Sources */,
 			);
