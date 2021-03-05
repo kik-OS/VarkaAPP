@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		E495628725F20F2D0068F15A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495628525F20F2D0068F15A /* LaunchScreen.storyboard */; };
 		E495629625F20FDF0068F15A /* InfoAboutProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495629525F20FDF0068F15A /* InfoAboutProductViewController.swift */; };
 		E495629925F20FED0068F15A /* InfoAboutProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495629825F20FED0068F15A /* InfoAboutProductViewModel.swift */; };
+		E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562C625F245AF0068F15A /* RecentProductsViewController.swift */; };
+		E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562CD25F246DE0068F15A /* CustomTabBarController.swift */; };
+		E49562D125F247990068F15A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562D025F247990068F15A /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		E495628825F20F2D0068F15A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E495629525F20FDF0068F15A /* InfoAboutProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAboutProductViewController.swift; sourceTree = "<group>"; };
 		E495629825F20FED0068F15A /* InfoAboutProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAboutProductViewModel.swift; sourceTree = "<group>"; };
+		E49562C625F245AF0068F15A /* RecentProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductsViewController.swift; sourceTree = "<group>"; };
+		E49562CD25F246DE0068F15A /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		E49562D025F247990068F15A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +66,6 @@
 				279C6D49F0CF92B4F622ED1B /* Pods-VarkaAPP.debug.xcconfig */,
 				3D2706771555FB2F0FF1CADB /* Pods-VarkaAPP.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,6 +90,8 @@
 		E495627625F20F2A0068F15A /* VarkaAPP */ = {
 			isa = PBXGroup;
 			children = (
+				E49562CB25F246A90068F15A /* Views */,
+				E49562C925F245B40068F15A /* RecentProducts */,
 				E495629225F20F7B0068F15A /* StoryBoard */,
 				E495629125F20F5E0068F15A /* Resources */,
 				E495629025F20F510068F15A /* SupportingFiles */,
@@ -128,6 +135,23 @@
 				E495628525F20F2D0068F15A /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		E49562C925F245B40068F15A /* RecentProducts */ = {
+			isa = PBXGroup;
+			children = (
+				E49562C625F245AF0068F15A /* RecentProductsViewController.swift */,
+			);
+			path = RecentProducts;
+			sourceTree = "<group>";
+		};
+		E49562CB25F246A90068F15A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E49562CD25F246DE0068F15A /* CustomTabBarController.swift */,
+				E49562D025F247990068F15A /* CustomTabBar.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,8 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */,
+				E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
 				E495629625F20FDF0068F15A /* InfoAboutProductViewController.swift in Sources */,
+				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
+				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,
 				E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */,
 				E495629925F20FED0068F15A /* InfoAboutProductViewModel.swift in Sources */,
 			);
