@@ -1,16 +1,28 @@
 PODS:
   - BarcodeScanner (5.0.0)
+  - Spring (1.0.6)
 
 DEPENDENCIES:
   - BarcodeScanner
+  - Spring (from `https://github.com/LexDeBash/Spring.git`)
 
 SPEC REPOS:
   trunk:
     - BarcodeScanner
 
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/LexDeBash/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: b3bcc7d08cba7766c8b6ac161fee86349b8f6567
+    :git: https://github.com/LexDeBash/Spring.git
+
 SPEC CHECKSUMS:
   BarcodeScanner: 2f5a53198eae49dc39bf61f2c1f05c04e01ff72d
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
 
-PODFILE CHECKSUM: e60712fd513f7979df5d1b6deff312cd68532273
+PODFILE CHECKSUM: 63265fdfc0b35f026424acb69f12aa40969aa2b4
 
 COCOAPODS: 1.10.0

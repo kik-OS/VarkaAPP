@@ -32,16 +32,15 @@ class BarCodeScanerManager: BarcodeScannerCodeDelegate, BarcodeScannerErrorDeleg
     
     
     func openBarCodeScaner(with complition: @escaping (BarcodeScannerViewController) -> Void) {
-        let viewController = BarcodeScannerViewController()
-        viewController.codeDelegate = self
-        viewController.errorDelegate = self
-        viewController.dismissalDelegate = self
-        viewController.headerViewController.closeButton.tintColor = .red
-      
-        viewController.messageViewController.regularTintColor = .black
-       
-        viewController.messageViewController.textLabel.textColor = .black
-        complition(viewController)
+        let barCodeScaner = BarcodeScannerViewController()
+        barCodeScaner.codeDelegate = self
+        barCodeScaner.errorDelegate = self
+        barCodeScaner.dismissalDelegate = self
+        barCodeScaner.headerViewController.closeButton.tintColor = .red
+        barCodeScaner.messageViewController.regularTintColor = .black
+        barCodeScaner.messageViewController.textLabel.textColor = .black
+        
+        complition(barCodeScaner)
     }
     
 }

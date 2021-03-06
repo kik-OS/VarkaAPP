@@ -3,136 +3,220 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21A9206DF39D705F99C7453A85CC5471 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 671A27860EA652F408FBE94FAB3AAD79 /* Localizable.strings */; };
-		2DB1F7D317E5A014AB4EB30335DEAEB8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7269260105E84416E11FDF56535BB424 /* UIViewController+Extensions.swift */; };
-		308AB608F2297585ECA8083CE126FE4C /* VideoPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D48FB865D6E0867651B52212BBA7FC /* VideoPermissionService.swift */; };
-		332FCA5031807E217BA2F62269F3A97B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897196DD0044DACEC56512F5C9F9D1BE /* CameraViewController.swift */; };
+		0732637E2D54431D0F2680D9610CD78F /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E710F6BDAC7AA697B071F8E230B9C5A /* KeyboardLayoutConstraint.swift */; };
+		090028A65555DBA06E29BB5D684A28C0 /* Pods-VarkaAPP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F6248622BE9557724A1FC982EAF346 /* Pods-VarkaAPP-dummy.m */; };
+		0BA90CA2DDA9471E59A1F48AFBDDB3ED /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAF75A5858BB6A0C0DF5697E406FD5F /* LoadingView.xib */; };
+		1045F5952C216156A75B376D1D604298 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7765382D006A55440470ACCDB6AAE /* SpringButton.swift */; };
+		1500B78FC44AAED561BD90AF696705F0 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B460930AD4B6E5E3232EAD9078F5DD /* SoundPlayer.swift */; };
+		1D70037A0B3E4A3DDAAEE179B6ABB071 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B48B3A694493C994733E461E601512 /* DesignableView.swift */; };
+		29B7B49A4477F2FE45143E568C022B23 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76500CD3345AB99BDB99B14F46DF8F /* Misc.swift */; };
+		29CE9DBD65A494DB313F2991C90787A0 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E42676F966C9BB6AE2137E1AA1517C /* DesignableImageView.swift */; };
+		2B12DF1E24A75E8F8EC5556B37FA1F28 /* Spring-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE1DC57F8F1FCBCD84DCE84FC5AF8C /* Spring-dummy.m */; };
+		2DB1F7D317E5A014AB4EB30335DEAEB8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC18784F3767A1F1F5271F82886430 /* UIViewController+Extensions.swift */; };
+		308AB608F2297585ECA8083CE126FE4C /* VideoPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D071F5A58FC4786BABF437656FC8A2C1 /* VideoPermissionService.swift */; };
+		332FCA5031807E217BA2F62269F3A97B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EB004A1E954DC3F7080E81197A248E /* CameraViewController.swift */; };
+		352C340763B400F31C26159F463D4B64 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258F29D8843062478E235E9730C2530C /* TransitionZoom.swift */; };
+		3E1CED50F44E5D491DCD5003372DBF81 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 539BF0B5466E5EAC0A80F03FE9AF1DFB /* Images.xcassets */; };
+		451D1CF6EFD94AAF8F0333755B356B86 /* cameraRotate@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6FBFD2DB68412E85BD28F3D1DB546B1 /* cameraRotate@3x.png */; };
+		4641B14031D2FF6603A1AB1AE8A81872 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146777EA8A18993823E7BBF1F6EA5FA3 /* AsyncImageView.swift */; };
+		46E1E5F755E08FAC7FC8BE0BEE146465 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BD707FA90B6D76233EE4214C1F13C /* DesignableLabel.swift */; };
 		4B5BA3D38FB40690B93C0E3969AC3217 /* Localization.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 74F4D59B519920CD954D013FCD061B86 /* Localization.bundle */; };
-		4BE9AF350DC7568B06E34C03F2DA3579 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB88AEBFC1DF4BA6D598A88AB3644FB /* Functions.swift */; };
-		4D2D395C0BC595CB8EB330CC0623EB2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D27F53483E7691E74F88B87CD0D33A /* Foundation.framework */; };
-		516DA3390E9DA6C0290CEDCA5BBD3666 /* Pods-VarkaAPP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BD3E2B7CE196E28AFDC14F2BF74B4AAD /* Pods-VarkaAPP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		548CCFAB7A6FB5454672A78A62353C94 /* flashOff@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6ECB2D71DD6F5D9361E1D597A06E971 /* flashOff@3x.png */; };
-		557F4EA99959468A2BF95E6D10428D68 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA6B76BD897A065A3188325A598415 /* State.swift */; };
+		4BE9AF350DC7568B06E34C03F2DA3579 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCD399A17610163A956849DFF9E18D9 /* Functions.swift */; };
+		55765FA3526C83F9EAC8A71283051143 /* Spring-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D7077919EAD4F433AD06894165B9D4B /* Spring-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		557F4EA99959468A2BF95E6D10428D68 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203885BA0C0B510C1BE9FA18D0E54C61 /* State.swift */; };
+		57FE903C121A0DD6F923782277BCFAE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D27F53483E7691E74F88B87CD0D33A /* Foundation.framework */; };
+		5E7FB82A077840DF34C3953BC806F8F4 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D11F72D7D229AE639A33B092E8FA83 /* TransitionManager.swift */; };
+		5FD7F44CF9CD3B08A62E4E6B6BB68030 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1568C8B4C3AEE027F7491C0296E0D5B /* SpringLabel.swift */; };
+		711025B8E5C65F47055B8BDE2D7143B2 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CABD3D197D82AC6417DA56FADB1BCA0 /* UnwindSegue.swift */; };
+		7191075D5DFE463A9EE0EE5BB5C567C2 /* flashOn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC49ACDD659EA76ED4073A4D0380E1C /* flashOn@3x.png */; };
 		725104AEF077162A5B65315F912F0852 /* BarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A234A8BFB979A78BC6E93200F1F79F8B /* BarcodeScanner.bundle */; };
-		7760913E92FE2BCA7B1C000E6F58942A /* FocusViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389FE89BCB9F900CDEF3EC1168399E6 /* FocusViewType.swift */; };
+		7760913E92FE2BCA7B1C000E6F58942A /* FocusViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666063D4C259498C4BF08615ADF0B3AE /* FocusViewType.swift */; };
 		782E25EF99CFF47CC0B3431D0DB20624 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9DAEBAF7204BA39B34CF7E0E8FCFD7 /* AVFoundation.framework */; };
-		8A7892C9535D14180BA707B46025F9C6 /* cameraRotate@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 012BA25ACBDEA95DA4066CE7F542F14E /* cameraRotate@3x.png */; };
-		9554E000E30543FA96CEE0026406A0CE /* NSLayoutConstraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CFB7BE44AD1622DAF19EC6EFD0E2CB /* NSLayoutConstraint+Extensions.swift */; };
-		9A33E9E5BEE6CB8C389326EA1588AE7E /* info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB05B35E08AE348CC4255C0CB0AE24 /* info@3x.png */; };
+		796621B5A6EBDE53FA99F5555B0F59D7 /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA884B35835771611720BB21614BF3F /* SpringTextView.swift */; };
+		7CEA02BEDE5F0BF8FD0A0290B5F5ED9C /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD10C557D97510278E2F197F2348D667 /* DesignableTextView.swift */; };
+		8B3CBE9698B2B0DAD17D224468412B2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D27F53483E7691E74F88B87CD0D33A /* Foundation.framework */; };
+		9140B6366B10B74C366EBF342680579E /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA39A267624ABB6DAE8CEB6CF71D52 /* SpringImageView.swift */; };
+		93591D9AD5D74959575DAA966898CEEE /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA7EBA7038239B4ED7DF13016ECF6DA /* BlurView.swift */; };
+		9554E000E30543FA96CEE0026406A0CE /* NSLayoutConstraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A8DF5C35E0015B29B23AD7D141E6A /* NSLayoutConstraint+Extensions.swift */; };
+		A655FA3A985F470092D34931CAA9B1D3 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F591E98CE56B4C79D6E85C6D63A6FB5 /* DesignableTextField.swift */; };
+		A6CED5C2055858A15DA2A89283BE0946 /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AFF9B3CCCC15C900D36A978818CD6 /* SpringTextField.swift */; };
 		A6EA5D1B0D18231E6A3CE43A494BCA91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3447B6A50AA430A059E8197DFCDA88F /* UIKit.framework */; };
-		A7C8A55D7A6828D19257C5DC940A0EF9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306C6D0F75D65DF403D8A287E746E36 /* UIView+Extensions.swift */; };
-		AA9EC8E9C8DCA7953E9A1DA7B46DDEC9 /* AVMetadataObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D63949EDB691E84D617C0E574FA530 /* AVMetadataObject+Extensions.swift */; };
-		D235124E4A7B687EBF426AA6087AEB5E /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9AE80FE9760736378CAFADCD22DCD3 /* BarcodeScannerViewController.swift */; };
-		D6DF37241EF397BF9C111E592B05DA3E /* flashOn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95539F71D23620B6395844E5DC077286 /* flashOn@3x.png */; };
-		D7AF37748C512E156B04D527C288F216 /* BarcodeScanner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BE3908F405E1693B56C0A4B409765D /* BarcodeScanner-dummy.m */; };
-		D88B6F2FA2660A1651C4A4B0C848EB45 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411AEA4ECDAEBDE3A66883C0E6DFFED4 /* MessageViewController.swift */; };
-		D8F21C55EAFE68610F13C0D35856AF07 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6AD70AACDFE71A8F93DA14AD677A14 /* HeaderViewController.swift */; };
-		DBD6749F816809245B9017F022EFFB03 /* BarcodeScanner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FFB0A153ED8178CBEFE4BF9F15363F5 /* BarcodeScanner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7C8A55D7A6828D19257C5DC940A0EF9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D6EB4812BE85AE8C6E038006F112EC /* UIView+Extensions.swift */; };
+		AA9EC8E9C8DCA7953E9A1DA7B46DDEC9 /* AVMetadataObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31BA32CC576E9478393B336459C178A /* AVMetadataObject+Extensions.swift */; };
+		ADAEC5BE6189467CAA14AECAD02927F3 /* Pods-VarkaAPP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BD3E2B7CE196E28AFDC14F2BF74B4AAD /* Pods-VarkaAPP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B337AD4DF3D3FE8A85402AE84BEBD075 /* info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D6DD0376659B2DA01E230A86183D10 /* info@3x.png */; };
+		BC5296499E5E62E321AB957C1D5B1A81 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D434113C1054808256C2C4CEFA3ADA0 /* Localizable.strings */; };
+		BE66FB3AA6EAD1EF4A984A1F665DC640 /* flashOff@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58EE8F348786F1A91A3A62B56FB1773A /* flashOff@3x.png */; };
+		C027055833A0B6578D37DFBBF2AED005 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96E86977F1932FA2889C8168B5F9CE4 /* SpringView.swift */; };
+		C70BBAB83307287049F532A4EB9CCEF1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C921340A9DC152C66B5A2C558DB172 /* ImageLoader.swift */; };
+		CC60AF46BE0EB20F50602AD2EDFE953F /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACC0CC2C9E95979C58E10F31727301B /* DesignableButton.swift */; };
+		CFA425E34FFEF752EA7CB11A55F08A9E /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD88D2049495F2DEE73EAADFA626D55 /* AutoTextView.swift */; };
+		D235124E4A7B687EBF426AA6087AEB5E /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3992070E9DC8A40576769037DC6A312E /* BarcodeScannerViewController.swift */; };
+		D6F9651ADAC53B92DCAAB44816333C03 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F5FE77FC2ED710F593C7B250BC61A8 /* AsyncButton.swift */; };
+		D7AF37748C512E156B04D527C288F216 /* BarcodeScanner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 641CF6275030FBF9B1884666658DDDF1 /* BarcodeScanner-dummy.m */; };
+		D88B6F2FA2660A1651C4A4B0C848EB45 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5356C17EDBA40B10ED2B971597A87A3 /* MessageViewController.swift */; };
+		D8F21C55EAFE68610F13C0D35856AF07 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12E1837C5D8393E6449531307D970D /* HeaderViewController.swift */; };
+		DBD6749F816809245B9017F022EFFB03 /* BarcodeScanner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E5130A74732C095D0423CF43AC4DE1 /* BarcodeScanner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E28207B8139965BF5953588E35465DB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D27F53483E7691E74F88B87CD0D33A /* Foundation.framework */; };
-		E6620B9942328118F197F9C3F1AB8351 /* Pods-VarkaAPP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F6248622BE9557724A1FC982EAF346 /* Pods-VarkaAPP-dummy.m */; };
-		F351CBBA7D0FE00F84286F87520B6AD7 /* TorchMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF0ED70E9A1CA14313E4B6A6C9A74F /* TorchMode.swift */; };
+		E5854E6A53A8B1ABB1312522029212C6 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA26F582F043A5B17EB184687D828 /* DesignableTabBarController.swift */; };
+		E61861448B6C2D9EB4610DF5532BA204 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9762BD9D199AA6136EDFFA7050F9A8 /* LoadingView.swift */; };
+		EA658ED3170B393E01430E31E8482A8C /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62249C231A2C2368F496A7130511CFA5 /* SpringAnimation.swift */; };
+		F351CBBA7D0FE00F84286F87520B6AD7 /* TorchMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8193EF0ACD903263C49ABBFF2D5081 /* TorchMode.swift */; };
+		F44E1B920D6638069D7450CA3773C0FD /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEAA6367AF797450B91DCAD9095E57 /* Spring.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C35CE9EF059EB3DE8ADAA07B1638178 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 39D656AC88E303625E9AA42D19C21D75;
-			remoteInfo = BarcodeScanner;
-		};
-		51B2CC14CAA941DBDA824236192BBBE1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2598A00DF974C904143778EDC46CC0E5;
-			remoteInfo = "BarcodeScanner-Localization";
-		};
-		C49D51B0138299B66442BD9F336DB608 /* PBXContainerItemProxy */ = {
+		1499EC2E866FCFD4384E50C4A72C547A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 02E136446D8E897681981873306A783A;
 			remoteInfo = "BarcodeScanner-BarcodeScanner";
 		};
+		5769FDD2ADDB4A04C70547024661AE75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A062DD8462AB228A88272FF6B09535E9;
+			remoteInfo = Spring;
+		};
+		72B72964885D501BA8E880382032E139 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2598A00DF974C904143778EDC46CC0E5;
+			remoteInfo = "BarcodeScanner-Localization";
+		};
+		765E2D0C919E0FC89EA2743678CC2F31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39D656AC88E303625E9AA42D19C21D75;
+			remoteInfo = BarcodeScanner;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		012BA25ACBDEA95DA4066CE7F542F14E /* cameraRotate@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cameraRotate@3x.png"; path = "Images/cameraRotate@3x.png"; sourceTree = "<group>"; };
-		05D63949EDB691E84D617C0E574FA530 /* AVMetadataObject+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AVMetadataObject+Extensions.swift"; path = "Sources/Extensions/AVMetadataObject+Extensions.swift"; sourceTree = "<group>"; };
-		05E29CECB04E7342AD52D966F2CD5435 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		003BD707FA90B6D76233EE4214C1F13C /* DesignableLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableLabel.swift; path = Spring/DesignableLabel.swift; sourceTree = "<group>"; };
 		09F6248622BE9557724A1FC982EAF346 /* Pods-VarkaAPP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VarkaAPP-dummy.m"; sourceTree = "<group>"; };
-		0F39A1D768EB072F96D97CFC0472457B /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E12E1837C5D8393E6449531307D970D /* HeaderViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeaderViewController.swift; path = Sources/Controllers/HeaderViewController.swift; sourceTree = "<group>"; };
+		0FD524BE252C5F6EFFE156A85C986C88 /* Spring.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Spring.modulemap; sourceTree = "<group>"; };
 		13EBC831BFA7325962BBE73386317FA4 /* Pods-VarkaAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VarkaAPP.release.xcconfig"; sourceTree = "<group>"; };
+		146777EA8A18993823E7BBF1F6EA5FA3 /* AsyncImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncImageView.swift; path = Spring/AsyncImageView.swift; sourceTree = "<group>"; };
 		16454EF181CBBFC73896C81677D43154 /* Pods-VarkaAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VarkaAPP.debug.xcconfig"; sourceTree = "<group>"; };
-		17170A259FF5EFF1500B74DF03E44F94 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1774385206AA0CF93C648139D5DDEF43 /* Pods-VarkaAPP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VarkaAPP.modulemap"; sourceTree = "<group>"; };
-		19BB8B141B4331E78AEBA73C052F8EA8 /* BarcodeScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BarcodeScanner.release.xcconfig; sourceTree = "<group>"; };
-		1DC0C4B857AC6823EDEA9B1E373B4852 /* BarcodeScanner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BarcodeScanner.modulemap; sourceTree = "<group>"; };
+		1ACC0CC2C9E95979C58E10F31727301B /* DesignableButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableButton.swift; path = Spring/DesignableButton.swift; sourceTree = "<group>"; };
 		1ECAF238D971E4672D22FE330D54D6E8 /* Pods-VarkaAPP-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VarkaAPP-acknowledgements.plist"; sourceTree = "<group>"; };
 		1F9DAEBAF7204BA39B34CF7E0E8FCFD7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		203885BA0C0B510C1BE9FA18D0E54C61 /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = Sources/DataStructures/State.swift; sourceTree = "<group>"; };
+		2177439F19DFB5E58D92E02596588AD6 /* BarcodeScanner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BarcodeScanner.modulemap; sourceTree = "<group>"; };
+		23D6EB4812BE85AE8C6E038006F112EC /* UIView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Sources/Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
+		258F29D8843062478E235E9730C2530C /* TransitionZoom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionZoom.swift; path = Spring/TransitionZoom.swift; sourceTree = "<group>"; };
 		25D27F53483E7691E74F88B87CD0D33A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		26EF0ED70E9A1CA14313E4B6A6C9A74F /* TorchMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TorchMode.swift; path = Sources/DataStructures/TorchMode.swift; sourceTree = "<group>"; };
+		2E710F6BDAC7AA697B071F8E230B9C5A /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardLayoutConstraint.swift; path = Spring/KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		2FDEAA6367AF797450B91DCAD9095E57 /* Spring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spring.swift; path = Spring/Spring.swift; sourceTree = "<group>"; };
+		3992070E9DC8A40576769037DC6A312E /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarcodeScannerViewController.swift; path = Sources/Controllers/BarcodeScannerViewController.swift; sourceTree = "<group>"; };
+		3C07C72398107215F6C355DBE1377BAD /* Spring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spring.debug.xcconfig; sourceTree = "<group>"; };
 		3DA2D8529C4C3B7849DD235426390F32 /* Pods-VarkaAPP-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VarkaAPP-frameworks.sh"; sourceTree = "<group>"; };
-		411AEA4ECDAEBDE3A66883C0E6DFFED4 /* MessageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageViewController.swift; path = Sources/Controllers/MessageViewController.swift; sourceTree = "<group>"; };
-		450DCAF71909614EFDF28CAB4DCA353B /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4DF642A67966C18FD9D8678BA756B82E /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5B9AE80FE9760736378CAFADCD22DCD3 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarcodeScannerViewController.swift; path = Sources/Controllers/BarcodeScannerViewController.swift; sourceTree = "<group>"; };
+		3F136A20734AD27CC397572C4E62ADCE /* Spring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F591E98CE56B4C79D6E85C6D63A6FB5 /* DesignableTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextField.swift; path = Spring/DesignableTextField.swift; sourceTree = "<group>"; };
+		422C7153293FC1D61464341EA73B2EA9 /* Spring.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spring.release.xcconfig; sourceTree = "<group>"; };
+		46B460930AD4B6E5E3232EAD9078F5DD /* SoundPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoundPlayer.swift; path = Spring/SoundPlayer.swift; sourceTree = "<group>"; };
+		49FBA26F582F043A5B17EB184687D828 /* DesignableTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTabBarController.swift; path = Spring/DesignableTabBarController.swift; sourceTree = "<group>"; };
+		539BF0B5466E5EAC0A80F03FE9AF1DFB /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SpringApp/Images.xcassets; sourceTree = "<group>"; };
+		58EE8F348786F1A91A3A62B56FB1773A /* flashOff@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "flashOff@3x.png"; path = "Images/flashOff@3x.png"; sourceTree = "<group>"; };
 		5CF5E581A38224828CDE1EDCE11D7BC6 /* Pods-VarkaAPP-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VarkaAPP-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5F0A9874CA38F64C1BEBBF1F0782B386 /* ResourceBundle-BarcodeScanner-BarcodeScanner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-BarcodeScanner-BarcodeScanner-Info.plist"; sourceTree = "<group>"; };
-		5FFB0A153ED8178CBEFE4BF9F15363F5 /* BarcodeScanner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BarcodeScanner-umbrella.h"; sourceTree = "<group>"; };
-		7269260105E84416E11FDF56535BB424 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extensions.swift"; path = "Sources/Extensions/UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		7306C6D0F75D65DF403D8A287E746E36 /* UIView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Sources/Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
+		62249C231A2C2368F496A7130511CFA5 /* SpringAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringAnimation.swift; path = Spring/SpringAnimation.swift; sourceTree = "<group>"; };
+		641CF6275030FBF9B1884666658DDDF1 /* BarcodeScanner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BarcodeScanner-dummy.m"; sourceTree = "<group>"; };
+		666063D4C259498C4BF08615ADF0B3AE /* FocusViewType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FocusViewType.swift; path = Sources/DataStructures/FocusViewType.swift; sourceTree = "<group>"; };
+		6BA7EBA7038239B4ED7DF13016ECF6DA /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Spring/BlurView.swift; sourceTree = "<group>"; };
+		6CABD3D197D82AC6417DA56FADB1BCA0 /* UnwindSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnwindSegue.swift; path = Spring/UnwindSegue.swift; sourceTree = "<group>"; };
+		73EB004A1E954DC3F7080E81197A248E /* CameraViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = Sources/Controllers/CameraViewController.swift; sourceTree = "<group>"; };
 		74F4D59B519920CD954D013FCD061B86 /* Localization.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Localization.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CAB05B35E08AE348CC4255C0CB0AE24 /* info@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "info@3x.png"; path = "Images/info@3x.png"; sourceTree = "<group>"; };
-		82D9C8134867DD1520044E02BBA65C8C /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "pl-PL.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		76DA39A267624ABB6DAE8CEB6CF71D52 /* SpringImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringImageView.swift; path = Spring/SpringImageView.swift; sourceTree = "<group>"; };
+		7F6B4B3595884CEE369437A4D90C7A08 /* BarcodeScanner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BarcodeScanner-Info.plist"; sourceTree = "<group>"; };
 		8446E35F1998D9E2A7346D68A8E63A67 /* Pods-VarkaAPP-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VarkaAPP-Info.plist"; sourceTree = "<group>"; };
-		897196DD0044DACEC56512F5C9F9D1BE /* CameraViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = Sources/Controllers/CameraViewController.swift; sourceTree = "<group>"; };
-		9389FE89BCB9F900CDEF3EC1168399E6 /* FocusViewType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FocusViewType.swift; path = Sources/DataStructures/FocusViewType.swift; sourceTree = "<group>"; };
-		95539F71D23620B6395844E5DC077286 /* flashOn@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "flashOn@3x.png"; path = "Images/flashOn@3x.png"; sourceTree = "<group>"; };
-		96BE3908F405E1693B56C0A4B409765D /* BarcodeScanner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BarcodeScanner-dummy.m"; sourceTree = "<group>"; };
-		98D48FB865D6E0867651B52212BBA7FC /* VideoPermissionService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoPermissionService.swift; path = Sources/Helpers/VideoPermissionService.swift; sourceTree = "<group>"; };
-		9D01A36FD477C21FCB201BF06871459F /* ResourceBundle-Localization-BarcodeScanner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Localization-BarcodeScanner-Info.plist"; sourceTree = "<group>"; };
+		85FBC07BCCCE4A0D4B60C6B406669F79 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		86F5FE77FC2ED710F593C7B250BC61A8 /* AsyncButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncButton.swift; path = Spring/AsyncButton.swift; sourceTree = "<group>"; };
+		8C8193EF0ACD903263C49ABBFF2D5081 /* TorchMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TorchMode.swift; path = Sources/DataStructures/TorchMode.swift; sourceTree = "<group>"; };
+		8D28D9805F456EC45836D2B760D97819 /* Spring-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Spring-Info.plist"; sourceTree = "<group>"; };
+		8D7077919EAD4F433AD06894165B9D4B /* Spring-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-umbrella.h"; sourceTree = "<group>"; };
+		95ED1BB543081403D99FDC97B125492C /* BarcodeScanner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BarcodeScanner-prefix.pch"; sourceTree = "<group>"; };
+		98E605D23B7E836258521A874210260D /* BarcodeScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BarcodeScanner.debug.xcconfig; sourceTree = "<group>"; };
+		9BC49ACDD659EA76ED4073A4D0380E1C /* flashOn@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "flashOn@3x.png"; path = "Images/flashOn@3x.png"; sourceTree = "<group>"; };
+		9BDE1DC57F8F1FCBCD84DCE84FC5AF8C /* Spring-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spring-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A1DA6B76BD897A065A3188325A598415 /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = Sources/DataStructures/State.swift; sourceTree = "<group>"; };
+		9D96A1E69E20F10F953D9AF2B0C9A347 /* BarcodeScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BarcodeScanner.release.xcconfig; sourceTree = "<group>"; };
 		A234A8BFB979A78BC6E93200F1F79F8B /* BarcodeScanner.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarcodeScanner.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6ECB2D71DD6F5D9361E1D597A06E971 /* flashOff@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "flashOff@3x.png"; path = "Images/flashOff@3x.png"; sourceTree = "<group>"; };
+		A31BA32CC576E9478393B336459C178A /* AVMetadataObject+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AVMetadataObject+Extensions.swift"; path = "Sources/Extensions/AVMetadataObject+Extensions.swift"; sourceTree = "<group>"; };
+		A9D11F72D7D229AE639A33B092E8FA83 /* TransitionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionManager.swift; path = Spring/TransitionManager.swift; sourceTree = "<group>"; };
+		AA9762BD9D199AA6136EDFFA7050F9A8 /* LoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = Spring/LoadingView.swift; sourceTree = "<group>"; };
+		AE1E65ABCF300A4410B1B809F0546170 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B5356C17EDBA40B10ED2B971597A87A3 /* MessageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageViewController.swift; path = Sources/Controllers/MessageViewController.swift; sourceTree = "<group>"; };
+		BCA884B35835771611720BB21614BF3F /* SpringTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextView.swift; path = Spring/SpringTextView.swift; sourceTree = "<group>"; };
+		BD10C557D97510278E2F197F2348D667 /* DesignableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextView.swift; path = Spring/DesignableTextView.swift; sourceTree = "<group>"; };
 		BD3E2B7CE196E28AFDC14F2BF74B4AAD /* Pods-VarkaAPP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VarkaAPP-umbrella.h"; sourceTree = "<group>"; };
-		BD57383B4483C78A4DE9348B5814AAA1 /* BarcodeScanner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BarcodeScanner-Info.plist"; sourceTree = "<group>"; };
+		BDF44DB3A37DC412F95AFB7C50EB7F21 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BEB99315A83F7AF80779DF4E76356FCE /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C2E42676F966C9BB6AE2137E1AA1517C /* DesignableImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableImageView.swift; path = Spring/DesignableImageView.swift; sourceTree = "<group>"; };
+		C89D41CCF9638ECAD1D9576AB6A30497 /* ResourceBundle-Localization-BarcodeScanner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Localization-BarcodeScanner-Info.plist"; sourceTree = "<group>"; };
+		CC0C83955408288A35D7C8E998082050 /* ResourceBundle-BarcodeScanner-BarcodeScanner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-BarcodeScanner-BarcodeScanner-Info.plist"; sourceTree = "<group>"; };
+		CDAF75A5858BB6A0C0DF5697E406FD5F /* LoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = LoadingView.xib; path = Spring/LoadingView.xib; sourceTree = "<group>"; };
 		CEC6E08D351631DC655F4A648DE0C061 /* BarcodeScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BarcodeScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5C84530007FBF407A628BF7FF203825 /* BarcodeScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BarcodeScanner.debug.xcconfig; sourceTree = "<group>"; };
-		E1C90A132ED9F4D5CE3713DDCD5B930F /* BarcodeScanner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BarcodeScanner-prefix.pch"; sourceTree = "<group>"; };
+		D04AFF9B3CCCC15C900D36A978818CD6 /* SpringTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextField.swift; path = Spring/SpringTextField.swift; sourceTree = "<group>"; };
+		D071F5A58FC4786BABF437656FC8A2C1 /* VideoPermissionService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoPermissionService.swift; path = Sources/Helpers/VideoPermissionService.swift; sourceTree = "<group>"; };
+		D0A2EFFAA75E3886D616B2E36D9C9196 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "pl-PL.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D96E86977F1932FA2889C8168B5F9CE4 /* SpringView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringView.swift; path = Spring/SpringView.swift; sourceTree = "<group>"; };
 		E3447B6A50AA430A059E8197DFCDA88F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		EF6AD70AACDFE71A8F93DA14AD677A14 /* HeaderViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeaderViewController.swift; path = Sources/Controllers/HeaderViewController.swift; sourceTree = "<group>"; };
+		E4B48B3A694493C994733E461E601512 /* DesignableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableView.swift; path = Spring/DesignableView.swift; sourceTree = "<group>"; };
+		E6D6DD0376659B2DA01E230A86183D10 /* info@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "info@3x.png"; path = "Images/info@3x.png"; sourceTree = "<group>"; };
+		E6FBFD2DB68412E85BD28F3D1DB546B1 /* cameraRotate@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cameraRotate@3x.png"; path = "Images/cameraRotate@3x.png"; sourceTree = "<group>"; };
+		EB76500CD3345AB99BDB99B14F46DF8F /* Misc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Misc.swift; path = Spring/Misc.swift; sourceTree = "<group>"; };
+		EC7A8DF5C35E0015B29B23AD7D141E6A /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraint+Extensions.swift"; path = "Sources/Extensions/NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
+		EEE7765382D006A55440470ACCDB6AAE /* SpringButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringButton.swift; path = Spring/SpringButton.swift; sourceTree = "<group>"; };
 		F011207DFAF11474856E2ABC94E3238E /* Pods_VarkaAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarkaAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4CFB7BE44AD1622DAF19EC6EFD0E2CB /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraint+Extensions.swift"; path = "Sources/Extensions/NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
-		FBB88AEBFC1DF4BA6D598A88AB3644FB /* Functions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = Sources/Helpers/Functions.swift; sourceTree = "<group>"; };
+		F1568C8B4C3AEE027F7491C0296E0D5B /* SpringLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringLabel.swift; path = Spring/SpringLabel.swift; sourceTree = "<group>"; };
+		F3F76E4939DF91F4BCBA1ADD82637C87 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5BC18784F3767A1F1F5271F82886430 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extensions.swift"; path = "Sources/Extensions/UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		F6C921340A9DC152C66B5A2C558DB172 /* ImageLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = Spring/ImageLoader.swift; sourceTree = "<group>"; };
+		F9E5130A74732C095D0423CF43AC4DE1 /* BarcodeScanner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BarcodeScanner-umbrella.h"; sourceTree = "<group>"; };
+		FB2F615DFDD14566CBB7DCF8388D0FDF /* Spring-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-prefix.pch"; sourceTree = "<group>"; };
+		FBCD399A17610163A956849DFF9E18D9 /* Functions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = Sources/Helpers/Functions.swift; sourceTree = "<group>"; };
+		FBD88D2049495F2DEE73EAADFA626D55 /* AutoTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoTextView.swift; path = Spring/AutoTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		48D3EC524E8DCFC620DEDE9F3A017A42 /* Frameworks */ = {
+		645749F37CA16172B5B9F4FAD42F27C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57FE903C121A0DD6F923782277BCFAE3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AD12D0EAF131616AE56EBE75AA0745D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B3CBE9698B2B0DAD17D224468412B2F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7056A80A445FBC61BD06F4EB19627F69 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56F90C312E017227180F196D0ADD6AE3 /* Frameworks */ = {
+		7B5F8BD685F024401E1A1D177EDB979A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		74F88AD555F268BEB57835FFC5803E93 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4D2D395C0BC595CB8EB330CC0623EB2C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,27 +241,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		387DC5DE11A55DBDFC0D7DA5C2E106CA /* Products */ = {
+		415A880D85522165DF9F6B8D96D21D76 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A234A8BFB979A78BC6E93200F1F79F8B /* BarcodeScanner.bundle */,
-				CEC6E08D351631DC655F4A648DE0C061 /* BarcodeScanner.framework */,
-				74F4D59B519920CD954D013FCD061B86 /* Localization.bundle */,
-				F011207DFAF11474856E2ABC94E3238E /* Pods_VarkaAPP.framework */,
+				2177439F19DFB5E58D92E02596588AD6 /* BarcodeScanner.modulemap */,
+				641CF6275030FBF9B1884666658DDDF1 /* BarcodeScanner-dummy.m */,
+				7F6B4B3595884CEE369437A4D90C7A08 /* BarcodeScanner-Info.plist */,
+				95ED1BB543081403D99FDC97B125492C /* BarcodeScanner-prefix.pch */,
+				F9E5130A74732C095D0423CF43AC4DE1 /* BarcodeScanner-umbrella.h */,
+				98E605D23B7E836258521A874210260D /* BarcodeScanner.debug.xcconfig */,
+				9D96A1E69E20F10F953D9AF2B0C9A347 /* BarcodeScanner.release.xcconfig */,
+				CC0C83955408288A35D7C8E998082050 /* ResourceBundle-BarcodeScanner-BarcodeScanner-Info.plist */,
+				C89D41CCF9638ECAD1D9576AB6A30497 /* ResourceBundle-Localization-BarcodeScanner-Info.plist */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		420C6979DF1C07CF7C4179A1DAD98754 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				012BA25ACBDEA95DA4066CE7F542F14E /* cameraRotate@3x.png */,
-				A6ECB2D71DD6F5D9361E1D597A06E971 /* flashOff@3x.png */,
-				95539F71D23620B6395844E5DC077286 /* flashOn@3x.png */,
-				7CAB05B35E08AE348CC4255C0CB0AE24 /* info@3x.png */,
-				671A27860EA652F408FBE94FAB3AAD79 /* Localizable.strings */,
-			);
-			name = Resources;
+			name = "Support Files";
+			path = "../Target Support Files/BarcodeScanner";
 			sourceTree = "<group>";
 		};
 		439889605EFAD97B3872FAF274DF229F /* iOS */ = {
@@ -198,29 +276,50 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7787AAD93F50B13BE8D25A8661CA76C6 /* Support Files */ = {
+		6C3137041CCD6B32DD815717C94D9A68 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1DC0C4B857AC6823EDEA9B1E373B4852 /* BarcodeScanner.modulemap */,
-				96BE3908F405E1693B56C0A4B409765D /* BarcodeScanner-dummy.m */,
-				BD57383B4483C78A4DE9348B5814AAA1 /* BarcodeScanner-Info.plist */,
-				E1C90A132ED9F4D5CE3713DDCD5B930F /* BarcodeScanner-prefix.pch */,
-				5FFB0A153ED8178CBEFE4BF9F15363F5 /* BarcodeScanner-umbrella.h */,
-				D5C84530007FBF407A628BF7FF203825 /* BarcodeScanner.debug.xcconfig */,
-				19BB8B141B4331E78AEBA73C052F8EA8 /* BarcodeScanner.release.xcconfig */,
-				5F0A9874CA38F64C1BEBBF1F0782B386 /* ResourceBundle-BarcodeScanner-BarcodeScanner-Info.plist */,
-				9D01A36FD477C21FCB201BF06871459F /* ResourceBundle-Localization-BarcodeScanner-Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/BarcodeScanner";
-			sourceTree = "<group>";
-		};
-		85D9386E567BD1767925E10C140DBD7B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FF94405E20193D6A247D1F61780C5830 /* BarcodeScanner */,
+				BC3611FC7EE74A851DC89CE178250EEE /* BarcodeScanner */,
+				FBDBA0F2FBD65E78CC295DF7F43413A1 /* Spring */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B63DACA07D2F1DB6EA9D45D145254852 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0FD524BE252C5F6EFFE156A85C986C88 /* Spring.modulemap */,
+				9BDE1DC57F8F1FCBCD84DCE84FC5AF8C /* Spring-dummy.m */,
+				8D28D9805F456EC45836D2B760D97819 /* Spring-Info.plist */,
+				FB2F615DFDD14566CBB7DCF8388D0FDF /* Spring-prefix.pch */,
+				8D7077919EAD4F433AD06894165B9D4B /* Spring-umbrella.h */,
+				3C07C72398107215F6C355DBE1377BAD /* Spring.debug.xcconfig */,
+				422C7153293FC1D61464341EA73B2EA9 /* Spring.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Spring";
+			sourceTree = "<group>";
+		};
+		BC3611FC7EE74A851DC89CE178250EEE /* BarcodeScanner */ = {
+			isa = PBXGroup;
+			children = (
+				A31BA32CC576E9478393B336459C178A /* AVMetadataObject+Extensions.swift */,
+				3992070E9DC8A40576769037DC6A312E /* BarcodeScannerViewController.swift */,
+				73EB004A1E954DC3F7080E81197A248E /* CameraViewController.swift */,
+				666063D4C259498C4BF08615ADF0B3AE /* FocusViewType.swift */,
+				FBCD399A17610163A956849DFF9E18D9 /* Functions.swift */,
+				0E12E1837C5D8393E6449531307D970D /* HeaderViewController.swift */,
+				B5356C17EDBA40B10ED2B971597A87A3 /* MessageViewController.swift */,
+				EC7A8DF5C35E0015B29B23AD7D141E6A /* NSLayoutConstraint+Extensions.swift */,
+				203885BA0C0B510C1BE9FA18D0E54C61 /* State.swift */,
+				8C8193EF0ACD903263C49ABBFF2D5081 /* TorchMode.swift */,
+				23D6EB4812BE85AE8C6E038006F112EC /* UIView+Extensions.swift */,
+				F5BC18784F3767A1F1F5271F82886430 /* UIViewController+Extensions.swift */,
+				D071F5A58FC4786BABF437656FC8A2C1 /* VideoPermissionService.swift */,
+				FA564C7CFFD71E41B8E2832083F63B22 /* Resources */,
+				415A880D85522165DF9F6B8D96D21D76 /* Support Files */,
+			);
+			path = BarcodeScanner;
 			sourceTree = "<group>";
 		};
 		BC6AA3390003CE99475C994BD8E05048 /* Pods-VarkaAPP */ = {
@@ -240,42 +339,97 @@
 			path = "Target Support Files/Pods-VarkaAPP";
 			sourceTree = "<group>";
 		};
+		BDD514D8D9234730E0B43CF919579D63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A234A8BFB979A78BC6E93200F1F79F8B /* BarcodeScanner.bundle */,
+				CEC6E08D351631DC655F4A648DE0C061 /* BarcodeScanner.framework */,
+				74F4D59B519920CD954D013FCD061B86 /* Localization.bundle */,
+				F011207DFAF11474856E2ABC94E3238E /* Pods_VarkaAPP.framework */,
+				3F136A20734AD27CC397572C4E62ADCE /* Spring.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C44C7598EAB5E16CE1E52C158AD7E78A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				539BF0B5466E5EAC0A80F03FE9AF1DFB /* Images.xcassets */,
+				CDAF75A5858BB6A0C0DF5697E406FD5F /* LoadingView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
-				85D9386E567BD1767925E10C140DBD7B /* Pods */,
-				387DC5DE11A55DBDFC0D7DA5C2E106CA /* Products */,
+				6C3137041CCD6B32DD815717C94D9A68 /* Pods */,
+				BDD514D8D9234730E0B43CF919579D63 /* Products */,
 				6721E973CB22C6E6F7A048D868CBBED8 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		FF94405E20193D6A247D1F61780C5830 /* BarcodeScanner */ = {
+		FA564C7CFFD71E41B8E2832083F63B22 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				05D63949EDB691E84D617C0E574FA530 /* AVMetadataObject+Extensions.swift */,
-				5B9AE80FE9760736378CAFADCD22DCD3 /* BarcodeScannerViewController.swift */,
-				897196DD0044DACEC56512F5C9F9D1BE /* CameraViewController.swift */,
-				9389FE89BCB9F900CDEF3EC1168399E6 /* FocusViewType.swift */,
-				FBB88AEBFC1DF4BA6D598A88AB3644FB /* Functions.swift */,
-				EF6AD70AACDFE71A8F93DA14AD677A14 /* HeaderViewController.swift */,
-				411AEA4ECDAEBDE3A66883C0E6DFFED4 /* MessageViewController.swift */,
-				F4CFB7BE44AD1622DAF19EC6EFD0E2CB /* NSLayoutConstraint+Extensions.swift */,
-				A1DA6B76BD897A065A3188325A598415 /* State.swift */,
-				26EF0ED70E9A1CA14313E4B6A6C9A74F /* TorchMode.swift */,
-				7306C6D0F75D65DF403D8A287E746E36 /* UIView+Extensions.swift */,
-				7269260105E84416E11FDF56535BB424 /* UIViewController+Extensions.swift */,
-				98D48FB865D6E0867651B52212BBA7FC /* VideoPermissionService.swift */,
-				420C6979DF1C07CF7C4179A1DAD98754 /* Resources */,
-				7787AAD93F50B13BE8D25A8661CA76C6 /* Support Files */,
+				E6FBFD2DB68412E85BD28F3D1DB546B1 /* cameraRotate@3x.png */,
+				58EE8F348786F1A91A3A62B56FB1773A /* flashOff@3x.png */,
+				9BC49ACDD659EA76ED4073A4D0380E1C /* flashOn@3x.png */,
+				E6D6DD0376659B2DA01E230A86183D10 /* info@3x.png */,
+				8D434113C1054808256C2C4CEFA3ADA0 /* Localizable.strings */,
 			);
-			path = BarcodeScanner;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FBDBA0F2FBD65E78CC295DF7F43413A1 /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				86F5FE77FC2ED710F593C7B250BC61A8 /* AsyncButton.swift */,
+				146777EA8A18993823E7BBF1F6EA5FA3 /* AsyncImageView.swift */,
+				FBD88D2049495F2DEE73EAADFA626D55 /* AutoTextView.swift */,
+				6BA7EBA7038239B4ED7DF13016ECF6DA /* BlurView.swift */,
+				1ACC0CC2C9E95979C58E10F31727301B /* DesignableButton.swift */,
+				C2E42676F966C9BB6AE2137E1AA1517C /* DesignableImageView.swift */,
+				003BD707FA90B6D76233EE4214C1F13C /* DesignableLabel.swift */,
+				49FBA26F582F043A5B17EB184687D828 /* DesignableTabBarController.swift */,
+				3F591E98CE56B4C79D6E85C6D63A6FB5 /* DesignableTextField.swift */,
+				BD10C557D97510278E2F197F2348D667 /* DesignableTextView.swift */,
+				E4B48B3A694493C994733E461E601512 /* DesignableView.swift */,
+				F6C921340A9DC152C66B5A2C558DB172 /* ImageLoader.swift */,
+				2E710F6BDAC7AA697B071F8E230B9C5A /* KeyboardLayoutConstraint.swift */,
+				AA9762BD9D199AA6136EDFFA7050F9A8 /* LoadingView.swift */,
+				EB76500CD3345AB99BDB99B14F46DF8F /* Misc.swift */,
+				46B460930AD4B6E5E3232EAD9078F5DD /* SoundPlayer.swift */,
+				2FDEAA6367AF797450B91DCAD9095E57 /* Spring.swift */,
+				62249C231A2C2368F496A7130511CFA5 /* SpringAnimation.swift */,
+				EEE7765382D006A55440470ACCDB6AAE /* SpringButton.swift */,
+				76DA39A267624ABB6DAE8CEB6CF71D52 /* SpringImageView.swift */,
+				F1568C8B4C3AEE027F7491C0296E0D5B /* SpringLabel.swift */,
+				D04AFF9B3CCCC15C900D36A978818CD6 /* SpringTextField.swift */,
+				BCA884B35835771611720BB21614BF3F /* SpringTextView.swift */,
+				D96E86977F1932FA2889C8168B5F9CE4 /* SpringView.swift */,
+				A9D11F72D7D229AE639A33B092E8FA83 /* TransitionManager.swift */,
+				258F29D8843062478E235E9730C2530C /* TransitionZoom.swift */,
+				6CABD3D197D82AC6417DA56FADB1BCA0 /* UnwindSegue.swift */,
+				C44C7598EAB5E16CE1E52C158AD7E78A /* Resources */,
+				B63DACA07D2F1DB6EA9D45D145254852 /* Support Files */,
+			);
+			path = Spring;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0F18CABA0E3DA9D6E1A489DEF3786274 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADAEC5BE6189467CAA14AECAD02927F3 /* Pods-VarkaAPP-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1880153451A255DD5101D9B9C4DF8B90 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,11 +438,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6AE4E66D1EAF6D2772BD93C0FAF9E188 /* Headers */ = {
+		D72C6FA9C18EBBB5947BA00EB5B3FC3B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				516DA3390E9DA6C0290CEDCA5BBD3666 /* Pods-VarkaAPP-umbrella.h in Headers */,
+				55765FA3526C83F9EAC8A71283051143 /* Spring-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,11 +451,11 @@
 /* Begin PBXNativeTarget section */
 		02E136446D8E897681981873306A783A /* BarcodeScanner-BarcodeScanner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7502A557CD5E4A4F1612B1F77B64E902 /* Build configuration list for PBXNativeTarget "BarcodeScanner-BarcodeScanner" */;
+			buildConfigurationList = 140228DCDDB7E847140689787FEE1129 /* Build configuration list for PBXNativeTarget "BarcodeScanner-BarcodeScanner" */;
 			buildPhases = (
-				F2C90379E989D9E63DEA7A6C1D009F41 /* Sources */,
-				48D3EC524E8DCFC620DEDE9F3A017A42 /* Frameworks */,
-				666A422EACF6A731CFB3809FF77D26B2 /* Resources */,
+				8AD8C50C4C6E919EF1637E7759B5210E /* Sources */,
+				7056A80A445FBC61BD06F4EB19627F69 /* Frameworks */,
+				A40749D18588352B06919A98817F3CD3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -314,11 +468,11 @@
 		};
 		2598A00DF974C904143778EDC46CC0E5 /* BarcodeScanner-Localization */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9EC38FB0E3785E79DF23FABC41A7C673 /* Build configuration list for PBXNativeTarget "BarcodeScanner-Localization" */;
+			buildConfigurationList = E47C01A16EAA651C3DDFAD3E46CC0913 /* Build configuration list for PBXNativeTarget "BarcodeScanner-Localization" */;
 			buildPhases = (
-				740C05CF6C89D54FEAF3A69AB757AF25 /* Sources */,
-				56F90C312E017227180F196D0ADD6AE3 /* Frameworks */,
-				8DEAA2696D6DB6DD2C3813AD9C2FE29D /* Resources */,
+				5BFCC4A100DEEF1BD82FD37076B2D5C4 /* Sources */,
+				7B5F8BD685F024401E1A1D177EDB979A /* Frameworks */,
+				AF39F35635DF54F364CD42A44E705922 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -341,27 +495,46 @@
 			buildRules = (
 			);
 			dependencies = (
-				71511E9B4A5CFE6BD9474B3C5F54329F /* PBXTargetDependency */,
-				099C08BC25C56489289C49FAF989A4D3 /* PBXTargetDependency */,
+				1F1500756B2F2A1B09C4079383827B1C /* PBXTargetDependency */,
+				A2E97AE821CB420040D8611E8FB879FF /* PBXTargetDependency */,
 			);
 			name = BarcodeScanner;
 			productName = BarcodeScanner;
 			productReference = CEC6E08D351631DC655F4A648DE0C061 /* BarcodeScanner.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DA2882D5052B9ECA759072F41D76A1F2 /* Pods-VarkaAPP */ = {
+		A062DD8462AB228A88272FF6B09535E9 /* Spring */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ED9B43F160A26FE248D7DF45CD0DC656 /* Build configuration list for PBXNativeTarget "Pods-VarkaAPP" */;
+			buildConfigurationList = D09528C50F366F4ABEFEFEEC9A68896E /* Build configuration list for PBXNativeTarget "Spring" */;
 			buildPhases = (
-				6AE4E66D1EAF6D2772BD93C0FAF9E188 /* Headers */,
-				FC541855C7C63D70571A4D8D1E2AC6DE /* Sources */,
-				74F88AD555F268BEB57835FFC5803E93 /* Frameworks */,
-				7AFB02FADC31A033918626024805AF1C /* Resources */,
+				D72C6FA9C18EBBB5947BA00EB5B3FC3B /* Headers */,
+				5C602B0ABD9406EF6EAE9A1F6B42925A /* Sources */,
+				645749F37CA16172B5B9F4FAD42F27C5 /* Frameworks */,
+				6C948503E5CFDEA0EC74C74E3CA45213 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DE56A655A63423E4D5D12CEDE781B709 /* PBXTargetDependency */,
+			);
+			name = Spring;
+			productName = Spring;
+			productReference = 3F136A20734AD27CC397572C4E62ADCE /* Spring.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DA2882D5052B9ECA759072F41D76A1F2 /* Pods-VarkaAPP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 750D6EB4F25D1FBE3D2E3628D1834DCE /* Build configuration list for PBXNativeTarget "Pods-VarkaAPP" */;
+			buildPhases = (
+				0F18CABA0E3DA9D6E1A489DEF3786274 /* Headers */,
+				1C39FF6D48B84F89050ACFCBBCCFA36F /* Sources */,
+				6AD12D0EAF131616AE56EBE75AA0745D /* Frameworks */,
+				A697DB070F5DFA17277C3D314B5342F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1990C5DC2D3D0B8CBAA9F146224955A /* PBXTargetDependency */,
+				3500B4921A5093D4BBD1218EA9F49D54 /* PBXTargetDependency */,
 			);
 			name = "Pods-VarkaAPP";
 			productName = "Pods-VarkaAPP";
@@ -378,7 +551,7 @@
 				LastUpgradeCheck = 1230;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -391,7 +564,7 @@
 				tr,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 387DC5DE11A55DBDFC0D7DA5C2E106CA /* Products */;
+			productRefGroup = BDD514D8D9234730E0B43CF919579D63 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -399,34 +572,18 @@
 				02E136446D8E897681981873306A783A /* BarcodeScanner-BarcodeScanner */,
 				2598A00DF974C904143778EDC46CC0E5 /* BarcodeScanner-Localization */,
 				DA2882D5052B9ECA759072F41D76A1F2 /* Pods-VarkaAPP */,
+				A062DD8462AB228A88272FF6B09535E9 /* Spring */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		666A422EACF6A731CFB3809FF77D26B2 /* Resources */ = {
+		6C948503E5CFDEA0EC74C74E3CA45213 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A7892C9535D14180BA707B46025F9C6 /* cameraRotate@3x.png in Resources */,
-				548CCFAB7A6FB5454672A78A62353C94 /* flashOff@3x.png in Resources */,
-				D6DF37241EF397BF9C111E592B05DA3E /* flashOn@3x.png in Resources */,
-				9A33E9E5BEE6CB8C389326EA1588AE7E /* info@3x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7AFB02FADC31A033918626024805AF1C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8DEAA2696D6DB6DD2C3813AD9C2FE29D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				21A9206DF39D705F99C7453A85CC5471 /* Localizable.strings in Resources */,
+				3E1CED50F44E5D491DCD5003372DBF81 /* Images.xcassets in Resources */,
+				0BA90CA2DDA9471E59A1F48AFBDDB3ED /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,9 +596,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A40749D18588352B06919A98817F3CD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451D1CF6EFD94AAF8F0333755B356B86 /* cameraRotate@3x.png in Resources */,
+				BE66FB3AA6EAD1EF4A984A1F665DC640 /* flashOff@3x.png in Resources */,
+				7191075D5DFE463A9EE0EE5BB5C567C2 /* flashOn@3x.png in Resources */,
+				B337AD4DF3D3FE8A85402AE84BEBD075 /* info@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A697DB070F5DFA17277C3D314B5342F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF39F35635DF54F364CD42A44E705922 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC5296499E5E62E321AB957C1D5B1A81 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1C39FF6D48B84F89050ACFCBBCCFA36F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				090028A65555DBA06E29BB5D684A28C0 /* Pods-VarkaAPP-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F03B6C32146C30B73BF3ED66FEEDED9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -463,61 +654,94 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		740C05CF6C89D54FEAF3A69AB757AF25 /* Sources */ = {
+		5BFCC4A100DEEF1BD82FD37076B2D5C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2C90379E989D9E63DEA7A6C1D009F41 /* Sources */ = {
+		5C602B0ABD9406EF6EAE9A1F6B42925A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6F9651ADAC53B92DCAAB44816333C03 /* AsyncButton.swift in Sources */,
+				4641B14031D2FF6603A1AB1AE8A81872 /* AsyncImageView.swift in Sources */,
+				CFA425E34FFEF752EA7CB11A55F08A9E /* AutoTextView.swift in Sources */,
+				93591D9AD5D74959575DAA966898CEEE /* BlurView.swift in Sources */,
+				CC60AF46BE0EB20F50602AD2EDFE953F /* DesignableButton.swift in Sources */,
+				29CE9DBD65A494DB313F2991C90787A0 /* DesignableImageView.swift in Sources */,
+				46E1E5F755E08FAC7FC8BE0BEE146465 /* DesignableLabel.swift in Sources */,
+				E5854E6A53A8B1ABB1312522029212C6 /* DesignableTabBarController.swift in Sources */,
+				A655FA3A985F470092D34931CAA9B1D3 /* DesignableTextField.swift in Sources */,
+				7CEA02BEDE5F0BF8FD0A0290B5F5ED9C /* DesignableTextView.swift in Sources */,
+				1D70037A0B3E4A3DDAAEE179B6ABB071 /* DesignableView.swift in Sources */,
+				C70BBAB83307287049F532A4EB9CCEF1 /* ImageLoader.swift in Sources */,
+				0732637E2D54431D0F2680D9610CD78F /* KeyboardLayoutConstraint.swift in Sources */,
+				E61861448B6C2D9EB4610DF5532BA204 /* LoadingView.swift in Sources */,
+				29B7B49A4477F2FE45143E568C022B23 /* Misc.swift in Sources */,
+				1500B78FC44AAED561BD90AF696705F0 /* SoundPlayer.swift in Sources */,
+				2B12DF1E24A75E8F8EC5556B37FA1F28 /* Spring-dummy.m in Sources */,
+				F44E1B920D6638069D7450CA3773C0FD /* Spring.swift in Sources */,
+				EA658ED3170B393E01430E31E8482A8C /* SpringAnimation.swift in Sources */,
+				1045F5952C216156A75B376D1D604298 /* SpringButton.swift in Sources */,
+				9140B6366B10B74C366EBF342680579E /* SpringImageView.swift in Sources */,
+				5FD7F44CF9CD3B08A62E4E6B6BB68030 /* SpringLabel.swift in Sources */,
+				A6CED5C2055858A15DA2A89283BE0946 /* SpringTextField.swift in Sources */,
+				796621B5A6EBDE53FA99F5555B0F59D7 /* SpringTextView.swift in Sources */,
+				C027055833A0B6578D37DFBBF2AED005 /* SpringView.swift in Sources */,
+				5E7FB82A077840DF34C3953BC806F8F4 /* TransitionManager.swift in Sources */,
+				352C340763B400F31C26159F463D4B64 /* TransitionZoom.swift in Sources */,
+				711025B8E5C65F47055B8BDE2D7143B2 /* UnwindSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC541855C7C63D70571A4D8D1E2AC6DE /* Sources */ = {
+		8AD8C50C4C6E919EF1637E7759B5210E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6620B9942328118F197F9C3F1AB8351 /* Pods-VarkaAPP-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		099C08BC25C56489289C49FAF989A4D3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "BarcodeScanner-Localization";
-			target = 2598A00DF974C904143778EDC46CC0E5 /* BarcodeScanner-Localization */;
-			targetProxy = 51B2CC14CAA941DBDA824236192BBBE1 /* PBXContainerItemProxy */;
-		};
-		71511E9B4A5CFE6BD9474B3C5F54329F /* PBXTargetDependency */ = {
+		1F1500756B2F2A1B09C4079383827B1C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "BarcodeScanner-BarcodeScanner";
 			target = 02E136446D8E897681981873306A783A /* BarcodeScanner-BarcodeScanner */;
-			targetProxy = C49D51B0138299B66442BD9F336DB608 /* PBXContainerItemProxy */;
+			targetProxy = 1499EC2E866FCFD4384E50C4A72C547A /* PBXContainerItemProxy */;
 		};
-		DE56A655A63423E4D5D12CEDE781B709 /* PBXTargetDependency */ = {
+		3500B4921A5093D4BBD1218EA9F49D54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Spring;
+			target = A062DD8462AB228A88272FF6B09535E9 /* Spring */;
+			targetProxy = 5769FDD2ADDB4A04C70547024661AE75 /* PBXContainerItemProxy */;
+		};
+		A2E97AE821CB420040D8611E8FB879FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BarcodeScanner-Localization";
+			target = 2598A00DF974C904143778EDC46CC0E5 /* BarcodeScanner-Localization */;
+			targetProxy = 72B72964885D501BA8E880382032E139 /* PBXContainerItemProxy */;
+		};
+		B1990C5DC2D3D0B8CBAA9F146224955A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BarcodeScanner;
 			target = 39D656AC88E303625E9AA42D19C21D75 /* BarcodeScanner */;
-			targetProxy = 3C35CE9EF059EB3DE8ADAA07B1638178 /* PBXContainerItemProxy */;
+			targetProxy = 765E2D0C919E0FC89EA2743678CC2F31 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		671A27860EA652F408FBE94FAB3AAD79 /* Localizable.strings */ = {
+		8D434113C1054808256C2C4CEFA3ADA0 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4DF642A67966C18FD9D8678BA756B82E /* Localizable.strings */,
-				05E29CECB04E7342AD52D966F2CD5435 /* Localizable.strings */,
-				17170A259FF5EFF1500B74DF03E44F94 /* Localizable.strings */,
-				450DCAF71909614EFDF28CAB4DCA353B /* Localizable.strings */,
-				82D9C8134867DD1520044E02BBA65C8C /* Localizable.strings */,
-				0F39A1D768EB072F96D97CFC0472457B /* Localizable.strings */,
+				AE1E65ABCF300A4410B1B809F0546170 /* Localizable.strings */,
+				85FBC07BCCCE4A0D4B60C6B406669F79 /* Localizable.strings */,
+				BDF44DB3A37DC412F95AFB7C50EB7F21 /* Localizable.strings */,
+				F3F76E4939DF91F4BCBA1ADD82637C87 /* Localizable.strings */,
+				D0A2EFFAA75E3886D616B2E36D9C9196 /* Localizable.strings */,
+				BEB99315A83F7AF80779DF4E76356FCE /* Localizable.strings */,
 			);
 			name = Localizable.strings;
 			path = Localization;
@@ -592,9 +816,43 @@
 			};
 			name = Debug;
 		};
+		1732D0A36321EA43379E90F13DE3C196 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C07C72398107215F6C355DBE1377BAD /* Spring.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spring/Spring-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
+				PRODUCT_MODULE_NAME = Spring;
+				PRODUCT_NAME = Spring;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		2FEA454F4444CB0910941109A5138DC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5C84530007FBF407A628BF7FF203825 /* BarcodeScanner.debug.xcconfig */;
+			baseConfigurationReference = 98E605D23B7E836258521A874210260D /* BarcodeScanner.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -627,9 +885,135 @@
 			};
 			name = Debug;
 		};
-		49B79930E5C7287C956F7E90573236A0 /* Debug */ = {
+		3AB28AD2C246B3208E52B4323383ADBD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5C84530007FBF407A628BF7FF203825 /* BarcodeScanner.debug.xcconfig */;
+			baseConfigurationReference = 16454EF181CBBFC73896C81677D43154 /* Pods-VarkaAPP.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3AE6F5EBAEF5DA34DB1A292022A4CBA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 422C7153293FC1D61464341EA73B2EA9 /* Spring.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spring/Spring-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
+				PRODUCT_MODULE_NAME = Spring;
+				PRODUCT_NAME = Spring;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		40C37F07306D42236F0647B88046A5FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98E605D23B7E836258521A874210260D /* BarcodeScanner.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BarcodeScanner";
+				IBSC_MODULE = BarcodeScanner;
+				INFOPLIST_FILE = "Target Support Files/BarcodeScanner/ResourceBundle-Localization-BarcodeScanner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = Localization;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		6BCEE0944FEB88C58441ECC704E0AD66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13EBC831BFA7325962BBE73386317FA4 /* Pods-VarkaAPP.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		89B73FE0A77112020127DB0A5BDCDCB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D96A1E69E20F10F953D9AF2B0C9A347 /* BarcodeScanner.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BarcodeScanner";
 				IBSC_MODULE = BarcodeScanner;
@@ -641,11 +1025,27 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
+		};
+		8C4FE494E4AABD668592BA08A2602EDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D96A1E69E20F10F953D9AF2B0C9A347 /* BarcodeScanner.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BarcodeScanner";
+				IBSC_MODULE = BarcodeScanner;
+				INFOPLIST_FILE = "Target Support Files/BarcodeScanner/ResourceBundle-Localization-BarcodeScanner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = Localization;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		8FF2D903F02AB3F82D38FE8538384741 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19BB8B141B4331E78AEBA73C052F8EA8 /* BarcodeScanner.release.xcconfig */;
+			baseConfigurationReference = 9D96A1E69E20F10F953D9AF2B0C9A347 /* BarcodeScanner.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -741,116 +1141,9 @@
 			};
 			name = Release;
 		};
-		BA64DFBDEFF7B3663976D8B3FD9001F4 /* Debug */ = {
+		DAFB2C5CD1DD7CBCF11D501848063A7C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16454EF181CBBFC73896C81677D43154 /* Pods-VarkaAPP.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C52C1496B8AB2DCE1A2AA8493BE321E2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19BB8B141B4331E78AEBA73C052F8EA8 /* BarcodeScanner.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BarcodeScanner";
-				IBSC_MODULE = BarcodeScanner;
-				INFOPLIST_FILE = "Target Support Files/BarcodeScanner/ResourceBundle-Localization-BarcodeScanner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = Localization;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		DF532435FCD8BCCB6BBA64D8ED0AE14F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13EBC831BFA7325962BBE73386317FA4 /* Pods-VarkaAPP.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		E9F8CD109EF37CEF152E72BB2E683304 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5C84530007FBF407A628BF7FF203825 /* BarcodeScanner.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BarcodeScanner";
-				IBSC_MODULE = BarcodeScanner;
-				INFOPLIST_FILE = "Target Support Files/BarcodeScanner/ResourceBundle-Localization-BarcodeScanner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = Localization;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		EE55DE4FFFBD2C6CD4EA6FC6102D2FC5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19BB8B141B4331E78AEBA73C052F8EA8 /* BarcodeScanner.release.xcconfig */;
+			baseConfigurationReference = 98E605D23B7E836258521A874210260D /* BarcodeScanner.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BarcodeScanner";
 				IBSC_MODULE = BarcodeScanner;
@@ -862,11 +1155,20 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		140228DCDDB7E847140689787FEE1129 /* Build configuration list for PBXNativeTarget "BarcodeScanner-BarcodeScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAFB2C5CD1DD7CBCF11D501848063A7C /* Debug */,
+				89B73FE0A77112020127DB0A5BDCDCB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -885,29 +1187,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7502A557CD5E4A4F1612B1F77B64E902 /* Build configuration list for PBXNativeTarget "BarcodeScanner-BarcodeScanner" */ = {
+		750D6EB4F25D1FBE3D2E3628D1834DCE /* Build configuration list for PBXNativeTarget "Pods-VarkaAPP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				49B79930E5C7287C956F7E90573236A0 /* Debug */,
-				EE55DE4FFFBD2C6CD4EA6FC6102D2FC5 /* Release */,
+				3AB28AD2C246B3208E52B4323383ADBD /* Debug */,
+				6BCEE0944FEB88C58441ECC704E0AD66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9EC38FB0E3785E79DF23FABC41A7C673 /* Build configuration list for PBXNativeTarget "BarcodeScanner-Localization" */ = {
+		D09528C50F366F4ABEFEFEEC9A68896E /* Build configuration list for PBXNativeTarget "Spring" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E9F8CD109EF37CEF152E72BB2E683304 /* Debug */,
-				C52C1496B8AB2DCE1A2AA8493BE321E2 /* Release */,
+				1732D0A36321EA43379E90F13DE3C196 /* Debug */,
+				3AE6F5EBAEF5DA34DB1A292022A4CBA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ED9B43F160A26FE248D7DF45CD0DC656 /* Build configuration list for PBXNativeTarget "Pods-VarkaAPP" */ = {
+		E47C01A16EAA651C3DDFAD3E46CC0913 /* Build configuration list for PBXNativeTarget "BarcodeScanner-Localization" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BA64DFBDEFF7B3663976D8B3FD9001F4 /* Debug */,
-				DF532435FCD8BCCB6BBA64D8ED0AE14F /* Release */,
+				40C37F07306D42236F0647B88046A5FD /* Debug */,
+				8C4FE494E4AABD668592BA08A2602EDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
