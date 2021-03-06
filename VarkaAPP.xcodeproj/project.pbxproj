@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		92DF0E837979D9BE1CA2995C /* Pods_VarkaAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7260218810D9C9E8CAE94BC3 /* Pods_VarkaAPP.framework */; };
+		CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02B9EC25F2ACA000788EE3 /* Product.swift */; };
+		CE02B9F025F2B2F900788EE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE02B9EF25F2B2F900788EE3 /* GoogleService-Info.plist */; };
+		CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA0525F3A94500788EE3 /* FirebaseService.swift */; };
+		CE02BA0B25F3AB6800788EE3 /* FirebaseTestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA0925F3AB6800788EE3 /* FirebaseTestingViewController.swift */; };
+		CE02BA0C25F3AB6800788EE3 /* FirebaseTestingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE02BA0A25F3AB6800788EE3 /* FirebaseTestingViewController.xib */; };
 		E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627725F20F2A0068F15A /* AppDelegate.swift */; };
 		E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627925F20F2A0068F15A /* SceneDelegate.swift */; };
 		E495627F25F20F2A0068F15A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495627D25F20F2A0068F15A /* Main.storyboard */; };
@@ -20,13 +25,17 @@
 		E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562CD25F246DE0068F15A /* CustomTabBarController.swift */; };
 		E49562D125F247990068F15A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562D025F247990068F15A /* CustomTabBar.swift */; };
 		E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562D825F2775E0068F15A /* RecentProductViewModel.swift */; };
-		E49562E025F299F10068F15A /* CustomTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562DF25F299F10068F15A /* CustomTabBarViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		279C6D49F0CF92B4F622ED1B /* Pods-VarkaAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarkaAPP.debug.xcconfig"; path = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		3D2706771555FB2F0FF1CADB /* Pods-VarkaAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarkaAPP.release.xcconfig"; path = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.release.xcconfig"; sourceTree = "<group>"; };
 		7260218810D9C9E8CAE94BC3 /* Pods_VarkaAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarkaAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE02B9EC25F2ACA000788EE3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		CE02B9EF25F2B2F900788EE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE02BA0525F3A94500788EE3 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		CE02BA0925F3AB6800788EE3 /* FirebaseTestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTestingViewController.swift; sourceTree = "<group>"; };
+		CE02BA0A25F3AB6800788EE3 /* FirebaseTestingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirebaseTestingViewController.xib; sourceTree = "<group>"; };
 		E495627425F20F2A0068F15A /* VarkaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VarkaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495627725F20F2A0068F15A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E495627925F20F2A0068F15A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +50,6 @@
 		E49562CD25F246DE0068F15A /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		E49562D025F247990068F15A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		E49562D825F2775E0068F15A /* RecentProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductViewModel.swift; sourceTree = "<group>"; };
-		E49562DF25F299F10068F15A /* CustomTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,39 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE02B9EB25F2AC6200788EE3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE02B9EC25F2ACA000788EE3 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE02BA0325F3A8E600788EE3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE02BA0425F3A91700788EE3 /* FirebaseService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE02BA0425F3A91700788EE3 /* FirebaseService */ = {
+			isa = PBXGroup;
+			children = (
+				CE02BA0525F3A94500788EE3 /* FirebaseService.swift */,
+			);
+			path = FirebaseService;
+			sourceTree = "<group>";
+		};
+		CE02BA0825F3AB1400788EE3 /* FirebaseTesting */ = {
+			isa = PBXGroup;
+			children = (
+				CE02BA0925F3AB6800788EE3 /* FirebaseTestingViewController.swift */,
+				CE02BA0A25F3AB6800788EE3 /* FirebaseTestingViewController.xib */,
+			);
+			path = FirebaseTesting;
+			sourceTree = "<group>";
+		};
 		E495626B25F20F2A0068F15A = {
 			isa = PBXGroup;
 			children = (
@@ -96,11 +137,13 @@
 			children = (
 				E49562CB25F246A90068F15A /* Views */,
 				E49562C925F245B40068F15A /* RecentProducts */,
-				E495628F25F20F3D0068F15A /* InfoAboutProducts */,
-				E49562E325F2A1CC0068F15A /* Services */,
+				CE02BA0825F3AB1400788EE3 /* FirebaseTesting */,
 				E495629225F20F7B0068F15A /* StoryBoard */,
+				CE02B9EB25F2AC6200788EE3 /* Models */,
+				CE02BA0325F3A8E600788EE3 /* Services */,
 				E495629125F20F5E0068F15A /* Resources */,
 				E495629025F20F510068F15A /* SupportingFiles */,
+				E495628F25F20F3D0068F15A /* InfoAboutProducts */,
 			);
 			path = VarkaAPP;
 			sourceTree = "<group>";
@@ -119,6 +162,7 @@
 			children = (
 				E495628025F20F2A0068F15A /* VarkaAPP.xcdatamodeld */,
 				E495628825F20F2D0068F15A /* Info.plist */,
+				CE02B9EF25F2B2F900788EE3 /* GoogleService-Info.plist */,
 				E495627925F20F2A0068F15A /* SceneDelegate.swift */,
 				E495627725F20F2A0068F15A /* AppDelegate.swift */,
 			);
@@ -155,17 +199,9 @@
 			isa = PBXGroup;
 			children = (
 				E49562CD25F246DE0068F15A /* CustomTabBarController.swift */,
-				E49562DF25F299F10068F15A /* CustomTabBarViewModel.swift */,
 				E49562D025F247990068F15A /* CustomTabBar.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		E49562E325F2A1CC0068F15A /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,7 +263,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE02BA0C25F3AB6800788EE3 /* FirebaseTestingViewController.xib in Resources */,
 				E495628725F20F2D0068F15A /* LaunchScreen.storyboard in Resources */,
+				CE02B9F025F2B2F900788EE3 /* GoogleService-Info.plist in Resources */,
 				E495628425F20F2D0068F15A /* Assets.xcassets in Resources */,
 				E495627F25F20F2A0068F15A /* Main.storyboard in Resources */,
 			);
@@ -284,14 +322,16 @@
 			files = (
 				E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */,
 				E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */,
+				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
 				E495629625F20FDF0068F15A /* InfoAboutProductViewController.swift in Sources */,
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
+				CE02BA0B25F3AB6800788EE3 /* FirebaseTestingViewController.swift in Sources */,
 				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,
 				E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */,
+				CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */,
 				E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */,
 				E495629925F20FED0068F15A /* InfoAboutProductViewModel.swift in Sources */,
-				E49562E025F299F10068F15A /* CustomTabBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

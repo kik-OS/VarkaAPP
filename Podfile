@@ -6,5 +6,8 @@ target 'VarkaAPP' do
   use_frameworks!
 
   pod 'BarcodeScanner'
-pod 'Spring', :git => 'https://github.com/LexDeBash/Spring.git'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Analytics'
+
 end
