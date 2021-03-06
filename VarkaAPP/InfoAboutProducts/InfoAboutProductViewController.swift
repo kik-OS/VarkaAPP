@@ -27,34 +27,34 @@ class InfoAboutProductViewController: UIViewController {
     }
     
     
-    func showBarCodeScaner() {
-        let barCodeScanerVC = BarcodeScannerViewController()
-        barCodeScanerVC.codeDelegate = self
-        barCodeScanerVC.errorDelegate = self
-        barCodeScanerVC.dismissalDelegate = self
-//        barCodeScanerVC.modalPresentationStyle = .fullScreen
-        present(barCodeScanerVC, animated: true, completion: nil)
-    }
+//    func showBarCodeScaner() {
+//        let barCodeScanerVC = BarcodeScannerViewController()
+//        barCodeScanerVC.codeDelegate = self
+//        barCodeScanerVC.errorDelegate = self
+//        barCodeScanerVC.dismissalDelegate = self
+////        barCodeScanerVC.modalPresentationStyle = .fullScreen
+//        present(barCodeScanerVC, animated: true, completion: nil)
+//    }
 }
 
 
 
 // MARK: BarCodeScanerDelegate
-extension InfoAboutProductViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
-    
-    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-        barCodeLabel.text = code
-        controller.dismiss(animated: true, completion: nil)
-        controller.reset()
-    }
-    
-    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
-        print(error.localizedDescription)
-    }
-    
-    func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-}
+//extension InfoAboutProductViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
+//
+//    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
+//        barCodeLabel.text = code
+//        controller.dismiss(animated: true, completion: nil)
+//        controller.reset()
+//    }
+//
+//    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
+//        print(error.localizedDescription)
+//    }
+//
+//    func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
+//        controller.dismiss(animated: true, completion: nil)
+//    }
+//}
 
 

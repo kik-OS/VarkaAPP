@@ -15,22 +15,22 @@ final class FirebaseTestingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        firebaseService.fetchProducts { result in
-            switch result {
-            case .success(let products):
-                print(products)
-            case .failure:
-                break
-            }
-        }
+//        firebaseService.fetchProducts { result in
+//            switch result {
+//            case .success(let products):
+//                print(products)
+//            case .failure:
+//                break
+//            }
+//        }
         
-        firebaseService.fetchProduct(byCode: "AB1234567890C") { result in
-            switch result {
-            case .success(let product):
-                print(product ?? "Not fetched")
-            case .failure:
-                break
-            }
-        }
+//        firebaseService.fetchProduct(byCode: "AB1234567890C") { result in
+//            switch result {
+//            case .success(let product):
+//                print(product ?? "Not fetched")
+//            case .failure:
+//                break
+//            }
+//        }
     }
 }

@@ -218,7 +218,7 @@ Licensed under the **MIT** license
       same "printed page" as the copyright notice for easier
       identification within third-party archives.
 
-   Copyright [yyyy] [name of copyright owner]
+   Copyright 2020 Firebase, Inc.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -235,7 +235,7 @@ Licensed under the **MIT** license
 
 ## FirebaseAnalytics
 
-Copyright 2021 Google
+Copyright 2020 Google
 
 ## FirebaseCore
 
@@ -428,7 +428,7 @@ Copyright 2021 Google
       same "printed page" as the copyright notice for easier
       identification within third-party archives.
 
-   Copyright [yyyy] [name of copyright owner]
+   Copyright 2020 Firebase, Inc.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -634,7 +634,7 @@ Copyright 2021 Google
       same "printed page" as the copyright notice for easier
       identification within third-party archives.
 
-   Copyright [yyyy] [name of copyright owner]
+   Copyright 2020 Firebase, Inc.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -840,7 +840,7 @@ Copyright 2021 Google
       same "printed page" as the copyright notice for easier
       identification within third-party archives.
 
-   Copyright [yyyy] [name of copyright owner]
+   Copyright 2020 Firebase, Inc.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -1046,7 +1046,7 @@ Copyright 2021 Google
       same "printed page" as the copyright notice for easier
       identification within third-party archives.
 
-   Copyright [yyyy] [name of copyright owner]
+   Copyright 2020 Firebase, Inc.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -1063,7 +1063,7 @@ Copyright 2021 Google
 
 ## GoogleAppMeasurement
 
-Copyright 2021 Google
+Copyright 2020 Google
 
 ## GoogleDataTransport
 
@@ -1256,7 +1256,7 @@ Copyright 2021 Google
       same "printed page" as the copyright notice for easier
       identification within third-party archives.
 
-   Copyright [yyyy] [name of copyright owner]
+   Copyright 2020 Firebase, Inc.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92DF0E837979D9BE1CA2995C /* Pods_VarkaAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7260218810D9C9E8CAE94BC3 /* Pods_VarkaAPP.framework */; };
+		B4A93CC62F9DE9305CB5ED4A /* Pods_VarkaAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D072E3F54676A3D2332BFDC /* Pods_VarkaAPP.framework */; };
 		CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02B9EC25F2ACA000788EE3 /* Product.swift */; };
 		CE02B9F025F2B2F900788EE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE02B9EF25F2B2F900788EE3 /* GoogleService-Info.plist */; };
 		CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA0525F3A94500788EE3 /* FirebaseService.swift */; };
@@ -28,9 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		279C6D49F0CF92B4F622ED1B /* Pods-VarkaAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarkaAPP.debug.xcconfig"; path = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.debug.xcconfig"; sourceTree = "<group>"; };
-		3D2706771555FB2F0FF1CADB /* Pods-VarkaAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarkaAPP.release.xcconfig"; path = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.release.xcconfig"; sourceTree = "<group>"; };
-		7260218810D9C9E8CAE94BC3 /* Pods_VarkaAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarkaAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D072E3F54676A3D2332BFDC /* Pods_VarkaAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarkaAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		368895D720CB91702BA8B665 /* Pods-VarkaAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarkaAPP.debug.xcconfig"; path = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.debug.xcconfig"; sourceTree = "<group>"; };
+		44445641A18A32DE51622430 /* Pods-VarkaAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarkaAPP.release.xcconfig"; path = "Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP.release.xcconfig"; sourceTree = "<group>"; };
 		CE02B9EC25F2ACA000788EE3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CE02B9EF25F2B2F900788EE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE02BA0525F3A94500788EE3 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
@@ -57,17 +57,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92DF0E837979D9BE1CA2995C /* Pods_VarkaAPP.framework in Frameworks */,
+				B4A93CC62F9DE9305CB5ED4A /* Pods_VarkaAPP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6E65FE99C103A7E9EA7ACDF1 /* Frameworks */ = {
+		2CB13E2CF021FEFD5AC1268F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7260218810D9C9E8CAE94BC3 /* Pods_VarkaAPP.framework */,
+				2D072E3F54676A3D2332BFDC /* Pods_VarkaAPP.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -75,8 +75,8 @@
 		79D81D43AA5EFD42FF24CC98 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				279C6D49F0CF92B4F622ED1B /* Pods-VarkaAPP.debug.xcconfig */,
-				3D2706771555FB2F0FF1CADB /* Pods-VarkaAPP.release.xcconfig */,
+				368895D720CB91702BA8B665 /* Pods-VarkaAPP.debug.xcconfig */,
+				44445641A18A32DE51622430 /* Pods-VarkaAPP.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -120,7 +120,7 @@
 				E495627625F20F2A0068F15A /* VarkaAPP */,
 				E495627525F20F2A0068F15A /* Products */,
 				79D81D43AA5EFD42FF24CC98 /* Pods */,
-				6E65FE99C103A7E9EA7ACDF1 /* Frameworks */,
+				2CB13E2CF021FEFD5AC1268F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,11 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E495628B25F20F2D0068F15A /* Build configuration list for PBXNativeTarget "VarkaAPP" */;
 			buildPhases = (
-				EBDCA4FF7B0A9CCE5A244963 /* [CP] Check Pods Manifest.lock */,
+				32E1800A6EECB04F3F85F0A1 /* [CP] Check Pods Manifest.lock */,
 				E495627025F20F2A0068F15A /* Sources */,
 				E495627125F20F2A0068F15A /* Frameworks */,
 				E495627225F20F2A0068F15A /* Resources */,
-				DD5253A20179738CED755E98 /* [CP] Embed Pods Frameworks */,
+				437DCDE8C4A74E889C24CCA6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,24 +274,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DD5253A20179738CED755E98 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EBDCA4FF7B0A9CCE5A244963 /* [CP] Check Pods Manifest.lock */ = {
+		32E1800A6EECB04F3F85F0A1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -311,6 +294,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		437DCDE8C4A74E889C24CCA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -475,13 +475,14 @@
 		};
 		E495628C25F20F2D0068F15A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 279C6D49F0CF92B4F622ED1B /* Pods-VarkaAPP.debug.xcconfig */;
+			baseConfigurationReference = 368895D720CB91702BA8B665 /* Pods-VarkaAPP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58287L88KM;
 				INFOPLIST_FILE = VarkaAPP/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,19 +490,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Kik-OS.VarkaAPP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		E495628D25F20F2D0068F15A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D2706771555FB2F0FF1CADB /* Pods-VarkaAPP.release.xcconfig */;
+			baseConfigurationReference = 44445641A18A32DE51622430 /* Pods-VarkaAPP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58287L88KM;
 				INFOPLIST_FILE = VarkaAPP/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +511,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Kik-OS.VarkaAPP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

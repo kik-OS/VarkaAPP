@@ -6,14 +6,9 @@
 //
 
 import UIKit
+import BarcodeScanner
 
 class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
-    //    required init(coder aDecoder: NSCoder) {
-    //        super.init(coder: aDecoder)!
-    //    }
-    
-    var viewModel: CustomTabBarViewModelProtocol!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +42,12 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     @objc func centerButtonAction(sender: UIButton) {
         sender.animationForCentralButton()
+        let barCodeScanerVC = BarcodeScannerViewController()
+        barCodeScanerVC.codeDelegate = self
+        barCodeScanerVC.errorDelegate = self
+        barCodeScanerVC.dismissalDelegate = self
+        present(barCodeScanerVC, animated: true, completion: nil)
         
-        guard let firstVC = self.viewControllers?.first else {return}
-        let infoAboutProductViewController = firstVC as? InfoAboutProductViewController
-        infoAboutProductViewController?.showBarCodeScaner()
     }
 }
 
@@ -66,6 +63,19 @@ extension UIButton {
 }
 
 
+
+extension CustomTabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
+    
+    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
+        print(code)
+    }
+    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
+        
+    }
+    func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
 
 
 
