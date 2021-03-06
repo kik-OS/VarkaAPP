@@ -9,6 +9,9 @@ import Foundation
 import Firebase
 
 struct Product {
+    
+    // MARK: - Properties
+    
     let code: String
     let title: String
     let producer: String
@@ -19,13 +22,15 @@ struct Product {
     let needStirring: Bool?
     let ref: DatabaseReference?
     
+    // MARK: - Initializers
+    
     init(code: String, title: String, producer: String, category: String, weight: Int?, cookingTime: Int, intoBoilingWater: Bool?, needStirring: Bool?, ref: DatabaseReference? = nil) {
         self.code = code
         self.title = title
         self.producer = producer
         self.category = category
-        self.cookingTime = cookingTime
         self.weight = weight
+        self.cookingTime = cookingTime
         self.intoBoilingWater = intoBoilingWater
         self.needStirring = needStirring
         self.ref = ref
@@ -44,6 +49,20 @@ struct Product {
         needStirring = snapshotValue["needStirring"] as? Bool
         ref = snapshot.ref
     }
+    
+    // MARK: - Public methods
+    
+    func convertToDictionaty() -> Any {
+        ["code": code,
+         "title": title,
+         "producer": producer,
+         "category": category,
+         "weight": weight as Any,
+         "cookingTime": cookingTime,
+         "intoBoilingWater": intoBoilingWater as Any,
+         "needStirring": needStirring as Any,
+         "ref": ref as Any]
+    }
 }
 
 extension Product {
@@ -58,6 +77,11 @@ extension Product {
             code: "9876543210987", title: "Buckwheat", producer: "Agro-Alliance",
             category: "Grocery", weight: 900, cookingTime: 420,
             intoBoilingWater: false, needStirring: false
+        ),
+        Product(
+            code: "AB1234567890C", title: "Pelmeni", producer: "Brothers",
+            category: "Semifinished", weight: 1000, cookingTime: 360,
+            intoBoilingWater: true, needStirring: true
         )]
     }
 }

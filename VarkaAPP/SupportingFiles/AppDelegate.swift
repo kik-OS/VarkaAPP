@@ -15,9 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        saveData()
         return true
     }
-
+    
+    func saveData() {
+        let products = Product.getProducts()
+        let ref = Database.database().reference()
+        
+        products.forEach {
+            ref.child("products").child($0.code).setValue($0.convertToDictionaty())
+        }
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
