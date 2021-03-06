@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C3u-R3-MZb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K9i-IV-iPe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,10 +8,29 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Custom Tab Bar Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="UWm-bg-Y3K">
+            <objects>
+                <navigationController id="K9i-IV-iPe" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dVv-Rt-MYM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="C3u-R3-MZb" kind="relationship" relationship="rootViewController" id="pBP-kX-iXp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajg-zz-ENn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1907" y="90"/>
+        </scene>
+        <!--Варка-->
         <scene sceneID="mpw-V2-NPN">
             <objects>
                 <tabBarController id="C3u-R3-MZb" customClass="CustomTabBarController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Варка" id="dlE-K4-omA">
+                        <barButtonItem key="rightBarButtonItem" image="timer" catalog="system" id="URZ-Nx-ETA"/>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ccC-ff-bsM" customClass="CustomTabBar" customModule="VarkaAPP" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -33,10 +52,26 @@
                     <view key="view" contentMode="scaleToFill" id="wbc-QK-p7d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="111111111111" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuL-Ko-zBV">
+                                <rect key="frame" x="10" y="427" width="394" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="tee-QP-f9D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GuL-Ko-zBV" firstAttribute="leading" secondItem="tee-QP-f9D" secondAttribute="leading" constant="10" id="3qh-yx-bUy"/>
+                            <constraint firstItem="tee-QP-f9D" firstAttribute="trailing" secondItem="GuL-Ko-zBV" secondAttribute="trailing" constant="10" id="d78-OU-5lW"/>
+                            <constraint firstItem="GuL-Ko-zBV" firstAttribute="centerY" secondItem="wbc-QK-p7d" secondAttribute="centerY" id="ywv-Sw-daN"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Как Варить" image="shippingbox" catalog="system" id="xF4-qd-BWs"/>
+                    <connections>
+                        <outlet property="barCodeLabel" destination="GuL-Ko-zBV" id="aNk-j4-fr3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRF-PW-jJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,14 +95,10 @@
             <point key="canvasLocation" x="523" y="90"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="ccC-ff-bsM">
-            <size key="intrinsicContentSize" width="-1" height="83"/>
-        </designable>
-    </designables>
     <resources>
         <image name="rectangle.3.offgrid" catalog="system" width="128" height="81"/>
         <image name="shippingbox" catalog="system" width="128" height="124"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

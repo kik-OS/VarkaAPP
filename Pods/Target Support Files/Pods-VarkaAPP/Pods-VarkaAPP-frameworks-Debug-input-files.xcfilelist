@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-VarkaAPP/Pods-VarkaAPP-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/BarcodeScanner/BarcodeScanner.framework
+${BUILT_PRODUCTS_DIR}/Spring/Spring.framework
