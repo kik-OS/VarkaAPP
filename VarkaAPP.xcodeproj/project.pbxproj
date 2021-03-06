@@ -21,7 +21,6 @@
 		E49562D125F247990068F15A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562D025F247990068F15A /* CustomTabBar.swift */; };
 		E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562D825F2775E0068F15A /* RecentProductViewModel.swift */; };
 		E49562E025F299F10068F15A /* CustomTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562DF25F299F10068F15A /* CustomTabBarViewModel.swift */; };
-		E49562E525F2A1FA0068F15A /* BarCodeScanerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562E425F2A1FA0068F15A /* BarCodeScanerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +42,6 @@
 		E49562D025F247990068F15A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		E49562D825F2775E0068F15A /* RecentProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductViewModel.swift; sourceTree = "<group>"; };
 		E49562DF25F299F10068F15A /* CustomTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewModel.swift; sourceTree = "<group>"; };
-		E49562E425F2A1FA0068F15A /* BarCodeScanerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScanerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,13 +94,13 @@
 		E495627625F20F2A0068F15A /* VarkaAPP */ = {
 			isa = PBXGroup;
 			children = (
-				E49562E325F2A1CC0068F15A /* Services */,
 				E49562CB25F246A90068F15A /* Views */,
 				E49562C925F245B40068F15A /* RecentProducts */,
+				E495628F25F20F3D0068F15A /* InfoAboutProducts */,
+				E49562E325F2A1CC0068F15A /* Services */,
 				E495629225F20F7B0068F15A /* StoryBoard */,
 				E495629125F20F5E0068F15A /* Resources */,
 				E495629025F20F510068F15A /* SupportingFiles */,
-				E495628F25F20F3D0068F15A /* InfoAboutProducts */,
 			);
 			path = VarkaAPP;
 			sourceTree = "<group>";
@@ -166,7 +164,6 @@
 		E49562E325F2A1CC0068F15A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E49562E425F2A1FA0068F15A /* BarCodeScanerManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -288,7 +285,6 @@
 				E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */,
 				E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
-				E49562E525F2A1FA0068F15A /* BarCodeScanerManager.swift in Sources */,
 				E495629625F20FDF0068F15A /* InfoAboutProductViewController.swift in Sources */,
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
 				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,

@@ -30,11 +30,11 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
                                                                               weight: .thin), forImageIn: .normal)
         
         middleBtn.backgroundColor = .white
-        middleBtn.layer.borderColor = UIColor.red.cgColor
+        middleBtn.layer.borderColor = UIColor.white.cgColor
         middleBtn.layer.borderWidth = 1
         middleBtn.layer.cornerRadius = 0.5 * middleBtn.bounds.size.width
         middleBtn.clipsToBounds = true
-        middleBtn.tintColor = .red
+        middleBtn.tintColor = .orange
         
         
         middleBtn.animationForCentralButton()
@@ -47,11 +47,10 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     @objc func centerButtonAction(sender: UIButton) {
         sender.animationForCentralButton()
-        BarCodeScanerManager.shared.openBarCodeScaner { vc in
-            DispatchQueue.main.async {
-                self.present(vc, animated: true, completion: nil)
-            }
-        }
+        
+        guard let firstVC = self.viewControllers?.first else {return}
+        let infoAboutProductViewController = firstVC as? InfoAboutProductViewController
+        infoAboutProductViewController?.showBarCodeScaner()
     }
 }
 

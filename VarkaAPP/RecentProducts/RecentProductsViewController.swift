@@ -9,21 +9,38 @@ import UIKit
 
 class RecentProductsViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func viewDidLoad() {
+//           super.viewDidLoad()
+//           // Do any additional setup after loading the view, typically from a nib.
+//
+//           // Create a DatePicker
+//           let datePicker: UIDatePicker = UIDatePicker()
+//
+//           // Posiiton date picket within a view
+//           datePicker.frame = CGRect(x: 10, y: 50, width: self.view.frame.width, height: 200)
+//
+//           // Set some of UIDatePicker properties
+//           datePicker.backgroundColor = UIColor.white
+//           datePicker.datePickerMode = UIDatePicker.Mode.countDownTimer
+//
+//
+//
+//           // Add an event to call onDidChangeDate function when value is changed.
+//           datePicker.addTarget(self, action: #selector(self.datePickerValueChanged(_:)), for: .valueChanged)
+//
+//           // Add DataPicker to the view
+//           self.view.addSubview(datePicker)
+//
+//       }
+//
+//       // Not called the first time
+//    @objc func datePickerValueChanged(_ sender: UIDatePicker){
+//           print("Selected value \(sender.countDownDuration)")
+//       }
+//
+//       override func didReceiveMemoryWarning() {
+//           super.didReceiveMemoryWarning()
+//           // Dispose of any resources that can be recreated.
+//       }
 
 }
