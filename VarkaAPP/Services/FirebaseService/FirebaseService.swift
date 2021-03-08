@@ -13,9 +13,11 @@ import FirebaseDatabase
 // MARK: - Protocols
 
 protocol FirebaseServiceProtocol {
+    func saveProduct(_ product: Product)
     func saveProducts(_ products: [Product])
     func fetchProduct(byCode code: String, completion: @escaping (Result<Product?, Error>) -> Void)
     func fetchProducts(completion: @escaping (Result<[Product], Error>) -> Void)
+    func removeProduct(byCode code: String)
 }
 
 final class FirebaseService: FirebaseServiceProtocol {
@@ -26,6 +28,10 @@ final class FirebaseService: FirebaseServiceProtocol {
     
     
     // MARK: - Public methods
+    
+    func saveProduct(_ product: Product) {
+        ref.child("products").child(product.code).setValue(product.convertToDictionaty())
+    }
     
     func saveProducts(_ products: [Product]) {
         products.forEach {
@@ -44,5 +50,9 @@ final class FirebaseService: FirebaseServiceProtocol {
             let products = snapshot.children.compactMap { Product(snapshot: $0 as! DataSnapshot) }
             completion(.success(products))
         }
+    }
+    
+    func removeProduct(byCode code: String) {
+        ref.child("products").child(code).removeValue()
     }
 }

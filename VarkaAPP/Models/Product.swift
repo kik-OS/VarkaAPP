@@ -69,18 +69,18 @@ extension Product {
     
     static func getProducts() -> [Product] {
         [Product(
-            code: "1234567890123", title: "Rice", producer: "Agro-Alliance",
-            category: "Grocery", weight: 800, cookingTime: 600,
+            code: "1234567890000", title: "Рис круглозёрный", producer: "Агро-Альянс",
+            category: "Бакалея", weight: 800, cookingTime: 600,
             intoBoilingWater: true, needStirring: false
         ),
         Product(
-            code: "9876543210987", title: "Buckwheat", producer: "Agro-Alliance",
-            category: "Grocery", weight: 900, cookingTime: 420,
+            code: "0987654321098", title: "Гречка", producer: "Агро-Альянс",
+            category: "Бакалея", weight: 900, cookingTime: 420,
             intoBoilingWater: false, needStirring: false
         ),
         Product(
-            code: "AB1234567890C", title: "Pelmeni", producer: "Brothers",
-            category: "Semifinished", weight: 1000, cookingTime: 360,
+            code: "AB1234567890D", title: "Пельмени", producer: "Братцы-вареники",
+            category: "Полуфабрикаты", weight: 1000, cookingTime: 360,
             intoBoilingWater: true, needStirring: true
         )]
     }
