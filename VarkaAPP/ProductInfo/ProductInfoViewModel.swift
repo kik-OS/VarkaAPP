@@ -13,6 +13,7 @@ protocol ProductInfoViewModelProtocol {
     var cookingTime: String { get }
     var intoBoilingWater: String { get }
     var needStirring: String { get }
+    var isHiddenProductStackView: Bool { get }
     
     init(product: Product?)
 }
@@ -45,6 +46,10 @@ final class ProductInfoViewModel: ProductInfoViewModelProtocol {
         product.value?.needStirring ?? false
             ? "Требуется мешать во время варки"
             : "Можно не мешать"
+    }
+    
+    var isHiddenProductStackView: Bool {
+        product.value == nil
     }
     
     // MARK: - Initializers

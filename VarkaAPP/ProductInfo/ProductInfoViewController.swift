@@ -12,6 +12,8 @@ final class ProductInfoViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var productStackView: UIStackView!
+    @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var producerLabel: UILabel!
@@ -52,14 +54,18 @@ final class ProductInfoViewController: UIViewController {
     
     private func setupViewModelBindings() {
         viewModel.product.bind { [unowned self] product in
-            self.titleLabel.text = product?.title
-            self.barcodeLabel.text = product?.code
-            self.producerLabel.text = product?.producer
-            self.categoryLabel.text = product?.category
-            self.weightLabel.text = viewModel.weight
-            self.cookingTimeLabel.text = viewModel.cookingTime
-            self.intoBoilingWaterLabel.text = viewModel.intoBoilingWater
-            self.needStirringLabel.text = viewModel.needStirring
+            guard !viewModel.isHiddenProductStackView else { return }
+            
+            titleLabel.text = product?.title
+            barcodeLabel.text = product?.code
+            producerLabel.text = product?.producer
+            categoryLabel.text = product?.category
+            weightLabel.text = viewModel.weight
+            cookingTimeLabel.text = viewModel.cookingTime
+            intoBoilingWaterLabel.text = viewModel.intoBoilingWater
+            needStirringLabel.text = viewModel.needStirring
+            productStackView.isHidden = false
+            infoLabel.isHidden = true
         }
     }
 }
