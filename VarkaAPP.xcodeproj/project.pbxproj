@@ -11,8 +11,10 @@
 		CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02B9EC25F2ACA000788EE3 /* Product.swift */; };
 		CE02B9F025F2B2F900788EE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE02B9EF25F2B2F900788EE3 /* GoogleService-Info.plist */; };
 		CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA0525F3A94500788EE3 /* FirebaseService.swift */; };
-		CE02BA0B25F3AB6800788EE3 /* FirebaseTestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA0925F3AB6800788EE3 /* FirebaseTestingViewController.swift */; };
-		CE02BA0C25F3AB6800788EE3 /* FirebaseTestingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE02BA0A25F3AB6800788EE3 /* FirebaseTestingViewController.xib */; };
+		CE02BA0B25F3AB6800788EE3 /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA0925F3AB6800788EE3 /* ProductInfoViewController.swift */; };
+		CE02BA0C25F3AB6800788EE3 /* ProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE02BA0A25F3AB6800788EE3 /* ProductInfoViewController.xib */; };
+		CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */; };
+		CE02BA8325F7572300788EE3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA8225F7572300788EE3 /* Box.swift */; };
 		E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627725F20F2A0068F15A /* AppDelegate.swift */; };
 		E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627925F20F2A0068F15A /* SceneDelegate.swift */; };
 		E495627F25F20F2A0068F15A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495627D25F20F2A0068F15A /* Main.storyboard */; };
@@ -34,8 +36,10 @@
 		CE02B9EC25F2ACA000788EE3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CE02B9EF25F2B2F900788EE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE02BA0525F3A94500788EE3 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
-		CE02BA0925F3AB6800788EE3 /* FirebaseTestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTestingViewController.swift; sourceTree = "<group>"; };
-		CE02BA0A25F3AB6800788EE3 /* FirebaseTestingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirebaseTestingViewController.xib; sourceTree = "<group>"; };
+		CE02BA0925F3AB6800788EE3 /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
+		CE02BA0A25F3AB6800788EE3 /* ProductInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductInfoViewController.xib; sourceTree = "<group>"; };
+		CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewModel.swift; sourceTree = "<group>"; };
+		CE02BA8225F7572300788EE3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		E495627425F20F2A0068F15A /* VarkaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VarkaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495627725F20F2A0068F15A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E495627925F20F2A0068F15A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				CE02B9EC25F2ACA000788EE3 /* Product.swift */,
+				CE02BA8225F7572300788EE3 /* Box.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,13 +110,14 @@
 			path = FirebaseService;
 			sourceTree = "<group>";
 		};
-		CE02BA0825F3AB1400788EE3 /* FirebaseTesting */ = {
+		CE02BA0825F3AB1400788EE3 /* ProductInfo */ = {
 			isa = PBXGroup;
 			children = (
-				CE02BA0925F3AB6800788EE3 /* FirebaseTestingViewController.swift */,
-				CE02BA0A25F3AB6800788EE3 /* FirebaseTestingViewController.xib */,
+				CE02BA0925F3AB6800788EE3 /* ProductInfoViewController.swift */,
+				CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */,
+				CE02BA0A25F3AB6800788EE3 /* ProductInfoViewController.xib */,
 			);
-			path = FirebaseTesting;
+			path = ProductInfo;
 			sourceTree = "<group>";
 		};
 		E495626B25F20F2A0068F15A = {
@@ -137,7 +143,7 @@
 			children = (
 				E49562CB25F246A90068F15A /* Views */,
 				E49562C925F245B40068F15A /* RecentProducts */,
-				CE02BA0825F3AB1400788EE3 /* FirebaseTesting */,
+				CE02BA0825F3AB1400788EE3 /* ProductInfo */,
 				E495629225F20F7B0068F15A /* StoryBoard */,
 				CE02B9EB25F2AC6200788EE3 /* Models */,
 				CE02BA0325F3A8E600788EE3 /* Services */,
@@ -263,7 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE02BA0C25F3AB6800788EE3 /* FirebaseTestingViewController.xib in Resources */,
+				CE02BA0C25F3AB6800788EE3 /* ProductInfoViewController.xib in Resources */,
 				E495628725F20F2D0068F15A /* LaunchScreen.storyboard in Resources */,
 				CE02B9F025F2B2F900788EE3 /* GoogleService-Info.plist in Resources */,
 				E495628425F20F2D0068F15A /* Assets.xcassets in Resources */,
@@ -321,12 +327,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */,
+				CE02BA8325F7572300788EE3 /* Box.swift in Sources */,
 				E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */,
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
 				E495629625F20FDF0068F15A /* InfoAboutProductViewController.swift in Sources */,
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
-				CE02BA0B25F3AB6800788EE3 /* FirebaseTestingViewController.swift in Sources */,
+				CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */,
+				CE02BA0B25F3AB6800788EE3 /* ProductInfoViewController.swift in Sources */,
 				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,
 				E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */,
 				CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */,

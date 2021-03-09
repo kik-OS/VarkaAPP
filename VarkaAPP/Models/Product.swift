@@ -24,7 +24,8 @@ struct Product {
     
     // MARK: - Initializers
     
-    init(code: String, title: String, producer: String, category: String, weight: Int?, cookingTime: Int, intoBoilingWater: Bool?, needStirring: Bool?, ref: DatabaseReference? = nil) {
+    init(code: String, title: String, producer: String, category: String, weight: Int?,
+         cookingTime: Int, intoBoilingWater: Bool?, needStirring: Bool?, ref: DatabaseReference? = nil) {
         self.code = code
         self.title = title
         self.producer = producer
