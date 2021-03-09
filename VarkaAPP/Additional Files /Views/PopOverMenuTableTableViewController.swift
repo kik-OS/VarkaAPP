@@ -18,9 +18,8 @@ class PopOverMenuTableTableViewController: UITableViewController {
     }
 
     override func viewWillLayoutSubviews() {
-        preferredContentSize = CGSize(width: 200 , height: tableView.contentSize.height)
+        preferredContentSize = CGSize(width: 150 , height: 165)
     }
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -32,10 +31,8 @@ class PopOverMenuTableTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        cell.textLabel?.text = array[indexPath.row]
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CellFromPopOverTableViewTableViewCell
+        cell.titleProduct.text = array[indexPath.row]
         return cell
     }
     
@@ -43,7 +40,4 @@ class PopOverMenuTableTableViewController: UITableViewController {
         delegate.getSelectedItemFromPopOver(item: array[indexPath.row])
         dismiss(animated: true, completion: nil)
     }
-
-   
-
 }

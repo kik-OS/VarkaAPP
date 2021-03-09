@@ -108,7 +108,7 @@
         <scene sceneID="2JN-jQ-wYi">
             <objects>
                 <viewController id="7Z7-UH-SDU" customClass="AddNewProductViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="q42-Nc-QYf">
+                    <view key="view" contentMode="scaleToFill" id="q42-Nc-QYf" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -124,7 +124,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4607114691306" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="498-Wo-fVB">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 4607114691306" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="498-Wo-fVB">
                                                 <rect key="frame" x="0.0" y="21.5" width="374" height="32.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
@@ -171,7 +171,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="et5-mg-NG8" kind="popoverPresentation" popoverAnchorView="N8J-2Y-mkW" id="O5x-sQ-e43">
+                                                            <segue destination="et5-mg-NG8" kind="popoverPresentation" identifier="showPopOver" popoverAnchorView="N8J-2Y-mkW" id="O5x-sQ-e43">
                                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                             </segue>
                                                         </connections>
@@ -356,17 +356,36 @@
             <objects>
                 <tableViewController storyboardIdentifier="popVC" id="et5-mg-NG8" customClass="PopOverMenuTableTableViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qwG-Gt-h2m">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="separatorColor" systemColor="systemIndigoColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="15I-Cx-STb">
-                                <rect key="frame" x="0.0" y="28" width="200" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="38" id="oxm-0S-GcC" customClass="CellFromPopOverTableViewTableViewCell" customModule="VarkaAPP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="150" height="38"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="15I-Cx-STb" id="pC1-nV-0O4">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oxm-0S-GcC" id="5lJ-nj-JRi">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="38"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Макароны" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdY-Aa-bkM">
+                                            <rect key="frame" x="16" y="11" width="118" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vdY-Aa-bkM" firstAttribute="leading" secondItem="5lJ-nj-JRi" secondAttribute="leadingMargin" id="Df3-QD-LC6"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vdY-Aa-bkM" secondAttribute="bottom" id="JxN-nh-hlT"/>
+                                        <constraint firstItem="vdY-Aa-bkM" firstAttribute="trailing" secondItem="5lJ-nj-JRi" secondAttribute="trailingMargin" id="NA3-RD-vQl"/>
+                                        <constraint firstItem="vdY-Aa-bkM" firstAttribute="top" secondItem="5lJ-nj-JRi" secondAttribute="topMargin" id="UWu-a5-MMl"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <connections>
+                                    <outlet property="titleProduct" destination="vdY-Aa-bkM" id="Lxl-Us-7aS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -374,11 +393,11 @@
                             <outlet property="delegate" destination="et5-mg-NG8" id="ElC-sp-cjF"/>
                         </connections>
                     </tableView>
-                    <size key="freeformSize" width="200" height="200"/>
+                    <size key="freeformSize" width="150" height="150"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjq-cG-uX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="-640"/>
+            <point key="canvasLocation" x="356.52173913043481" y="-640.17857142857144"/>
         </scene>
     </scenes>
     <resources>

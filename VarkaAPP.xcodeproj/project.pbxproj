@@ -18,6 +18,7 @@
 		E451D08A25F7370C00890584 /* AddNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08925F7370C00890584 /* AddNewProductViewController.swift */; };
 		E451D08D25F7372100890584 /* AddNewProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08C25F7372100890584 /* AddNewProductViewModel.swift */; };
 		E451D09425F75B9F00890584 /* PopOverMenuTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D09325F75B9F00890584 /* PopOverMenuTableTableViewController.swift */; };
+		E451D09825F774AE00890584 /* CellFromPopOverTableViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D09725F774AE00890584 /* CellFromPopOverTableViewTableViewCell.swift */; };
 		E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627725F20F2A0068F15A /* AppDelegate.swift */; };
 		E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627925F20F2A0068F15A /* SceneDelegate.swift */; };
 		E495627F25F20F2A0068F15A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495627D25F20F2A0068F15A /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		E451D08925F7370C00890584 /* AddNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductViewController.swift; sourceTree = "<group>"; };
 		E451D08C25F7372100890584 /* AddNewProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductViewModel.swift; sourceTree = "<group>"; };
 		E451D09325F75B9F00890584 /* PopOverMenuTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverMenuTableTableViewController.swift; sourceTree = "<group>"; };
+		E451D09725F774AE00890584 /* CellFromPopOverTableViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFromPopOverTableViewTableViewCell.swift; sourceTree = "<group>"; };
 		E495627425F20F2A0068F15A /* VarkaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VarkaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495627725F20F2A0068F15A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E495627925F20F2A0068F15A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		E451D08625F400B700890584 /* Additional Files  */ = {
 			isa = PBXGroup;
 			children = (
+				E451D09625F7748000890584 /* Views */,
 				E451D07E25F3FF8100890584 /* Extensions */,
 				E451D08225F4001400890584 /* Helpers */,
 			);
@@ -154,9 +157,17 @@
 			children = (
 				E451D08925F7370C00890584 /* AddNewProductViewController.swift */,
 				E451D08C25F7372100890584 /* AddNewProductViewModel.swift */,
-				E451D09325F75B9F00890584 /* PopOverMenuTableTableViewController.swift */,
 			);
 			path = AddNewProduct;
+			sourceTree = "<group>";
+		};
+		E451D09625F7748000890584 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E451D09325F75B9F00890584 /* PopOverMenuTableTableViewController.swift */,
+				E451D09725F774AE00890584 /* CellFromPopOverTableViewTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E495626B25F20F2A0068F15A = {
@@ -370,6 +381,7 @@
 				E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */,
 				E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */,
 				E451D08025F3FFB000890584 /* UIButton+Extension.swift in Sources */,
+				E451D09825F774AE00890584 /* CellFromPopOverTableViewTableViewCell.swift in Sources */,
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
 				E495629625F20FDF0068F15A /* InfoAboutProductViewController.swift in Sources */,
