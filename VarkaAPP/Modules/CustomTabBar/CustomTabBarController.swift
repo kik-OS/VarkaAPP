@@ -60,7 +60,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         let productInfoVC = ProductInfoViewController(nibName: nil,
                                                       bundle: nil,
                                                       viewModel: productInfoViewModel)
-        viewControllers = [productInfoVC]
+        viewControllers?.append(productInfoVC)
     }
 }
 

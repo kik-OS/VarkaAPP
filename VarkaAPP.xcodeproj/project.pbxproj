@@ -27,8 +27,6 @@
 		E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E495628025F20F2A0068F15A /* VarkaAPP.xcdatamodeld */; };
 		E495628425F20F2D0068F15A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E495628325F20F2D0068F15A /* Assets.xcassets */; };
 		E495628725F20F2D0068F15A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495628525F20F2D0068F15A /* LaunchScreen.storyboard */; };
-		E495629625F20FDF0068F15A /* InfoAboutProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495629525F20FDF0068F15A /* InfoAboutProductViewController.swift */; };
-		E495629925F20FED0068F15A /* InfoAboutProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495629825F20FED0068F15A /* InfoAboutProductViewModel.swift */; };
 		E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562C625F245AF0068F15A /* RecentProductsViewController.swift */; };
 		E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562CD25F246DE0068F15A /* CustomTabBarController.swift */; };
 		E49562D125F247990068F15A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562D025F247990068F15A /* CustomTabBar.swift */; };
@@ -60,8 +58,6 @@
 		E495628325F20F2D0068F15A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E495628625F20F2D0068F15A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E495628825F20F2D0068F15A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E495629525F20FDF0068F15A /* InfoAboutProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAboutProductViewController.swift; sourceTree = "<group>"; };
-		E495629825F20FED0068F15A /* InfoAboutProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAboutProductViewModel.swift; sourceTree = "<group>"; };
 		E49562C625F245AF0068F15A /* RecentProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductsViewController.swift; sourceTree = "<group>"; };
 		E49562CD25F246DE0068F15A /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		E49562D025F247990068F15A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -101,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				CE02B9EC25F2ACA000788EE3 /* Product.swift */,
-				CE02BA8225F7572300788EE3 /* Box.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -132,6 +127,17 @@
 			path = ProductInfo;
 			sourceTree = "<group>";
 		};
+		CE3A167B25F7925A00FFA849 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E49562CB25F246A90068F15A /* CustomTabBar */,
+				CE02BA0825F3AB1400788EE3 /* ProductInfo */,
+				E49562C925F245B40068F15A /* RecentProducts */,
+				E451D08825F736E500890584 /* AddNewProduct */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		E451D07E25F3FF8100890584 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +157,7 @@
 		E451D08625F400B700890584 /* Additional Files  */ = {
 			isa = PBXGroup;
 			children = (
+				CE02BA8225F7572300788EE3 /* Box.swift */,
 				E451D09625F7748000890584 /* Views */,
 				E451D07E25F3FF8100890584 /* Extensions */,
 				E451D08225F4001400890584 /* Helpers */,
@@ -197,11 +204,7 @@
 		E495627625F20F2A0068F15A /* VarkaAPP */ = {
 			isa = PBXGroup;
 			children = (
-				E451D08825F736E500890584 /* AddNewProduct */,
-				E495628F25F20F3D0068F15A /* InfoAboutProducts */,
-				E49562C925F245B40068F15A /* RecentProducts */,
-				CE02BA0825F3AB1400788EE3 /* ProductInfo */,
-				E49562CB25F246A90068F15A /* CustomTabBar */,
+				CE3A167B25F7925A00FFA849 /* Modules */,
 				E451D08625F400B700890584 /* Additional Files  */,
 				E495629225F20F7B0068F15A /* StoryBoard */,
 				CE02B9EB25F2AC6200788EE3 /* Models */,
@@ -210,15 +213,6 @@
 				E495629025F20F510068F15A /* SupportingFiles */,
 			);
 			path = VarkaAPP;
-			sourceTree = "<group>";
-		};
-		E495628F25F20F3D0068F15A /* InfoAboutProducts */ = {
-			isa = PBXGroup;
-			children = (
-				E495629525F20FDF0068F15A /* InfoAboutProductViewController.swift */,
-				E495629825F20FED0068F15A /* InfoAboutProductViewModel.swift */,
-			);
-			path = InfoAboutProducts;
 			sourceTree = "<group>";
 		};
 		E495629025F20F510068F15A /* SupportingFiles */ = {
@@ -391,7 +385,6 @@
 				E451D09825F774AE00890584 /* CellFromPopOverTableViewTableViewCell.swift in Sources */,
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
-				E495629625F20FDF0068F15A /* InfoAboutProductViewController.swift in Sources */,
 				E451D09425F75B9F00890584 /* PopOverMenuTableTableViewController.swift in Sources */,
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
 				CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */,
@@ -402,7 +395,6 @@
 				CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */,
 				E451D08425F4002F00890584 /* Constants.swift in Sources */,
 				E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */,
-				E495629925F20FED0068F15A /* InfoAboutProductViewModel.swift in Sources */,
 				E451D08A25F7370C00890584 /* AddNewProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

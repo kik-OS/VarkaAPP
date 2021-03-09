@@ -44,12 +44,19 @@ final class ProductInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBar()
         viewModel.product.value = Product.getProducts().first!
         
         setupViewModelBindings()
     }
     
     // MARK: - Private methods
+    
+    func setupNavigationBar() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+    }
     
     private func setupViewModelBindings() {
         viewModel.product.bind { [unowned self] product in

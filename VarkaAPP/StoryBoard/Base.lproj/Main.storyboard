@@ -47,45 +47,12 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="5fI-hc-nbu" kind="relationship" relationship="viewControllers" id="rns-K8-HTT"/>
                         <segue destination="NLH-E7-4kJ" kind="relationship" relationship="viewControllers" id="DSd-zb-1p4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIE-Fl-ZVU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1068" y="90"/>
-        </scene>
-        <!--Как Варить-->
-        <scene sceneID="PEf-60-GMR">
-            <objects>
-                <viewController id="5fI-hc-nbu" customClass="InfoAboutProductViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wbc-QK-p7d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="111111111111" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuL-Ko-zBV">
-                                <rect key="frame" x="10" y="427" width="394" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="tee-QP-f9D"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="GuL-Ko-zBV" firstAttribute="leading" secondItem="tee-QP-f9D" secondAttribute="leading" constant="10" id="3qh-yx-bUy"/>
-                            <constraint firstItem="tee-QP-f9D" firstAttribute="trailing" secondItem="GuL-Ko-zBV" secondAttribute="trailing" constant="10" id="d78-OU-5lW"/>
-                            <constraint firstItem="GuL-Ko-zBV" firstAttribute="centerY" secondItem="wbc-QK-p7d" secondAttribute="centerY" id="ywv-Sw-daN"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Как Варить" image="shippingbox" catalog="system" id="xF4-qd-BWs"/>
-                    <connections>
-                        <outlet property="barCodeLabel" destination="GuL-Ko-zBV" id="aNk-j4-fr3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bRF-PW-jJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-266" y="91"/>
         </scene>
         <!--Недавние-->
         <scene sceneID="ITO-eJ-sYf">
@@ -402,7 +369,6 @@
     </scenes>
     <resources>
         <image name="rectangle.3.offgrid" catalog="system" width="128" height="81"/>
-        <image name="shippingbox" catalog="system" width="128" height="124"/>
         <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
