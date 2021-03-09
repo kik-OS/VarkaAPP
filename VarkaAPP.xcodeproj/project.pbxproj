@@ -13,6 +13,12 @@
 		CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA0525F3A94500788EE3 /* FirebaseService.swift */; };
 		CE02BA0B25F3AB6800788EE3 /* FirebaseTestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA0925F3AB6800788EE3 /* FirebaseTestingViewController.swift */; };
 		CE02BA0C25F3AB6800788EE3 /* FirebaseTestingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE02BA0A25F3AB6800788EE3 /* FirebaseTestingViewController.xib */; };
+		E451D08025F3FFB000890584 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D07F25F3FFB000890584 /* UIButton+Extension.swift */; };
+		E451D08425F4002F00890584 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08325F4002F00890584 /* Constants.swift */; };
+		E451D08A25F7370C00890584 /* AddNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08925F7370C00890584 /* AddNewProductViewController.swift */; };
+		E451D08D25F7372100890584 /* AddNewProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08C25F7372100890584 /* AddNewProductViewModel.swift */; };
+		E451D09425F75B9F00890584 /* PopOverMenuTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D09325F75B9F00890584 /* PopOverMenuTableTableViewController.swift */; };
+		E451D09825F774AE00890584 /* CellFromPopOverTableViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D09725F774AE00890584 /* CellFromPopOverTableViewTableViewCell.swift */; };
 		E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627725F20F2A0068F15A /* AppDelegate.swift */; };
 		E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627925F20F2A0068F15A /* SceneDelegate.swift */; };
 		E495627F25F20F2A0068F15A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495627D25F20F2A0068F15A /* Main.storyboard */; };
@@ -36,6 +42,12 @@
 		CE02BA0525F3A94500788EE3 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		CE02BA0925F3AB6800788EE3 /* FirebaseTestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTestingViewController.swift; sourceTree = "<group>"; };
 		CE02BA0A25F3AB6800788EE3 /* FirebaseTestingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirebaseTestingViewController.xib; sourceTree = "<group>"; };
+		E451D07F25F3FFB000890584 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		E451D08325F4002F00890584 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E451D08925F7370C00890584 /* AddNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductViewController.swift; sourceTree = "<group>"; };
+		E451D08C25F7372100890584 /* AddNewProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductViewModel.swift; sourceTree = "<group>"; };
+		E451D09325F75B9F00890584 /* PopOverMenuTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverMenuTableTableViewController.swift; sourceTree = "<group>"; };
+		E451D09725F774AE00890584 /* CellFromPopOverTableViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFromPopOverTableViewTableViewCell.swift; sourceTree = "<group>"; };
 		E495627425F20F2A0068F15A /* VarkaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VarkaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495627725F20F2A0068F15A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E495627925F20F2A0068F15A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +126,50 @@
 			path = FirebaseTesting;
 			sourceTree = "<group>";
 		};
+		E451D07E25F3FF8100890584 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E451D07F25F3FFB000890584 /* UIButton+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E451D08225F4001400890584 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E451D08325F4002F00890584 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E451D08625F400B700890584 /* Additional Files  */ = {
+			isa = PBXGroup;
+			children = (
+				E451D09625F7748000890584 /* Views */,
+				E451D07E25F3FF8100890584 /* Extensions */,
+				E451D08225F4001400890584 /* Helpers */,
+			);
+			path = "Additional Files ";
+			sourceTree = "<group>";
+		};
+		E451D08825F736E500890584 /* AddNewProduct */ = {
+			isa = PBXGroup;
+			children = (
+				E451D08925F7370C00890584 /* AddNewProductViewController.swift */,
+				E451D08C25F7372100890584 /* AddNewProductViewModel.swift */,
+			);
+			path = AddNewProduct;
+			sourceTree = "<group>";
+		};
+		E451D09625F7748000890584 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E451D09325F75B9F00890584 /* PopOverMenuTableTableViewController.swift */,
+				E451D09725F774AE00890584 /* CellFromPopOverTableViewTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E495626B25F20F2A0068F15A = {
 			isa = PBXGroup;
 			children = (
@@ -135,15 +191,17 @@
 		E495627625F20F2A0068F15A /* VarkaAPP */ = {
 			isa = PBXGroup;
 			children = (
-				E49562CB25F246A90068F15A /* Views */,
+				E451D08825F736E500890584 /* AddNewProduct */,
+				E495628F25F20F3D0068F15A /* InfoAboutProducts */,
 				E49562C925F245B40068F15A /* RecentProducts */,
+				E49562CB25F246A90068F15A /* CustomTabBar */,
+				E451D08625F400B700890584 /* Additional Files  */,
 				CE02BA0825F3AB1400788EE3 /* FirebaseTesting */,
 				E495629225F20F7B0068F15A /* StoryBoard */,
 				CE02B9EB25F2AC6200788EE3 /* Models */,
 				CE02BA0325F3A8E600788EE3 /* Services */,
 				E495629125F20F5E0068F15A /* Resources */,
 				E495629025F20F510068F15A /* SupportingFiles */,
-				E495628F25F20F3D0068F15A /* InfoAboutProducts */,
 			);
 			path = VarkaAPP;
 			sourceTree = "<group>";
@@ -195,13 +253,13 @@
 			path = RecentProducts;
 			sourceTree = "<group>";
 		};
-		E49562CB25F246A90068F15A /* Views */ = {
+		E49562CB25F246A90068F15A /* CustomTabBar */ = {
 			isa = PBXGroup;
 			children = (
 				E49562CD25F246DE0068F15A /* CustomTabBarController.swift */,
 				E49562D025F247990068F15A /* CustomTabBar.swift */,
 			);
-			path = Views;
+			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,16 +380,22 @@
 			files = (
 				E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */,
 				E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */,
+				E451D08025F3FFB000890584 /* UIButton+Extension.swift in Sources */,
+				E451D09825F774AE00890584 /* CellFromPopOverTableViewTableViewCell.swift in Sources */,
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
 				E495629625F20FDF0068F15A /* InfoAboutProductViewController.swift in Sources */,
+				E451D09425F75B9F00890584 /* PopOverMenuTableTableViewController.swift in Sources */,
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
+				E451D08D25F7372100890584 /* AddNewProductViewModel.swift in Sources */,
 				CE02BA0B25F3AB6800788EE3 /* FirebaseTestingViewController.swift in Sources */,
 				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,
 				E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */,
 				CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */,
+				E451D08425F4002F00890584 /* Constants.swift in Sources */,
 				E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */,
 				E495629925F20FED0068F15A /* InfoAboutProductViewModel.swift in Sources */,
+				E451D08A25F7370C00890584 /* AddNewProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
