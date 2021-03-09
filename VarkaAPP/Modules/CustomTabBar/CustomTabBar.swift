@@ -26,9 +26,9 @@ class CustomTabBar: UITabBar {
         shapeLayer.shadowOpacity = 0.3
         
         if let oldShapeLayer = self.shapeLayer {
-            self.layer.replaceSublayer(oldShapeLayer, with: shapeLayer)
+            layer.replaceSublayer(oldShapeLayer, with: shapeLayer)
         } else {
-            self.layer.insertSublayer(shapeLayer, at: 0)
+            layer.insertSublayer(shapeLayer, at: 0)
         }
         self.shapeLayer = shapeLayer
     }
@@ -36,7 +36,7 @@ class CustomTabBar: UITabBar {
     func createPath() -> CGPath {
         let height: CGFloat = 37.0
         let path = UIBezierPath()
-        let centerWidth = self.frame.width / 2
+        let centerWidth = frame.width / 2
         path.move(to: CGPoint(x: 0, y: 0)) // start top left
         path.addLine(to: CGPoint(x: (centerWidth - height * 2), y: 0)) // the beginning of the trough
         
@@ -48,16 +48,16 @@ class CustomTabBar: UITabBar {
                       controlPoint1: CGPoint(x: centerWidth + 35, y: height),
                       controlPoint2: CGPoint(x: (centerWidth + 30), y: 0))
         
-        path.addLine(to: CGPoint(x: self.frame.width, y: 0))
-        path.addLine(to: CGPoint(x: self.frame.width, y: self.frame.height))
-        path.addLine(to: CGPoint(x: 0, y: self.frame.height))
+        path.addLine(to: CGPoint(x: frame.width, y: 0))
+        path.addLine(to: CGPoint(x: frame.width, y: frame.height))
+        path.addLine(to: CGPoint(x: 0, y: frame.height))
         path.close()
         
         return path.cgPath
     }
     
     override func draw(_ rect: CGRect) {
-        self.addShape()
+        addShape()
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {

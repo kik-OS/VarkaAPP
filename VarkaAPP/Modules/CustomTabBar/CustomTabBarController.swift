@@ -10,16 +10,18 @@ import BarcodeScanner
 
 class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
     
+    let firebaseService: FirebaseServiceProtocol = FirebaseService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = self
+        delegate = self
         setupMiddleButton()
         setupTabs()
     }
     
     func setupMiddleButton() {
         
-        let middleBtn = UIButton(frame: CGRect(x: (self.view.bounds.width / 2)-30,
+        let middleBtn = UIButton(frame: CGRect(x: (view.bounds.width / 2) - 30,
                                                y: -30,
                                                width: 60,
                                                height: 60))
@@ -37,10 +39,10 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         middleBtn.tintColor = .orange
         
         middleBtn.animationForCentralButton()
-        middleBtn.addTarget(self, action: #selector(self.centerButtonAction), for: .touchUpInside)
+        middleBtn.addTarget(self, action: #selector(centerButtonAction), for: .touchUpInside)
         
-        self.tabBar.addSubview(middleBtn)
-        self.view.layoutIfNeeded()
+        tabBar.addSubview(middleBtn)
+        view.layoutIfNeeded()
     }
     
     
@@ -50,6 +52,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         barCodeScanerVC.codeDelegate = self
         barCodeScanerVC.errorDelegate = self
         barCodeScanerVC.dismissalDelegate = self
+        barCodeScanerVC.modalPresentationStyle = .fullScreen
         present(barCodeScanerVC, animated: true, completion: nil)
     }
     
@@ -60,7 +63,12 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         let productInfoVC = ProductInfoViewController(nibName: nil,
                                                       bundle: nil,
                                                       viewModel: productInfoViewModel)
-        viewControllers?.append(productInfoVC)
+        productInfoVC.tabBarController?.tabBarItem.image = UIImage(systemName: "shippingbox")
+        
+        let recentProductsVC = RecentProductsViewController()
+        recentProductsVC.tabBarController?.tabBarItem.image = UIImage(systemName: "list.bullet.rectangle")
+                
+        viewControllers = [productInfoVC, recentProductsVC]
     }
 }
 
@@ -68,7 +76,18 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
 extension CustomTabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
     
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-        print(code)
+        firebaseService.fetchProduct(byCode: code) { [weak self] result in
+            switch result {
+            case .success(let product):
+                if let product = product {
+                    let productInfoViewModel = ProductInfoViewModel(product: product)
+                    guard let productInfoVC = self?.tabBarController?.viewControllers?.first as? ProductInfoViewController else { return }
+                    productInfoVC.viewModel = productInfoViewModel
+                }
+            case .failure:
+                break
+            }
+        }
     }
     func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
         print(error.localizedDescription)

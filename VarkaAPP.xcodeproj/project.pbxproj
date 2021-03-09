@@ -15,6 +15,7 @@
 		CE02BA0C25F3AB6800788EE3 /* ProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE02BA0A25F3AB6800788EE3 /* ProductInfoViewController.xib */; };
 		CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */; };
 		CE02BA8325F7572300788EE3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA8225F7572300788EE3 /* Box.swift */; };
+		CE3A168025F7957E00FFA849 /* RecentProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3A167F25F7957E00FFA849 /* RecentProductsViewController.xib */; };
 		E451D08025F3FFB000890584 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D07F25F3FFB000890584 /* UIButton+Extension.swift */; };
 		E451D08425F4002F00890584 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08325F4002F00890584 /* Constants.swift */; };
 		E451D08A25F7370C00890584 /* AddNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08925F7370C00890584 /* AddNewProductViewController.swift */; };
@@ -44,6 +45,7 @@
 		CE02BA0A25F3AB6800788EE3 /* ProductInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductInfoViewController.xib; sourceTree = "<group>"; };
 		CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewModel.swift; sourceTree = "<group>"; };
 		CE02BA8225F7572300788EE3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		CE3A167F25F7957E00FFA849 /* RecentProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentProductsViewController.xib; sourceTree = "<group>"; };
 		E451D07F25F3FFB000890584 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		E451D08325F4002F00890584 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E451D08925F7370C00890584 /* AddNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			children = (
 				E49562C625F245AF0068F15A /* RecentProductsViewController.swift */,
 				E49562D825F2775E0068F15A /* RecentProductViewModel.swift */,
+				CE3A167F25F7957E00FFA849 /* RecentProductsViewController.xib */,
 			);
 			path = RecentProducts;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				E495628725F20F2D0068F15A /* LaunchScreen.storyboard in Resources */,
 				CE02B9F025F2B2F900788EE3 /* GoogleService-Info.plist in Resources */,
 				E495628425F20F2D0068F15A /* Assets.xcassets in Resources */,
+				CE3A168025F7957E00FFA849 /* RecentProductsViewController.xib in Resources */,
 				E495627F25F20F2A0068F15A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

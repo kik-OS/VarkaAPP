@@ -46,30 +46,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="NLH-E7-4kJ" kind="relationship" relationship="viewControllers" id="DSd-zb-1p4"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIE-Fl-ZVU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1068" y="90"/>
-        </scene>
-        <!--Недавние-->
-        <scene sceneID="ITO-eJ-sYf">
-            <objects>
-                <viewController id="NLH-E7-4kJ" customClass="RecentProductsViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HB2-L1-lvR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="c6D-oO-Hxt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Недавние" image="rectangle.3.offgrid" catalog="system" id="9SD-Ef-C3M"/>
-                    <navigationItem key="navigationItem" id="Jec-Vl-Rol"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P7C-I3-ms0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="523" y="90"/>
+            <point key="canvasLocation" x="-1001" y="90"/>
         </scene>
         <!--Add New Product View Controller-->
         <scene sceneID="2JN-jQ-wYi">
@@ -316,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-TG-UNZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-268.1159420289855" y="-640.17857142857144"/>
+            <point key="canvasLocation" x="-112" y="90"/>
         </scene>
         <!--Pop Over Menu Table Table View Controller-->
         <scene sceneID="hgO-Rj-ku5">
@@ -364,11 +344,10 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjq-cG-uX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356.52173913043481" y="-640.17857142857144"/>
+            <point key="canvasLocation" x="599" y="90"/>
         </scene>
     </scenes>
     <resources>
-        <image name="rectangle.3.offgrid" catalog="system" width="128" height="81"/>
         <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
