@@ -23,7 +23,7 @@ class CustomTabBar: UITabBar {
         shapeLayer.shadowOffset = CGSize(width:0, height:0)
         shapeLayer.shadowRadius = 5
         shapeLayer.shadowColor = UIColor.gray.cgColor
-        shapeLayer.shadowOpacity = 0.3
+        shapeLayer.shadowOpacity = 0.5
         
         if let oldShapeLayer = self.shapeLayer {
             layer.replaceSublayer(oldShapeLayer, with: shapeLayer)
@@ -31,6 +31,8 @@ class CustomTabBar: UITabBar {
             layer.insertSublayer(shapeLayer, at: 0)
         }
         self.shapeLayer = shapeLayer
+        
+        
     }
     
     func createPath() -> CGPath {

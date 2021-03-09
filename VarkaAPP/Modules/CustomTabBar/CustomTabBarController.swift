@@ -17,6 +17,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         delegate = self
         setupMiddleButton()
         setupTabs()
+        
     }
     
     func setupMiddleButton() {
@@ -36,7 +37,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         middleBtn.layer.borderWidth = 1
         middleBtn.layer.cornerRadius = 0.5 * middleBtn.bounds.size.width
         middleBtn.clipsToBounds = true
-        middleBtn.tintColor = .orange
+        middleBtn.tintColor = .systemIndigo
         
         middleBtn.animationForCentralButton()
         middleBtn.addTarget(self, action: #selector(centerButtonAction), for: .touchUpInside)
@@ -63,11 +64,14 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         let productInfoVC = ProductInfoViewController(nibName: nil,
                                                       bundle: nil,
                                                       viewModel: productInfoViewModel)
-        productInfoVC.tabBarController?.tabBarItem.image = UIImage(systemName: "shippingbox")
         
         let recentProductsVC = RecentProductsViewController()
-        recentProductsVC.tabBarController?.tabBarItem.image = UIImage(systemName: "list.bullet.rectangle")
-                
+        productInfoVC.tabBarItem.title = "Как варить"
+        productInfoVC.tabBarItem.image = UIImage(named: "pot.png")
+        tabBar.tintColor = .systemIndigo
+        
+        recentProductsVC.tabBarItem.title = "Недавние продукты"
+        recentProductsVC.tabBarItem.image = UIImage(named: "box.png")
         viewControllers = [productInfoVC, recentProductsVC]
     }
 }
