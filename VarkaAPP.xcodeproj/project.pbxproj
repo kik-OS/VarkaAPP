@@ -17,6 +17,7 @@
 		E451D08425F4002F00890584 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08325F4002F00890584 /* Constants.swift */; };
 		E451D08A25F7370C00890584 /* AddNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08925F7370C00890584 /* AddNewProductViewController.swift */; };
 		E451D08D25F7372100890584 /* AddNewProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08C25F7372100890584 /* AddNewProductViewModel.swift */; };
+		E451D09425F75B9F00890584 /* PopOverMenuTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D09325F75B9F00890584 /* PopOverMenuTableTableViewController.swift */; };
 		E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627725F20F2A0068F15A /* AppDelegate.swift */; };
 		E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627925F20F2A0068F15A /* SceneDelegate.swift */; };
 		E495627F25F20F2A0068F15A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495627D25F20F2A0068F15A /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		E451D08325F4002F00890584 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E451D08925F7370C00890584 /* AddNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductViewController.swift; sourceTree = "<group>"; };
 		E451D08C25F7372100890584 /* AddNewProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductViewModel.swift; sourceTree = "<group>"; };
+		E451D09325F75B9F00890584 /* PopOverMenuTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverMenuTableTableViewController.swift; sourceTree = "<group>"; };
 		E495627425F20F2A0068F15A /* VarkaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VarkaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495627725F20F2A0068F15A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E495627925F20F2A0068F15A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				E451D08925F7370C00890584 /* AddNewProductViewController.swift */,
 				E451D08C25F7372100890584 /* AddNewProductViewModel.swift */,
+				E451D09325F75B9F00890584 /* PopOverMenuTableTableViewController.swift */,
 			);
 			path = AddNewProduct;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
 				E495629625F20FDF0068F15A /* InfoAboutProductViewController.swift in Sources */,
+				E451D09425F75B9F00890584 /* PopOverMenuTableTableViewController.swift in Sources */,
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
 				E451D08D25F7372100890584 /* AddNewProductViewModel.swift in Sources */,
 				CE02BA0B25F3AB6800788EE3 /* FirebaseTestingViewController.swift in Sources */,

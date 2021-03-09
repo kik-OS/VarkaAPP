@@ -36,7 +36,7 @@
                             <barButtonItem systemItem="add" id="Che-2E-bQx">
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <connections>
-                                    <segue destination="7Z7-UH-SDU" kind="showDetail" id="XZD-2v-UeB"/>
+                                    <segue destination="7Z7-UH-SDU" kind="presentation" id="XZD-2v-UeB"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -127,7 +127,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4607114691306" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="498-Wo-fVB">
                                                 <rect key="frame" x="0.0" y="21.5" width="374" height="32.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
                                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -171,7 +171,9 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="category:" destination="7Z7-UH-SDU" eventType="touchUpInside" id="urD-Tt-acM"/>
+                                                            <segue destination="et5-mg-NG8" kind="popoverPresentation" popoverAnchorView="N8J-2Y-mkW" id="O5x-sQ-e43">
+                                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                            </segue>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -200,7 +202,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="title:" destination="7Z7-UH-SDU" eventType="editingDidEnd" id="Qtc-ji-7RX"/>
+                                                            <action selector="titleProductEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="Xvb-nf-0zk"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -223,7 +225,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="cookingTime:" destination="7Z7-UH-SDU" eventType="editingDidEnd" id="uC0-tu-vtI"/>
+                                                            <action selector="timeOfCookingEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="d67-Js-WlC"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -245,9 +247,6 @@
                                                         <rect key="frame" x="0.0" y="20.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="producer:" destination="7Z7-UH-SDU" eventType="editingDidEnd" id="eu7-kl-hy0"/>
-                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -268,9 +267,6 @@
                                                         <rect key="frame" x="0.0" y="20.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                        <connections>
-                                                            <action selector="weight:" destination="7Z7-UH-SDU" eventType="editingDidEnd" id="MDg-Lr-ppW"/>
-                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -310,9 +306,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3F-mr-hrf">
                                 <rect key="frame" x="74" y="492.5" width="266" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                 <state key="normal" title="Сохранить">
                                     <color key="titleColor" systemColor="systemIndigoColor"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" systemColor="systemGray5Color"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -321,7 +320,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="saveButton:" destination="7Z7-UH-SDU" eventType="touchUpInside" id="psc-Sz-DPb"/>
+                                    <action selector="saveButtonPressed:" destination="7Z7-UH-SDU" eventType="touchUpInside" id="xPv-K7-eu7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -339,12 +338,47 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryButton" destination="N8J-2Y-mkW" id="8g4-gT-glb"/>
                         <outlet property="codeLabel" destination="498-Wo-fVB" id="AWQ-Tp-621"/>
+                        <outlet property="cookingTime" destination="rwY-qc-xSG" id="WlG-MW-dCy"/>
+                        <outlet property="producer" destination="YaD-L5-W2x" id="i3C-H7-BKd"/>
+                        <outlet property="saveButton" destination="N3F-mr-hrf" id="0x0-FT-yrQ"/>
+                        <outlet property="titleOfProduct" destination="Opw-DD-c1S" id="b5M-KG-l8g"/>
+                        <outlet property="weight" destination="dGI-iU-gH8" id="ZK7-aT-8pf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-TG-UNZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-268.1159420289855" y="-640.17857142857144"/>
+        </scene>
+        <!--Pop Over Menu Table Table View Controller-->
+        <scene sceneID="hgO-Rj-ku5">
+            <objects>
+                <tableViewController storyboardIdentifier="popVC" id="et5-mg-NG8" customClass="PopOverMenuTableTableViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qwG-Gt-h2m">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="15I-Cx-STb">
+                                <rect key="frame" x="0.0" y="28" width="200" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="15I-Cx-STb" id="pC1-nV-0O4">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="et5-mg-NG8" id="mUK-pJ-ufz"/>
+                            <outlet property="delegate" destination="et5-mg-NG8" id="ElC-sp-cjF"/>
+                        </connections>
+                    </tableView>
+                    <size key="freeformSize" width="200" height="200"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjq-cG-uX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="359" y="-640"/>
         </scene>
     </scenes>
     <resources>
@@ -356,6 +390,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
