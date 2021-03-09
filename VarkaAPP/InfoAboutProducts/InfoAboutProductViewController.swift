@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import BarcodeScanner
 
 
 class InfoAboutProductViewController: UIViewController {
@@ -18,43 +17,19 @@ class InfoAboutProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .orange
-        
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
         navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController!.navigationBar.shadowImage = UIImage()
         navigationController!.navigationBar.isTranslucent = true
-        
-        
     }
-    
-    
-//    func showBarCodeScaner() {
-//        let barCodeScanerVC = BarcodeScannerViewController()
-//        barCodeScanerVC.codeDelegate = self
-//        barCodeScanerVC.errorDelegate = self
-//        barCodeScanerVC.dismissalDelegate = self
-////        barCodeScanerVC.modalPresentationStyle = .fullScreen
-//        present(barCodeScanerVC, animated: true, completion: nil)
-//    }
+
 }
 
 
 
-// MARK: BarCodeScanerDelegate
-//extension InfoAboutProductViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
-//
-//    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-//        barCodeLabel.text = code
-//        controller.dismiss(animated: true, completion: nil)
-//        controller.reset()
-//    }
-//
-//    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
-//        print(error.localizedDescription)
-//    }
-//
-//    func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
-//        controller.dismiss(animated: true, completion: nil)
-//    }
-//}
+
 
 
