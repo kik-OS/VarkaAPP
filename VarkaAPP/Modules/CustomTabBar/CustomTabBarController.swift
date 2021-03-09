@@ -76,18 +76,22 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
 extension CustomTabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
     
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
+        
+       
         firebaseService.fetchProduct(byCode: code) { [weak self] result in
             switch result {
             case .success(let product):
+                
                 if let product = product {
                     let productInfoViewModel = ProductInfoViewModel(product: product)
-                    guard let productInfoVC = self?.tabBarController?.viewControllers?.first as? ProductInfoViewController else { return }
+                    guard let productInfoVC = self?.viewControllers?.first as? ProductInfoViewController else { return }
                     productInfoVC.viewModel = productInfoViewModel
                 }
             case .failure:
                 break
             }
         }
+        dismiss(animated: true, completion: nil)
     }
     func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
         print(error.localizedDescription)

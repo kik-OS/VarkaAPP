@@ -55,7 +55,7 @@
         <scene sceneID="2JN-jQ-wYi">
             <objects>
                 <viewController id="7Z7-UH-SDU" customClass="AddNewProductViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="q42-Nc-QYf" customClass="UIScrollView">
+                    <view key="view" contentMode="scaleToFill" id="q42-Nc-QYf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

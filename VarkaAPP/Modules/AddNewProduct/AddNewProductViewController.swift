@@ -37,33 +37,29 @@ class AddNewProductViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        print("!!!!!!!!!!!!!!!!!!")
+        let code = "4603726592574"
+        
+        guard let category = categoryButton.title(for: .normal),
+              let title = titleOfProduct.text,
+              let cookingTime = Int(cookingTime.text!)
+              else { return }
+        let producerText = producer.text!
+        let weightText = Int(weight.text!)
+        
+        let product = Product(code: code, title: title, producer: producerText, category: category, weight: weightText, cookingTime: cookingTime, intoBoilingWater: true, needStirring: true)
+        
+        FirebaseService().saveProduct(product)
+    
+        
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
-        
+    
         updateSaveButtonState()
         setupGestures()
     }
-    
-    
-    
-    
-//    @objc private func keyBoardDidShow(notification: Notification) {
-//        guard let userInfo = notification.userInfo else { return }
-//        let kbFrameSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-//        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height + kbFrameSize.height)
-//
-//        (self.view as! UIScrollView).scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
-//    }
-//
-//    @objc private func keyBoardDidHide() {
-//        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
-//    }
     
     
     private func updateSaveButtonState() {
@@ -120,7 +116,7 @@ extension AddNewProductViewController: UITextFieldDelegate {
 
 extension AddNewProductViewController: AddNewProductViewControllerDelegate {
     func getSelectedItemFromPopOver(item: String) {
-        let selectedItem = "  " + item
+        let selectedItem = item
         categoryButton.setTitle(selectedItem, for: .normal)
         categoryButton.setTitleColor(.black, for: .normal)
     }

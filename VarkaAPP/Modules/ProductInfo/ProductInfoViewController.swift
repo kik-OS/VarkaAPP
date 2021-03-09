@@ -24,7 +24,11 @@ final class ProductInfoViewController: UIViewController {
     
     // MARK: - Properties
     
-    var viewModel: ProductInfoViewModelProtocol
+    var viewModel: ProductInfoViewModelProtocol {
+        didSet {
+            setupViewModelBindings()
+        }
+    }
     
     // MARK: - Initializers
     
@@ -45,7 +49,7 @@ final class ProductInfoViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavigationBar()
-        viewModel.product.value = Product.getProducts().first!
+//        viewModel.product.value = Product.getProducts().first!
         
         setupViewModelBindings()
     }
