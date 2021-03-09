@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 
 final class ProductInfoViewController: UIViewController {
     
@@ -25,7 +24,7 @@ final class ProductInfoViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var viewModel: ProductInfoViewModelProtocol
+    var viewModel: ProductInfoViewModelProtocol
     
     // MARK: - Initializers
     

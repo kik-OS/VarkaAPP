@@ -32,7 +32,7 @@ final class ProductInfoViewModel: ProductInfoViewModelProtocol {
     }
     
     var cookingTime: String {
-        let cookingTime = (product.value?.cookingTime ?? 0) / 60
+        let cookingTime = (product.value?.cookingTime ?? 0)
         return "\(cookingTime) мин"
     }
     
