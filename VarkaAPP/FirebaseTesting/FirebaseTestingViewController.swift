@@ -15,22 +15,34 @@ final class FirebaseTestingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        firebaseService.fetchProducts { result in
-//            switch result {
-//            case .success(let products):
-//                print(products)
-//            case .failure:
-//                break
-//            }
-//        }
+        let newProduct = Product(
+            code: "4607016244682", title: "Чечевица зелёная", producer: "Увелка",
+            category: "Бакалея", weight: 500, cookingTime: 720,
+            intoBoilingWater: true, needStirring: true
+        )
         
-//        firebaseService.fetchProduct(byCode: "AB1234567890C") { result in
-//            switch result {
-//            case .success(let product):
-//                print(product ?? "Not fetched")
-//            case .failure:
-//                break
-//            }
-//        }
+        firebaseService.saveProduct(newProduct)
+        
+//        firebaseService.saveProducts(Product.getProducts())
+        
+        firebaseService.fetchProducts { result in
+            switch result {
+            case .success(let products):
+                print(products)
+            case .failure:
+                break
+            }
+        }
+        
+        firebaseService.fetchProduct(byCode: "AB1234567890C") { result in
+            switch result {
+            case .success(let product):
+                print(product ?? "Not fetched")
+            case .failure:
+                break
+            }
+        }
+        
+//        firebaseService.removeProduct(byCode: "9876543210987")
     }
 }

@@ -13,9 +13,11 @@ import FirebaseDatabase
 // MARK: - Protocols
 
 protocol FirebaseServiceProtocol {
-//    func saveProducts(_ products: [Product])
-//    func fetchProduct(byCode code: String, completion: @escaping (Result<Product?, Error>) -> Void)
-//    func fetchProducts(completion: @escaping (Result<[Product], Error>) -> Void)
+    func saveProduct(_ product: Product)
+    func saveProducts(_ products: [Product])
+    func fetchProduct(byCode code: String, completion: @escaping (Result<Product?, Error>) -> Void)
+    func fetchProducts(completion: @escaping (Result<[Product], Error>) -> Void)
+    func removeProduct(byCode code: String)
 }
 
 final class FirebaseService: FirebaseServiceProtocol {
@@ -27,49 +29,30 @@ final class FirebaseService: FirebaseServiceProtocol {
     
     // MARK: - Public methods
     
+    func saveProduct(_ product: Product) {
+        ref.child("products").child(product.code).setValue(product.convertToDictionaty())
+    }
+    
     func saveProducts(_ products: [Product]) {
         products.forEach {
             ref.child("products").child($0.code).setValue($0.convertToDictionaty())
         }
     }
     
-//    func fetchProduct(byCode code: String, completion: @escaping (Result<Product?, Error>) -> Void) {
-//        ref.child("products").child(code).getData { (error, snapshot) in
-//            if let error = error {
-//                print("Error getting data \(error)")
-//                completion(.failure(error))
-//            }
-//            else if snapshot.exists() {
-//                let product = Product(snapshot: snapshot)
-//
-//                completion(.success(product))
-//            } else {
-//                print("No data available")
-//                completion(.success(nil))
-//            }
-//        }
-//    }
+    func fetchProduct(byCode code: String, completion: @escaping (Result<Product?, Error>) -> Void) {
+        ref.child("products").child(code).observe(.value) { snapshot in
+            completion(.success(Product(snapshot: snapshot)))
+        }
+    }
     
-//    func fetchProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
-//        ref.child("products").getData { (error, snapshot) in
-//            if let error = error {
-//                print("Error getting data \(error)")
-//                completion(.failure(error))
-//            }
-//            else if snapshot.exists() {
-//                guard let productsData = snapshot.value as? [String: Any] else {
-//                    print("Data format is incorrect")
-//                    completion(.success([]))
-//                    return
-//                }
-//
-//                let products = productsData.keys.compactMap { Product(snapshot: snapshot.childSnapshot(forPath: $0)) }
-//
-//                completion(.success(products))
-//            } else {
-//                print("No data available")
-//                completion(.success([]))
-//            }
-//        }
-//    }
+    func fetchProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
+        ref.child("products").observe(.value) { snapshot in
+            let products = snapshot.children.compactMap { Product(snapshot: $0 as! DataSnapshot) }
+            completion(.success(products))
+        }
+    }
+    
+    func removeProduct(byCode code: String) {
+        ref.child("products").child(code).removeValue()
+    }
 }
