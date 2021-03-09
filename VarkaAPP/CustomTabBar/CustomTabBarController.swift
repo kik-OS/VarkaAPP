@@ -14,6 +14,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         self.delegate = self
         setupMiddleButton()
+        setupTabs()
     }
     
     func setupMiddleButton() {
@@ -50,6 +51,16 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         barCodeScanerVC.errorDelegate = self
         barCodeScanerVC.dismissalDelegate = self
         present(barCodeScanerVC, animated: true, completion: nil)
+    }
+    
+    // MARK: - Private methods
+    
+    private func setupTabs() {
+        let productInfoViewModel = ProductInfoViewModel(product: nil)
+        let productInfoVC = ProductInfoViewController(nibName: nil,
+                                                      bundle: nil,
+                                                      viewModel: productInfoViewModel)
+        viewControllers = [productInfoVC]
     }
 }
 

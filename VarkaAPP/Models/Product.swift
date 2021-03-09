@@ -24,7 +24,8 @@ struct Product {
     
     // MARK: - Initializers
     
-    init(code: String, title: String, producer: String, category: String, weight: Int?, cookingTime: Int, intoBoilingWater: Bool?, needStirring: Bool?, ref: DatabaseReference? = nil) {
+    init(code: String, title: String, producer: String, category: String, weight: Int?,
+         cookingTime: Int, intoBoilingWater: Bool?, needStirring: Bool?, ref: DatabaseReference? = nil) {
         self.code = code
         self.title = title
         self.producer = producer
@@ -70,17 +71,17 @@ extension Product {
     static func getProducts() -> [Product] {
         [Product(
             code: "1234567890000", title: "Рис круглозёрный", producer: "Агро-Альянс",
-            category: "Бакалея", weight: 800, cookingTime: 600,
+            category: "Бакалея", weight: 800, cookingTime: 10,
             intoBoilingWater: true, needStirring: false
         ),
         Product(
             code: "0987654321098", title: "Гречка", producer: "Агро-Альянс",
-            category: "Бакалея", weight: 900, cookingTime: 420,
+            category: "Бакалея", weight: 900, cookingTime: 7,
             intoBoilingWater: false, needStirring: false
         ),
         Product(
             code: "AB1234567890D", title: "Пельмени", producer: "Братцы-вареники",
-            category: "Полуфабрикаты", weight: 1000, cookingTime: 360,
+            category: "Полуфабрикаты", weight: 1000, cookingTime: 6,
             intoBoilingWater: true, needStirring: true
         )]
     }
