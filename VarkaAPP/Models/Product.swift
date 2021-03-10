@@ -5,8 +5,9 @@
 //  Created by Evgeny Novgorodov on 05.03.2021.
 //
 
-import Foundation
 import Firebase
+
+typealias ProductCategory = String
 
 struct Product {
     
@@ -15,7 +16,7 @@ struct Product {
     let code: String
     let title: String
     let producer: String
-    let category: String
+    let category: ProductCategory
     let weight: Int?
     let cookingTime: Int
     let intoBoilingWater: Bool?
@@ -24,7 +25,7 @@ struct Product {
     
     // MARK: - Initializers
     
-    init(code: String, title: String, producer: String, category: String, weight: Int?,
+    init(code: String, title: String, producer: String, category: ProductCategory, weight: Int?,
          cookingTime: Int, intoBoilingWater: Bool?, needStirring: Bool?, ref: DatabaseReference? = nil) {
         self.code = code
         self.title = title
@@ -43,7 +44,7 @@ struct Product {
         code = snapshotValue["code"] as! String
         title = snapshotValue["title"] as! String
         producer = snapshotValue["producer"] as! String
-        category = snapshotValue["category"] as! String
+        category = snapshotValue["category"] as! ProductCategory
         weight = snapshotValue["weight"] as? Int
         cookingTime = snapshotValue["cookingTime"] as! Int
         intoBoilingWater = snapshotValue["intoBoilingWater"] as? Bool
