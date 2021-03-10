@@ -8,39 +8,43 @@
 import UIKit
 
 class RecentProductsViewController: UIViewController {
-
-//    override func viewDidLoad() {
-//           super.viewDidLoad()
-//           // Do any additional setup after loading the view, typically from a nib.
-//
-//           // Create a DatePicker
-//           let datePicker: UIDatePicker = UIDatePicker()
-//
-//           // Posiiton date picket within a view
-//           datePicker.frame = CGRect(x: 10, y: 50, width: self.view.frame.width, height: 200)
-//
-//           // Set some of UIDatePicker properties
-//           datePicker.backgroundColor = UIColor.white
-//           datePicker.datePickerMode = UIDatePicker.Mode.countDownTimer
-//
-//
-//
-//           // Add an event to call onDidChangeDate function when value is changed.
-//           datePicker.addTarget(self, action: #selector(self.datePickerValueChanged(_:)), for: .valueChanged)
-//
-//           // Add DataPicker to the view
-//           self.view.addSubview(datePicker)
-//
-//       }
-//
-//       // Not called the first time
-//    @objc func datePickerValueChanged(_ sender: UIDatePicker){
-//           print("Selected value \(sender.countDownDuration)")
-//       }
-//
-//       override func didReceiveMemoryWarning() {
-//           super.didReceiveMemoryWarning()
-//           // Dispose of any resources that can be recreated.
-//       }
-
+    @IBOutlet weak var recentProductLabel: UILabel!
+    
+    private var recentProductCollectionView = RecentProductCollectionView()
+    
+    var products: [Product] = []
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        fetchDataFromFireBase()
+        
+        view.addSubview(recentProductCollectionView)
+        
+        recentProductCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        recentProductCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        recentProductCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        recentProductCollectionView.topAnchor.constraint(equalTo: recentProductLabel.bottomAnchor, constant: 10).isActive = true
+        recentProductCollectionView.heightAnchor.constraint(equalToConstant: 350).isActive = true
+    }
+    
+    
+    func fetchDataFromFireBase() {
+        let firebaseService: FirebaseServiceProtocol = FirebaseService()
+        firebaseService.fetchProducts { result in
+            switch result {
+            case .success(let products):
+                self.products = products
+                self.recentProductCollectionView.set(products: products)
+                DispatchQueue.main.async {
+                    self.recentProductCollectionView.reloadData()
+                }
+            case .failure(_):
+                break
+            }
+        }
+    }
 }
+
