@@ -7,71 +7,74 @@
 
 import UIKit
 
-
-protocol AddNewProductViewControllerDelegate {
-    func getSelectedItemFromPopOver(item: String)
-}
-
 class AddNewProductViewController: UIViewController {
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var codeLabel: UILabel!
     @IBOutlet weak var categoryButton: UIButton!
-    @IBOutlet weak var titleOfProduct: UITextField!
-    @IBOutlet weak var cookingTime: UITextField!
-    @IBOutlet weak var producer: UITextField!
-    @IBOutlet weak var weight: UITextField!
+    @IBOutlet weak var titleProductTF: UITextField!
+    @IBOutlet weak var cookingTimeTF: UITextField!
+    @IBOutlet weak var producerTF: UITextField!
+    @IBOutlet weak var weightTF: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
+    // MARK: - Properties
+    
+    private var viewModel: AddNewProductViewModelProtocol!
     
     
-    @IBAction func titleProductEditingChanged(_ sender: UITextField) {
-        updateSaveButtonState()
+    // MARK: - Actions
+    
+    @IBAction func titleProductEditingChanged() {
+        viewModel.textFromTitleProductTF = titleProductTF.text
     }
-    @IBAction func timeOfCookingEditingChanged(_ sender: UITextField) {
-        updateSaveButtonState()
+    @IBAction func cookingTimeEditingChanged() {
+        viewModel.textFromCookingTimeTF = cookingTimeTF.text
     }
     
-    
-    @IBAction func closeButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func closeButtonPressed() {
+        dismiss(animated: true)
     }
     
-    @IBAction func saveButtonPressed(_ sender: UIButton) {
-        let code = "4603726592574"
-        
-        guard let category = categoryButton.title(for: .normal),
-              let title = titleOfProduct.text,
-              let cookingTime = Int(cookingTime.text!)
-              else { return }
-        let producerText = producer.text!
-        let weightText = Int(weight.text!)
-        
-        let product = Product(code: code, title: title, producer: producerText, category: category, weight: weightText, cookingTime: cookingTime, intoBoilingWater: true, needStirring: true)
-        
-        FirebaseService().saveProduct(product)
-    
-        
-        
+    @IBAction func saveButtonPressed() {
+        viewModel.validation() ?
+            successfulValidation() :
+            showAlert()
     }
+    
+    // MARK: - Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        updateSaveButtonState()
+        viewModel = AddNewProductViewModel()
         setupGestures()
     }
     
     
-    private func updateSaveButtonState() {
-        let titleOfProductText = titleOfProduct.text ?? ""
-        let cookingTimeText = cookingTime.text ?? ""
-        saveButton.isEnabled = !titleOfProductText.isEmpty && !cookingTimeText.isEmpty
+    private func showAlert() {
+        let alert = UIAlertController(title: "Упс...",
+                                      message: viewModel.incorrectMessage,
+                                      preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) 
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
     
     
+    private func successfulValidation() {
+        // отображение описания продукта
+        
+        dismiss(animated: true)
+    }
     
     
-    //MARK: ADD POPOVER MENU
+}
+
+
+//MARK: - PopOver Menu
+
+extension AddNewProductViewController {
     
     private func setupGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
@@ -80,8 +83,9 @@ class AddNewProductViewController: UIViewController {
     }
     
     @objc private func tapped() {
-        guard let popVC = storyboard?.instantiateViewController(identifier: "popVC") as? PopOverMenuTableTableViewController else { return }
+        guard let popVC = storyboard?.instantiateViewController(identifier: "popVC") as? PopOverMenuTableViewController else { return }
         popVC.delegate = self
+        popVC.viewModel = PopOverMenuTableViewModel()
         popVC.modalPresentationStyle = .popover
         
         let popOverVC = popVC.popoverPresentationController
@@ -91,14 +95,14 @@ class AddNewProductViewController: UIViewController {
                                        y: self.categoryButton.bounds.midY,
                                        width: 0,
                                        height: 0)
-        popVC.preferredContentSize = CGSize(width: 150, height: 150)
+        popVC.preferredContentSize = CGSize(width: popOverTableSize.width.rawValue,
+                                            height: popOverTableSize.height.rawValue)
         self.present(popVC, animated: true)
     }
 }
 
 
-
-
+//MARK: - Extensions
 
 extension AddNewProductViewController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -116,8 +120,8 @@ extension AddNewProductViewController: UITextFieldDelegate {
 
 extension AddNewProductViewController: AddNewProductViewControllerDelegate {
     func getSelectedItemFromPopOver(item: String) {
-        let selectedItem = item
-        categoryButton.setTitle(selectedItem, for: .normal)
+        categoryButton.setTitle(item, for: .normal)
         categoryButton.setTitleColor(.black, for: .normal)
+        viewModel.categotySelected = true
     }
 }

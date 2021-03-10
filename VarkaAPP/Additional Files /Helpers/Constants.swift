@@ -8,7 +8,14 @@
 import Foundation
 
 enum Constants {
-    
-    
-    
 }
+
+enum popOverTableSize: Int {
+    case width = 150
+    case height = 160
+}
+
+
+
+
+

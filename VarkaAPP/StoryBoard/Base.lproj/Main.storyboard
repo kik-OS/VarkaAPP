@@ -108,7 +108,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="33" id="hTB-T7-eGm"/>
                                                         </constraints>
-                                                        <state key="normal" title="  Макароны">
+                                                        <state key="normal" title="  Выбрать категорию ">
                                                             <color key="titleColor" systemColor="systemGray2Color"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -149,7 +149,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="titleProductEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="Xvb-nf-0zk"/>
+                                                            <action selector="titleProductEditingChanged" destination="7Z7-UH-SDU" eventType="editingDidEnd" id="EYd-CN-G5F"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -170,9 +170,9 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="15" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rwY-qc-xSG">
                                                         <rect key="frame" x="0.0" y="20.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <connections>
-                                                            <action selector="timeOfCookingEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="d67-Js-WlC"/>
+                                                            <action selector="cookingTimeEditingChanged" destination="7Z7-UH-SDU" eventType="editingChanged" id="1SI-oA-ZNX"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -247,7 +247,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PT2-Dh-npl">
                                 <rect key="frame" x="372" y="12" width="30" height="30"/>
                                 <connections>
-                                    <action selector="closeButton:" destination="7Z7-UH-SDU" eventType="touchUpInside" id="m5D-D6-mnM"/>
+                                    <action selector="closeButtonPressed" destination="7Z7-UH-SDU" eventType="touchUpInside" id="b4r-f1-paC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3F-mr-hrf">
@@ -267,7 +267,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="saveButtonPressed:" destination="7Z7-UH-SDU" eventType="touchUpInside" id="xPv-K7-eu7"/>
+                                    <action selector="saveButtonPressed" destination="7Z7-UH-SDU" eventType="touchUpInside" id="tfJ-mi-w1A"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -287,21 +287,21 @@
                     <connections>
                         <outlet property="categoryButton" destination="N8J-2Y-mkW" id="8g4-gT-glb"/>
                         <outlet property="codeLabel" destination="498-Wo-fVB" id="AWQ-Tp-621"/>
-                        <outlet property="cookingTime" destination="rwY-qc-xSG" id="WlG-MW-dCy"/>
-                        <outlet property="producer" destination="YaD-L5-W2x" id="i3C-H7-BKd"/>
+                        <outlet property="cookingTimeTF" destination="rwY-qc-xSG" id="8I5-xl-ZUz"/>
+                        <outlet property="producerTF" destination="YaD-L5-W2x" id="4Co-0e-RYb"/>
                         <outlet property="saveButton" destination="N3F-mr-hrf" id="0x0-FT-yrQ"/>
-                        <outlet property="titleOfProduct" destination="Opw-DD-c1S" id="b5M-KG-l8g"/>
-                        <outlet property="weight" destination="dGI-iU-gH8" id="ZK7-aT-8pf"/>
+                        <outlet property="titleProductTF" destination="Opw-DD-c1S" id="dwF-xm-mHy"/>
+                        <outlet property="weightTF" destination="dGI-iU-gH8" id="2M1-w6-2SU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-TG-UNZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-112" y="90"/>
         </scene>
-        <!--Pop Over Menu Table Table View Controller-->
+        <!--Pop Over Menu Table View Controller-->
         <scene sceneID="hgO-Rj-ku5">
             <objects>
-                <tableViewController storyboardIdentifier="popVC" id="et5-mg-NG8" customClass="PopOverMenuTableTableViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="popVC" id="et5-mg-NG8" customClass="PopOverMenuTableViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qwG-Gt-h2m">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

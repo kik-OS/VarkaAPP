@@ -81,27 +81,27 @@ extension CustomTabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErro
     
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
         
-       
-        firebaseService.fetchProduct(byCode: code) { [weak self] result in
-            switch result {
-            case .success(let product):
-                
-                if let product = product {
-                    let productInfoViewModel = ProductInfoViewModel(product: product)
-                    guard let productInfoVC = self?.viewControllers?.first as? ProductInfoViewController else { return }
-                    productInfoVC.viewModel = productInfoViewModel
-                }
-            case .failure:
-                break
-            }
-        }
-        dismiss(animated: true, completion: nil)
+//        firebaseService.fetchProduct(byCode: code) { [weak self] result in
+//            switch result {
+//            case .success(let product):
+//
+//                if let product = product {
+//                    let productInfoViewModel = ProductInfoViewModel(product: product)
+//                    guard let productInfoVC = self?.viewControllers?.first as? ProductInfoViewController else { return }
+//                    productInfoVC.viewModel = productInfoViewModel
+//                }
+//            case .failure:
+//                break
+//            }
+//        }
+        
+        dismiss(animated: true)
     }
     func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
         print(error.localizedDescription)
     }
     func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
 }
 

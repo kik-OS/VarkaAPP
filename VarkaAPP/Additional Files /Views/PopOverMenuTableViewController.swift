@@ -7,18 +7,24 @@
 
 import UIKit
 
-class PopOverMenuTableTableViewController: UITableViewController {
+class PopOverMenuTableViewController: UITableViewController {
 
-    let array = ["Макароны", "Рис", "Гречка", "Крупа", "Пельмени", "Вареники"]
+    // MARK: - Properties
     
     var delegate: AddNewProductViewControllerDelegate!
+    var viewModel: PopOverMenuTableViewModelProtocol!
+    
+    // MARK: - Lifecycle method
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    //MARK: - Override methodes
+    
     override func viewWillLayoutSubviews() {
-        preferredContentSize = CGSize(width: 150 , height: 165)
+        preferredContentSize = CGSize(width: popOverTableSize.width.rawValue ,
+                                      height: popOverTableSize.height.rawValue)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -26,18 +32,18 @@ class PopOverMenuTableTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+       viewModel.numberOfRows()
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CellFromPopOverTableViewTableViewCell
-        cell.titleProduct.text = array[indexPath.row]
+        cell.titleProduct.text = viewModel.selectedCategory(at: indexPath)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate.getSelectedItemFromPopOver(item: array[indexPath.row])
+        delegate.getSelectedItemFromPopOver(item: viewModel.selectedCategory(at: indexPath))
         dismiss(animated: true, completion: nil)
     }
 }
