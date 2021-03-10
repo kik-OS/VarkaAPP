@@ -49,14 +49,11 @@ final class ProductInfoViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavigationBar()
-//        viewModel.product.value = Product.getProducts().first!
-        
-        setupViewModelBindings()
     }
     
     // MARK: - Private methods
     
-    func setupNavigationBar() {
+    private func setupNavigationBar() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true

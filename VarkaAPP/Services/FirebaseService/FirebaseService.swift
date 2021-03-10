@@ -5,7 +5,6 @@
 //  Created by Evgeny Novgorodov on 06.03.2021.
 //
 
-import Foundation
 import FirebaseDatabase
 
 // MARK: - Protocols
@@ -24,7 +23,6 @@ final class FirebaseService: FirebaseServiceProtocol {
     // MARK: - Properties
     
     private let ref = Database.database().reference()
-    
     
     // MARK: - Public methods
     
