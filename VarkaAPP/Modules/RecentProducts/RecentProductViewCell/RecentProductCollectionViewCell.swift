@@ -9,6 +9,14 @@ import UIKit
 
 class RecentProductCollectionViewCell: UICollectionViewCell {
 
+    var viewModel: RecentProductCollectionViewCellViewModelProtocol! {
+        didSet {
+            mainImageView.image = UIImage(named: viewModel.productImage)
+            nameLabel.text = viewModel.productTitle
+            producerLabel.text = viewModel.productProducer
+        }
+    }
+    
     static let reuseID = "RecentProductCollectionViewCell"
     
     let mainImageView: UIImageView = {

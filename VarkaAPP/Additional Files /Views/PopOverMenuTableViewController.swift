@@ -20,7 +20,7 @@ class PopOverMenuTableViewController: UITableViewController {
         super.viewDidLoad()
     }
 
-    //MARK: - Override methodes
+    //MARK: - Override methods
     
     override func viewWillLayoutSubviews() {
         preferredContentSize = CGSize(width: popOverTableSize.width.rawValue ,
@@ -37,7 +37,7 @@ class PopOverMenuTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CellFromPopOverTableViewTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CellFromPopOverTableViewCell
         cell.titleProduct.text = viewModel.selectedCategory(at: indexPath)
         return cell
     }

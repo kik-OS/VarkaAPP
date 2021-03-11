@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+
+protocol RecentProductViewModelProtocol {
+
+    
+}
+
+class RecentProductViewModel: RecentProductViewModelProtocol {
+    
+  
+}
