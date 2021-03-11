@@ -5,7 +5,6 @@
 //  Created by Evgeny Novgorodov on 05.03.2021.
 //
 
-import Foundation
 import Firebase
 
 struct Product {
@@ -38,17 +37,23 @@ struct Product {
     }
     
     init?(snapshot: DataSnapshot) {
-        guard let snapshotValue = snapshot.value as? [String: AnyObject] else { return nil }
+        guard let snapshotValue = snapshot.value as? [String: AnyObject],
+              let code = snapshotValue["code"] as? String,
+              let title = snapshotValue["title"] as? String,
+              let producer = snapshotValue["producer"] as? String,
+              let category = snapshotValue["category"] as? String,
+              let cookingTime = snapshotValue["cookingTime"] as? Int
+              else { return nil }
         
-        code = snapshotValue["code"] as! String
-        title = snapshotValue["title"] as! String
-        producer = snapshotValue["producer"] as! String
-        category = snapshotValue["category"] as! String
-        weight = snapshotValue["weight"] as? Int
-        cookingTime = snapshotValue["cookingTime"] as! Int
-        intoBoilingWater = snapshotValue["intoBoilingWater"] as? Bool
-        needStirring = snapshotValue["needStirring"] as? Bool
-        ref = snapshot.ref
+        self.code = code
+        self.title = title
+        self.producer = producer
+        self.category = category
+        self.weight = snapshotValue["weight"] as? Int
+        self.cookingTime = cookingTime
+        self.intoBoilingWater = snapshotValue["intoBoilingWater"] as? Bool
+        self.needStirring = snapshotValue["needStirring"] as? Bool
+        self.ref = snapshot.ref
     }
     
     // MARK: - Public methods

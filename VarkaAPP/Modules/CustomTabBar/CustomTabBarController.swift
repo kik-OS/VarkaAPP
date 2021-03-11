@@ -8,9 +8,13 @@
 import UIKit
 import BarcodeScanner
 
-class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
+final class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
     
-    let firebaseService: FirebaseServiceProtocol = FirebaseService()
+    // MARK: - Properties
+    
+    private let firebaseService: FirebaseServiceProtocol = FirebaseService()
+    
+    // MARK: - Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +23,19 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         setupTabs()
     }
     
-    func setupMiddleButton() {
-        
+    // MARK: - Actions
+    
+    @objc private func centerButtonAction(sender: UIButton) {
+        sender.animationForCentralButton()
+        let barCodeScanerVC = BarcodeScannerViewController()
+        barCodeScanerVC.codeDelegate = self
+        barCodeScanerVC.errorDelegate = self
+        barCodeScanerVC.dismissalDelegate = self
+        barCodeScanerVC.modalPresentationStyle = .fullScreen
+        present(barCodeScanerVC, animated: true, completion: nil)
+    }
+    
+    private func setupMiddleButton() {
         let middleBtn = UIButton(frame: CGRect(x: (view.bounds.width / 2) - 30,
                                                y: -30,
                                                width: 60,
@@ -30,7 +45,6 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         middleBtn.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 35,
                                                                               weight: .thin),
                                                                               forImageIn: .normal)
-        
         middleBtn.backgroundColor = .white
         middleBtn.layer.borderColor = UIColor.white.cgColor
         middleBtn.layer.borderWidth = 1
@@ -43,17 +57,6 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         tabBar.addSubview(middleBtn)
         view.layoutIfNeeded()
-    }
-    
-    
-    @objc func centerButtonAction(sender: UIButton) {
-        sender.animationForCentralButton()
-        let barCodeScanerVC = BarcodeScannerViewController()
-        barCodeScanerVC.codeDelegate = self
-        barCodeScanerVC.errorDelegate = self
-        barCodeScanerVC.dismissalDelegate = self
-        barCodeScanerVC.modalPresentationStyle = .fullScreen
-        present(barCodeScanerVC, animated: true, completion: nil)
     }
     
     // MARK: - Private methods
@@ -76,8 +79,6 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
 extension CustomTabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
     
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-        
-       
         firebaseService.fetchProduct(byCode: code) { [weak self] result in
             switch result {
             case .success(let product):
@@ -93,9 +94,11 @@ extension CustomTabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErro
         }
         dismiss(animated: true, completion: nil)
     }
+    
     func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
         print(error.localizedDescription)
     }
+    
     func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
         dismiss(animated: true, completion: nil)
     }

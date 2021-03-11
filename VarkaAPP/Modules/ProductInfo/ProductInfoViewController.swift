@@ -49,14 +49,22 @@ final class ProductInfoViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavigationBar()
-//        viewModel.product.value = Product.getProducts().first!
         
-        setupViewModelBindings()
+//        FirebaseService().saveCategories(Category.getCategories())
+        
+        FirebaseService().fetchCategories { categories in
+            print("Категории:")
+            categories.sorted { $0.id < $1.id }.forEach { print($0) }
+            
+            let categoryNames = categories.sorted { $0.id < $1.id }.map { $0.name }
+            print("Массив категорий:")
+            print(categoryNames)
+        }
     }
     
     // MARK: - Private methods
     
-    func setupNavigationBar() {
+    private func setupNavigationBar() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
