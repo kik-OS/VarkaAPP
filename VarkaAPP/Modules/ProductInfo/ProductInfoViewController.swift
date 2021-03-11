@@ -49,6 +49,17 @@ final class ProductInfoViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavigationBar()
+        
+//        FirebaseService().saveCategories(Category.getCategories())
+        
+        FirebaseService().fetchCategories { categories in
+            print("Категории:")
+            categories.sorted { $0.id < $1.id }.forEach { print($0) }
+            
+            let categoryNames = categories.sorted { $0.id < $1.id }.map { $0.name }
+            print("Массив категорий:")
+            print(categoryNames)
+        }
     }
     
     // MARK: - Private methods
