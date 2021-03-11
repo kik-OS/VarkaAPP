@@ -15,7 +15,7 @@ protocol FirebaseServiceProtocol {
     func fetchProduct(byCode code: String, completion: @escaping (Result<Product?, Error>) -> Void)
     func fetchProducts(completion: @escaping (Result<[Product], Error>) -> Void)
     func removeProduct(byCode code: String)
-    func fetchCategories(completion: @escaping ([ProductCategory]) -> Void)
+    func fetchCategories(completion: @escaping ([Category]) -> Void)
 }
 
 final class FirebaseService: FirebaseServiceProtocol {
@@ -53,10 +53,10 @@ final class FirebaseService: FirebaseServiceProtocol {
         ref.child("products").child(code).removeValue()
     }
     
-    func fetchCategories(completion: @escaping ([ProductCategory]) -> Void) {
-        ref.child("categories").observe(.value) { snapshot in
-            let categories = snapshot.children.compactMap { ($0 as? DataSnapshot)?.key ?? nil }
-            completion(categories)
-        }
+    func fetchCategories(completion: @escaping ([Category]) -> Void) {
+//        ref.child("categories").observe(.value) { snapshot in
+//            let categories = snapshot.children.compactMap { ($0 as? DataSnapshot)?.key ?? nil }
+//            completion(categories)
+//        }
     }
 }

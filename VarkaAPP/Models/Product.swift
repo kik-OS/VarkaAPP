@@ -7,8 +7,6 @@
 
 import Firebase
 
-typealias ProductCategory = String
-
 struct Product {
     
     // MARK: - Properties
@@ -16,7 +14,7 @@ struct Product {
     let code: String
     let title: String
     let producer: String
-    let category: ProductCategory
+    let category: String
     let weight: Int?
     let cookingTime: Int
     let intoBoilingWater: Bool?
@@ -25,7 +23,7 @@ struct Product {
     
     // MARK: - Initializers
     
-    init(code: String, title: String, producer: String, category: ProductCategory, weight: Int?,
+    init(code: String, title: String, producer: String, category: String, weight: Int?,
          cookingTime: Int, intoBoilingWater: Bool?, needStirring: Bool?, ref: DatabaseReference? = nil) {
         self.code = code
         self.title = title
@@ -39,17 +37,23 @@ struct Product {
     }
     
     init?(snapshot: DataSnapshot) {
-        guard let snapshotValue = snapshot.value as? [String: AnyObject] else { return nil }
+        guard let snapshotValue = snapshot.value as? [String: AnyObject],
+              let code = snapshotValue["code"] as? String,
+              let title = snapshotValue["title"] as? String,
+              let producer = snapshotValue["producer"] as? String,
+              let category = snapshotValue["category"] as? String,
+              let cookingTime = snapshotValue["cookingTime"] as? Int
+              else { return nil }
         
-        code = snapshotValue["code"] as! String
-        title = snapshotValue["title"] as! String
-        producer = snapshotValue["producer"] as! String
-        category = snapshotValue["category"] as! ProductCategory
-        weight = snapshotValue["weight"] as? Int
-        cookingTime = snapshotValue["cookingTime"] as! Int
-        intoBoilingWater = snapshotValue["intoBoilingWater"] as? Bool
-        needStirring = snapshotValue["needStirring"] as? Bool
-        ref = snapshot.ref
+        self.code = code
+        self.title = title
+        self.producer = producer
+        self.category = category
+        self.weight = snapshotValue["weight"] as? Int
+        self.cookingTime = cookingTime
+        self.intoBoilingWater = snapshotValue["intoBoilingWater"] as? Bool
+        self.needStirring = snapshotValue["needStirring"] as? Bool
+        self.ref = snapshot.ref
     }
     
     // MARK: - Public methods

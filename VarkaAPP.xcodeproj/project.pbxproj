@@ -16,6 +16,8 @@
 		CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */; };
 		CE02BA8325F7572300788EE3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA8225F7572300788EE3 /* Box.swift */; };
 		CE3A168025F7957E00FFA849 /* RecentProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3A167F25F7957E00FFA849 /* RecentProductsViewController.xib */; };
+		CE3A168B25F9D7A000FFA849 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A168A25F9D7A000FFA849 /* Category.swift */; };
+		CE3A168F25F9D9BB00FFA849 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */; };
 		E451D08025F3FFB000890584 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D07F25F3FFB000890584 /* UIButton+Extension.swift */; };
 		E451D08425F4002F00890584 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08325F4002F00890584 /* Constants.swift */; };
 		E451D08A25F7370C00890584 /* AddNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08925F7370C00890584 /* AddNewProductViewController.swift */; };
@@ -46,6 +48,8 @@
 		CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewModel.swift; sourceTree = "<group>"; };
 		CE02BA8225F7572300788EE3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		CE3A167F25F7957E00FFA849 /* RecentProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentProductsViewController.xib; sourceTree = "<group>"; };
+		CE3A168A25F9D7A000FFA849 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		E451D07F25F3FFB000890584 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		E451D08325F4002F00890584 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E451D08925F7370C00890584 /* AddNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				CE02B9EC25F2ACA000788EE3 /* Product.swift */,
+				CE3A168A25F9D7A000FFA849 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				E451D07F25F3FFB000890584 /* UIButton+Extension.swift */,
+				CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
 				E451D09425F75B9F00890584 /* PopOverMenuTableTableViewController.swift in Sources */,
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
+				CE3A168B25F9D7A000FFA849 /* Category.swift in Sources */,
 				CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */,
 				CE02BA0B25F3AB6800788EE3 /* ProductInfoViewController.swift in Sources */,
 				E451D08D25F7372100890584 /* AddNewProductViewModel.swift in Sources */,
@@ -399,6 +406,7 @@
 				CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */,
 				E451D08425F4002F00890584 /* Constants.swift in Sources */,
 				E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */,
+				CE3A168F25F9D9BB00FFA849 /* DateFormatter+Extension.swift in Sources */,
 				E451D08A25F7370C00890584 /* AddNewProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
