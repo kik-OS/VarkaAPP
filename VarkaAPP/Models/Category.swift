@@ -59,8 +59,6 @@ struct Category {
 extension Category {
     
     static func getCategories() -> [Category] {
-        let categoryNames = ["Макароны", "Гречка", "Рис", "Пельмени", "Вареники", "Овсянка",
-                             "Чечевица красная", "Чечевица зелёная", "Другое"]
-        return categoryNames.map { Category(name: $0) }
+        Constants.categoryNames.map { Category(name: $0) }
     }
 }
