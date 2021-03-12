@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CellFromPopOverTableViewTableViewCell: UITableViewCell {
+class CellFromPopOverTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

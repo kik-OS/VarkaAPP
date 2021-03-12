@@ -24,17 +24,17 @@
             </objects>
             <point key="canvasLocation" x="-1907" y="90"/>
         </scene>
-        <!--Варка-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="mpw-V2-NPN">
             <objects>
                 <tabBarController id="C3u-R3-MZb" customClass="CustomTabBarController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Варка" id="dlE-K4-omA">
+                    <navigationItem key="navigationItem" id="dlE-K4-omA">
                         <rightBarButtonItems>
                             <barButtonItem image="timer" catalog="system" id="URZ-Nx-ETA">
-                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </barButtonItem>
                             <barButtonItem systemItem="add" id="Che-2E-bQx">
-                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="7Z7-UH-SDU" kind="presentation" id="XZD-2v-UeB"/>
                                 </connections>
@@ -60,21 +60,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="9l5-lN-5R8">
-                                <rect key="frame" x="20" y="55" width="374" height="398.5"/>
+                                <rect key="frame" x="20" y="55" width="374" height="392.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="PcZ-wc-V84">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARCODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cz-La-o4u">
-                                                <rect key="frame" x="0.0" y="0.0" width="78.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cz-La-o4u">
+                                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 4607114691306" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="498-Wo-fVB">
-                                                <rect key="frame" x="0.0" y="21.5" width="374" height="32.5"/>
+                                                <rect key="frame" x="0.0" y="21.5" width="374" height="26.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -91,7 +91,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="nkA-jn-YUm">
-                                        <rect key="frame" x="0.0" y="67" width="374" height="331.5"/>
+                                        <rect key="frame" x="0.0" y="61" width="374" height="331.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9Um-aB-Lec">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="53.5"/>
@@ -108,7 +108,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="33" id="hTB-T7-eGm"/>
                                                         </constraints>
-                                                        <state key="normal" title="  Макароны">
+                                                        <state key="normal" title="  Выбрать категорию ">
                                                             <color key="titleColor" systemColor="systemGray2Color"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -149,7 +149,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="titleProductEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="Xvb-nf-0zk"/>
+                                                            <action selector="titleProductEditingChanged" destination="7Z7-UH-SDU" eventType="editingDidEnd" id="EYd-CN-G5F"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -170,9 +170,9 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="15" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rwY-qc-xSG">
                                                         <rect key="frame" x="0.0" y="20.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <connections>
-                                                            <action selector="timeOfCookingEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="d67-Js-WlC"/>
+                                                            <action selector="cookingTimeEditingChanged" destination="7Z7-UH-SDU" eventType="editingChanged" id="1SI-oA-ZNX"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -247,11 +247,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PT2-Dh-npl">
                                 <rect key="frame" x="372" y="12" width="30" height="30"/>
                                 <connections>
-                                    <action selector="closeButton:" destination="7Z7-UH-SDU" eventType="touchUpInside" id="m5D-D6-mnM"/>
+                                    <action selector="closeButtonPressed" destination="7Z7-UH-SDU" eventType="touchUpInside" id="b4r-f1-paC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3F-mr-hrf">
-                                <rect key="frame" x="74" y="492.5" width="266" height="42"/>
+                                <rect key="frame" x="74" y="486.5" width="266" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                 <state key="normal" title="Сохранить">
@@ -267,7 +267,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="saveButtonPressed:" destination="7Z7-UH-SDU" eventType="touchUpInside" id="xPv-K7-eu7"/>
+                                    <action selector="saveButtonPressed" destination="7Z7-UH-SDU" eventType="touchUpInside" id="tfJ-mi-w1A"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -287,28 +287,28 @@
                     <connections>
                         <outlet property="categoryButton" destination="N8J-2Y-mkW" id="8g4-gT-glb"/>
                         <outlet property="codeLabel" destination="498-Wo-fVB" id="AWQ-Tp-621"/>
-                        <outlet property="cookingTime" destination="rwY-qc-xSG" id="WlG-MW-dCy"/>
-                        <outlet property="producer" destination="YaD-L5-W2x" id="i3C-H7-BKd"/>
+                        <outlet property="cookingTimeTF" destination="rwY-qc-xSG" id="8I5-xl-ZUz"/>
+                        <outlet property="producerTF" destination="YaD-L5-W2x" id="4Co-0e-RYb"/>
                         <outlet property="saveButton" destination="N3F-mr-hrf" id="0x0-FT-yrQ"/>
-                        <outlet property="titleOfProduct" destination="Opw-DD-c1S" id="b5M-KG-l8g"/>
-                        <outlet property="weight" destination="dGI-iU-gH8" id="ZK7-aT-8pf"/>
+                        <outlet property="titleProductTF" destination="Opw-DD-c1S" id="dwF-xm-mHy"/>
+                        <outlet property="weightTF" destination="dGI-iU-gH8" id="2M1-w6-2SU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-TG-UNZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-112" y="90"/>
+            <point key="canvasLocation" x="-277" y="90"/>
         </scene>
-        <!--Pop Over Menu Table Table View Controller-->
+        <!--Pop Over Menu Table View Controller-->
         <scene sceneID="hgO-Rj-ku5">
             <objects>
-                <tableViewController storyboardIdentifier="popVC" id="et5-mg-NG8" customClass="PopOverMenuTableTableViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="popVC" id="et5-mg-NG8" customClass="PopOverMenuTableViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qwG-Gt-h2m">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <color key="separatorColor" systemColor="systemIndigoColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="38" id="oxm-0S-GcC" customClass="CellFromPopOverTableViewTableViewCell" customModule="VarkaAPP" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="38" id="oxm-0S-GcC" customClass="CellFromPopOverTableViewCell" customModule="VarkaAPP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="150" height="38"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oxm-0S-GcC" id="5lJ-nj-JRi">
@@ -344,7 +344,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjq-cG-uX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="599" y="90"/>
+            <point key="canvasLocation" x="300" y="-161"/>
         </scene>
     </scenes>
     <resources>

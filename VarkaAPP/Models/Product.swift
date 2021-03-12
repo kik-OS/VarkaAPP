@@ -58,7 +58,7 @@ struct Product {
     
     // MARK: - Public methods
     
-    func convertToDictionaty() -> Any {
+    func convertToDictionary() -> Any {
         ["code": code,
          "title": title,
          "producer": producer,

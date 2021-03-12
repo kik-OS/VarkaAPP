@@ -19,11 +19,10 @@ class CustomTabBar: UITabBar {
         shapeLayer.fillColor = UIColor.white.cgColor
         shapeLayer.lineWidth = 0.2
         
-        //shadow
         shapeLayer.shadowOffset = CGSize(width:0, height:0)
         shapeLayer.shadowRadius = 5
         shapeLayer.shadowColor = UIColor.gray.cgColor
-        shapeLayer.shadowOpacity = 0.3
+        shapeLayer.shadowOpacity = 0.5
         
         if let oldShapeLayer = self.shapeLayer {
             layer.replaceSublayer(oldShapeLayer, with: shapeLayer)
@@ -33,12 +32,13 @@ class CustomTabBar: UITabBar {
         self.shapeLayer = shapeLayer
     }
     
-    func createPath() -> CGPath {
+    private func createPath() -> CGPath {
+        
         let height: CGFloat = 37.0
         let path = UIBezierPath()
         let centerWidth = frame.width / 2
-        path.move(to: CGPoint(x: 0, y: 0)) // start top left
-        path.addLine(to: CGPoint(x: (centerWidth - height * 2), y: 0)) // the beginning of the trough
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: (centerWidth - height * 2), y: 0))
         
         path.addCurve(to: CGPoint(x: centerWidth, y: height),
                       controlPoint1: CGPoint(x: (centerWidth - 30), y: 0),

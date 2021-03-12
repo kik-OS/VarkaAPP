@@ -49,6 +49,7 @@ final class ProductInfoViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavigationBar()
+        view.backgroundColor = .systemIndigo
         
 //        FirebaseService().saveCategories(Category.getCategories())
         
@@ -64,7 +65,7 @@ final class ProductInfoViewController: UIViewController {
     
     // MARK: - Private methods
     
-    private func setupNavigationBar() {
+   private func setupNavigationBar() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
