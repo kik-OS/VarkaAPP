@@ -53,7 +53,7 @@ final class ProductInfoViewController: UIViewController {
         
 //        FirebaseService().saveCategories(Category.getCategories())
         
-        FirebaseService().fetchCategories { categories in
+        FirebaseService.shared.fetchCategories { categories in
             print("Категории:")
             categories.sorted { $0.id < $1.id }.forEach { print($0) }
             

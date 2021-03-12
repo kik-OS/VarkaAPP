@@ -19,12 +19,13 @@ struct Product {
     let cookingTime: Int
     let intoBoilingWater: Bool?
     let needStirring: Bool?
+    let waterRatio: Double
     let ref: DatabaseReference?
     
     // MARK: - Initializers
     
     init(code: String, title: String, producer: String, category: String, weight: Int?,
-         cookingTime: Int, intoBoilingWater: Bool?, needStirring: Bool?, ref: DatabaseReference? = nil) {
+         cookingTime: Int, intoBoilingWater: Bool?, needStirring: Bool?, waterRatio: Double, ref: DatabaseReference? = nil) {
         self.code = code
         self.title = title
         self.producer = producer
@@ -33,6 +34,7 @@ struct Product {
         self.cookingTime = cookingTime
         self.intoBoilingWater = intoBoilingWater
         self.needStirring = needStirring
+        self.waterRatio = waterRatio
         self.ref = ref
     }
     
@@ -42,7 +44,8 @@ struct Product {
               let title = snapshotValue["title"] as? String,
               let producer = snapshotValue["producer"] as? String,
               let category = snapshotValue["category"] as? String,
-              let cookingTime = snapshotValue["cookingTime"] as? Int
+              let cookingTime = snapshotValue["cookingTime"] as? Int,
+              let waterRatio = snapshotValue["waterRatio"] as? Double
               else { return nil }
         
         self.code = code
@@ -53,6 +56,7 @@ struct Product {
         self.cookingTime = cookingTime
         self.intoBoilingWater = snapshotValue["intoBoilingWater"] as? Bool
         self.needStirring = snapshotValue["needStirring"] as? Bool
+        self.waterRatio = waterRatio
         self.ref = snapshot.ref
     }
     
@@ -67,6 +71,7 @@ struct Product {
          "cookingTime": cookingTime,
          "intoBoilingWater": intoBoilingWater as Any,
          "needStirring": needStirring as Any,
+         "waterRatio": waterRatio,
          "ref": ref as Any]
     }
 }
@@ -77,17 +82,17 @@ extension Product {
         [Product(
             code: "1234567890000", title: "Рис круглозёрный", producer: "Агро-Альянс",
             category: "Бакалея", weight: 800, cookingTime: 10,
-            intoBoilingWater: true, needStirring: false
+            intoBoilingWater: true, needStirring: false, waterRatio: 3
         ),
         Product(
             code: "0987654321098", title: "Гречка", producer: "Агро-Альянс",
             category: "Бакалея", weight: 900, cookingTime: 7,
-            intoBoilingWater: false, needStirring: false
+            intoBoilingWater: false, needStirring: false, waterRatio: 2.2
         ),
         Product(
             code: "AB1234567890D", title: "Пельмени", producer: "Братцы-вареники",
             category: "Полуфабрикаты", weight: 1000, cookingTime: 6,
-            intoBoilingWater: true, needStirring: true
+            intoBoilingWater: true, needStirring: true, waterRatio: 1
         )]
     }
 }

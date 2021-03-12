@@ -29,6 +29,7 @@
 		E491967925F8F5A200395445 /* RecentProductCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967825F8F5A200395445 /* RecentProductCollectionView.swift */; };
 		E491967F25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967E25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift */; };
 		E491968725FA8E4B00395445 /* RecentProductCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491968625FA8E4B00395445 /* RecentProductCollectionViewCellViewModel.swift */; };
+		E491969925FB5C2900395445 /* CGPath + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491969825FB5C2900395445 /* CGPath + Extension.swift */; };
 		E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627725F20F2A0068F15A /* AppDelegate.swift */; };
 		E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627925F20F2A0068F15A /* SceneDelegate.swift */; };
 		E495627F25F20F2A0068F15A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495627D25F20F2A0068F15A /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		E491967825F8F5A200395445 /* RecentProductCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionView.swift; sourceTree = "<group>"; };
 		E491967E25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionViewViewModel.swift; sourceTree = "<group>"; };
 		E491968625FA8E4B00395445 /* RecentProductCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		E491969825FB5C2900395445 /* CGPath + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPath + Extension.swift"; sourceTree = "<group>"; };
 		E495627425F20F2A0068F15A /* VarkaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VarkaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495627725F20F2A0068F15A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E495627925F20F2A0068F15A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		CE3A167B25F7925A00FFA849 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E491969425FB5BAC00395445 /* PopOverMenu */,
 				E49562CB25F246A90068F15A /* CustomTabBar */,
 				CE02BA0825F3AB1400788EE3 /* ProductInfo */,
 				E49562C925F245B40068F15A /* RecentProducts */,
@@ -160,6 +163,7 @@
 			children = (
 				E451D07F25F3FFB000890584 /* UIButton+Extension.swift */,
 				CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */,
+				E491969825FB5C2900395445 /* CGPath + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -176,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				CE02BA8225F7572300788EE3 /* Box.swift */,
-				E451D09625F7748000890584 /* Views */,
 				E451D07E25F3FF8100890584 /* Extensions */,
 				E451D08225F4001400890584 /* Helpers */,
 			);
@@ -190,16 +193,6 @@
 				E451D08C25F7372100890584 /* AddNewProductViewModel.swift */,
 			);
 			path = AddNewProduct;
-			sourceTree = "<group>";
-		};
-		E451D09625F7748000890584 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E451D09325F75B9F00890584 /* PopOverMenuTableViewController.swift */,
-				E491966B25F8B71500395445 /* PopOverMenuTableViewModel.swift */,
-				E451D09725F774AE00890584 /* CellFromPopOverTableViewCell.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		E491967225F8E2BC00395445 /* RecentProductViewCell */ = {
@@ -228,6 +221,24 @@
 				E491967E25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift */,
 			);
 			path = RecentProductsCollectionView;
+			sourceTree = "<group>";
+		};
+		E491969425FB5BAC00395445 /* PopOverMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E491966B25F8B71500395445 /* PopOverMenuTableViewModel.swift */,
+				E451D09325F75B9F00890584 /* PopOverMenuTableViewController.swift */,
+				E491969625FB5BCD00395445 /* PopOverMenuTableViewCell */,
+			);
+			path = PopOverMenu;
+			sourceTree = "<group>";
+		};
+		E491969625FB5BCD00395445 /* PopOverMenuTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E451D09725F774AE00890584 /* CellFromPopOverTableViewCell.swift */,
+			);
+			path = PopOverMenuTableViewCell;
 			sourceTree = "<group>";
 		};
 		E495626B25F20F2A0068F15A = {
@@ -433,6 +444,7 @@
 				E491967F25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift in Sources */,
 				E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */,
 				E491967925F8F5A200395445 /* RecentProductCollectionView.swift in Sources */,
+				E491969925FB5C2900395445 /* CGPath + Extension.swift in Sources */,
 				E451D08025F3FFB000890584 /* UIButton+Extension.swift in Sources */,
 				E451D09825F774AE00890584 /* CellFromPopOverTableViewCell.swift in Sources */,
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,

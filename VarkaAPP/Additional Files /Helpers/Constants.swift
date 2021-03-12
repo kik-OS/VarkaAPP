@@ -13,6 +13,7 @@ struct ConstantsCollectionView {
     static let productsCollectionMinimumLineSpacing: CGFloat = 10
     static let productsCollectionItemWidth = (UIScreen.main.bounds.width - ConstantsCollectionView.leftDistanceToView - ConstantsCollectionView.rightDistanceToView - (ConstantsCollectionView.productsCollectionMinimumLineSpacing / 2)) / 2
 }
+
 enum Constants {
     static let categoryNames = ["Макароны", "Гречка", "Рис", "Пельмени", "Вареники", "Овсянка",
                                 "Чечевица красная", "Чечевица зелёная", "Другое"]
