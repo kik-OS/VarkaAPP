@@ -9,6 +9,8 @@ import UIKit
 
 class RecentProductCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Properties
+    
     var viewModel: RecentProductCollectionViewCellViewModelProtocol! {
         didSet {
             mainImageView.image = UIImage(named: viewModel.productImage)
@@ -44,6 +46,7 @@ class RecentProductCollectionViewCell: UICollectionViewCell {
          return label
      }()
     
+    // MARK: - Initializer
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,8 +54,26 @@ class RecentProductCollectionViewCell: UICollectionViewCell {
         addSubview(mainImageView)
         addSubview(nameLabel)
         addSubview(producerLabel)
-        
         backgroundColor = .systemIndigo
+        configureConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Methods
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.cornerRadius = 10
+        self.layer.shadowRadius = 9
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowOffset = CGSize(width: 5, height: 8)
+        self.clipsToBounds = false
+    }
+    
+    private func configureConstraints() {
         mainImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         mainImageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         mainImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -66,19 +87,4 @@ class RecentProductCollectionViewCell: UICollectionViewCell {
         producerLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8).isActive = true
         producerLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/2, constant: 10).isActive = true
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        self.layer.cornerRadius = 10
-        self.layer.shadowRadius = 9
-        self.layer.shadowOpacity = 0.3
-        self.layer.shadowOffset = CGSize(width: 5, height: 8)
-        self.clipsToBounds = false
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
 }

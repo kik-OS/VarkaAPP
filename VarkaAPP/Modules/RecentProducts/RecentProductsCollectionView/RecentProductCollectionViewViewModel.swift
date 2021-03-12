@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RecentProductCollectionViewViewModelProtocol {
+protocol RecentProductCollectionViewViewModelProtocol: class {
     func cellViewModel(at indexPath: IndexPath) -> RecentProductCollectionViewCellViewModelProtocol?
     func fetchProducts(completion: @escaping() -> Void)
     var products: [Product] { get }
@@ -17,25 +17,29 @@ protocol RecentProductCollectionViewViewModelProtocol {
 
 class RecentProductCollectionViewViewModel: RecentProductCollectionViewViewModelProtocol {
     
+    // MARK: - Properties
+    
     var products: [Product] = []
     
     var numberOfItemsInSection: Int {
         products.count
     }
     
-    func fetchProducts(completion: @escaping () -> Void) {
-            FirebaseService.shared.fetchProducts { [weak self] result in
-                switch result {
-                case .success(let products):
-                    self?.products = products
-                    DispatchQueue.main.async {
-                        completion()
-                    }
-                case .failure(_):
-                    break
+    // MARK: - Methods
+    
+   func fetchProducts(completion: @escaping () -> Void) {
+        FirebaseService.shared.fetchProducts { [weak self] result in
+            switch result {
+            case .success(let products):
+                self?.products = products
+                DispatchQueue.main.async {
+                    completion()
                 }
+            case .failure(_):
+                break
             }
         }
+    }
     
     func cellViewModel(at indexPath: IndexPath) -> RecentProductCollectionViewCellViewModelProtocol? {
         let product = products[indexPath.row]

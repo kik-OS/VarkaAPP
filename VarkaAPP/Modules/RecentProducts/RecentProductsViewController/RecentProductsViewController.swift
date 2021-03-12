@@ -9,21 +9,28 @@ import UIKit
 
 class RecentProductsViewController: UIViewController {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var recentProductLabel: UILabel!
+    @IBOutlet weak var nothingFoundLabel: UILabel!
+    
+    // MARK: - Properties
     
     private var recentProductCollectionView = RecentProductCollectionView()
-    
     private var viewModel: RecentProductViewModelProtocol!
+    
+    
+    // MARK: - Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(recentProductCollectionView)
         configureConstraints()
-        
         //Переделать 
         recentProductCollectionView.viewModel = RecentProductCollectionViewViewModel()
     }
     
+    // MARK: - Private methods
     
    private func configureConstraints() {
         recentProductCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true

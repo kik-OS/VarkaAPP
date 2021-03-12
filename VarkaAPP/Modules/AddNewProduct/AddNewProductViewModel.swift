@@ -18,7 +18,7 @@ enum IncorrectMessages: String {
 protocol AddNewProductViewModelProtocol {
     var textFromTitleProductTF: String? { get set }
     var textFromCookingTimeTF: String? { get set }
-    var categotySelected: Bool { get set }
+    var categorySelected: Bool { get set }
     func validation() -> Bool
     var incorrectMessage: String { get }
     
@@ -33,13 +33,13 @@ final class AddNewProductViewModel: AddNewProductViewModelProtocol {
     
     var textFromTitleProductTF: String?
     var textFromCookingTimeTF: String?
-    var categotySelected: Bool = false
+    var categorySelected: Bool = false
     
     
-    // MARK: - Methodes
+    // MARK: - Methods
     
     func validation() -> Bool {
-        guard categotySelected else {
+        guard categorySelected else {
             incorrectMessage = IncorrectMessages.incorrectCategory.rawValue
             return false }
         guard let titleText = textFromTitleProductTF else {

@@ -68,7 +68,10 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         barCodeScannerVC.codeDelegate = self
         barCodeScannerVC.errorDelegate = self
         barCodeScannerVC.dismissalDelegate = self
-        barCodeScannerVC.modalPresentationStyle = .fullScreen
+//        barCodeScannerVC.modalPresentationStyle = .fullScreen
+        barCodeScannerVC.messageViewController.regularTintColor = .systemIndigo
+        barCodeScannerVC.messageViewController.textLabel.textColor = .systemIndigo
+        barCodeScannerVC.headerViewController.closeButton.tintColor = .systemIndigo
         present(barCodeScannerVC, animated: true, completion: nil)
     }
 }

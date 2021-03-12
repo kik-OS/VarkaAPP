@@ -15,6 +15,9 @@ protocol RecentProductCollectionViewCellViewModelProtocol {
 }
 
 class RecentProductCollectionViewCellViewModel: RecentProductCollectionViewCellViewModelProtocol {
+    
+    // MARK: - Properties
+    
     var productTitle: String {
         product.title
     }
@@ -29,9 +32,9 @@ class RecentProductCollectionViewCellViewModel: RecentProductCollectionViewCellV
     
     private let product: Product
     
+    // MARK: - Initializer
+    
     required init(product: Product) {
         self.product = product
     }
-    
-    
 }

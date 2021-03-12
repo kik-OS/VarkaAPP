@@ -51,6 +51,7 @@ class AddNewProductViewController: UIViewController {
         setupGestures()
     }
     
+    // MARK: - Private methods
     
     private func showAlert() {
         let alert = UIAlertController(title: "Упс...",
@@ -122,6 +123,6 @@ extension AddNewProductViewController: AddNewProductViewControllerDelegate {
     func getSelectedItemFromPopOver(item: String) {
         categoryButton.setTitle(item, for: .normal)
         categoryButton.setTitleColor(.black, for: .normal)
-        viewModel.categotySelected = true
+        viewModel.categorySelected = true
     }
 }

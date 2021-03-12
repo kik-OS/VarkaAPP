@@ -9,6 +9,8 @@ import UIKit
 
 class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    // MARK: - Properties
+    
     var viewModel: RecentProductCollectionViewViewModelProtocol! {
         didSet {
             viewModel.fetchProducts { [weak self] in
@@ -16,6 +18,8 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
             }
         }
     }
+    
+    // MARK: - Initializer 
     
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -41,17 +45,19 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    // MARK: - Methods
+    
+    internal func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.numberOfItemsInSection
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: RecentProductCollectionViewCell.reuseID, for: indexPath) as! RecentProductCollectionViewCell
         cell.viewModel = viewModel.cellViewModel(at: indexPath)
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: ConstantsCollectionView.productsCollectionItemWidth, height: frame.height * 0.9)
     }
     
