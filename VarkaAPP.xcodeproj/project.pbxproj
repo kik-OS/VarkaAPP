@@ -30,6 +30,7 @@
 		E491967F25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967E25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift */; };
 		E491968725FA8E4B00395445 /* RecentProductCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491968625FA8E4B00395445 /* RecentProductCollectionViewCellViewModel.swift */; };
 		E491969925FB5C2900395445 /* CGPath + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491969825FB5C2900395445 /* CGPath + Extension.swift */; };
+		E49196C725FB9F5D00395445 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49196C625FB9F5D00395445 /* StorageManager.swift */; };
 		E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627725F20F2A0068F15A /* AppDelegate.swift */; };
 		E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627925F20F2A0068F15A /* SceneDelegate.swift */; };
 		E495627F25F20F2A0068F15A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495627D25F20F2A0068F15A /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 		E491967E25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionViewViewModel.swift; sourceTree = "<group>"; };
 		E491968625FA8E4B00395445 /* RecentProductCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		E491969825FB5C2900395445 /* CGPath + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPath + Extension.swift"; sourceTree = "<group>"; };
+		E49196C625FB9F5D00395445 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E495627425F20F2A0068F15A /* VarkaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VarkaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495627725F20F2A0068F15A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E495627925F20F2A0068F15A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		CE02BA0325F3A8E600788EE3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E49196C525FB9F4200395445 /* StorageManager */,
 				CE02BA0425F3A91700788EE3 /* FirebaseService */,
 			);
 			path = Services;
@@ -239,6 +242,14 @@
 				E451D09725F774AE00890584 /* CellFromPopOverTableViewCell.swift */,
 			);
 			path = PopOverMenuTableViewCell;
+			sourceTree = "<group>";
+		};
+		E49196C525FB9F4200395445 /* StorageManager */ = {
+			isa = PBXGroup;
+			children = (
+				E49196C625FB9F5D00395445 /* StorageManager.swift */,
+			);
+			path = StorageManager;
 			sourceTree = "<group>";
 		};
 		E495626B25F20F2A0068F15A = {
@@ -459,6 +470,7 @@
 				E451D08D25F7372100890584 /* AddNewProductViewModel.swift in Sources */,
 				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,
 				E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */,
+				E49196C725FB9F5D00395445 /* StorageManager.swift in Sources */,
 				CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */,
 				E451D08425F4002F00890584 /* Constants.swift in Sources */,
 				E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */,

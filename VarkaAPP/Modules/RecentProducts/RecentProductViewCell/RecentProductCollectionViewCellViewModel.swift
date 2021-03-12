@@ -8,21 +8,21 @@
 import Foundation
 
 protocol RecentProductCollectionViewCellViewModelProtocol {
-    var productTitle: String { get }
-    var productProducer: String { get }
+    var productTitle: String? { get }
+    var productProducer: String? { get }
     var productImage: String { get }
-    init(product: Product)
+    init(product: ProductCD)
 }
 
 class RecentProductCollectionViewCellViewModel: RecentProductCollectionViewCellViewModelProtocol {
     
     // MARK: - Properties
     
-    var productTitle: String {
+    var productTitle: String? {
         product.title
     }
     
-    var productProducer: String {
+    var productProducer: String? {
         product.producer
     }
     
@@ -30,11 +30,11 @@ class RecentProductCollectionViewCellViewModel: RecentProductCollectionViewCellV
         "rice.png"
     }
     
-    private let product: Product
+    private let product: ProductCD
     
     // MARK: - Initializer
     
-    required init(product: Product) {
+    required init(product: ProductCD) {
         self.product = product
     }
 }
