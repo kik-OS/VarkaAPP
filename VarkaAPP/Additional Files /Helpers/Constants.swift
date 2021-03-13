@@ -19,7 +19,7 @@ enum Constants {
                                 "Чечевица красная", "Чечевица зелёная", "Другое"]
 }
 
-enum popOverTableSize: Int {
+enum PopOverTableSize: Int {
     case width = 150
     case height = 160
 }

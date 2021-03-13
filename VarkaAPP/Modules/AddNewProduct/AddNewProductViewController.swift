@@ -96,8 +96,8 @@ extension AddNewProductViewController {
                                        y: self.categoryButton.bounds.midY,
                                        width: 0,
                                        height: 0)
-        popVC.preferredContentSize = CGSize(width: popOverTableSize.width.rawValue,
-                                            height: popOverTableSize.height.rawValue)
+        popVC.preferredContentSize = CGSize(width: PopOverTableSize.width.rawValue,
+                                            height: PopOverTableSize.height.rawValue)
         self.present(popVC, animated: true)
     }
 }

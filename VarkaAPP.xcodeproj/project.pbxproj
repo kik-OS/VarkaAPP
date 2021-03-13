@@ -15,6 +15,8 @@
 		CE02BA0C25F3AB6800788EE3 /* ProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE02BA0A25F3AB6800788EE3 /* ProductInfoViewController.xib */; };
 		CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */; };
 		CE02BA8325F7572300788EE3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA8225F7572300788EE3 /* Box.swift */; };
+		CE20DE1925FCA7EF00274A95 /* TimerSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20DE1725FCA7EF00274A95 /* TimerSettingViewController.swift */; };
+		CE20DE1A25FCA7EF00274A95 /* TimerSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE20DE1825FCA7EF00274A95 /* TimerSettingViewController.xib */; };
 		CE3A168025F7957E00FFA849 /* RecentProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3A167F25F7957E00FFA849 /* RecentProductsViewController.xib */; };
 		CE3A168B25F9D7A000FFA849 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A168A25F9D7A000FFA849 /* Category.swift */; };
 		CE3A168F25F9D9BB00FFA849 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */; };
@@ -53,6 +55,8 @@
 		CE02BA0A25F3AB6800788EE3 /* ProductInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductInfoViewController.xib; sourceTree = "<group>"; };
 		CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewModel.swift; sourceTree = "<group>"; };
 		CE02BA8225F7572300788EE3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		CE20DE1725FCA7EF00274A95 /* TimerSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingViewController.swift; sourceTree = "<group>"; };
+		CE20DE1825FCA7EF00274A95 /* TimerSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerSettingViewController.xib; sourceTree = "<group>"; };
 		CE3A167F25F7957E00FFA849 /* RecentProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentProductsViewController.xib; sourceTree = "<group>"; };
 		CE3A168A25F9D7A000FFA849 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
@@ -146,6 +150,15 @@
 			path = ProductInfo;
 			sourceTree = "<group>";
 		};
+		CE20DE1625FCA74D00274A95 /* TimerSetting */ = {
+			isa = PBXGroup;
+			children = (
+				CE20DE1725FCA7EF00274A95 /* TimerSettingViewController.swift */,
+				CE20DE1825FCA7EF00274A95 /* TimerSettingViewController.xib */,
+			);
+			path = TimerSetting;
+			sourceTree = "<group>";
+		};
 		CE3A167B25F7925A00FFA849 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +166,7 @@
 				E49562CB25F246A90068F15A /* CustomTabBar */,
 				CE02BA0825F3AB1400788EE3 /* ProductInfo */,
 				E49562C925F245B40068F15A /* RecentProducts */,
+				CE20DE1625FCA74D00274A95 /* TimerSetting */,
 				E451D08825F736E500890584 /* AddNewProduct */,
 			);
 			path = Modules;
@@ -383,6 +397,7 @@
 				CE02BA0C25F3AB6800788EE3 /* ProductInfoViewController.xib in Resources */,
 				E495628725F20F2D0068F15A /* LaunchScreen.storyboard in Resources */,
 				CE02B9F025F2B2F900788EE3 /* GoogleService-Info.plist in Resources */,
+				CE20DE1A25FCA7EF00274A95 /* TimerSettingViewController.xib in Resources */,
 				E495628425F20F2D0068F15A /* Assets.xcassets in Resources */,
 				CE3A168025F7957E00FFA849 /* RecentProductsViewController.xib in Resources */,
 				E495627F25F20F2A0068F15A /* Main.storyboard in Resources */,
@@ -448,6 +463,7 @@
 				E451D08025F3FFB000890584 /* UIButton+Extension.swift in Sources */,
 				E451D09825F774AE00890584 /* CellFromPopOverTableViewCell.swift in Sources */,
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
+				CE20DE1925FCA7EF00274A95 /* TimerSettingViewController.swift in Sources */,
 				E491966C25F8B71500395445 /* PopOverMenuTableViewModel.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
 				E451D09425F75B9F00890584 /* PopOverMenuTableViewController.swift in Sources */,

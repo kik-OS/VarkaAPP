@@ -7,8 +7,8 @@
 
 import UIKit
 
-class PopOverMenuTableViewController: UITableViewController {
-
+final class PopOverMenuTableViewController: UITableViewController {
+    
     // MARK: - Properties
     
     var delegate: AddNewProductViewControllerDelegate!
@@ -19,22 +19,17 @@ class PopOverMenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     //MARK: - Override methods
     
     override func viewWillLayoutSubviews() {
-        preferredContentSize = CGSize(width: popOverTableSize.width.rawValue ,
-                                      height: popOverTableSize.height.rawValue)
+        preferredContentSize = CGSize(width: PopOverTableSize.width.rawValue ,
+                                      height: PopOverTableSize.height.rawValue)
     }
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       viewModel.numberOfRows()
+        viewModel.numberOfRows()
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CellFromPopOverTableViewCell
