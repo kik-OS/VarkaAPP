@@ -9,6 +9,8 @@ import UIKit
 
 class AddNewProductViewController: UIViewController {
     
+   
+    
     // MARK: - Outlets
     
     @IBOutlet weak var codeLabel: UILabel!
@@ -18,6 +20,10 @@ class AddNewProductViewController: UIViewController {
     @IBOutlet weak var producerTF: UITextField!
     @IBOutlet weak var weightTF: UITextField!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var waterRatioLabel: UILabel!
+    @IBOutlet weak var stepperRatio: UIStepper!
+    
+   
     
     // MARK: - Properties
     
@@ -26,11 +32,25 @@ class AddNewProductViewController: UIViewController {
     
     // MARK: - Actions
     
+    @IBAction func weightProductEditingChanged() {
+        viewModel.textFromWeightTF = weightTF.text
+    }
+    @IBAction func stepperRatioTapped() {
+        viewModel.waterRatio = stepperRatio.value
+        waterRatioLabel.text = viewModel.stringForWaterRatio
+    }
+    @IBAction func needStirringSwitch(_ sender: UISwitch) {
+        viewModel.needStirring = sender.isOn
+    }
+    
     @IBAction func titleProductEditingChanged() {
         viewModel.textFromTitleProductTF = titleProductTF.text
     }
     @IBAction func cookingTimeEditingChanged() {
         viewModel.textFromCookingTimeTF = cookingTimeTF.text
+    }
+    @IBAction func producerProductEditingChanged() {
+        viewModel.textFromProducerTF = producerTF.text
     }
     
     @IBAction func closeButtonPressed() {
@@ -42,6 +62,8 @@ class AddNewProductViewController: UIViewController {
             successfulValidation() :
             showAlert()
     }
+    
+   
     
     // MARK: - Lifecycle methods
     
@@ -64,7 +86,8 @@ class AddNewProductViewController: UIViewController {
     
     
     private func successfulValidation() {
-        // отображение описания продукта
+        viewModel.codeLabelText = codeLabel.text
+        viewModel.createProduct()
         
         dismiss(animated: true)
     }
@@ -124,5 +147,8 @@ extension AddNewProductViewController: AddNewProductViewControllerDelegate {
         categoryButton.setTitle(item, for: .normal)
         categoryButton.setTitleColor(.black, for: .normal)
         viewModel.categorySelected = true
+        viewModel.selectedCategory = item
     }
 }
+
+
