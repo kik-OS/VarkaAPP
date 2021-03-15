@@ -27,7 +27,11 @@ class AddNewProductViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var viewModel: AddNewProductViewModelProtocol!
+    private var viewModel: AddNewProductViewModelProtocol! {
+        didSet {
+            viewModel.getCategories()
+        }
+    }
     
     
     // MARK: - Actions
@@ -71,8 +75,6 @@ class AddNewProductViewController: UIViewController {
         super.viewDidLoad()
         viewModel = AddNewProductViewModel()
         setupGestures()
-        
-        
     }
     
     // MARK: - Private methods
@@ -89,7 +91,7 @@ class AddNewProductViewController: UIViewController {
     
     private func successfulValidation() {
         viewModel.codeLabelText = codeLabel.text
-        viewModel.createProduct()
+        viewModel.initializeProduct()
         viewModel.createProductInCoreData()
 //        viewModel.createProductInFB()
         performSegue(withIdentifier: "unwindToProductInfo", sender: nil)
@@ -124,7 +126,7 @@ extension AddNewProductViewController {
     @objc private func tapped() {
         guard let popVC = storyboard?.instantiateViewController(identifier: "popVC") as? PopOverMenuTableViewController else { return }
         popVC.delegate = self
-        popVC.viewModel = PopOverMenuTableViewModel()
+        popVC.viewModel = PopOverMenuTableViewModel(categories: viewModel.categories)
         popVC.modalPresentationStyle = .popover
         
         let popOverVC = popVC.popoverPresentationController
@@ -158,11 +160,11 @@ extension AddNewProductViewController: UITextFieldDelegate {
 }
 
 extension AddNewProductViewController: AddNewProductViewControllerDelegate {
-    func getSelectedItemFromPopOver(item: String) {
-        categoryButton.setTitle(item, for: .normal)
+    func getSelectedItemFromPopOver(selectedCategory: String) {
+        categoryButton.setTitle(selectedCategory, for: .normal)
         categoryButton.setTitleColor(.black, for: .normal)
         viewModel.categorySelected = true
-        viewModel.selectedCategory = item
+        viewModel.selectedCategory = selectedCategory
     }
 }
 

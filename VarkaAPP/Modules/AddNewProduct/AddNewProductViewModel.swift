@@ -29,60 +29,18 @@ protocol AddNewProductViewModelProtocol {
     var stringForWaterRatio: String { get }
     var selectedCategory: String? { get set}
     var completedProduct: Product? { get }
+    var categories: [Category] { get }
     func validation() -> Bool
-    func createProduct()
+    func initializeProduct()
     func createProductInCoreData()
     func createProductInFB()
+    func getCategories()
     
     
 }
 
 final class AddNewProductViewModel: AddNewProductViewModelProtocol {
     
-    
-    func createProductInFB() {
-        guard let product = completedProduct else { return }
-        FirebaseService.shared.saveProduct(product)
-    }
-    
-    
-    
-    func createProductInCoreData() {
-        guard let productCD = completedProduct else { return }
-        
-        StorageManager.shared.saveProductCD(code: productCD.code, title: productCD.title,
-                                            producer: productCD.producer, category: productCD.category,
-                                            weight: productCD.weight, cookingTime: productCD.cookingTime,
-                                            intoBoilingWater: productCD.intoBoilingWater,
-                                            needStirring: productCD.needStirring,
-                                            waterRatio: productCD.waterRatio, date: Date())
-    }
-    
-    
-    
-
-    func createProduct() {
-        guard let barcode = codeLabelText else { return }
-        guard let title = textFromTitleProductTF else { return }
-        guard let producer = textFromProducerTF else { return }
-        guard let category = selectedCategory else { return }
-        guard let cookingTimeString = textFromCookingTimeTF else { return}
-        guard let cookingTimeInt = Int(cookingTimeString) else { return }
-        var weightInt: Int?
-        if let weightString = textFromWeightTF {
-            weightInt = Int(weightString)
-        }
-        completedProduct = Product(code: barcode, title: title,
-                                   producer: producer, category: category,
-                                   weight: weightInt, cookingTime: cookingTimeInt,
-                                   intoBoilingWater: true, needStirring: needStirring,
-                                   waterRatio: waterRatio)
-    }
-    
-  
-    
-    
-
     // MARK: - Properties
     var completedProduct: Product?
     var selectedCategory: String?
@@ -95,6 +53,7 @@ final class AddNewProductViewModel: AddNewProductViewModelProtocol {
     var waterRatio: Double = 1
     var textFromWeightTF: String?
     var incorrectMessage: String = ""
+    var categories: [Category] = []
     var stringForWaterRatio: String {
         "🍚 1 : \(Int(waterRatio))💧"
     }
@@ -131,10 +90,47 @@ final class AddNewProductViewModel: AddNewProductViewModelProtocol {
     }
     
     
+    func getCategories() {
+        FirebaseService.shared.fetchCategories { categories in
+            self.categories = categories
+        }
+    }
+    
+    func createProductInFB() {
+        guard let product = completedProduct else { return }
+        FirebaseService.shared.saveProduct(product)
+    }
+    
+    func createProductInCoreData() {
+        guard let productCD = completedProduct else { return }
+        StorageManager.shared.saveProductCD(code: productCD.code, title: productCD.title,
+                                            producer: productCD.producer, category: productCD.category,
+                                            weight: productCD.weight, cookingTime: productCD.cookingTime,
+                                            intoBoilingWater: productCD.intoBoilingWater,
+                                            needStirring: productCD.needStirring,
+                                            waterRatio: productCD.waterRatio, date: Date())
+    }
+    
+    func initializeProduct() {
+        guard let barcode = codeLabelText else { return }
+        guard let title = textFromTitleProductTF else { return }
+        guard let producer = textFromProducerTF else { return }
+        guard let category = selectedCategory else { return }
+        guard let cookingTimeString = textFromCookingTimeTF else { return}
+        guard let cookingTimeInt = Int(cookingTimeString) else { return }
+        var weightInt: Int?
+        if let weightString = textFromWeightTF {
+            weightInt = Int(weightString) }
+        completedProduct = Product(code: barcode, title: title,
+                                   producer: producer, category: category,
+                                   weight: weightInt, cookingTime: cookingTimeInt,
+                                   intoBoilingWater: true, needStirring: needStirring,
+                                   waterRatio: waterRatio)
+    }
 }
 
 protocol AddNewProductViewControllerDelegate {
-    func getSelectedItemFromPopOver(item: String)
+    func getSelectedItemFromPopOver(selectedCategory: String)
 }
 
 

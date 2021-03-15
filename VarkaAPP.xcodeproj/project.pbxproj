@@ -24,6 +24,7 @@
 		E451D08D25F7372100890584 /* AddNewProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08C25F7372100890584 /* AddNewProductViewModel.swift */; };
 		E451D09425F75B9F00890584 /* PopOverMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D09325F75B9F00890584 /* PopOverMenuTableViewController.swift */; };
 		E451D09825F774AE00890584 /* CellFromPopOverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D09725F774AE00890584 /* CellFromPopOverTableViewCell.swift */; };
+		E466EE5F25FF771E004E18D1 /* CustomTabBarControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466EE5E25FF771E004E18D1 /* CustomTabBarControllerViewModel.swift */; };
 		E491966C25F8B71500395445 /* PopOverMenuTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491966B25F8B71500395445 /* PopOverMenuTableViewModel.swift */; };
 		E491967525F8E30000395445 /* RecentProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967325F8E30000395445 /* RecentProductCollectionViewCell.swift */; };
 		E491967925F8F5A200395445 /* RecentProductCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967825F8F5A200395445 /* RecentProductCollectionView.swift */; };
@@ -63,6 +64,7 @@
 		E451D08C25F7372100890584 /* AddNewProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductViewModel.swift; sourceTree = "<group>"; };
 		E451D09325F75B9F00890584 /* PopOverMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverMenuTableViewController.swift; sourceTree = "<group>"; };
 		E451D09725F774AE00890584 /* CellFromPopOverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFromPopOverTableViewCell.swift; sourceTree = "<group>"; };
+		E466EE5E25FF771E004E18D1 /* CustomTabBarControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarControllerViewModel.swift; sourceTree = "<group>"; };
 		E491966B25F8B71500395445 /* PopOverMenuTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverMenuTableViewModel.swift; sourceTree = "<group>"; };
 		E491967325F8E30000395445 /* RecentProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		E491967825F8F5A200395445 /* RecentProductCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionView.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				E49562CD25F246DE0068F15A /* CustomTabBarController.swift */,
+				E466EE5E25FF771E004E18D1 /* CustomTabBarControllerViewModel.swift */,
 				E49562D025F247990068F15A /* CustomTabBar.swift */,
 			);
 			path = CustomTabBar;
@@ -456,6 +459,7 @@
 				E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */,
 				E491967925F8F5A200395445 /* RecentProductCollectionView.swift in Sources */,
 				E491969925FB5C2900395445 /* CGPath + Extension.swift in Sources */,
+				E466EE5F25FF771E004E18D1 /* CustomTabBarControllerViewModel.swift in Sources */,
 				E451D08025F3FFB000890584 /* UIButton+Extension.swift in Sources */,
 				E451D09825F774AE00890584 /* CellFromPopOverTableViewCell.swift in Sources */,
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
