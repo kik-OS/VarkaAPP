@@ -28,17 +28,39 @@ protocol AddNewProductViewModelProtocol {
     var incorrectMessage: String { get }
     var stringForWaterRatio: String { get }
     var selectedCategory: String? { get set}
+    var completedProduct: Product? { get }
     func validation() -> Bool
     func createProduct()
+    func createProductInCoreData()
+    func createProductInFB()
+    
     
 }
 
 final class AddNewProductViewModel: AddNewProductViewModelProtocol {
     
     
-    var selectedCategory: String?
+    func createProductInFB() {
+        guard let product = completedProduct else { return }
+        FirebaseService.shared.saveProduct(product)
+    }
     
     
+    
+    func createProductInCoreData() {
+        guard let productCD = completedProduct else { return }
+        
+        StorageManager.shared.saveProductCD(code: productCD.code, title: productCD.title,
+                                            producer: productCD.producer, category: productCD.category,
+                                            weight: productCD.weight, cookingTime: productCD.cookingTime,
+                                            intoBoilingWater: productCD.intoBoilingWater,
+                                            needStirring: productCD.needStirring,
+                                            waterRatio: productCD.waterRatio, date: Date())
+    }
+    
+    
+    
+
     func createProduct() {
         guard let barcode = codeLabelText else { return }
         guard let title = textFromTitleProductTF else { return }
@@ -50,9 +72,11 @@ final class AddNewProductViewModel: AddNewProductViewModelProtocol {
         if let weightString = textFromWeightTF {
             weightInt = Int(weightString)
         }
-        let product = Product(code: barcode, title: title, producer: producer, category: category, weight: weightInt, cookingTime: cookingTimeInt, intoBoilingWater: true, needStirring: needStirring, waterRatio: waterRatio)
-        
-        print("!!!!!!!!!!!!!!!!!!!\(product)!!!!!!!!!!!!!!!!!!")
+        completedProduct = Product(code: barcode, title: title,
+                                   producer: producer, category: category,
+                                   weight: weightInt, cookingTime: cookingTimeInt,
+                                   intoBoilingWater: true, needStirring: needStirring,
+                                   waterRatio: waterRatio)
     }
     
   
@@ -60,7 +84,9 @@ final class AddNewProductViewModel: AddNewProductViewModelProtocol {
     
 
     // MARK: - Properties
-    var codeLabelText: String? 
+    var completedProduct: Product?
+    var selectedCategory: String?
+    var codeLabelText: String?
     var textFromTitleProductTF: String?
     var textFromCookingTimeTF: String?
     var textFromProducerTF: String?

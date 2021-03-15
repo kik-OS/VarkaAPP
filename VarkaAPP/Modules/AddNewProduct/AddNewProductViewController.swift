@@ -9,7 +9,7 @@ import UIKit
 
 class AddNewProductViewController: UIViewController {
     
-   
+    
     
     // MARK: - Outlets
     
@@ -23,7 +23,7 @@ class AddNewProductViewController: UIViewController {
     @IBOutlet weak var waterRatioLabel: UILabel!
     @IBOutlet weak var stepperRatio: UIStepper!
     
-   
+    
     
     // MARK: - Properties
     
@@ -63,7 +63,7 @@ class AddNewProductViewController: UIViewController {
             showAlert()
     }
     
-   
+    
     
     // MARK: - Lifecycle methods
     
@@ -71,6 +71,8 @@ class AddNewProductViewController: UIViewController {
         super.viewDidLoad()
         viewModel = AddNewProductViewModel()
         setupGestures()
+        
+        
     }
     
     // MARK: - Private methods
@@ -88,11 +90,24 @@ class AddNewProductViewController: UIViewController {
     private func successfulValidation() {
         viewModel.codeLabelText = codeLabel.text
         viewModel.createProduct()
-        
-        dismiss(animated: true)
+        viewModel.createProductInCoreData()
+//        viewModel.createProductInFB()
+        performSegue(withIdentifier: "unwindToProductInfo", sender: nil)
     }
     
     
+    // MARK: - Override methods
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let productInfoVC = segue.destination as? ProductInfoViewController else {
+            return }
+        productInfoVC.viewModel = ProductInfoViewModel(product: viewModel.completedProduct)
+        guard let recentProductVC = segue.destination.tabBarController?.viewControllers?.last
+                as? RecentProductsViewController else { return }
+        recentProductVC.recentProductCollectionView.viewModel = RecentProductCollectionViewViewModel()
+        recentProductVC.recentProductCollectionView.viewModel.fetchProductFromCoreData {
+            recentProductVC.recentProductCollectionView.reloadData()
+        }
+    }
 }
 
 

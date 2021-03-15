@@ -27,7 +27,7 @@
         <!--Custom Tab Bar Controller-->
         <scene sceneID="mpw-V2-NPN">
             <objects>
-                <tabBarController id="C3u-R3-MZb" customClass="CustomTabBarController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="customTabBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C3u-R3-MZb" customClass="CustomTabBarController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="dlE-K4-omA">
                         <rightBarButtonItems>
                             <barButtonItem image="timer" catalog="system" id="URZ-Nx-ETA">
@@ -49,7 +49,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIE-Fl-ZVU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1001" y="90"/>
+            <point key="canvasLocation" x="-1084" y="90"/>
         </scene>
         <!--Add New Product View Controller-->
         <scene sceneID="2JN-jQ-wYi">
@@ -378,9 +378,11 @@
                         <outlet property="titleProductTF" destination="Opw-DD-c1S" id="dwF-xm-mHy"/>
                         <outlet property="waterRatioLabel" destination="zGw-lw-7Dz" id="cUb-1g-UC8"/>
                         <outlet property="weightTF" destination="dGI-iU-gH8" id="2M1-w6-2SU"/>
+                        <segue destination="MeM-Oj-keO" kind="unwind" identifier="unwindToProductInfo" unwindAction="unwindWithSegue:" id="GKk-Dw-5wY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-TG-UNZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="MeM-Oj-keO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-278.26086956521743" y="89.732142857142847"/>
         </scene>

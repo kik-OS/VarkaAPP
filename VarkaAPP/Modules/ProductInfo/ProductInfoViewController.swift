@@ -87,4 +87,6 @@ final class ProductInfoViewController: UIViewController {
             infoLabel.isHidden = true
         }
     }
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {}
 }
