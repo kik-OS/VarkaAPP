@@ -39,7 +39,7 @@ class RecentProductsViewController: UIViewController {
         view.addSubview(recentProductCollectionView)
         configureConstraints()
         //Переделать 
-        recentProductCollectionView.viewModel = RecentProductCollectionViewViewModel()
+        
     }
     
     // MARK: - Private methods

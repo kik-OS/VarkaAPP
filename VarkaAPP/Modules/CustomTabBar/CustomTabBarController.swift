@@ -36,6 +36,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         recentProductsVC.tabBarItem.title = "Недавние продукты"
         recentProductsVC.tabBarItem.image = UIImage(named: "box.png")
+        recentProductsVC.recentProductCollectionView.viewModel = RecentProductCollectionViewViewModel()
         viewControllers = [productInfoVC, recentProductsVC]
     }
     
@@ -78,22 +79,32 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func showAlert() {
-        let alert = UIAlertController(title: viewModel.alertTitle, message: viewModel.alertMessages, preferredStyle: .actionSheet)
-        let okAction = UIAlertAction(title: "Добавить", style: .default) { _ in
-            //
+        let alert = UIAlertController(title: viewModel.alertTitle, message: viewModel.alertMessages, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Добавить", style: .destructive) { _ in
+            guard let addNewProductVC = self.storyboard?.instantiateViewController(identifier: "addNewProductVC") as? AddNewProductViewController else { return }
+            addNewProductVC.viewModel = AddNewProductViewModel(code: self.viewModel.codeFromBarCodeScanner)
+            
+            self.present(addNewProductVC, animated: true)
         }
+        
         let cancelAction = UIAlertAction(title: "Нет, не хочу", style: .default) { _ in
-            //
         }
+        
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         present(alert, animated: true)
     }
     
     func showProductInfoVC() {
-        guard let productInfoVC = tabBarController?.viewControllers?.first as? ProductInfoViewController else { return }
-        productInfoVC.viewModel = ProductInfoViewModel(product: viewModel.product)
-        present(productInfoVC, animated: true)
+        guard let vc = self.viewControllers?.first as? ProductInfoViewController else { return }
+        vc.viewModel = ProductInfoViewModel(product: viewModel.product)
+        
+        viewModel.createProductInCoreData()
+        guard let recentProductVC = self.viewControllers?.last as? RecentProductsViewController else { return }
+        recentProductVC.recentProductCollectionView.viewModel.fetchProductFromCoreData {
+            recentProductVC.recentProductCollectionView.reloadData()
+        self.selectedIndex = 0
+    }
     }
     
 }
@@ -103,10 +114,14 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
 extension CustomTabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
     
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-        viewModel.getProductFromFB(code: code)
-//        viewModel.showAlert ? showAlert() : showProductInfoVC()
-//        viewModel.showAlert = false
-//        dismiss(animated: true)
+        viewModel.codeFromBarCodeScanner = code
+        viewModel.getProductFromFB(code: code) {
+            self.showProductInfoVC()
+        } completionB: {
+            self.showAlert()
+        }
+
+        self.dismiss(animated: true)
         
         
         
@@ -119,6 +134,7 @@ extension CustomTabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErro
     
     func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
         dismiss(animated: true)
+      
     }
 }
 

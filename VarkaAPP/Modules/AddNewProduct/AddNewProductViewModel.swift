@@ -36,10 +36,15 @@ protocol AddNewProductViewModelProtocol {
     func createProductInFB()
     func getCategories()
     
+    init(code: String)
     
 }
 
 final class AddNewProductViewModel: AddNewProductViewModelProtocol {
+    init(code: String) {
+        self.codeLabelText = code
+    }
+    
     
     // MARK: - Properties
     var completedProduct: Product?

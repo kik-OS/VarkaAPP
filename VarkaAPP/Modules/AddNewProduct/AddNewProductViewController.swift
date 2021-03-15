@@ -27,7 +27,7 @@ class AddNewProductViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var viewModel: AddNewProductViewModelProtocol! {
+    var viewModel: AddNewProductViewModelProtocol! {
         didSet {
             viewModel.getCategories()
         }
@@ -73,8 +73,8 @@ class AddNewProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = AddNewProductViewModel()
         setupGestures()
+        codeLabel.text = viewModel.codeLabelText
     }
     
     // MARK: - Private methods
@@ -93,7 +93,7 @@ class AddNewProductViewController: UIViewController {
         viewModel.codeLabelText = codeLabel.text
         viewModel.initializeProduct()
         viewModel.createProductInCoreData()
-//        viewModel.createProductInFB()
+        viewModel.createProductInFB()
         performSegue(withIdentifier: "unwindToProductInfo", sender: nil)
     }
     

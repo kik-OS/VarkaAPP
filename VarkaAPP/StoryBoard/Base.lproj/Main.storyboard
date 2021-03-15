@@ -29,17 +29,9 @@
             <objects>
                 <tabBarController storyboardIdentifier="customTabBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C3u-R3-MZb" customClass="CustomTabBarController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="dlE-K4-omA">
-                        <rightBarButtonItems>
-                            <barButtonItem image="timer" catalog="system" id="URZ-Nx-ETA">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem systemItem="add" id="Che-2E-bQx">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <segue destination="7Z7-UH-SDU" kind="presentation" id="XZD-2v-UeB"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="timer" catalog="system" id="URZ-Nx-ETA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ccC-ff-bsM" customClass="CustomTabBar" customModule="VarkaAPP" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -54,13 +46,13 @@
         <!--Add New Product View Controller-->
         <scene sceneID="2JN-jQ-wYi">
             <objects>
-                <viewController id="7Z7-UH-SDU" customClass="AddNewProductViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addNewProductVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Z7-UH-SDU" customClass="AddNewProductViewController" customModule="VarkaAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q42-Nc-QYf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="9l5-lN-5R8">
-                                <rect key="frame" x="20" y="55" width="374" height="529.5"/>
+                                <rect key="frame" x="20" y="99" width="374" height="529.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="PcZ-wc-V84">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
@@ -329,13 +321,13 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PT2-Dh-npl">
-                                <rect key="frame" x="372" y="12" width="30" height="30"/>
+                                <rect key="frame" x="372" y="56" width="30" height="30"/>
                                 <connections>
                                     <action selector="closeButtonPressed" destination="7Z7-UH-SDU" eventType="touchUpInside" id="b4r-f1-paC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3F-mr-hrf">
-                                <rect key="frame" x="74" y="623.5" width="266" height="42"/>
+                                <rect key="frame" x="74" y="667.5" width="266" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                 <state key="normal" title="Сохранить">

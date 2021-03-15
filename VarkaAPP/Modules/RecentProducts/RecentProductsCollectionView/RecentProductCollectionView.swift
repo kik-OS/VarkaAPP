@@ -13,13 +13,11 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
     
     var viewModel: RecentProductCollectionViewViewModelProtocol! {
         didSet {
-//            viewModel.fetchProducts { [weak self] in
-//                self?.reloadData()
             viewModel.fetchProductFromCoreData { [weak self] in
                 self?.reloadData()
             }
-            }
         }
+    }
     
     
     // MARK: - Initializer 
