@@ -8,10 +8,10 @@
 import Foundation
 
 protocol RecentProductCollectionViewViewModelProtocol: class {
-    func cellViewModel(at indexPath: IndexPath) -> RecentProductCollectionViewCellViewModelProtocol?
     var numberOfItemsInSection: Int { get }
     var productsCD: [ProductCD] { get }
     func fetchProductFromCoreData(completion: @escaping() -> Void)
+    func cellViewModel(at indexPath: IndexPath) -> RecentProductCollectionViewCellViewModelProtocol?
 }
 
 
@@ -20,7 +20,6 @@ class RecentProductCollectionViewViewModel: RecentProductCollectionViewViewModel
     // MARK: - Properties
     
     var productsCD: [ProductCD] = []
-    
     var numberOfItemsInSection: Int {
         productsCD.count
     }

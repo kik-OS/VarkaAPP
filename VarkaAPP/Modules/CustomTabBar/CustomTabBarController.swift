@@ -17,13 +17,22 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         viewModel = CustomTabBarControllerViewModel()
         delegate = self
         setupMiddleButton()
-        setupTabs()
+        setupTabBarItems()
+       
+        
     }
     
+    //изменение расстояния между tab bar items
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        self.tabBar.itemPositioning = .centered
+        self.tabBar.itemSpacing = UIScreen.main.bounds.width / 2.5
+    }
     
     // MARK: - Private methods
     
-    private func setupTabs() {
+    private func setupTabBarItems() {
         let productInfoViewModel = ProductInfoViewModel(product: nil)
         let productInfoVC = ProductInfoViewController(nibName: nil,
                                                       bundle: nil,
@@ -43,26 +52,33 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     private func setupMiddleButton() {
         
-        let middleButton = UIButton(frame: CGRect(x: (view.bounds.width / 2) - 30,
-                                                  y: -30,
-                                                  width: 60,
-                                                  height: 60))
-        
-        middleButton.setImage(UIImage(systemName: ImageTitles.tabBarMiddleButton), for: .normal)
-        middleButton.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 35,
-                                                                                 weight: .thin),
-                                                     forImageIn: .normal)
+//        let middleButton = UIButton(frame: CGRect(x: (view.bounds.width / 2) - 30,
+//                                                  y: -30,
+//                                                  width: 60,
+//                                                  height: 60))
+        let middleButton = UIButton()
         middleButton.backgroundColor = .white
         middleButton.layer.borderColor = UIColor.white.cgColor
         middleButton.layer.borderWidth = 1
-        middleButton.layer.cornerRadius = 0.5 * middleButton.bounds.size.width
+        middleButton.layer.cornerRadius = 34
         middleButton.clipsToBounds = true
         middleButton.tintColor = .systemIndigo
         middleButton.animationForCentralButton()
         middleButton.addTarget(self, action: #selector(centerButtonAction), for: .touchUpInside)
+        middleButton.translatesAutoresizingMaskIntoConstraints = false
+        middleButton.setImage(UIImage(systemName: ImageTitles.tabBarMiddleButton), for: .normal)
+        middleButton.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 35,
+                                                                                 weight: .thin),
+                                                                                 forImageIn: .normal)
         
-        tabBar.addSubview(middleButton)
+        view.addSubview(middleButton)
         view.layoutIfNeeded()
+        
+        middleButton.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor).isActive = true
+        middleButton.centerYAnchor.constraint(equalTo: tabBar.topAnchor).isActive = true
+        middleButton.widthAnchor.constraint(equalToConstant: 68).isActive = true
+        middleButton.heightAnchor.constraint(equalToConstant: 68).isActive = true
+         
     }
     
     @objc func centerButtonAction(sender: UIButton) {
@@ -103,6 +119,8 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         viewModel.createProductInCoreData()
         self.selectedIndex = 0
     }
+    
+   
 }
 
 

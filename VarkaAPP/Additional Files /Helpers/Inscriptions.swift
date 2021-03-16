@@ -13,7 +13,7 @@ struct Inscriptions {
     static let popVCStoryBoardID = "popVC"
     
     static let tabBarItemLeftTitle = "Как варить"
-    static let tabBarItemRightTitle = "Недавние продукты"
+    static let tabBarItemRightTitle = "Недавние"
     
     static let barCodeAlertTitle = "Хьюстон, у нас проблемы"
     static let barCodeAlertMessage = "Кажется, данного продукта еще нет в базе, вы можете нам помочь и добавить его вручную"

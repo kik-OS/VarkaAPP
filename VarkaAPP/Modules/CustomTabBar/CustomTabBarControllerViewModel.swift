@@ -10,10 +10,12 @@ import Foundation
 
 
 protocol CustomTabBarControllerViewModelProtocol: class {
-    func getProductFromFB(code: String, completionSuccess: @escaping() -> Void, completionProductNotFound: @escaping() -> Void)
+    
     var product: Product? { get }
     var codeFromBarCodeScanner: String { get set }
     func createProductInCoreData()
+    func getProductFromFB(code: String, completionSuccess: @escaping() -> Void,
+                          completionProductNotFound: @escaping() -> Void)
 }
 
 class CustomTabBarControllerViewModel: CustomTabBarControllerViewModelProtocol {
@@ -26,7 +28,9 @@ class CustomTabBarControllerViewModel: CustomTabBarControllerViewModelProtocol {
     
     // MARK: - Methods
     
-    func getProductFromFB(code: String, completionSuccess: @escaping() -> Void, completionProductNotFound: @escaping() -> Void) {
+    func getProductFromFB(code: String, completionSuccess: @escaping() -> Void,
+                          completionProductNotFound: @escaping() -> Void) {
+        
         FirebaseService.shared.fetchProduct(byCode: code) { [weak self] result in
             switch result {
             case .success(let product):
