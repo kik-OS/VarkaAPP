@@ -92,7 +92,6 @@ class AddNewProductViewController: UIViewController {
     private func successfulValidation() {
         viewModel.codeLabelText = codeLabel.text
         viewModel.initializeProduct()
-        viewModel.createProductInCoreData()
         viewModel.createProductInFB()
         performSegue(withIdentifier: "unwindToProductInfo", sender: nil)
     }
@@ -100,15 +99,8 @@ class AddNewProductViewController: UIViewController {
     
     // MARK: - Override methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let productInfoVC = segue.destination as? ProductInfoViewController else {
-            return }
+        guard let productInfoVC = segue.destination as? ProductInfoViewController else { return }
         productInfoVC.viewModel = ProductInfoViewModel(product: viewModel.completedProduct)
-        guard let recentProductVC = segue.destination.tabBarController?.viewControllers?.last
-                as? RecentProductsViewController else { return }
-        recentProductVC.recentProductCollectionView.viewModel = RecentProductCollectionViewViewModel()
-        recentProductVC.recentProductCollectionView.viewModel.fetchProductFromCoreData {
-            recentProductVC.recentProductCollectionView.reloadData()
-        }
     }
 }
 
@@ -124,7 +116,7 @@ extension AddNewProductViewController {
     }
     
     @objc private func tapped() {
-        guard let popVC = storyboard?.instantiateViewController(identifier: "popVC") as? PopOverMenuTableViewController else { return }
+        guard let popVC = storyboard?.instantiateViewController(identifier: Inscriptions.popVCStoryBoardID) as? PopOverMenuTableViewController else { return }
         popVC.delegate = self
         popVC.viewModel = PopOverMenuTableViewModel(categories: viewModel.categories)
         popVC.modalPresentationStyle = .popover

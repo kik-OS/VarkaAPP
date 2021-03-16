@@ -30,12 +30,12 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
                                                       viewModel: productInfoViewModel)
         
         let recentProductsVC = RecentProductsViewController()
-        productInfoVC.tabBarItem.title = "Как варить"
-        productInfoVC.tabBarItem.image = UIImage(named: "pot.png")
+        productInfoVC.tabBarItem.title = Inscriptions.tabBarItemLeftTitle
+        productInfoVC.tabBarItem.image = UIImage(named: ImageTitles.tabBarItemLeft)
         tabBar.tintColor = .systemIndigo
         
-        recentProductsVC.tabBarItem.title = "Недавние продукты"
-        recentProductsVC.tabBarItem.image = UIImage(named: "box.png")
+        recentProductsVC.tabBarItem.title = Inscriptions.tabBarItemRightTitle
+        recentProductsVC.tabBarItem.image = UIImage(named: ImageTitles.tabBarItemRight)
         recentProductsVC.recentProductCollectionView.viewModel = RecentProductCollectionViewViewModel()
         viewControllers = [productInfoVC, recentProductsVC]
     }
@@ -48,7 +48,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
                                                   width: 60,
                                                   height: 60))
         
-        middleButton.setImage(UIImage(systemName: "barcode.viewfinder"), for: .normal)
+        middleButton.setImage(UIImage(systemName: ImageTitles.tabBarMiddleButton), for: .normal)
         middleButton.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 35,
                                                                                  weight: .thin),
                                                      forImageIn: .normal)
@@ -71,7 +71,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         barCodeScannerVC.codeDelegate = self
         barCodeScannerVC.errorDelegate = self
         barCodeScannerVC.dismissalDelegate = self
-        //        barCodeScannerVC.modalPresentationStyle = .fullScreen
+        barCodeScannerVC.modalPresentationStyle = .fullScreen
         barCodeScannerVC.messageViewController.regularTintColor = .systemIndigo
         barCodeScannerVC.messageViewController.textLabel.textColor = .systemIndigo
         barCodeScannerVC.headerViewController.closeButton.tintColor = .systemIndigo
@@ -79,15 +79,17 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func showAlert() {
-        let alert = UIAlertController(title: viewModel.alertTitle, message: viewModel.alertMessages, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Добавить", style: .destructive) { _ in
-            guard let addNewProductVC = self.storyboard?.instantiateViewController(identifier: "addNewProductVC") as? AddNewProductViewController else { return }
+        let alert = UIAlertController(title: Inscriptions.barCodeAlertTitle, message: Inscriptions.barCodeAlertMessage, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: Inscriptions.barCodeAlertButtonOkTitle, style: .destructive) { _ in
+            //Действие при нажатии на ok
+            guard let addNewProductVC = self.storyboard?.instantiateViewController(identifier: Inscriptions.addNewProductVCStoryBoardID) as? AddNewProductViewController else { return }
             addNewProductVC.viewModel = AddNewProductViewModel(code: self.viewModel.codeFromBarCodeScanner)
-            
             self.present(addNewProductVC, animated: true)
         }
         
-        let cancelAction = UIAlertAction(title: "Нет, не хочу", style: .default) { _ in
+        let cancelAction = UIAlertAction(title: Inscriptions.barCodeAlertButtonCancelTitle, style: .default) { _ in
+            //действие при нажатии на cancel
         }
         
         alert.addAction(okAction)
@@ -95,19 +97,14 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         present(alert, animated: true)
     }
     
-    func showProductInfoVC() {
-        guard let vc = self.viewControllers?.first as? ProductInfoViewController else { return }
-        vc.viewModel = ProductInfoViewModel(product: viewModel.product)
-        
+    private func showProductInfoVC() {
+        guard let productInfoVC = self.viewControllers?.first as? ProductInfoViewController else { return }
+        productInfoVC.viewModel = ProductInfoViewModel(product: viewModel.product)
         viewModel.createProductInCoreData()
-        guard let recentProductVC = self.viewControllers?.last as? RecentProductsViewController else { return }
-        recentProductVC.recentProductCollectionView.viewModel.fetchProductFromCoreData {
-            recentProductVC.recentProductCollectionView.reloadData()
         self.selectedIndex = 0
     }
-    }
-    
 }
+
 
 // MARK: - Extensions
 
@@ -115,17 +112,13 @@ extension CustomTabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErro
     
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
         viewModel.codeFromBarCodeScanner = code
-        viewModel.getProductFromFB(code: code) {
-            self.showProductInfoVC()
-        } completionB: {
-            self.showAlert()
+        
+        viewModel.getProductFromFB(code: code) { [weak self] in
+            self?.showProductInfoVC()
+        } completionProductNotFound: { [weak self] in
+            self?.showAlert()
         }
-
         self.dismiss(animated: true)
-        
-        
-        
-        
     }
     
     func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
@@ -134,7 +127,7 @@ extension CustomTabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErro
     
     func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
         dismiss(animated: true)
-      
+        
     }
 }
 

@@ -43,8 +43,10 @@ class StorageManager {
     }
     
     // Save data
-    func saveProductCD(code: String, title: String, producer: String, category: String, weight: Int?,
-                       cookingTime: Int, intoBoilingWater: Bool?, needStirring: Bool?, waterRatio: Double, date: Date) {
+    func saveProductCD(code: String, title: String, producer: String,
+                       category: String, weight: Int?,
+                       cookingTime: Int, intoBoilingWater: Bool?,
+                       needStirring: Bool?, waterRatio: Double, date: Date) {
         
         let productCD = ProductCD(context: viewContext)
         productCD.code = code
@@ -62,8 +64,6 @@ class StorageManager {
             productCD.needsStirring = productNeedStirring
             productCD.intoBoilingWater = productIntoBoilingWater
         }
-        
-        
         saveContext()
     }
     

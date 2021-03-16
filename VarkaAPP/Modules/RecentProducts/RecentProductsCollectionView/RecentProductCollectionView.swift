@@ -37,8 +37,6 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
         
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
-        
-        
     }
     
     required init?(coder: NSCoder) {

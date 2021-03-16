@@ -54,12 +54,8 @@ final class ProductInfoViewController: UIViewController {
 //        FirebaseService().saveCategories(Category.getCategories())
         
         FirebaseService.shared.fetchCategories { categories in
-            print("Категории:")
             categories.sorted { $0.id < $1.id }.forEach { print($0) }
-            
-            let categoryNames = categories.sorted { $0.id < $1.id }.map { $0.name }
-            print("Массив категорий:")
-            print(categoryNames)
+//            let categoryNames = categories.sorted { $0.id < $1.id }.map { $0.name }
         }
     }
     

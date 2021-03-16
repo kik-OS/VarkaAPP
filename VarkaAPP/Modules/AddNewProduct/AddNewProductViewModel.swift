@@ -32,7 +32,6 @@ protocol AddNewProductViewModelProtocol {
     var categories: [Category] { get }
     func validation() -> Bool
     func initializeProduct()
-    func createProductInCoreData()
     func createProductInFB()
     func getCategories()
     
@@ -104,16 +103,6 @@ final class AddNewProductViewModel: AddNewProductViewModelProtocol {
     func createProductInFB() {
         guard let product = completedProduct else { return }
         FirebaseService.shared.saveProduct(product)
-    }
-    
-    func createProductInCoreData() {
-        guard let productCD = completedProduct else { return }
-        StorageManager.shared.saveProductCD(code: productCD.code, title: productCD.title,
-                                            producer: productCD.producer, category: productCD.category,
-                                            weight: productCD.weight, cookingTime: productCD.cookingTime,
-                                            intoBoilingWater: productCD.intoBoilingWater,
-                                            needStirring: productCD.needStirring,
-                                            waterRatio: productCD.waterRatio, date: Date())
     }
     
     func initializeProduct() {

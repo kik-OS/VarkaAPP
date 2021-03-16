@@ -17,34 +17,35 @@ class RecentProductsViewController: UIViewController {
     // MARK: - Properties
     
     var recentProductCollectionView = RecentProductCollectionView()
-    private var viewModel: RecentProductViewModelProtocol!
-    
+    //    private var viewModel: RecentProductViewModelProtocol!
     
     // MARK: - Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-//        let test: [ProductCD] = StorageManager.shared.fetchData()
-//
-//        for i in test {
-//            StorageManager.shared.deleteProductCD(i)
-//        }
-        
-        
-        
+        //        let test: [ProductCD] = StorageManager.shared.fetchData()
+        //
+        //        for i in test {
+        //            StorageManager.shared.deleteProductCD(i)
+        //        }
         
         view.addSubview(recentProductCollectionView)
         configureConstraints()
-        //Переделать 
         
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        recentProductCollectionView.viewModel.fetchProductFromCoreData { [ weak self] in
+            self?.recentProductCollectionView.reloadData()
+        }
     }
     
     // MARK: - Private methods
     
-   private func configureConstraints() {
+    private func configureConstraints() {
         recentProductCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         recentProductCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         recentProductCollectionView.topAnchor.constraint(equalTo: recentProductLabel.bottomAnchor,
