@@ -16,6 +16,8 @@ protocol ProductInfoViewModelProtocol {
     var isHiddenProductStackView: Bool { get }
     
     init(product: Product?)
+    
+    func getTimerViewModel() -> TimerViewModelProtocol
 }
 
 final class ProductInfoViewModel: ProductInfoViewModelProtocol {
@@ -56,5 +58,11 @@ final class ProductInfoViewModel: ProductInfoViewModelProtocol {
     
     init(product: Product?) {
         self.product.value = product
+    }
+    
+    // MARK: - Public methods
+    
+    func getTimerViewModel() -> TimerViewModelProtocol {
+        TimerViewModel(minutes: product.value?.cookingTime ?? 0)
     }
 }
