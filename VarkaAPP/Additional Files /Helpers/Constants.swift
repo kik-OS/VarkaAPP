@@ -14,14 +14,18 @@ struct ConstantsCollectionView {
     static let productsCollectionItemWidth = (UIScreen.main.bounds.width - ConstantsCollectionView.leftDistanceToView - ConstantsCollectionView.rightDistanceToView - (ConstantsCollectionView.productsCollectionMinimumLineSpacing / 2)) / 2
 }
 
-enum Constants {
+enum DataConstants {
     static let categoryNames = ["Макароны", "Гречка", "Рис", "Пельмени", "Вареники", "Овсянка",
                                 "Чечевица красная", "Чечевица зелёная", "Другое"]
 }
 
-enum popOverTableSize: Int {
+enum PopOverTableSize: Int {
     case width = 150
     case height = 160
 }
 
-
+enum UIConstants {
+    static let defaultCornerRadius: CGFloat = 10
+    static let buttonEnabledColor = UIColor.systemIndigo
+    static let buttonDisabledColor = UIColor.systemGray2
+}

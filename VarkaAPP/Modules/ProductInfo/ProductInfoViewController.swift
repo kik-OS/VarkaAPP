@@ -63,6 +63,15 @@ final class ProductInfoViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions
+    
+    @IBAction func setTimerTapped() {
+        let timerViewModel = viewModel.getTimerViewModel()
+        let timerVC = TimerViewController(nibName: nil, bundle: nil, viewModel: timerViewModel)
+        timerVC.modalPresentationStyle = .overCurrentContext
+        present(timerVC, animated: true)
+    }
+    
     // MARK: - Private methods
     
    private func setupNavigationBar() {

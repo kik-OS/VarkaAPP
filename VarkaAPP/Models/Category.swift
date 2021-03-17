@@ -59,6 +59,6 @@ struct Category {
 extension Category {
     
     static func getCategories() -> [Category] {
-        Constants.categoryNames.map { Category(name: $0) }
+        DataConstants.categoryNames.map { Category(name: $0) }
     }
 }
