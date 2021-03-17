@@ -51,13 +51,10 @@ class CustomTabBarControllerViewModel: CustomTabBarControllerViewModelProtocol {
         }
     }
     
+    
+    //Переделать 
     func createProductInCoreData() {
         guard let productCD = product else { return }
-        StorageManager.shared.saveProductCD(code: productCD.code, title: productCD.title,
-                                            producer: productCD.producer, category: productCD.category,
-                                            weight: productCD.weight, cookingTime: productCD.cookingTime,
-                                            intoBoilingWater: productCD.intoBoilingWater,
-                                            needStirring: productCD.needStirring,
-                                            waterRatio: productCD.waterRatio, date: Date())
+        StorageManager.shared.saveProductCD(product: productCD)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageTitles {
+enum ImageTitles {
     
   static let tabBarItemLeft = "pot.png"
   static let tabBarItemRight = "box.png"

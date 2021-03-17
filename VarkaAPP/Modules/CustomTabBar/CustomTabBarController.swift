@@ -18,16 +18,14 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         delegate = self
         setupMiddleButton()
         setupTabBarItems()
-       
-        
     }
     
     //изменение расстояния между tab bar items
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        self.tabBar.itemPositioning = .centered
-        self.tabBar.itemSpacing = UIScreen.main.bounds.width / 2.5
+        tabBar.itemPositioning = .centered
+        tabBar.itemSpacing = UIScreen.main.bounds.width / 2.5
     }
     
     // MARK: - Private methods
@@ -97,8 +95,10 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
     private func showAlert() {
         let alert = UIAlertController(title: Inscriptions.barCodeAlertTitle, message: Inscriptions.barCodeAlertMessage, preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: Inscriptions.barCodeAlertButtonOkTitle, style: .destructive) { _ in
+        let okAction = UIAlertAction(title: Inscriptions.barCodeAlertButtonOkTitle, style: .destructive) { [weak self] _ in
             //Действие при нажатии на ok
+            guard let self = self else { return }
+            //Перенести инициализацию в модель
             guard let addNewProductVC = self.storyboard?.instantiateViewController(identifier: Inscriptions.addNewProductVCStoryBoardID) as? AddNewProductViewController else { return }
             addNewProductVC.viewModel = AddNewProductViewModel(code: self.viewModel.codeFromBarCodeScanner)
             self.present(addNewProductVC, animated: true)
@@ -114,10 +114,11 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func showProductInfoVC() {
-        guard let productInfoVC = self.viewControllers?.first as? ProductInfoViewController else { return }
+        guard let productInfoVC = viewControllers?.first as? ProductInfoViewController else { return }
         productInfoVC.viewModel = ProductInfoViewModel(product: viewModel.product)
         viewModel.createProductInCoreData()
-        self.selectedIndex = 0
+//        self.selectedIndex = 0
+        selectedViewController = viewControllers?.first
     }
     
    
