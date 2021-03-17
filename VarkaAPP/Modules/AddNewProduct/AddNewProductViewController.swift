@@ -9,6 +9,8 @@ import UIKit
 
 class AddNewProductViewController: UIViewController {
     
+    
+    
     // MARK: - Outlets
     
     @IBOutlet weak var codeLabel: UILabel!
@@ -18,19 +20,41 @@ class AddNewProductViewController: UIViewController {
     @IBOutlet weak var producerTF: UITextField!
     @IBOutlet weak var weightTF: UITextField!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var waterRatioLabel: UILabel!
+    @IBOutlet weak var stepperRatio: UIStepper!
+    
+    
     
     // MARK: - Properties
     
-    private var viewModel: AddNewProductViewModelProtocol!
+    var viewModel: AddNewProductViewModelProtocol! {
+        didSet {
+            viewModel.getCategories()
+        }
+    }
     
     
     // MARK: - Actions
+    
+    @IBAction func weightProductEditingChanged() {
+        viewModel.textFromWeightTF = weightTF.text
+    }
+    @IBAction func stepperRatioTapped() {
+        viewModel.waterRatio = stepperRatio.value
+        waterRatioLabel.text = viewModel.stringForWaterRatio
+    }
+    @IBAction func needStirringSwitch(_ sender: UISwitch) {
+        viewModel.needStirring = sender.isOn
+    }
     
     @IBAction func titleProductEditingChanged() {
         viewModel.textFromTitleProductTF = titleProductTF.text
     }
     @IBAction func cookingTimeEditingChanged() {
         viewModel.textFromCookingTimeTF = cookingTimeTF.text
+    }
+    @IBAction func producerProductEditingChanged() {
+        viewModel.textFromProducerTF = producerTF.text
     }
     
     @IBAction func closeButtonPressed() {
@@ -43,12 +67,14 @@ class AddNewProductViewController: UIViewController {
             showAlert()
     }
     
+    
+    
     // MARK: - Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = AddNewProductViewModel()
         setupGestures()
+        codeLabel.text = viewModel.codeLabelText
     }
     
     // MARK: - Private methods
@@ -64,12 +90,18 @@ class AddNewProductViewController: UIViewController {
     
     
     private func successfulValidation() {
-        // отображение описания продукта
-        
-        dismiss(animated: true)
+        viewModel.codeLabelText = codeLabel.text
+        viewModel.initializeProduct()
+        viewModel.createProductInFB()
+        performSegue(withIdentifier: "unwindToProductInfo", sender: nil)
     }
     
     
+    // MARK: - Override methods
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let productInfoVC = segue.destination as? ProductInfoViewController else { return }
+        productInfoVC.viewModel = ProductInfoViewModel(product: viewModel.completedProduct)
+    }
 }
 
 
@@ -84,9 +116,9 @@ extension AddNewProductViewController {
     }
     
     @objc private func tapped() {
-        guard let popVC = storyboard?.instantiateViewController(identifier: "popVC") as? PopOverMenuTableViewController else { return }
+        guard let popVC = storyboard?.instantiateViewController(identifier: Inscriptions.popVCStoryBoardID) as? PopOverMenuTableViewController else { return }
         popVC.delegate = self
-        popVC.viewModel = PopOverMenuTableViewModel()
+        popVC.viewModel = PopOverMenuTableViewModel(categories: viewModel.categories)
         popVC.modalPresentationStyle = .popover
         
         let popOverVC = popVC.popoverPresentationController
@@ -120,9 +152,12 @@ extension AddNewProductViewController: UITextFieldDelegate {
 }
 
 extension AddNewProductViewController: AddNewProductViewControllerDelegate {
-    func getSelectedItemFromPopOver(item: String) {
-        categoryButton.setTitle(item, for: .normal)
+    func getSelectedItemFromPopOver(selectedCategory: String) {
+        categoryButton.setTitle(selectedCategory, for: .normal)
         categoryButton.setTitleColor(.black, for: .normal)
         viewModel.categorySelected = true
+        viewModel.selectedCategory = selectedCategory
     }
 }
+
+

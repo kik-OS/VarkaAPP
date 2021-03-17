@@ -47,20 +47,8 @@ final class ProductInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupNavigationBar()
         view.backgroundColor = .systemIndigo
-        
-//        FirebaseService().saveCategories(Category.getCategories())
-        
-        FirebaseService.shared.fetchCategories { categories in
-            print("Категории:")
-            categories.sorted { $0.id < $1.id }.forEach { print($0) }
-            
-            let categoryNames = categories.sorted { $0.id < $1.id }.map { $0.name }
-            print("Массив категорий:")
-            print(categoryNames)
-        }
     }
     
     // MARK: - Actions
@@ -96,4 +84,6 @@ final class ProductInfoViewController: UIViewController {
             infoLabel.isHidden = true
         }
     }
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {}
 }

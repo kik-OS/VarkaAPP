@@ -7,21 +7,31 @@
 
 import Foundation
 
-let arrayOfCategories = ["Макароны", "Рис", "Гречка", "Крупа", "Пельмени", "Вареники"]
+
 
 protocol PopOverMenuTableViewModelProtocol {
+    var categories : [Category] { get }
     func numberOfRows() -> Int
     func selectedCategory(at indexPath: IndexPath) -> String
+    init(categories: [Category])
     
 }
 
 class PopOverMenuTableViewModel: PopOverMenuTableViewModelProtocol {
+    required init(categories: [Category]) {
+        self.categories = categories
+    }
+    
+    
+    
+    var categories: [Category] = []
+    
     func selectedCategory(at indexPath: IndexPath) -> String {
-        arrayOfCategories[indexPath.row]
+        categories[indexPath.row].name
     }
     
     func numberOfRows() -> Int {
-        arrayOfCategories.count
+        categories.count
     }
     
     

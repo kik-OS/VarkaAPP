@@ -38,7 +38,7 @@ final class PopOverMenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate.getSelectedItemFromPopOver(item: viewModel.selectedCategory(at: indexPath))
+        delegate.getSelectedItemFromPopOver(selectedCategory: viewModel.selectedCategory(at: indexPath))
         dismiss(animated: true, completion: nil)
     }
 }

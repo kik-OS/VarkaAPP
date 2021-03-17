@@ -43,27 +43,25 @@ class StorageManager {
     }
     
     // Save data
-    func saveProductCD(code: String, title: String, producer: String, category: String, weight: Int?,
-                       cookingTime: Int, intoBoilingWater: Bool?, needStirring: Bool?, waterRatio: Double, date: Date) {
+    func saveProductCD(product: Product) {
+        
         
         let productCD = ProductCD(context: viewContext)
-        productCD.code = code
-        productCD.title = title
-        productCD.producer = producer
-        productCD.category = category
-        productCD.cookingTime = Int64(cookingTime)
-        productCD.waterRatio = waterRatio
+        productCD.code = product.code
+        productCD.title = product.title
+        productCD.producer = product.producer
+        productCD.category = product.category
+        productCD.cookingTime = Int64(product.cookingTime)
+        productCD.waterRatio = product.waterRatio
         productCD.date = Date()
         
-        if let productWeight = weight,
-           let productNeedStirring = needStirring,
-           let productIntoBoilingWater = intoBoilingWater {
+        if let productWeight = product.weight,
+           let productNeedStirring = product.needStirring,
+           let productIntoBoilingWater = product.intoBoilingWater {
             productCD.weight = Int64(productWeight)
             productCD.needsStirring = productNeedStirring
             productCD.intoBoilingWater = productIntoBoilingWater
         }
-        
-        
         saveContext()
     }
     
