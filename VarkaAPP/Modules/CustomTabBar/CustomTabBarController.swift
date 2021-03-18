@@ -40,7 +40,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     // MARK: - Actions
     
     @objc private func centerButtonAction(sender: UIButton) {
-        sender.animationForCentralButton()
+        sender.animationForMiddleButton()
         let barCodeScannerVC = CustomBarcodeScannerViewController(delegate: self)
         present(barCodeScannerVC, animated: true, completion: nil)
     }
@@ -67,6 +67,8 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     }
     
     private func setupMiddleButton() {
+        let middleButton = UIButton.setupMiddleButtonTabBar()
+         
         middleButton.addTarget(self, action: #selector(centerButtonAction), for: .touchUpInside)
         
         view.addSubview(middleButton)

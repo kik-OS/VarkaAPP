@@ -49,7 +49,7 @@
 		E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562CD25F246DE0068F15A /* CustomTabBarController.swift */; };
 		E49562D125F247990068F15A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562D025F247990068F15A /* CustomTabBar.swift */; };
 		E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562D825F2775E0068F15A /* RecentProductViewModel.swift */; };
-		E4AAA443260369B0006DF73A /* middleButtonTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AAA442260369B0006DF73A /* middleButtonTabBar.swift */; };
+		E4AAA443260369B0006DF73A /* MiddleButtonTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AAA442260369B0006DF73A /* MiddleButtonTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,7 +99,7 @@
 		E49562CD25F246DE0068F15A /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		E49562D025F247990068F15A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		E49562D825F2775E0068F15A /* RecentProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductViewModel.swift; sourceTree = "<group>"; };
-		E4AAA442260369B0006DF73A /* middleButtonTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = middleButtonTabBar.swift; sourceTree = "<group>"; };
+		E4AAA442260369B0006DF73A /* MiddleButtonTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleButtonTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +183,7 @@
 			children = (
 				E49562D025F247990068F15A /* CustomTabBar.swift */,
 				CE2FF95A2603879600FDA68D /* CustomBarcodeScannerViewController.swift */,
-				E4AAA442260369B0006DF73A /* middleButtonTabBar.swift */,
+				E4AAA442260369B0006DF73A /* MiddleButtonTabBar.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -522,7 +522,7 @@
 				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,
 				E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */,
 				E49196C725FB9F5D00395445 /* StorageManager.swift in Sources */,
-				E4AAA443260369B0006DF73A /* middleButtonTabBar.swift in Sources */,
+				E4AAA443260369B0006DF73A /* MiddleButtonTabBar.swift in Sources */,
 				CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */,
 				E451D08425F4002F00890584 /* Constants.swift in Sources */,
 				E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */,
