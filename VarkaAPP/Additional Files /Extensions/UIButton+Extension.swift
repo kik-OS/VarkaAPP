@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIButton {
+    
     func animationForCentralButton() {
         let rotation = CASpringAnimation(keyPath: "transform.rotation.z")
         rotation.toValue = NSNumber(value: Double.pi * 4)

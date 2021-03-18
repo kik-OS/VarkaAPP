@@ -22,13 +22,14 @@
 		CE3A168F25F9D9BB00FFA849 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */; };
 		CE3F63B926011C7200968946 /* TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F63B826011C7200968946 /* TimerPickerView.swift */; };
 		CE3F63BC26011EAE00968946 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F63BB26011EAE00968946 /* TimerViewModel.swift */; };
+		CE50DD7D260276A700E33695 /* FirebaseServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50DD7C260276A700E33695 /* FirebaseServiceError.swift */; };
 		E451D08025F3FFB000890584 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D07F25F3FFB000890584 /* UIButton+Extension.swift */; };
 		E451D08425F4002F00890584 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08325F4002F00890584 /* Constants.swift */; };
-		E451D08A25F7370C00890584 /* AddNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08925F7370C00890584 /* AddNewProductViewController.swift */; };
-		E451D08D25F7372100890584 /* AddNewProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08C25F7372100890584 /* AddNewProductViewModel.swift */; };
+		E451D08A25F7370C00890584 /* AddingNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08925F7370C00890584 /* AddingNewProductViewController.swift */; };
+		E451D08D25F7372100890584 /* AddingNewProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08C25F7372100890584 /* AddingNewProductViewModel.swift */; };
 		E451D09425F75B9F00890584 /* PopOverMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D09325F75B9F00890584 /* PopOverMenuTableViewController.swift */; };
 		E451D09825F774AE00890584 /* CellFromPopOverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D09725F774AE00890584 /* CellFromPopOverTableViewCell.swift */; };
-		E466EE5F25FF771E004E18D1 /* CustomTabBarControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466EE5E25FF771E004E18D1 /* CustomTabBarControllerViewModel.swift */; };
+		E466EE5F25FF771E004E18D1 /* CustomTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466EE5E25FF771E004E18D1 /* CustomTabBarViewModel.swift */; };
 		E466EE79260089AF004E18D1 /* ImageTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466EE78260089AF004E18D1 /* ImageTitles.swift */; };
 		E466EE7C26008BC4004E18D1 /* Inscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466EE7B26008BC4004E18D1 /* Inscriptions.swift */; };
 		E491966C25F8B71500395445 /* PopOverMenuTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491966B25F8B71500395445 /* PopOverMenuTableViewModel.swift */; };
@@ -36,7 +37,7 @@
 		E491967925F8F5A200395445 /* RecentProductCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967825F8F5A200395445 /* RecentProductCollectionView.swift */; };
 		E491967F25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967E25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift */; };
 		E491968725FA8E4B00395445 /* RecentProductCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491968625FA8E4B00395445 /* RecentProductCollectionViewCellViewModel.swift */; };
-		E491969925FB5C2900395445 /* CGPath + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491969825FB5C2900395445 /* CGPath + Extension.swift */; };
+		E491969925FB5C2900395445 /* CGPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491969825FB5C2900395445 /* CGPath+Extension.swift */; };
 		E49196C725FB9F5D00395445 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49196C625FB9F5D00395445 /* StorageManager.swift */; };
 		E495627825F20F2A0068F15A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627725F20F2A0068F15A /* AppDelegate.swift */; };
 		E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495627925F20F2A0068F15A /* SceneDelegate.swift */; };
@@ -68,13 +69,14 @@
 		CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		CE3F63B826011C7200968946 /* TimerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPickerView.swift; sourceTree = "<group>"; };
 		CE3F63BB26011EAE00968946 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		CE50DD7C260276A700E33695 /* FirebaseServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServiceError.swift; sourceTree = "<group>"; };
 		E451D07F25F3FFB000890584 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		E451D08325F4002F00890584 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E451D08925F7370C00890584 /* AddNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductViewController.swift; sourceTree = "<group>"; };
-		E451D08C25F7372100890584 /* AddNewProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductViewModel.swift; sourceTree = "<group>"; };
+		E451D08925F7370C00890584 /* AddingNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewProductViewController.swift; sourceTree = "<group>"; };
+		E451D08C25F7372100890584 /* AddingNewProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewProductViewModel.swift; sourceTree = "<group>"; };
 		E451D09325F75B9F00890584 /* PopOverMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverMenuTableViewController.swift; sourceTree = "<group>"; };
 		E451D09725F774AE00890584 /* CellFromPopOverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFromPopOverTableViewCell.swift; sourceTree = "<group>"; };
-		E466EE5E25FF771E004E18D1 /* CustomTabBarControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarControllerViewModel.swift; sourceTree = "<group>"; };
+		E466EE5E25FF771E004E18D1 /* CustomTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewModel.swift; sourceTree = "<group>"; };
 		E466EE78260089AF004E18D1 /* ImageTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitles.swift; sourceTree = "<group>"; };
 		E466EE7B26008BC4004E18D1 /* Inscriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inscriptions.swift; sourceTree = "<group>"; };
 		E491966B25F8B71500395445 /* PopOverMenuTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverMenuTableViewModel.swift; sourceTree = "<group>"; };
@@ -82,7 +84,7 @@
 		E491967825F8F5A200395445 /* RecentProductCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionView.swift; sourceTree = "<group>"; };
 		E491967E25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionViewViewModel.swift; sourceTree = "<group>"; };
 		E491968625FA8E4B00395445 /* RecentProductCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
-		E491969825FB5C2900395445 /* CGPath + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPath + Extension.swift"; sourceTree = "<group>"; };
+		E491969825FB5C2900395445 /* CGPath+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPath+Extension.swift"; sourceTree = "<group>"; };
 		E49196C625FB9F5D00395445 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E495627425F20F2A0068F15A /* VarkaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VarkaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495627725F20F2A0068F15A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				CE02BA0525F3A94500788EE3 /* FirebaseService.swift */,
+				CE50DD7C260276A700E33695 /* FirebaseServiceError.swift */,
 			);
 			path = FirebaseService;
 			sourceTree = "<group>";
@@ -173,15 +176,23 @@
 			path = TimerSetting;
 			sourceTree = "<group>";
 		};
+		CE2FF94426032FBC00FDA68D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				E49562D025F247990068F15A /* CustomTabBar.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		CE3A167B25F7925A00FFA849 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				E491969425FB5BAC00395445 /* PopOverMenu */,
 				E49562CB25F246A90068F15A /* CustomTabBar */,
+				E491969425FB5BAC00395445 /* PopOverMenu */,
 				CE02BA0825F3AB1400788EE3 /* ProductInfo */,
 				E49562C925F245B40068F15A /* RecentProducts */,
 				CE20DE1625FCA74D00274A95 /* TimerSetting */,
-				E451D08825F736E500890584 /* AddNewProduct */,
+				E451D08825F736E500890584 /* AddingNewProduct */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -191,7 +202,7 @@
 			children = (
 				E451D07F25F3FFB000890584 /* UIButton+Extension.swift */,
 				CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */,
-				E491969825FB5C2900395445 /* CGPath + Extension.swift */,
+				E491969825FB5C2900395445 /* CGPath+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,13 +228,13 @@
 			path = "Additional Files ";
 			sourceTree = "<group>";
 		};
-		E451D08825F736E500890584 /* AddNewProduct */ = {
+		E451D08825F736E500890584 /* AddingNewProduct */ = {
 			isa = PBXGroup;
 			children = (
-				E451D08925F7370C00890584 /* AddNewProductViewController.swift */,
-				E451D08C25F7372100890584 /* AddNewProductViewModel.swift */,
+				E451D08925F7370C00890584 /* AddingNewProductViewController.swift */,
+				E451D08C25F7372100890584 /* AddingNewProductViewModel.swift */,
 			);
-			path = AddNewProduct;
+			path = AddingNewProduct;
 			sourceTree = "<group>";
 		};
 		E491967225F8E2BC00395445 /* RecentProductViewCell */ = {
@@ -355,8 +366,8 @@
 			isa = PBXGroup;
 			children = (
 				E49562CD25F246DE0068F15A /* CustomTabBarController.swift */,
-				E466EE5E25FF771E004E18D1 /* CustomTabBarControllerViewModel.swift */,
-				E49562D025F247990068F15A /* CustomTabBar.swift */,
+				E466EE5E25FF771E004E18D1 /* CustomTabBarViewModel.swift */,
+				CE2FF94426032FBC00FDA68D /* Subviews */,
 			);
 			path = CustomTabBar;
 			sourceTree = "<group>";
@@ -486,8 +497,8 @@
 				E49562CE25F246DE0068F15A /* CustomTabBarController.swift in Sources */,
 				E491967925F8F5A200395445 /* RecentProductCollectionView.swift in Sources */,
 				CE3F63B926011C7200968946 /* TimerPickerView.swift in Sources */,
-				E491969925FB5C2900395445 /* CGPath + Extension.swift in Sources */,
-				E466EE5F25FF771E004E18D1 /* CustomTabBarControllerViewModel.swift in Sources */,
+				E491969925FB5C2900395445 /* CGPath+Extension.swift in Sources */,
+				E466EE5F25FF771E004E18D1 /* CustomTabBarViewModel.swift in Sources */,
 				E451D08025F3FFB000890584 /* UIButton+Extension.swift in Sources */,
 				E451D09825F774AE00890584 /* CellFromPopOverTableViewCell.swift in Sources */,
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
@@ -502,7 +513,8 @@
 				E466EE7C26008BC4004E18D1 /* Inscriptions.swift in Sources */,
 				E491967525F8E30000395445 /* RecentProductCollectionViewCell.swift in Sources */,
 				CE02BA0B25F3AB6800788EE3 /* ProductInfoViewController.swift in Sources */,
-				E451D08D25F7372100890584 /* AddNewProductViewModel.swift in Sources */,
+				CE50DD7D260276A700E33695 /* FirebaseServiceError.swift in Sources */,
+				E451D08D25F7372100890584 /* AddingNewProductViewModel.swift in Sources */,
 				CE3F63BC26011EAE00968946 /* TimerViewModel.swift in Sources */,
 				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,
 				E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */,
@@ -511,7 +523,7 @@
 				E451D08425F4002F00890584 /* Constants.swift in Sources */,
 				E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */,
 				CE3A168F25F9D9BB00FFA849 /* DateFormatter+Extension.swift in Sources */,
-				E451D08A25F7370C00890584 /* AddNewProductViewController.swift in Sources */,
+				E451D08A25F7370C00890584 /* AddingNewProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

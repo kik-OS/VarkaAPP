@@ -7,11 +7,15 @@
 
 import UIKit
 
+protocol PopOverMenuTableViewControllerDelegate {
+    func getSelectedItemFromPopOver(selectedCategory: String)
+}
+
 final class PopOverMenuTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var delegate: AddNewProductViewControllerDelegate!
+    var delegate: PopOverMenuTableViewControllerDelegate!
     var viewModel: PopOverMenuTableViewModelProtocol!
     
     // MARK: - Lifecycle method

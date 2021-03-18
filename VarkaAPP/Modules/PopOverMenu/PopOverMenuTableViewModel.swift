@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 protocol PopOverMenuTableViewModelProtocol {
     var categories : [Category] { get }
     func numberOfRows() -> Int
@@ -17,12 +15,11 @@ protocol PopOverMenuTableViewModelProtocol {
     
 }
 
-class PopOverMenuTableViewModel: PopOverMenuTableViewModelProtocol {
+final class PopOverMenuTableViewModel: PopOverMenuTableViewModelProtocol {
+    
     required init(categories: [Category]) {
         self.categories = categories
     }
-    
-    
     
     var categories: [Category] = []
     
@@ -33,7 +30,4 @@ class PopOverMenuTableViewModel: PopOverMenuTableViewModelProtocol {
     func numberOfRows() -> Int {
         categories.count
     }
-    
-    
-    
 }

@@ -1,5 +1,5 @@
 //
-//  CGPath + Extension.swift
+//  CGPath+Extension.swift
 //  VarkaAPP
 //
 //  Created by Никита Гвоздиков on 12.03.2021.
@@ -10,7 +10,6 @@ import UIKit
 extension CGPath {
     
    static func createTabBarPath(frame: CGRect ) -> CGPath {
-        
         let height: CGFloat = 37.0
         let path = UIBezierPath()
         let centerWidth = frame.width / 2
