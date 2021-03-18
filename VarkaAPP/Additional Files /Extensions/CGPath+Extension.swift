@@ -9,7 +9,7 @@ import UIKit
 
 extension CGPath {
     
-   static func createTabBarPath(frame: CGRect ) -> CGPath {
+    static func createTabBarPath(frame: CGRect ) -> CGPath {
         let height: CGFloat = 37.0
         let path = UIBezierPath()
         let centerWidth = frame.width / 2
