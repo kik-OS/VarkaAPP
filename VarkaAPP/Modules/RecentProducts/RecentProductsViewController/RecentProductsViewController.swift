@@ -24,11 +24,9 @@ class RecentProductsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        let test: [ProductCD] = StorageManager.shared.fetchData()
-        //
-        //        for i in test {
-        //            StorageManager.shared.deleteProductCD(i)
-        //        }
+        //Временный метод для очистки coreData
+                let test: [ProductCD] = StorageManager.shared.fetchData()
+                for i in test {StorageManager.shared.deleteProductCD(i)}
         
         view.addSubview(recentProductCollectionView)
         configureConstraints()
@@ -46,11 +44,12 @@ class RecentProductsViewController: UIViewController {
     // MARK: - Private methods
     
     private func configureConstraints() {
-        recentProductCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        recentProductCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        recentProductCollectionView.topAnchor.constraint(equalTo: recentProductLabel.bottomAnchor,
-                                                         constant: 10).isActive = true
-        recentProductCollectionView.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        NSLayoutConstraint.activate([
+            recentProductCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            recentProductCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            recentProductCollectionView.topAnchor.constraint(equalTo: recentProductLabel.bottomAnchor, constant: 10),
+            recentProductCollectionView.heightAnchor.constraint(equalToConstant: 350)
+        ])
     }
 }
 

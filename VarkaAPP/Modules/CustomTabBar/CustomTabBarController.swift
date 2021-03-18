@@ -25,11 +25,10 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        delegate = self // НУЖЕН?
         setupMiddleButton()
         setupTabBarItems()
         setupViewModelBindings()
+        
     }
     
     // Изменение расстояния между tab bar items
@@ -41,7 +40,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     // MARK: - Actions
     
     @objc private func centerButtonAction(sender: UIButton) {
-        sender.animationForCentralButton()
+        sender.animationForMiddleButton()
         let barCodeScannerVC = BarcodeScannerViewController()
         barCodeScannerVC.codeDelegate = self
         barCodeScannerVC.errorDelegate = self
@@ -75,20 +74,8 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     }
     
     private func setupMiddleButton() {
-        let middleButton = UIButton()
-        middleButton.backgroundColor = .white
-        middleButton.layer.borderColor = UIColor.white.cgColor
-        middleButton.layer.borderWidth = 1
-        middleButton.layer.cornerRadius = 34
-        middleButton.clipsToBounds = true
-        middleButton.tintColor = .systemIndigo
-        middleButton.animationForCentralButton()
+        let middleButton = UIButton.setupMiddleButtonTabBar()
         middleButton.addTarget(self, action: #selector(centerButtonAction), for: .touchUpInside)
-        middleButton.translatesAutoresizingMaskIntoConstraints = false
-        middleButton.setImage(UIImage(systemName: ImageTitles.tabBarMiddleButton), for: .normal)
-        middleButton.setPreferredSymbolConfiguration(
-            UIImage.SymbolConfiguration(pointSize: 35, weight: .thin), forImageIn: .normal
-        )
         
         view.addSubview(middleButton)
         view.layoutIfNeeded()
@@ -102,6 +89,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     }
     
     private func setupViewModelBindings() {
+        
         viewModel.productDidReceive = { [unowned self] productInfoViewModel in
             guard let productInfoVC = viewControllers?.first as? ProductInfoViewController else { return }
             productInfoVC.viewModel = productInfoViewModel
@@ -109,19 +97,18 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         }
         
         viewModel.addingNewProductOffer = { [unowned self] code in
-            let alertController = productAddingOfferAlertController {
+            let alertController = offerToAddingProductAlertController {
                 guard let addNewProductVC = self.storyboard?.instantiateViewController(
-                        identifier: Inscriptions.addNewProductVCStoryBoardID
+                    identifier: Inscriptions.addNewProductVCStoryBoardID
                 ) as? AddingNewProductViewController else { return }
                 addNewProductVC.viewModel = self.viewModel.getAddingNewProductViewModel(withCode: code)
                 self.present(addNewProductVC, animated: true)
             }
-            
             self.present(alertController, animated: true)
         }
     }
     
-    private func productAddingOfferAlertController(okActionCompletion: @escaping () -> Void) -> UIAlertController {
+    private func offerToAddingProductAlertController(okActionCompletion: @escaping () -> Void) -> UIAlertController {
         let alertController = UIAlertController(title: Inscriptions.barCodeAlertTitle,
                                                 message: Inscriptions.barCodeAlertMessage,
                                                 preferredStyle: .alert)
