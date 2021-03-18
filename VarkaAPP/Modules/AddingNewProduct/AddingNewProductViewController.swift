@@ -1,5 +1,5 @@
 //
-//  AddNewProductViewController.swift
+//  AddingNewProductViewController.swift
 //  VarkaAPP
 //
 //  Created by Никита Гвоздиков on 09.03.2021.
@@ -7,9 +7,7 @@
 
 import UIKit
 
-class AddNewProductViewController: UIViewController {
-    
-    
+final class AddingNewProductViewController: UIViewController {
     
     // MARK: - Outlets
     
@@ -23,16 +21,13 @@ class AddNewProductViewController: UIViewController {
     @IBOutlet weak var waterRatioLabel: UILabel!
     @IBOutlet weak var stepperRatio: UIStepper!
     
-    
-    
     // MARK: - Properties
     
-    var viewModel: AddNewProductViewModelProtocol! {
+    var viewModel: AddingNewProductViewModelProtocol! {
         didSet {
             viewModel.getCategories()
         }
     }
-    
     
     // MARK: - Actions
     
@@ -67,8 +62,6 @@ class AddNewProductViewController: UIViewController {
             showAlert()
     }
     
-    
-    
     // MARK: - Lifecycle methods
     
     override func viewDidLoad() {
@@ -96,7 +89,6 @@ class AddNewProductViewController: UIViewController {
         performSegue(withIdentifier: "unwindToProductInfo", sender: nil)
     }
     
-    
     // MARK: - Override methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let productInfoVC = segue.destination as? ProductInfoViewController else { return }
@@ -104,10 +96,9 @@ class AddNewProductViewController: UIViewController {
     }
 }
 
-
 //MARK: - PopOver Menu
 
-extension AddNewProductViewController {
+extension AddingNewProductViewController {
     
     private func setupGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
@@ -134,24 +125,22 @@ extension AddNewProductViewController {
     }
 }
 
-
 //MARK: - Extensions
 
-extension AddNewProductViewController: UIPopoverPresentationControllerDelegate {
+extension AddingNewProductViewController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
 }
 
-
-extension AddNewProductViewController: UITextFieldDelegate {
+extension AddingNewProductViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
 }
 
-extension AddNewProductViewController: AddNewProductViewControllerDelegate {
+extension AddingNewProductViewController: PopOverMenuTableViewControllerDelegate {
     func getSelectedItemFromPopOver(selectedCategory: String) {
         categoryButton.setTitle(selectedCategory, for: .normal)
         categoryButton.setTitleColor(.black, for: .normal)
@@ -159,5 +148,3 @@ extension AddNewProductViewController: AddNewProductViewControllerDelegate {
         viewModel.selectedCategory = selectedCategory
     }
 }
-
-

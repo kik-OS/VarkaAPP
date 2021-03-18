@@ -1,11 +1,9 @@
 //
-//  AddNewProductViewModel.swift
+//  AddingNewProductViewModel.swift
 //  VarkaAPP
 //
 //  Created by Никита Гвоздиков on 09.03.2021.
 //
-
-
 
 import Foundation
 
@@ -16,7 +14,7 @@ enum IncorrectMessages: String {
     case incorrectProducer = "Производитель продукта, тоже очень важен"
 }
 
-protocol AddNewProductViewModelProtocol {
+protocol AddingNewProductViewModelProtocol {
     var codeLabelText: String? { get set }
     var textFromTitleProductTF: String? { get set }
     var textFromCookingTimeTF: String? { get set }
@@ -36,14 +34,13 @@ protocol AddNewProductViewModelProtocol {
     func getCategories()
     
     init(code: String)
-    
 }
 
-final class AddNewProductViewModel: AddNewProductViewModelProtocol {
+final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
+    
     init(code: String) {
         self.codeLabelText = code
     }
-    
     
     // MARK: - Properties
     var completedProduct: Product?
@@ -61,7 +58,6 @@ final class AddNewProductViewModel: AddNewProductViewModelProtocol {
     var stringForWaterRatio: String {
         "🍚 1 : \(Int(waterRatio))💧"
     }
-    
     
     // MARK: - Methods
     
@@ -93,7 +89,6 @@ final class AddNewProductViewModel: AddNewProductViewModelProtocol {
         return true
     }
     
-    
     func getCategories() {
         FirebaseService.shared.fetchCategories { categories in
             self.categories = categories
@@ -122,10 +117,3 @@ final class AddNewProductViewModel: AddNewProductViewModelProtocol {
                                    waterRatio: waterRatio)
     }
 }
-
-protocol AddNewProductViewControllerDelegate {
-    func getSelectedItemFromPopOver(selectedCategory: String)
-}
-
-
-

@@ -56,7 +56,7 @@ final class ProductInfoViewModel: ProductInfoViewModelProtocol {
     
     // MARK: - Initializers
     
-    init(product: Product?) {
+    init(product: Product? = nil) {
         self.product.value = product
     }
     
