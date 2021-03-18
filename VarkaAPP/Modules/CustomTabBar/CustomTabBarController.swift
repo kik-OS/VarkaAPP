@@ -42,14 +42,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     
     @objc private func centerButtonAction(sender: UIButton) {
         sender.animationForCentralButton()
-        let barCodeScannerVC = BarcodeScannerViewController()
-        barCodeScannerVC.codeDelegate = self
-        barCodeScannerVC.errorDelegate = self
-        barCodeScannerVC.dismissalDelegate = self
-        barCodeScannerVC.modalPresentationStyle = .fullScreen
-        barCodeScannerVC.messageViewController.regularTintColor = .systemIndigo
-        barCodeScannerVC.messageViewController.textLabel.textColor = .systemIndigo
-        barCodeScannerVC.headerViewController.closeButton.tintColor = .systemIndigo
+        let barCodeScannerVC = CustomBarcodeScannerViewController(delegate: self)
         present(barCodeScannerVC, animated: true, completion: nil)
     }
     

@@ -17,6 +17,7 @@
 		CE02BA8325F7572300788EE3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA8225F7572300788EE3 /* Box.swift */; };
 		CE20DE1925FCA7EF00274A95 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20DE1725FCA7EF00274A95 /* TimerViewController.swift */; };
 		CE20DE1A25FCA7EF00274A95 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE20DE1825FCA7EF00274A95 /* TimerViewController.xib */; };
+		CE2FF95B2603879600FDA68D /* CustomBarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FF95A2603879600FDA68D /* CustomBarcodeScannerViewController.swift */; };
 		CE3A168025F7957E00FFA849 /* RecentProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3A167F25F7957E00FFA849 /* RecentProductsViewController.xib */; };
 		CE3A168B25F9D7A000FFA849 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A168A25F9D7A000FFA849 /* Category.swift */; };
 		CE3A168F25F9D9BB00FFA849 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */; };
@@ -64,6 +65,7 @@
 		CE02BA8225F7572300788EE3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		CE20DE1725FCA7EF00274A95 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		CE20DE1825FCA7EF00274A95 /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
+		CE2FF95A2603879600FDA68D /* CustomBarcodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarcodeScannerViewController.swift; sourceTree = "<group>"; };
 		CE3A167F25F7957E00FFA849 /* RecentProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentProductsViewController.xib; sourceTree = "<group>"; };
 		CE3A168A25F9D7A000FFA849 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				E49562D025F247990068F15A /* CustomTabBar.swift */,
+				CE2FF95A2603879600FDA68D /* CustomBarcodeScannerViewController.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				CE3A168B25F9D7A000FFA849 /* Category.swift in Sources */,
 				CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */,
 				E466EE7C26008BC4004E18D1 /* Inscriptions.swift in Sources */,
+				CE2FF95B2603879600FDA68D /* CustomBarcodeScannerViewController.swift in Sources */,
 				E491967525F8E30000395445 /* RecentProductCollectionViewCell.swift in Sources */,
 				CE02BA0B25F3AB6800788EE3 /* ProductInfoViewController.swift in Sources */,
 				CE50DD7D260276A700E33695 /* FirebaseServiceError.swift in Sources */,
