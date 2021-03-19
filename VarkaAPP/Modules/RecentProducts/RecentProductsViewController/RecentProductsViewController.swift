@@ -25,8 +25,8 @@ class RecentProductsViewController: UIViewController {
         super.viewDidLoad()
         
         //Временный метод для очистки coreData
-                let test: [ProductCD] = StorageManager.shared.fetchData()
-                for i in test {StorageManager.shared.deleteProductCD(i)}
+//                let test: [ProductCD] = StorageManager.shared.fetchData()
+//                for i in test {StorageManager.shared.deleteProductCD(i)}
         
         view.addSubview(recentProductCollectionView)
         configureConstraints()

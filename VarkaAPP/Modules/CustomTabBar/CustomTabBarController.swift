@@ -43,6 +43,12 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         sender.animationForMiddleButton()
         let barCodeScannerVC = CustomBarcodeScannerViewController(delegate: self)
         present(barCodeScannerVC, animated: true, completion: nil)
+        
+        Notifications().checkNotificationSettings {
+            print("Уведомления выключены")
+        }
+        Notifications().showTimerNotification(throughMinutes: 1/60)
+        
     }
     
     // MARK: - Private methods
@@ -68,7 +74,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     
     private func setupMiddleButton() {
         let middleButton = UIButton.setupMiddleButtonTabBar()
-         
+        
         middleButton.addTarget(self, action: #selector(centerButtonAction), for: .touchUpInside)
         
         view.addSubview(middleButton)
