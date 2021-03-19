@@ -86,6 +86,7 @@ final class AddingNewProductViewController: UIViewController {
         viewModel.codeLabelText = codeLabel.text
         viewModel.initializeProduct()
         viewModel.createProductInFB()
+        Notifications().showProductWasAddedNotification()
         performSegue(withIdentifier: "unwindToProductInfo", sender: nil)
     }
     

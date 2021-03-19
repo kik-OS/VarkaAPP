@@ -44,10 +44,6 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         let barCodeScannerVC = CustomBarcodeScannerViewController(delegate: self)
         present(barCodeScannerVC, animated: true, completion: nil)
         
-        Notifications().checkNotificationSettings {
-            print("Уведомления выключены")
-        }
-        Notifications().showTimerNotification(throughMinutes: 1/60)
         
     }
     

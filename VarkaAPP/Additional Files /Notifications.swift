@@ -25,15 +25,14 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         notificationCenter.getNotificationSettings { (settings) in
             if settings.authorizationStatus == .denied ||
                 settings.authorizationStatus == .notDetermined {
-                completion()
+                DispatchQueue.main.async {
+                    completion()
+                }
             }
         }
     }
     
-    
-    
-    //Метод для удаления бейджий при запуске
-    func cleanBadges() {
+    func cleanBadgesAtStarting() {
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
@@ -42,7 +41,6 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
     }
     
     
-    //Локальные уведомления при открытом приложении
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.banner, .list, .sound])
     }
@@ -51,10 +49,8 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
         switch response.actionIdentifier {
-        //Действие если пользователь нажмет на уведомление без кнопок
         case UNNotificationDefaultActionIdentifier:
             print("Нажатие дефолт")
-        //Нажатие кнопки snooze и отложить на 5с
         case "snoozeOneMinute":
             showTimerNotification(throughMinutes: 1)
         case "snoozeFiveMinutes":
@@ -62,20 +58,15 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         case "turnOff":
             print("Тапнул на выключение")
         default:
-            print("!")
+            break
         }
-        
         completionHandler()
     }
     
-    
-    
-    
-    
     func showTimerNotification(throughMinutes: Double) {
         let numberOfSeconds = 60 * throughMinutes
-        let content = UNMutableNotificationContent()
         let userAction = "User Action"
+        let content = UNMutableNotificationContent()
         
         content.title = "Таймер"
         content.body = "Приготовление закончено. Не забудьте выключить плиту и слить воду"
@@ -88,13 +79,12 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         
         let url = URL(fileURLWithPath: path)
         do {
-            let attachment = try UNNotificationAttachment(identifier: "rice", url: url, options: nil)
-            
+            let attachment = try UNNotificationAttachment(identifier: "timer", url: url)
             content.attachments = [attachment]
-        } catch {
+        }
+        catch {
             
         }
-        
         
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: numberOfSeconds, repeats: false)
@@ -109,7 +99,7 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         
         
         let snoozeOneMinuteAction = UNNotificationAction(identifier: "snoozeOneMinute",
-                                                         title: "Отложить на 1 минуту",
+                                                         title: "Готовить еще минуту",
                                                          options: [])
         let snoozeFiveMinuteAction = UNNotificationAction(identifier: "snoozeFiveMinutes",
                                                           title: "Отложить на 5 минут",
@@ -123,11 +113,36 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
                                                         snoozeFiveMinuteAction,
                                                         turnOffAction],
                                               intentIdentifiers: [], options: [])
-        
         notificationCenter.setNotificationCategories([category])
     }
     
     
     
+    func showProductWasAddedNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Новый продукт добавлен в базу"
+        content.body = "Ура! Вы добавили новый продукт в базу и помогли нам стать лучше, спасибо!"
+        content.sound = UNNotificationSound.default
+        
+        let request = UNNotificationRequest(identifier: "productWasAdded",
+                                            content: content, trigger: nil)
+        notificationCenter.add(request)
+    }
     
+    func notificationsAreNotAvailableAlert() -> UIAlertController {
+        let alert = UIAlertController(title: "Внимание!", message: "Уведомления выключены. Пожалуйста, включите их, или мы не сможем сообщить о готовности продукта", preferredStyle: .actionSheet)
+        
+        let settingsAction = UIAlertAction(title: "Включить уведомления", style: .destructive) { _ in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Не хочу", style: .default)
+        
+        alert.addAction(settingsAction)
+        alert.addAction(cancelAction)
+        
+        return alert
+    }
 }

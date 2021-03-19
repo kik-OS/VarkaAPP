@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //вызывается метод для запроса разрешения
         notifications.requestAuthorization()
         //Метод для удаления бейджий при запуске
-        notifications.cleanBadges()
+        notifications.cleanBadgesAtStarting()
         
         return true
     }

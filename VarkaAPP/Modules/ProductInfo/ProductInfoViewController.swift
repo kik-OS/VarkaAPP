@@ -57,7 +57,14 @@ final class ProductInfoViewController: UIViewController {
         let timerViewModel = viewModel.getTimerViewModel()
         let timerVC = TimerViewController(nibName: nil, bundle: nil, viewModel: timerViewModel)
         timerVC.modalPresentationStyle = .overCurrentContext
+        
+        Notifications().checkNotificationSettings { [weak self] in
+            let alert = Notifications().notificationsAreNotAvailableAlert()
+            self?.present(alert, animated: true)
+        }
+        Notifications().showTimerNotification(throughMinutes: 1/60)
         present(timerVC, animated: true)
+        
     }
     
     // MARK: - Private methods
@@ -86,4 +93,5 @@ final class ProductInfoViewController: UIViewController {
     }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {}
+    
 }
