@@ -28,6 +28,7 @@ protocol AddingNewProductViewModelProtocol {
     var selectedCategory: String? { get set}
     var completedProduct: Product? { get }
     var categories: [Category] { get }
+    var listOfWaterRatio: [String] { get }
     func validation() -> Bool
     func initializeProduct()
     func createProductInFB()
@@ -37,6 +38,9 @@ protocol AddingNewProductViewModelProtocol {
 }
 
 final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
+    
+    var listOfWaterRatio = ["🍚 1 : 1💧", "🍚 1 : 2💧", "🍚 1 : 3💧", "🍚 1 : 4💧", "🍚 1 : 5💧" ]
+    
     
     init(code: String) {
         self.codeLabelText = code

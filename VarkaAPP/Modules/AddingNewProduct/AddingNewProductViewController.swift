@@ -12,16 +12,13 @@ final class AddingNewProductViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var codeLabel: UILabel!
-    @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var categoryTF: UITextField!
     @IBOutlet weak var titleProductTF: UITextField!
-    @IBOutlet weak var cookingTimeTF: UITextField!
     @IBOutlet weak var producerTF: UITextField!
+    @IBOutlet weak var cookingTimeTF: UITextField!
     @IBOutlet weak var weightTF: UITextField!
+    @IBOutlet weak var waterRatioTF: UITextField!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var waterRatioLabel: UILabel!
-    @IBOutlet weak var stepperRatio: UIStepper!
-    
-    
     
     // MARK: - Properties
     
@@ -35,10 +32,6 @@ final class AddingNewProductViewController: UIViewController {
     
     @IBAction func weightProductEditingChanged() {
         viewModel.textFromWeightTF = weightTF.text
-    }
-    @IBAction func stepperRatioTapped() {
-        viewModel.waterRatio = stepperRatio.value
-        waterRatioLabel.text = viewModel.stringForWaterRatio
     }
     @IBAction func needStirringSwitch(_ sender: UISwitch) {
         viewModel.needStirring = sender.isOn
@@ -62,23 +55,17 @@ final class AddingNewProductViewController: UIViewController {
         viewModel.validation() ?
             successfulValidation() :
             showAlert()
-        
-        
     }
     
     // MARK: - Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupGestures()
         codeLabel.text = viewModel.codeLabelText
-        addDoneButton(to: cookingTimeTF, weightTF, producerTF, titleProductTF )
-//        cookingTimeTF.delegate = self
-//        weightTF.delegate = self
-        
+        addToolBar(to: categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF)
+        initializePickerView()
     }
     
-
     
     // MARK: - Private methods
     
@@ -107,138 +94,132 @@ final class AddingNewProductViewController: UIViewController {
     }
 }
 
-//MARK: - PopOver Menu
 
-extension AddingNewProductViewController {
-    
-    private func setupGestures() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
-        tapGesture.numberOfTouchesRequired = 1
-        categoryButton.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc private func tapped() {
-        guard let popVC = storyboard?.instantiateViewController(identifier: Inscriptions.popVCStoryBoardID) as? PopOverMenuTableViewController else { return }
-        popVC.delegate = self
-        popVC.viewModel = PopOverMenuTableViewModel(categories: viewModel.categories)
-        popVC.modalPresentationStyle = .popover
-        
-        let popOverVC = popVC.popoverPresentationController
-        popOverVC?.delegate = self
-        popOverVC?.sourceView = self.categoryButton
-        popOverVC?.sourceRect = CGRect(x: self.categoryButton.bounds.midX / 2,
-                                       y: self.categoryButton.bounds.midY,
-                                       width: 0,
-                                       height: 0)
-        popVC.preferredContentSize = CGSize(width: PopOverTableSize.width.rawValue,
-                                            height: PopOverTableSize.height.rawValue)
-        self.present(popVC, animated: true)
-    }
-}
+
+
 
 //MARK: - Extensions
 
-extension AddingNewProductViewController: UIPopoverPresentationControllerDelegate {
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
-    }
-}
-
 extension AddingNewProductViewController: UITextFieldDelegate {
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-}
 
-extension AddingNewProductViewController: PopOverMenuTableViewControllerDelegate {
-    func getSelectedItemFromPopOver(selectedCategory: String) {
-        categoryButton.setTitle(selectedCategory, for: .normal)
-        categoryButton.setTitleColor(.black, for: .normal)
-        viewModel.categorySelected = true
-        viewModel.selectedCategory = selectedCategory
-    }
-}
 
-extension AddingNewProductViewController {
-    //Функция для нажатия на кнопку done
-     @objc private func didTapDone() {
+    
+    @objc private func didTapDone() {
         saveButtonPressed()
-//            view.endEditing(true)
-        }
+        //            view.endEditing(true)
+    }
     
     @objc private func didTapUp() {
         changedResponderForUpButton()
-       }
+    }
     
     @objc private func didTapDown() {
         changedResponderForDownButton()
-       }
+    }
     
     
+    
+    private func createToolBar() -> UIView {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title:"Готово", style: .done, target: self,action: #selector(didTapDone))
+        let downButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(didTapDown))
+        let upButton = UIBarButtonItem(title:"", style: .plain, target: self, action: #selector(didTapUp))
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space.width = 14
+        doneButton.tintColor = .systemIndigo
+        downButton.tintColor = .systemIndigo
+        downButton.image = UIImage(systemName: "arrow.down")
+        upButton.tintColor = .systemIndigo
+        upButton.image = UIImage(systemName: "arrow.up")
+        keyboardToolbar.items = [downButton, space, upButton, flexBarButton, doneButton]
         
-       //Добавление кнопки
-        private func addDoneButton(to textFields: UITextField...) {
-            
-            textFields.forEach { textField in
-                let keyboardToolbar = UIToolbar()
-                textField.inputAccessoryView = keyboardToolbar
-                keyboardToolbar.sizeToFit()
-                
-                let doneButton = UIBarButtonItem(
-                    title:"Готово",
-                    style: .done,
-                    target: self,
-                    action: #selector(didTapDone)
-                )
-                
-                let downButton = UIBarButtonItem(
-                    title: "↓",
-                    style: .done,
-                    target: self,
-                    action: #selector(didTapDown)
-                )
-                
-                let upButton = UIBarButtonItem(
-                    title:"↑",
-                    style: .done,
-                    target: self,
-                    action: #selector(didTapUp)
-                )
-                
-                let flexBarButton = UIBarButtonItem(
-                    barButtonSystemItem: .flexibleSpace,
-                    target: nil,
-                    action: nil
-                )
-                
-                keyboardToolbar.items = [downButton, upButton, flexBarButton, doneButton]
-            }
+        return keyboardToolbar
+    }
+    
+    
+    private func addToolBar(to textFields: UITextField...) {
+        let keyboardToolbar = createToolBar()
+        textFields.forEach { textField in
+            textField.inputAccessoryView = keyboardToolbar
         }
+    }
     
     
     func changedResponderForUpButton() {
-//        let textFields = [titleProductTF, producerTF, cookingTimeTF, weightTF]
-
-        if producerTF.isFirstResponder {
+        
+        if titleProductTF.isFirstResponder {
+            categoryTF.becomeFirstResponder()
+        }else if producerTF.isFirstResponder {
             titleProductTF.becomeFirstResponder()
         } else if cookingTimeTF.isFirstResponder {
             producerTF.becomeFirstResponder()
         } else if weightTF.isFirstResponder {
             cookingTimeTF.becomeFirstResponder()
+        } else if waterRatioTF.isFirstResponder {
+            weightTF.becomeFirstResponder()
         }
     }
     
     func changedResponderForDownButton() {
-        if weightTF.isFirstResponder {
+        if waterRatioTF.isFirstResponder {
             view.endEditing(true)
+        } else if weightTF.isFirstResponder {
+            waterRatioTF.becomeFirstResponder()
         } else if cookingTimeTF.isFirstResponder {
             weightTF.becomeFirstResponder()
         } else if producerTF.isFirstResponder {
             cookingTimeTF.becomeFirstResponder()
         } else if titleProductTF.isFirstResponder {
             producerTF.becomeFirstResponder()
+        } else if categoryTF.isFirstResponder {
+            titleProductTF.becomeFirstResponder()
         }
     }
-    
 }
+
+
+
+
+extension AddingNewProductViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func initializePickerView() {
+        let pickerViewForKB = UIPickerView()
+        categoryTF.inputView = pickerViewForKB
+        waterRatioTF.inputView = pickerViewForKB
+        pickerViewForKB.delegate = self
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if categoryTF.isFirstResponder {
+            return viewModel.categories.count
+        }
+        return viewModel.listOfWaterRatio.count
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if categoryTF.isFirstResponder {
+            return viewModel.categories[row].name
+        }
+        return viewModel.listOfWaterRatio[row]
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if categoryTF.isFirstResponder {
+            categoryTF.text = viewModel.categories[row].name
+        } else {
+            waterRatioTF.text = viewModel.listOfWaterRatio[row]
+        }
+    }
+}
+
