@@ -14,11 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let notifications = Notifications()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         FirebaseApp.configure()
         notifications.notificationCenter.delegate = notifications
-        //вызывается метод для запроса разрешения
         notifications.requestAuthorization()
-        //Метод для удаления бейджий при запуске
         notifications.cleanBadgesAtStarting()
         
         return true

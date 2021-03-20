@@ -25,6 +25,8 @@
 		CE3F63BC26011EAE00968946 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F63BB26011EAE00968946 /* TimerViewModel.swift */; };
 		CE50DD7D260276A700E33695 /* FirebaseServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50DD7C260276A700E33695 /* FirebaseServiceError.swift */; };
 		E4109EA42604B22F00A1E01E /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = E4109EA32604B22F00A1E01E /* timer.png */; };
+		E4109EA92605D7A300A1E01E /* not.wav in Resources */ = {isa = PBXBuildFile; fileRef = E4109EA82605D7A300A1E01E /* not.wav */; };
+		E4109EAC2605DB9500A1E01E /* nom.wav in Resources */ = {isa = PBXBuildFile; fileRef = E4109EAB2605DB9500A1E01E /* nom.wav */; };
 		E451D08425F4002F00890584 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08325F4002F00890584 /* Constants.swift */; };
 		E451D08A25F7370C00890584 /* AddingNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08925F7370C00890584 /* AddingNewProductViewController.swift */; };
 		E451D08D25F7372100890584 /* AddingNewProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08C25F7372100890584 /* AddingNewProductViewModel.swift */; };
@@ -75,6 +77,8 @@
 		CE3F63BB26011EAE00968946 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		CE50DD7C260276A700E33695 /* FirebaseServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServiceError.swift; sourceTree = "<group>"; };
 		E4109EA32604B22F00A1E01E /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer.png; sourceTree = "<group>"; };
+		E4109EA82605D7A300A1E01E /* not.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = not.wav; sourceTree = "<group>"; };
+		E4109EAB2605DB9500A1E01E /* nom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = nom.wav; sourceTree = "<group>"; };
 		E451D08325F4002F00890584 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E451D08925F7370C00890584 /* AddingNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewProductViewController.swift; sourceTree = "<group>"; };
 		E451D08C25F7372100890584 /* AddingNewProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewProductViewModel.swift; sourceTree = "<group>"; };
@@ -211,6 +215,15 @@
 				E4109EA32604B22F00A1E01E /* timer.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		E4109EAE2605DBCC00A1E01E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				E4109EAB2605DB9500A1E01E /* nom.wav */,
+				E4109EA82605D7A300A1E01E /* not.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		E451D07E25F3FF8100890584 /* Extensions */ = {
@@ -354,6 +367,7 @@
 		E495629125F20F5E0068F15A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4109EAE2605DBCC00A1E01E /* Sounds */,
 				E4109EA62604B2BB00A1E01E /* Images */,
 				E495628325F20F2D0068F15A /* Assets.xcassets */,
 			);
@@ -451,9 +465,11 @@
 				CE02BA0C25F3AB6800788EE3 /* ProductInfoViewController.xib in Resources */,
 				E495628725F20F2D0068F15A /* LaunchScreen.storyboard in Resources */,
 				CE02B9F025F2B2F900788EE3 /* GoogleService-Info.plist in Resources */,
+				E4109EAC2605DB9500A1E01E /* nom.wav in Resources */,
 				CE20DE1A25FCA7EF00274A95 /* TimerViewController.xib in Resources */,
 				E495628425F20F2D0068F15A /* Assets.xcassets in Resources */,
 				E4109EA42604B22F00A1E01E /* timer.png in Resources */,
+				E4109EA92605D7A300A1E01E /* not.wav in Resources */,
 				CE3A168025F7957E00FFA849 /* RecentProductsViewController.xib in Resources */,
 				E495627F25F20F2A0068F15A /* Main.storyboard in Resources */,
 			);

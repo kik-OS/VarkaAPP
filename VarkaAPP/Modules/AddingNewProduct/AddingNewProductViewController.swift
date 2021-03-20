@@ -21,6 +21,8 @@ final class AddingNewProductViewController: UIViewController {
     @IBOutlet weak var waterRatioLabel: UILabel!
     @IBOutlet weak var stepperRatio: UIStepper!
     
+    
+    
     // MARK: - Properties
     
     var viewModel: AddingNewProductViewModelProtocol! {
@@ -60,6 +62,8 @@ final class AddingNewProductViewController: UIViewController {
         viewModel.validation() ?
             successfulValidation() :
             showAlert()
+        
+        
     }
     
     // MARK: - Lifecycle methods
@@ -68,7 +72,13 @@ final class AddingNewProductViewController: UIViewController {
         super.viewDidLoad()
         setupGestures()
         codeLabel.text = viewModel.codeLabelText
+        addDoneButton(to: cookingTimeTF, weightTF, producerTF, titleProductTF )
+//        cookingTimeTF.delegate = self
+//        weightTF.delegate = self
+        
     }
+    
+
     
     // MARK: - Private methods
     
@@ -148,4 +158,87 @@ extension AddingNewProductViewController: PopOverMenuTableViewControllerDelegate
         viewModel.categorySelected = true
         viewModel.selectedCategory = selectedCategory
     }
+}
+
+extension AddingNewProductViewController {
+    //Функция для нажатия на кнопку done
+     @objc private func didTapDone() {
+        saveButtonPressed()
+//            view.endEditing(true)
+        }
+    
+    @objc private func didTapUp() {
+        changedResponderForUpButton()
+       }
+    
+    @objc private func didTapDown() {
+        changedResponderForDownButton()
+       }
+    
+    
+        
+       //Добавление кнопки
+        private func addDoneButton(to textFields: UITextField...) {
+            
+            textFields.forEach { textField in
+                let keyboardToolbar = UIToolbar()
+                textField.inputAccessoryView = keyboardToolbar
+                keyboardToolbar.sizeToFit()
+                
+                let doneButton = UIBarButtonItem(
+                    title:"Готово",
+                    style: .done,
+                    target: self,
+                    action: #selector(didTapDone)
+                )
+                
+                let downButton = UIBarButtonItem(
+                    title: "↓",
+                    style: .done,
+                    target: self,
+                    action: #selector(didTapDown)
+                )
+                
+                let upButton = UIBarButtonItem(
+                    title:"↑",
+                    style: .done,
+                    target: self,
+                    action: #selector(didTapUp)
+                )
+                
+                let flexBarButton = UIBarButtonItem(
+                    barButtonSystemItem: .flexibleSpace,
+                    target: nil,
+                    action: nil
+                )
+                
+                keyboardToolbar.items = [downButton, upButton, flexBarButton, doneButton]
+            }
+        }
+    
+    
+    func changedResponderForUpButton() {
+//        let textFields = [titleProductTF, producerTF, cookingTimeTF, weightTF]
+
+        if producerTF.isFirstResponder {
+            titleProductTF.becomeFirstResponder()
+        } else if cookingTimeTF.isFirstResponder {
+            producerTF.becomeFirstResponder()
+        } else if weightTF.isFirstResponder {
+            cookingTimeTF.becomeFirstResponder()
+        }
+    }
+    
+    func changedResponderForDownButton() {
+        if weightTF.isFirstResponder {
+            view.endEditing(true)
+        } else if cookingTimeTF.isFirstResponder {
+            weightTF.becomeFirstResponder()
+        } else if producerTF.isFirstResponder {
+            cookingTimeTF.becomeFirstResponder()
+        } else if titleProductTF.isFirstResponder {
+            producerTF.becomeFirstResponder()
+        }
+    }
+    
 }

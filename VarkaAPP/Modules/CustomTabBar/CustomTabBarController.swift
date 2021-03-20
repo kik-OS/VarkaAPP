@@ -29,6 +29,12 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         setupTabBarItems()
         setupViewModelBindings()
         
+        guard let addNewProductVC = self.storyboard?.instantiateViewController(
+            identifier: Inscriptions.addNewProductVCStoryBoardID
+        ) as? AddingNewProductViewController else { return }
+        addNewProductVC.viewModel = self.viewModel.getAddingNewProductViewModel(withCode: "12345")
+        self.present(addNewProductVC, animated: true)
+        
     }
     
     // Изменение расстояния между tab bar items
@@ -43,8 +49,6 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         sender.animationForMiddleButton()
         let barCodeScannerVC = CustomBarcodeScannerViewController(delegate: self)
         present(barCodeScannerVC, animated: true, completion: nil)
-        
-        
     }
     
     // MARK: - Private methods
