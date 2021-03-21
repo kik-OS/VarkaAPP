@@ -33,6 +33,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
             identifier: Inscriptions.addNewProductVCStoryBoardID
         ) as? AddingNewProductViewController else { return }
         addNewProductVC.viewModel = self.viewModel.getAddingNewProductViewModel(withCode: "12345")
+        addNewProductVC.modalPresentationStyle = .fullScreen
         self.present(addNewProductVC, animated: true)
         
     }

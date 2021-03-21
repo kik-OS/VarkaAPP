@@ -64,7 +64,26 @@ final class AddingNewProductViewController: UIViewController {
         codeLabel.text = viewModel.codeLabelText
         addToolBar(to: categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF)
         initializePickerView()
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
+        
+        
     }
+    
+    @objc private func kbDidShow(notification: Notification) {
+        guard let userInfo = notification.userInfo else {return}
+        let kbFrameSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height + kbFrameSize.height + 40)
+        
+        (self.view as! UIScrollView).scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
+    }
+    
+    @objc private func kbDidHide() {
+        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
+    }
+    
     
     
     // MARK: - Private methods
@@ -223,3 +242,11 @@ extension AddingNewProductViewController: UIPickerViewDelegate, UIPickerViewData
     }
 }
 
+extension AddingNewProductViewController {
+    
+    
+    
+    
+    
+    
+}
