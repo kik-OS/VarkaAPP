@@ -17,7 +17,7 @@ protocol ProductInfoViewModelProtocol {
     
     init(product: Product?)
     
-    func getTimerViewModel() -> TimerViewModelProtocol
+    func getTimerViewModel(withDelegate delegate: TimerViewModelDelegate) -> TimerViewModelProtocol
 }
 
 final class ProductInfoViewModel: ProductInfoViewModelProtocol {
@@ -62,7 +62,7 @@ final class ProductInfoViewModel: ProductInfoViewModelProtocol {
     
     // MARK: - Public methods
     
-    func getTimerViewModel() -> TimerViewModelProtocol {
-        TimerViewModel(minutes: product.value?.cookingTime ?? 0)
+    func getTimerViewModel(withDelegate delegate: TimerViewModelDelegate) -> TimerViewModelProtocol {
+        TimerViewModel(minutes: product.value?.cookingTime ?? 0, delegate: delegate)
     }
 }

@@ -12,7 +12,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     
     // MARK: - Properties
     
-    private var viewModel: CustomTabBarViewModelProtocol
+    var viewModel: CustomTabBarViewModelProtocol
     
     // MARK: - Initializers
     
@@ -106,6 +106,10 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
                 self.present(addNewProductVC, animated: true)
             }
             self.present(alertController, animated: true)
+        }
+        
+        viewModel.timerDidStart = { [unowned self] timeTitle in
+            title = timeTitle
         }
     }
     

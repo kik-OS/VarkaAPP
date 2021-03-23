@@ -12,6 +12,8 @@ protocol CustomTabBarViewModelProtocol: class {
     var productDidReceive: ((_ productInfoViewModel: ProductInfoViewModelProtocol) -> Void)? { get set }
     /// Вызывается для предложения добавить товар. В параметр передаётся бар-код, полученный от сканера.
     var addingNewProductOffer: ((_ code: String) -> Void)? { get set }
+    /// Вызывается при старте таймера из всплывающего окна.
+    var timerDidStart: ((_ time: String) -> Void)? { get set }
     
     func findProduct(byCode code: String)
     func getProductInfoViewModel(product: Product?) -> ProductInfoViewModelProtocol
@@ -26,6 +28,23 @@ final class CustomTabBarViewModel: CustomTabBarViewModelProtocol {
     
     var productDidReceive: ((_ productInfoViewModel: ProductInfoViewModelProtocol) -> Void)?
     var addingNewProductOffer: ((_ code: String) -> Void)?
+    var timerDidStart: ((_ time: String) -> Void)?
+    
+    /// Время таймера в секундах.
+    private var timerTime = 0
+    
+    private var stringTimerTime: String {
+        let minutes = timerTime / 60
+        let seconds = timerTime - (minutes * 60)
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.minimumIntegerDigits = 2
+        guard let stringSeconds = numberFormatter.string(for: seconds) else { return "" }
+        
+        return timerTime > 0
+            ? "Осталось: \(minutes):\(stringSeconds)"
+            : "Блюдо готово!!!"
+    }
     
     private let firebaseService: FirebaseServiceProtocol = FirebaseService.shared
     
@@ -59,12 +78,30 @@ final class CustomTabBarViewModel: CustomTabBarViewModelProtocol {
     }
     
     func getTimerViewModel() -> TimerViewModelProtocol {
-        TimerViewModel()
+        TimerViewModel(delegate: self)
     }
     
     // MARK: - Private methods
     
     private func createProductInCoreData(product: Product) {
         StorageManager.shared.saveProductCD(product: product)
+    }
+}
+
+extension CustomTabBarViewModel: TimerViewModelDelegate {
+    
+    func startTimerOn(minutes: Int) {
+        timerTime = minutes * 60
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer),
+                             userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimer(sender: Timer) {
+        guard timerTime >= 0 else {
+            sender.invalidate()
+            return
+        }
+        timerDidStart?(stringTimerTime)
+        timerTime -= 1
     }
 }

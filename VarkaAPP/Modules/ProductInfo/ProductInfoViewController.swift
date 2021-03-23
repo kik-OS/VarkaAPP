@@ -54,7 +54,10 @@ final class ProductInfoViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func setTimerTapped() {
-        let timerViewModel = viewModel.getTimerViewModel()
+        guard let customTabBar = tabBarController as? CustomTabBarController,
+              let customTabBarVM = customTabBar.viewModel as? TimerViewModelDelegate else { return }
+        
+        let timerViewModel = viewModel.getTimerViewModel(withDelegate: customTabBarVM)
         let timerVC = TimerViewController(nibName: nil, bundle: nil, viewModel: timerViewModel)
         timerVC.modalPresentationStyle = .overCurrentContext
         present(timerVC, animated: true)

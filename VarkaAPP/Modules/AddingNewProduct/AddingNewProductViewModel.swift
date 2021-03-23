@@ -28,12 +28,14 @@ protocol AddingNewProductViewModelProtocol {
     var selectedCategory: String? { get set}
     var completedProduct: Product? { get }
     var categories: [Category] { get }
+    
+    init(code: String)
+    
     func validation() -> Bool
     func initializeProduct()
     func createProductInFB()
     func getCategories()
-    
-    init(code: String)
+    func getProductInfoViewModel() -> ProductInfoViewModelProtocol
 }
 
 final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
@@ -115,5 +117,9 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
                                    weight: weightInt, cookingTime: cookingTimeInt,
                                    intoBoilingWater: true, needStirring: needStirring,
                                    waterRatio: waterRatio)
+    }
+    
+    func getProductInfoViewModel() -> ProductInfoViewModelProtocol {
+        ProductInfoViewModel(product: completedProduct)
     }
 }

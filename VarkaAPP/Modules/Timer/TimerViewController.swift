@@ -46,7 +46,7 @@ final class TimerViewController: UIViewController {
     }
     
     @IBAction func startButtonTapped() {
-        
+        viewModel.startTimer()
     }
     
     @IBAction func closeButtonTapped() {
