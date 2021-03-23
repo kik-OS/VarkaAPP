@@ -98,6 +98,9 @@
                                                         <rect key="frame" x="0.0" y="20.333333333333314" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldsEditingDidBegin:" destination="7Z7-UH-SDU" eventType="editingDidBegin" id="9xL-Jp-irU"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -120,12 +123,13 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Рис Жасмин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Opw-DD-c1S">
+                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Рис Жасмин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Opw-DD-c1S">
                                                         <rect key="frame" x="0.0" y="20.333333333333343" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                         <connections>
                                                             <action selector="textFieldsEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="X1s-X6-u1B"/>
+                                                            <action selector="textFieldsEditingDidBegin:" destination="7Z7-UH-SDU" eventType="editingDidBegin" id="zM8-2S-lLw"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -143,12 +147,13 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Мистраль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YaD-L5-W2x">
+                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Мистраль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YaD-L5-W2x">
                                                         <rect key="frame" x="0.0" y="20.333333333333314" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no"/>
                                                         <connections>
                                                             <action selector="textFieldsEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="l6U-RD-pbS"/>
+                                                            <action selector="textFieldsEditingDidBegin:" destination="7Z7-UH-SDU" eventType="editingDidBegin" id="7Qb-Qj-jKJ"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -166,12 +171,13 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="15" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rwY-qc-xSG">
+                                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="15" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rwY-qc-xSG">
                                                         <rect key="frame" x="0.0" y="20.333333333333371" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                         <connections>
                                                             <action selector="textFieldsEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="8Vy-eb-ZTF"/>
+                                                            <action selector="textFieldsEditingDidBegin:" destination="7Z7-UH-SDU" eventType="editingDidBegin" id="kdz-UK-aG3"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -189,12 +195,13 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="400" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dGI-iU-gH8">
+                                                    <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="400" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dGI-iU-gH8">
                                                         <rect key="frame" x="0.0" y="20.333333333333314" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                         <connections>
                                                             <action selector="textFieldsEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="fUt-0J-pEA"/>
+                                                            <action selector="textFieldsEditingDidBegin:" destination="7Z7-UH-SDU" eventType="editingDidBegin" id="ouj-Ij-fqo"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -212,10 +219,13 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Выбрать" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vWR-vs-Heh">
+                                                    <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Выбрать" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vWR-vs-Heh">
                                                         <rect key="frame" x="0.0" y="23.333333333333314" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldsEditingDidBegin:" destination="7Z7-UH-SDU" eventType="editingDidBegin" id="nsI-ta-NsQ"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>

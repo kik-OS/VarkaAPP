@@ -33,14 +33,9 @@ final class AddingNewProductViewController: UIViewController {
     
     // MARK: - Actions
     
-    
-    
-    @IBAction func textFieldsTouchUpInside(_ sender: UITextField) {
-        
-        ////////////////////
+    @IBAction func textFieldsEditingDidBegin(_ sender: UITextField) {
+        viewModel.indexOfFirstResponder = sender.tag
     }
-    
-    
     
     @IBAction func textFieldsEditingChanged(_ sender: UITextField) {
         switch sender {
@@ -168,9 +163,9 @@ extension AddingNewProductViewController: UITextFieldDelegate {
         doneButton.tintColor = .white
         doneButton.isEnabled = viewModel.validation()
         downButton.tintColor = .white
-        downButton.image = UIImage(systemName: "arrow.down")
+        downButton.image = UIImage(systemName: ImageTitles.toolBarDownButton)
         upButton.tintColor = .white
-        upButton.image = UIImage(systemName: "arrow.up")
+        upButton.image = UIImage(systemName: ImageTitles.toolBarUpButton)
         keyboardToolbar.items = [downButton, space, upButton, flexBarButton, doneButton]
         keyboardToolbar.backgroundColor = .systemIndigo
         keyboardToolbar.barTintColor = .systemIndigo
@@ -186,34 +181,13 @@ extension AddingNewProductViewController: UITextFieldDelegate {
     }
     
     private func changedResponderForUpButton() {
-        
-        if titleProductTF.isFirstResponder {
-            categoryTF.becomeFirstResponder()
-        }else if producerTF.isFirstResponder {
-            titleProductTF.becomeFirstResponder()
-        } else if cookingTimeTF.isFirstResponder {
-            producerTF.becomeFirstResponder()
-        } else if weightTF.isFirstResponder {
-            cookingTimeTF.becomeFirstResponder()
-        } else if waterRatioTF.isFirstResponder {
-            weightTF.becomeFirstResponder()
-        }
+        let textFields = [categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF]
+        textFields[viewModel.calculationOfUpperResponder()]?.becomeFirstResponder()
     }
     
     private func changedResponderForDownButton() {
-        if waterRatioTF.isFirstResponder {
-            view.endEditing(true)
-        } else if weightTF.isFirstResponder {
-            waterRatioTF.becomeFirstResponder()
-        } else if cookingTimeTF.isFirstResponder {
-            weightTF.becomeFirstResponder()
-        } else if producerTF.isFirstResponder {
-            cookingTimeTF.becomeFirstResponder()
-        } else if titleProductTF.isFirstResponder {
-            producerTF.becomeFirstResponder()
-        } else if categoryTF.isFirstResponder {
-            titleProductTF.becomeFirstResponder()
-        }
+        let textFields = [categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF]
+        textFields[viewModel.calculationOfLowerResponder()]?.becomeFirstResponder()
     }
 }
 

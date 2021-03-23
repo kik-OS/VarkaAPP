@@ -21,15 +21,23 @@ protocol AddingNewProductViewModelProtocol {
     var completedProduct: Product? { get }
     var categories: [Category] { get }
     var listOfWaterRatio: [String] { get }
+    var indexOfFirstResponder: Int { get set }
     func validation() -> Bool
     func calculateWaterRatio(row: Int)
     func createProductInFB()
     func getCategories()
+    func calculationOfLowerResponder() -> Int
+    func calculationOfUpperResponder() -> Int
     
     init(code: String)
 }
 
 final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
+    
+    
+
+    
+   
     
     // MARK: - Initializers
     
@@ -46,6 +54,7 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
     var textFromCookingTimeTF: String?
     var textFromWeightTF: String?
     var textFromWaterRatioTF: String?
+    var indexOfFirstResponder: Int = 0
     var waterRatio: Double = 3
     var completedProduct: Product?
     var needStirring: Bool = true
@@ -97,4 +106,21 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
         FirebaseService.shared.saveProduct(product)
     }
         
+    func calculationOfLowerResponder() -> Int {
+        switch indexOfFirstResponder {
+        case 0...4:
+            return indexOfFirstResponder + 1
+        default:
+            return indexOfFirstResponder
+        }
+    }
+    
+    func calculationOfUpperResponder() -> Int {
+        switch indexOfFirstResponder {
+        case 1...5:
+            return indexOfFirstResponder - 1
+        default:
+            return indexOfFirstResponder
+        }
+    }
 }
