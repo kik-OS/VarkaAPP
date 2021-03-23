@@ -48,15 +48,9 @@ enum Inscriptions {
     
     static let IncorrectValidationAlertTitle = "Упс..."
     
-    
-    
-    static let incorrectTitleTF = "Что-то не так с названием, проверьте его"
-    static let incorrectCookingTimeTF = "Нам кажется, или время приготовления выбрано не верно"
-    static let incorrectCategoryTF = "Пожалуйста, выберите категорию продукта"
-    static let incorrectProducerTF = "Производитель продукта, тоже очень важен"
-    static let someTFIsEmpty = "Пожалуйста, заполните все обязательные поля"
-    
     static let variantsOfWaterRatio = ["🍚 1 : 1💧", "🍚 1 : 2💧", "🍚 1 : 3💧", "🍚 1 : 4💧", "🍚 1 : 5💧"]
+    
+    static let titleOfDoneButtonForKB = "Сохранить"
     
     
     

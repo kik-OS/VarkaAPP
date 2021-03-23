@@ -21,8 +21,6 @@ final class AddingNewProductViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var mainScrollView: UIScrollView!
     
-    let doneButton = UIBarButtonItem(title:"Сохранить", style: .done, target: self,action: #selector(didTapOnDoneButton))
-    
     // MARK: - Properties
     
     var viewModel: AddingNewProductViewModelProtocol! {
@@ -31,10 +29,25 @@ final class AddingNewProductViewController: UIViewController {
         }
     }
     
-    // MARK: - Actions
+    // MARK: - Private Properties
+    
+    private let pickerViewForKB = UIPickerView()
+    private let doneButtonForKB = UIBarButtonItem()
+    
+    // MARK: - Override methods
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let productInfoVC = segue.destination as? ProductInfoViewController else { return }
+        productInfoVC.viewModel = ProductInfoViewModel(product: viewModel.completedProduct)
+    }
+    
+    // MARK: - IB Actions
     
     @IBAction func textFieldsEditingDidBegin(_ sender: UITextField) {
         viewModel.indexOfFirstResponder = sender.tag
+        viewModel.updatePickerViewIfNeeded(index: sender.tag) { [weak self] in
+            self?.pickerViewForKB.reloadAllComponents()
+        }
     }
     
     @IBAction func textFieldsEditingChanged(_ sender: UITextField) {
@@ -69,7 +82,6 @@ final class AddingNewProductViewController: UIViewController {
         performSegue(withIdentifier: Inscriptions.unwindToProductInfoSegueID, sender: nil)
     }
     
-    
     // MARK: - Lifecycle methods
     
     override func viewDidLoad() {
@@ -81,7 +93,7 @@ final class AddingNewProductViewController: UIViewController {
         configureGestureRecognizer()
     }
     
-    
+    // MARK: - Private Methods
     
     private func configureGestureRecognizer() {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(oneTouchOnScrollView))
@@ -94,24 +106,13 @@ final class AddingNewProductViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
-    
-    
-    // MARK: - Override methods
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let productInfoVC = segue.destination as? ProductInfoViewController else { return }
-        productInfoVC.viewModel = ProductInfoViewModel(product: viewModel.completedProduct)
-    }
 }
-
-
 
 
 
 //MARK: - Extensions
 
 extension AddingNewProductViewController: UITextFieldDelegate {
-    
     
     @objc private func oneTouchOnScrollView() {
         view.endEditing(true)
@@ -129,13 +130,11 @@ extension AddingNewProductViewController: UITextFieldDelegate {
         changedResponderForDownButton()
     }
     
-    
     @objc private func keyBoardDidShow(notification: Notification) {
         guard let userInfo = notification.userInfo else {return}
         let kbFrameSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         (view as! UIScrollView).contentSize = CGSize(width: view.bounds.size.width,
                                                      height: view.bounds.size.height + kbFrameSize.height + 40)
-        
         (view as! UIScrollView).scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
     }
     
@@ -144,29 +143,39 @@ extension AddingNewProductViewController: UITextFieldDelegate {
     }
     
     
-    
     private func updateSaveButtonsState() {
         let state = viewModel.validation()
         saveButton.isEnabled = state
-        doneButton.isEnabled = state
+        doneButtonForKB.isEnabled = state
     }
     
     private func createToolBar() -> UIToolbar {
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
         
-        let downButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(didTapOnDownButton))
-        let upButton = UIBarButtonItem(title:"", style: .plain, target: self, action: #selector(didTapOnUpButton))
+        doneButtonForKB.tintColor = .white
+        doneButtonForKB.isEnabled = false
+        doneButtonForKB.title = Inscriptions.titleOfDoneButtonForKB
+        doneButtonForKB.style = .plain
+        doneButtonForKB.action = #selector(didTapOnDoneButton)
+        
+        let downButtonForKB = UIBarButtonItem()
+        downButtonForKB.tintColor = .white
+        downButtonForKB.action = #selector(didTapOnDownButton)
+        downButtonForKB.image = UIImage(systemName: ImageTitles.toolBarDownButton)
+        downButtonForKB.style = .plain
+        
+        let upButtonForKB = UIBarButtonItem()
+        upButtonForKB.tintColor = .white
+        upButtonForKB.action = #selector(didTapOnUpButton)
+        upButtonForKB.image = UIImage(systemName: ImageTitles.toolBarUpButton)
+        upButtonForKB.style = .plain
+        
         let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         space.width = 14
-        doneButton.tintColor = .white
-        doneButton.isEnabled = viewModel.validation()
-        downButton.tintColor = .white
-        downButton.image = UIImage(systemName: ImageTitles.toolBarDownButton)
-        upButton.tintColor = .white
-        upButton.image = UIImage(systemName: ImageTitles.toolBarUpButton)
-        keyboardToolbar.items = [downButton, space, upButton, flexBarButton, doneButton]
+        
+        keyboardToolbar.items = [downButtonForKB, space, upButtonForKB, flexBarButton, doneButtonForKB]
         keyboardToolbar.backgroundColor = .systemIndigo
         keyboardToolbar.barTintColor = .systemIndigo
         return keyboardToolbar
@@ -194,8 +203,7 @@ extension AddingNewProductViewController: UITextFieldDelegate {
 
 extension AddingNewProductViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
-    func initializePickerView() {
-        let pickerViewForKB = UIPickerView()
+    private func initializePickerView() {
         categoryTF.inputView = pickerViewForKB
         waterRatioTF.inputView = pickerViewForKB
         pickerViewForKB.delegate = self
@@ -206,31 +214,23 @@ extension AddingNewProductViewController: UIPickerViewDelegate, UIPickerViewData
     }
     
     func pickerView( _ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if categoryTF.isFirstResponder {
-            return viewModel.categories.count
-        }
-        return viewModel.listOfWaterRatio.count
+        viewModel.numberOfRowsInPickerView
     }
     
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if categoryTF.isFirstResponder {
-            return viewModel.categories[row].name
-        }
-        return viewModel.listOfWaterRatio[row]
+        viewModel.dataForPickerView[row]
     }
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if categoryTF.isFirstResponder {
-            categoryTF.text = viewModel.categories[row].name
-            viewModel.textFromCategoryTF = viewModel.categories[row].name
-            updateSaveButtonsState()
-        } else {
-            waterRatioTF.text = viewModel.listOfWaterRatio[row]
-            viewModel.textFromWaterRatioTF = viewModel.listOfWaterRatio[row]
-            viewModel.calculateWaterRatio(row: row)
-            updateSaveButtonsState()
+        viewModel.pickerViewDidSelected { [weak self] in
+            self?.categoryTF.text = self?.viewModel.categories[row].name
+            self?.viewModel.textFromCategoryTF = self?.viewModel.categories[row].name
+        } completionWaterRatio: { [weak self] in
+            self?.waterRatioTF.text = self?.viewModel.listOfWaterRatio[row]
+            self?.viewModel.textFromWaterRatioTF = self?.viewModel.listOfWaterRatio[row]
+            self?.viewModel.calculateWaterRatio(row: row)
         }
-        
+        updateSaveButtonsState()
     }
 }
 

@@ -8,7 +8,7 @@
 import Foundation
 
 
-protocol AddingNewProductViewModelProtocol {
+protocol AddingNewProductViewModelProtocol: class {
     var codeLabelText: String? { get set }
     var textFromCategoryTF: String? { get set }
     var textFromTitleProductTF: String? { get set }
@@ -22,22 +22,22 @@ protocol AddingNewProductViewModelProtocol {
     var categories: [Category] { get }
     var listOfWaterRatio: [String] { get }
     var indexOfFirstResponder: Int { get set }
+    var dataForPickerView: [String] { get }
+    var numberOfRowsInPickerView: Int { get }
     func validation() -> Bool
     func calculateWaterRatio(row: Int)
     func createProductInFB()
     func getCategories()
     func calculationOfLowerResponder() -> Int
     func calculationOfUpperResponder() -> Int
+    func updatePickerViewIfNeeded(index: Int, completion: @escaping () -> Void)
+    func pickerViewDidSelected(completionCategory: @escaping () -> Void,
+                               completionWaterRatio: @escaping () -> Void)
     
     init(code: String)
 }
 
 final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
-    
-    
-
-    
-   
     
     // MARK: - Initializers
     
@@ -60,7 +60,9 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
     var needStirring: Bool = true
     var categories: [Category] = []
     var listOfWaterRatio = Inscriptions.variantsOfWaterRatio
-    
+    var numberOfRowsInPickerView: Int {
+        dataForPickerView.count
+    }
     // MARK: - Methods
     
     func calculateWaterRatio(row: Int) {
@@ -105,7 +107,7 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
         guard let product = completedProduct else { return }
         FirebaseService.shared.saveProduct(product)
     }
-        
+    
     func calculationOfLowerResponder() -> Int {
         switch indexOfFirstResponder {
         case 0...4:
@@ -121,6 +123,41 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
             return indexOfFirstResponder - 1
         default:
             return indexOfFirstResponder
+        }
+    }
+    
+    func pickerViewDidSelected(completionCategory: @escaping () -> Void,
+                               completionWaterRatio: @escaping () -> Void) {
+        switch indexOfFirstResponder {
+        case 0:
+            completionCategory()
+        case 5:
+            completionWaterRatio()
+        default:
+            break
+        }
+    }
+    
+    func updatePickerViewIfNeeded(index: Int, completion: @escaping () -> Void) {
+        switch index {
+        case 0, 5:
+            DispatchQueue.main.async {
+                completion()
+            }
+        default:
+            break
+        }
+    }
+    
+    
+    var dataForPickerView: [String] {
+        switch indexOfFirstResponder {
+        case 0:
+            return categories.map{$0.name}
+        case 5:
+            return listOfWaterRatio
+        default:
+            return []
         }
     }
 }
