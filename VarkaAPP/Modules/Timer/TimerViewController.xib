@@ -53,12 +53,25 @@
                                 <outlet property="delegate" destination="-1" id="HRO-yn-OBv"/>
                             </connections>
                         </pickerView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfU-57-Lsg">
+                            <rect key="frame" x="358" y="16" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="KFD-d5-zkT"/>
+                                <constraint firstAttribute="height" constant="40" id="wSZ-kS-px3"/>
+                            </constraints>
+                            <state key="normal" title="Close" image="closeButton"/>
+                            <connections>
+                                <action selector="closeButtonTapped" destination="-1" eventType="touchUpInside" id="NZ1-3C-oBJ"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="DR0-R7-Agj" firstAttribute="centerX" secondItem="kXW-ev-aFe" secondAttribute="centerX" id="8XP-eE-XCz"/>
+                        <constraint firstItem="KfU-57-Lsg" firstAttribute="top" secondItem="kXW-ev-aFe" secondAttribute="top" constant="16" id="Af9-mE-mBY"/>
                         <constraint firstItem="4DD-LA-e2I" firstAttribute="centerX" secondItem="kXW-ev-aFe" secondAttribute="centerX" id="Afr-x5-cUL"/>
                         <constraint firstItem="4DD-LA-e2I" firstAttribute="top" secondItem="kXW-ev-aFe" secondAttribute="top" constant="16" id="MzR-la-a4f"/>
+                        <constraint firstAttribute="trailing" secondItem="KfU-57-Lsg" secondAttribute="trailing" constant="16" id="Y9r-Ua-R5X"/>
                         <constraint firstItem="cT9-PW-pFs" firstAttribute="centerX" secondItem="kXW-ev-aFe" secondAttribute="centerX" id="bnX-y7-jAK"/>
                         <constraint firstItem="cT9-PW-pFs" firstAttribute="top" secondItem="DR0-R7-Agj" secondAttribute="bottom" constant="16" id="mAM-oi-27e"/>
                         <constraint firstItem="cT9-PW-pFs" firstAttribute="width" secondItem="kXW-ev-aFe" secondAttribute="width" multiplier="0.5" id="rfg-lS-Dce"/>
@@ -80,10 +93,11 @@
                 <constraint firstItem="kXW-ev-aFe" firstAttribute="leading" secondItem="sDZ-fj-Nvg" secondAttribute="leading" id="mFK-Br-DhE"/>
                 <constraint firstItem="sDZ-fj-Nvg" firstAttribute="trailing" secondItem="Knk-8H-I7y" secondAttribute="trailing" id="pag-ID-MTU"/>
             </constraints>
-            <point key="canvasLocation" x="137" y="7"/>
+            <point key="canvasLocation" x="136.23188405797103" y="6.6964285714285712"/>
         </view>
     </objects>
     <resources>
+        <image name="closeButton" width="200" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

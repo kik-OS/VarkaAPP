@@ -49,6 +49,10 @@ final class TimerViewController: UIViewController {
         
     }
     
+    @IBAction func closeButtonTapped() {
+        dismiss(animated: true)
+    }
+    
     // MARK: - Setup UI
     
     private func setupUI() {
