@@ -168,14 +168,14 @@
 			path = ProductInfo;
 			sourceTree = "<group>";
 		};
-		CE20DE1625FCA74D00274A95 /* TimerSetting */ = {
+		CE20DE1625FCA74D00274A95 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
 				CE20DE1725FCA7EF00274A95 /* TimerViewController.swift */,
 				CE3F63BB26011EAE00968946 /* TimerViewModel.swift */,
 				CE20DE1825FCA7EF00274A95 /* TimerViewController.xib */,
 			);
-			path = TimerSetting;
+			path = Timer;
 			sourceTree = "<group>";
 		};
 		CE2FF94426032FBC00FDA68D /* Subviews */ = {
@@ -195,7 +195,7 @@
 				E491969425FB5BAC00395445 /* PopOverMenu */,
 				CE02BA0825F3AB1400788EE3 /* ProductInfo */,
 				E49562C925F245B40068F15A /* RecentProducts */,
-				CE20DE1625FCA74D00274A95 /* TimerSetting */,
+				CE20DE1625FCA74D00274A95 /* Timer */,
 				E451D08825F736E500890584 /* AddingNewProduct */,
 			);
 			path = Modules;

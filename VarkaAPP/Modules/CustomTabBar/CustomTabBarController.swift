@@ -28,7 +28,6 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         setupMiddleButton()
         setupTabBarItems()
         setupViewModelBindings()
-        
     }
     
     // Изменение расстояния между tab bar items
@@ -42,7 +41,15 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     @objc private func centerButtonAction(sender: UIButton) {
         sender.animationForMiddleButton()
         let barCodeScannerVC = CustomBarcodeScannerViewController(delegate: self)
+        barCodeScannerVC.modalPresentationStyle = .fullScreen
         present(barCodeScannerVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func timerBarButtonTapped(_ sender: UIBarButtonItem) {
+        let timerViewModel = viewModel.getTimerViewModel()
+        let timerVC = TimerViewController(nibName: nil, bundle: nil, viewModel: timerViewModel)
+        timerVC.modalPresentationStyle = .overCurrentContext
+        present(timerVC, animated: true)
     }
     
     // MARK: - Private methods

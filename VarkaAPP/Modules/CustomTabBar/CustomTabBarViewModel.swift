@@ -17,6 +17,7 @@ protocol CustomTabBarViewModelProtocol: class {
     func getProductInfoViewModel(product: Product?) -> ProductInfoViewModelProtocol
     func getRecentProductCollectionViewViewModel() -> RecentProductCollectionViewViewModelProtocol
     func getAddingNewProductViewModel(withCode code: String) -> AddingNewProductViewModelProtocol
+    func getTimerViewModel() -> TimerViewModelProtocol
 }
 
 final class CustomTabBarViewModel: CustomTabBarViewModelProtocol {
@@ -55,6 +56,10 @@ final class CustomTabBarViewModel: CustomTabBarViewModelProtocol {
     
     func getAddingNewProductViewModel(withCode code: String) -> AddingNewProductViewModelProtocol {
         AddingNewProductViewModel(code: code)
+    }
+    
+    func getTimerViewModel() -> TimerViewModelProtocol {
+        TimerViewModel()
     }
     
     // MARK: - Private methods

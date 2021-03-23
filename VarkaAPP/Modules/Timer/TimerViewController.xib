@@ -13,7 +13,6 @@
                 <outlet property="backgroundView" destination="Knk-8H-I7y" id="ER2-76-mWg"/>
                 <outlet property="contentView" destination="kXW-ev-aFe" id="KbG-6h-eDq"/>
                 <outlet property="minutesPickerView" destination="DR0-R7-Agj" id="7xc-2h-zye"/>
-                <outlet property="secondsPickerView" destination="R0o-Ds-Bj9" id="FYI-Pq-cr7"/>
                 <outlet property="startButton" destination="cT9-PW-pFs" id="psF-Z5-sAW"/>
                 <outlet property="view" destination="Rxa-38-doa" id="3Qo-1F-PdC"/>
             </connections>
@@ -32,54 +31,6 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMn-Bi-7f9">
-                            <rect key="frame" x="142" y="58.5" width="130" height="120"/>
-                            <subviews>
-                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DR0-R7-Agj" customClass="TimerPickerView" customModule="VarkaAPP" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="60" height="120"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="60" id="BGw-u6-IBB"/>
-                                    </constraints>
-                                    <connections>
-                                        <outlet property="dataSource" destination="-1" id="QTk-nm-12L"/>
-                                        <outlet property="delegate" destination="-1" id="HRO-yn-OBv"/>
-                                    </connections>
-                                </pickerView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uh3-n6-I1d">
-                                    <rect key="frame" x="60" y="0.0" width="10" height="120"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="8" id="1pF-6p-AoH"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="1pF-6p-AoH"/>
-                                        </mask>
-                                    </variation>
-                                </label>
-                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0o-Ds-Bj9" customClass="TimerPickerView" customModule="VarkaAPP" customModuleProvider="target">
-                                    <rect key="frame" x="70" y="0.0" width="60" height="120"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="60" id="AO1-GD-EF2"/>
-                                    </constraints>
-                                    <connections>
-                                        <outlet property="dataSource" destination="-1" id="60o-oe-Vwx"/>
-                                        <outlet property="delegate" destination="-1" id="iIt-ei-ZDW"/>
-                                    </connections>
-                                </pickerView>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="120" id="2Bl-zW-e4c"/>
-                                <constraint firstAttribute="width" constant="200" id="Gak-O4-FwJ"/>
-                            </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="Gak-O4-FwJ"/>
-                                </mask>
-                            </variation>
-                        </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cT9-PW-pFs">
                             <rect key="frame" x="103.5" y="194.5" width="207" height="36"/>
                             <color key="backgroundColor" systemColor="systemIndigoColor"/>
@@ -91,17 +42,28 @@
                                 <action selector="startButtonTapped" destination="-1" eventType="touchUpInside" id="3ia-cW-1r5"/>
                             </connections>
                         </button>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DR0-R7-Agj" customClass="TimerPickerView" customModule="VarkaAPP" customModuleProvider="target">
+                            <rect key="frame" x="157" y="58.5" width="100" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="BGw-u6-IBB"/>
+                                <constraint firstAttribute="height" constant="120" id="jlm-Cd-UvM"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="QTk-nm-12L"/>
+                                <outlet property="delegate" destination="-1" id="HRO-yn-OBv"/>
+                            </connections>
+                        </pickerView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="fMn-Bi-7f9" firstAttribute="top" secondItem="4DD-LA-e2I" secondAttribute="bottom" constant="16" id="9X9-8C-nhV"/>
+                        <constraint firstItem="DR0-R7-Agj" firstAttribute="centerX" secondItem="kXW-ev-aFe" secondAttribute="centerX" id="8XP-eE-XCz"/>
                         <constraint firstItem="4DD-LA-e2I" firstAttribute="centerX" secondItem="kXW-ev-aFe" secondAttribute="centerX" id="Afr-x5-cUL"/>
                         <constraint firstItem="4DD-LA-e2I" firstAttribute="top" secondItem="kXW-ev-aFe" secondAttribute="top" constant="16" id="MzR-la-a4f"/>
                         <constraint firstItem="cT9-PW-pFs" firstAttribute="centerX" secondItem="kXW-ev-aFe" secondAttribute="centerX" id="bnX-y7-jAK"/>
-                        <constraint firstItem="cT9-PW-pFs" firstAttribute="top" secondItem="fMn-Bi-7f9" secondAttribute="bottom" constant="16" id="f6a-Y8-ixu"/>
+                        <constraint firstItem="cT9-PW-pFs" firstAttribute="top" secondItem="DR0-R7-Agj" secondAttribute="bottom" constant="16" id="mAM-oi-27e"/>
                         <constraint firstItem="cT9-PW-pFs" firstAttribute="width" secondItem="kXW-ev-aFe" secondAttribute="width" multiplier="0.5" id="rfg-lS-Dce"/>
                         <constraint firstAttribute="bottom" secondItem="cT9-PW-pFs" secondAttribute="bottom" constant="50" id="sjI-wx-vo5"/>
-                        <constraint firstItem="fMn-Bi-7f9" firstAttribute="centerX" secondItem="kXW-ev-aFe" secondAttribute="centerX" id="xdM-Th-O09"/>
+                        <constraint firstItem="DR0-R7-Agj" firstAttribute="top" secondItem="4DD-LA-e2I" secondAttribute="bottom" constant="16" id="z2O-9S-DCG"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knk-8H-I7y">

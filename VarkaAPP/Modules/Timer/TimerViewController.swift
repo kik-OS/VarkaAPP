@@ -14,7 +14,6 @@ final class TimerViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var minutesPickerView: TimerPickerView!
-    @IBOutlet weak var secondsPickerView: TimerPickerView!
     @IBOutlet weak var startButton: UIButton!
     
     // MARK: - Properties
@@ -57,7 +56,6 @@ final class TimerViewController: UIViewController {
         startButton.layer.cornerRadius = UIConstants.defaultCornerRadius
         updateStartButton()
         minutesPickerView.selectRow(viewModel.minutes, inComponent: 0, animated: false)
-        secondsPickerView.selectRow(viewModel.seconds, inComponent: 0, animated: false)
         
         let dismissByTapGR = UITapGestureRecognizer(target: self,
                                                     action: #selector(dismissByTapAction))
@@ -95,8 +93,7 @@ extension TimerViewController: UIPickerViewDataSource {
 extension TimerViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        viewModel.updateTimeTo(minutes: minutesPickerView.selectedRow(inComponent: 0),
-                               seconds: secondsPickerView.selectedRow(inComponent: 0))
+        viewModel.updateTimeTo(minutes: minutesPickerView.selectedRow(inComponent: 0))
         updateStartButton()
     }
 }

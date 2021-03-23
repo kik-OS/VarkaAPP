@@ -11,45 +11,36 @@ import Foundation
 
 protocol TimerViewModelProtocol {
     var minutes: Int { get }
-    var seconds: Int { get }
     var isEnabledStartButton: Bool { get }
     
     init(minutes: Int)
     
-    func updateTimeTo(minutes: Int, seconds: Int)
+    func updateTimeTo(minutes: Int)
 }
 
 final class TimerViewModel: TimerViewModelProtocol {
     
     // MARK: - Properties
     
-    var minutes: Int {
-        time / 60
-    }
-    
-    var seconds: Int {
-        time - (minutes * 60)
+    var minutes: Int = 0 {
+        didSet {
+            print("Timer is \(minutes) min")
+        }
     }
     
     var isEnabledStartButton: Bool {
-        time != 0
-    }
-    
-    private var time: Int {
-        didSet {
-            print("Timer is \(minutes) min \(seconds) sec")
-        }
+        minutes != 0
     }
     
     // MARK: - Initializers
     
     init(minutes: Int = 0) {
-        time = minutes * 60
+        self.minutes = minutes
     }
     
     // MARK: - Public methods
     
-    func updateTimeTo(minutes: Int, seconds: Int) {
-        time = (minutes * 60) + seconds
+    func updateTimeTo(minutes: Int) {
+        self.minutes = minutes
     }
 }
