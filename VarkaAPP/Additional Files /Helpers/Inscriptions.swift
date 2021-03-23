@@ -10,7 +10,7 @@ import Foundation
 enum Inscriptions {
     
     static let addNewProductVCStoryBoardID = "addNewProductVC"
-    static let popVCStoryBoardID = "popVC"
+    static let unwindToProductInfoSegueID = "unwindToProductInfo"
     
     static let tabBarItemLeftTitle = "Как варить"
     static let tabBarItemRightTitle = "Недавние"
@@ -46,6 +46,17 @@ enum Inscriptions {
     
     static let categoryIdentifierTimerNotification = "timerActions"
     
+    static let IncorrectValidationAlertTitle = "Упс..."
+    
+    
+    
+    static let incorrectTitleTF = "Что-то не так с названием, проверьте его"
+    static let incorrectCookingTimeTF = "Нам кажется, или время приготовления выбрано не верно"
+    static let incorrectCategoryTF = "Пожалуйста, выберите категорию продукта"
+    static let incorrectProducerTF = "Производитель продукта, тоже очень важен"
+    static let someTFIsEmpty = "Пожалуйста, заполните все обязательные поля"
+    
+    static let variantsOfWaterRatio = ["🍚 1 : 1💧", "🍚 1 : 2💧", "🍚 1 : 3💧", "🍚 1 : 4💧", "🍚 1 : 5💧"]
     
     
     

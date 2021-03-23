@@ -125,7 +125,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                         <connections>
-                                                            <action selector="titleProductEditingChanged" destination="7Z7-UH-SDU" eventType="editingDidEnd" id="EYd-CN-G5F"/>
+                                                            <action selector="textFieldsEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="X1s-X6-u1B"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -148,7 +148,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no"/>
                                                         <connections>
-                                                            <action selector="producerProductEditingChanged" destination="7Z7-UH-SDU" eventType="editingChanged" id="63t-u7-XaQ"/>
+                                                            <action selector="textFieldsEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="l6U-RD-pbS"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -171,7 +171,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                         <connections>
-                                                            <action selector="cookingTimeEditingChanged" destination="7Z7-UH-SDU" eventType="editingChanged" id="1SI-oA-ZNX"/>
+                                                            <action selector="textFieldsEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="8Vy-eb-ZTF"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -183,8 +183,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="zvM-9o-epV">
                                                 <rect key="frame" x="0.0" y="308.66666666666669" width="350" height="54.333333333333314"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество(грамм.) " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1k-7a-6GR">
-                                                        <rect key="frame" x="0.0" y="0.0" width="166" height="20.333333333333332"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество(грамм.)* " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1k-7a-6GR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="173.66666666666666" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -194,7 +194,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                         <connections>
-                                                            <action selector="weightProductEditingChanged" destination="7Z7-UH-SDU" eventType="editingChanged" id="t08-X0-n2X"/>
+                                                            <action selector="textFieldsEditingChanged:" destination="7Z7-UH-SDU" eventType="editingChanged" id="fUt-0J-pEA"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -206,7 +206,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="lYC-Ac-eHB">
                                                 <rect key="frame" x="0.0" y="371" width="350" height="57.333333333333314"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Соотношение продукта к воде" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfB-42-qcA">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Соотношение продукта к воде*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfB-42-qcA">
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -290,7 +290,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KA8-oT-Cf8">
                                         <rect key="frame" x="0.0" y="515.66666666666663" width="350" height="42"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3F-mr-hrf">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3F-mr-hrf">
                                                 <rect key="frame" x="100" y="0.0" width="150" height="42"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -344,6 +344,7 @@
                         <outlet property="categoryTF" destination="C2H-PC-HAl" id="U1j-uj-dbn"/>
                         <outlet property="codeLabel" destination="498-Wo-fVB" id="AWQ-Tp-621"/>
                         <outlet property="cookingTimeTF" destination="rwY-qc-xSG" id="8I5-xl-ZUz"/>
+                        <outlet property="mainScrollView" destination="q42-Nc-QYf" id="94x-mS-IKz"/>
                         <outlet property="producerTF" destination="YaD-L5-W2x" id="4Co-0e-RYb"/>
                         <outlet property="saveButton" destination="N3F-mr-hrf" id="0x0-FT-yrQ"/>
                         <outlet property="titleProductTF" destination="Opw-DD-c1S" id="dwF-xm-mHy"/>
