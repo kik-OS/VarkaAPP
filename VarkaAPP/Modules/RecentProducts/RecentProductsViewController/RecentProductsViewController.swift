@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol RecentProductCollectionViewDelegate {
+    func presentInfoAboutProduct(product: Product)
+}
+
 class RecentProductsViewController: UIViewController {
     
     // MARK: - Outlets
@@ -17,11 +21,7 @@ class RecentProductsViewController: UIViewController {
     // MARK: - Properties
     
     var recentProductCollectionView = RecentProductCollectionView()
-   
-   
-    //    private var viewModel: RecentProductViewModelProtocol!
-    
-    
+    var viewModel: RecentProductViewModelProtocol!
     
     
     // MARK: - Lifecycle methods
@@ -30,6 +30,8 @@ class RecentProductsViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(recentProductCollectionView)
         configureConstraints()
+        recentProductCollectionView.viewModel = viewModel.getRecentProductCollectionViewViewModel()
+        recentProductCollectionView.viewModel.delegate = self
     }
     
     
@@ -49,6 +51,15 @@ class RecentProductsViewController: UIViewController {
             recentProductCollectionView.topAnchor.constraint(equalTo: recentProductLabel.bottomAnchor, constant: 10),
             recentProductCollectionView.heightAnchor.constraint(equalToConstant: 350)
         ])
+    }
+}
+
+extension RecentProductsViewController: RecentProductCollectionViewDelegate {
+    func presentInfoAboutProduct(product: Product) {
+        let productInfoViewModel = viewModel.getProductInfoViewModel(product: product)
+        guard let productInfoVC = tabBarController?.viewControllers?.first as? ProductInfoViewController else { return }
+        productInfoVC.viewModel = productInfoViewModel
+        tabBarController?.selectedViewController = tabBarController?.viewControllers?.first
     }
 }
 

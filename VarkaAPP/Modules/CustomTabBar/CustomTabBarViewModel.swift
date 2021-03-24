@@ -15,11 +15,13 @@ protocol CustomTabBarViewModelProtocol: class {
     
     func findProduct(byCode code: String)
     func getProductInfoViewModel(product: Product?) -> ProductInfoViewModelProtocol
-    func getRecentProductCollectionViewViewModel() -> RecentProductCollectionViewViewModelProtocol
+    func getRecentProductViewModel() -> RecentProductViewModelProtocol
     func getAddingNewProductViewModel(withCode code: String) -> AddingNewProductViewModelProtocol
 }
 
 final class CustomTabBarViewModel: CustomTabBarViewModelProtocol {
+    
+    
     
     // MARK: - Properties
     
@@ -49,8 +51,8 @@ final class CustomTabBarViewModel: CustomTabBarViewModelProtocol {
         ProductInfoViewModel(product: product)
     }
     
-    func getRecentProductCollectionViewViewModel() -> RecentProductCollectionViewViewModelProtocol {
-        RecentProductCollectionViewViewModel()
+    func getRecentProductViewModel() -> RecentProductViewModelProtocol {
+        RecentProductViewModel()
     }
     
     func getAddingNewProductViewModel(withCode code: String) -> AddingNewProductViewModelProtocol {

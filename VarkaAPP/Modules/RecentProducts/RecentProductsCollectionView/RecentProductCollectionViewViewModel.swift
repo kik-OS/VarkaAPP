@@ -10,39 +10,32 @@ import Foundation
 protocol RecentProductCollectionViewViewModelProtocol: class {
     var numberOfItemsInSection: Int { get }
     var productsCD: [ProductCD] { get }
+    var delegate: RecentProductCollectionViewDelegate! { get set }
     func fetchProductFromCoreData(completion: @escaping() -> Void)
     func cellViewModel(at indexPath: IndexPath) -> RecentProductCollectionViewCellViewModelProtocol?
-    
-    
-    
-    func convertFromProductCDToProduct(at indexPath: IndexPath)
-    func getProductInfoViewModel() -> ProductInfoViewModelProtocol
-    var productForInitializeProductInfo: Product? { get }
+    func didSelectItemAt(indexPath: IndexPath)
 }
 
 
 class RecentProductCollectionViewViewModel: RecentProductCollectionViewViewModelProtocol {
-    var productForInitializeProductInfo: Product?
     
-    func getProductInfoViewModel() -> ProductInfoViewModelProtocol {
-        ProductInfoViewModel(product: productForInitializeProductInfo)
+    func didSelectItemAt(indexPath: IndexPath) {
+        guard let product = StorageManager.shared.convertFromProductCDToProduct(productCD: productsCD[indexPath.row]) else { return }
+        delegate.presentInfoAboutProduct(product: product)
     }
-    func convertFromProductCDToProduct(at indexPath: IndexPath)  {
-        productForInitializeProductInfo = StorageManager.shared.convertFromProductCDToProduct(productCD: productsCD[indexPath.row])
     
-    }
-        
+    
+    
+    
     // MARK: - Properties
     
     var productsCD: [ProductCD] = []
+    var delegate: RecentProductCollectionViewDelegate!
     var numberOfItemsInSection: Int {
         productsCD.count
     }
     
     // MARK: - Methods
-    
-        
-    
     
     func fetchProductFromCoreData(completion: @escaping() -> Void) {
         productsCD = StorageManager.shared.fetchData()

@@ -28,14 +28,6 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         setupMiddleButton()
         setupTabBarItems()
         setupViewModelBindings()
-        
-        guard let addNewProductVC = self.storyboard?.instantiateViewController(
-            identifier: Inscriptions.addNewProductVCStoryBoardID
-        ) as? AddingNewProductViewController else { return }
-        addNewProductVC.viewModel = self.viewModel.getAddingNewProductViewModel(withCode: "12345")
-        addNewProductVC.modalPresentationStyle = .fullScreen
-        self.present(addNewProductVC, animated: true)
-        
     }
     
     // Изменение расстояния между tab bar items
@@ -65,8 +57,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         productInfoVC.tabBarItem.image = UIImage(named: ImageTitles.tabBarItemLeft)
         
         let recentProductsVC = RecentProductsViewController()
-        let recentProductCollectionViewViewModel = viewModel.getRecentProductCollectionViewViewModel()
-        recentProductsVC.recentProductCollectionView.viewModel = recentProductCollectionViewViewModel
+        recentProductsVC.viewModel = viewModel.getRecentProductViewModel()
         recentProductsVC.tabBarItem.title = Inscriptions.tabBarItemRightTitle
         recentProductsVC.tabBarItem.image = UIImage(named: ImageTitles.tabBarItemRight)
         
