@@ -55,7 +55,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     // MARK: - Private methods
     
     private func setupTabBarItems() {
-        tabBar.tintColor = .systemIndigo
+        tabBar.tintColor = VarkaColors.mainColor
         
         let productInfoViewModel = viewModel.getProductInfoViewModel(product: nil)
         let productInfoVC = ProductInfoViewController(nibName: nil,

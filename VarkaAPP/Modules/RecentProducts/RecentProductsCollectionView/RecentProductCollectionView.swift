@@ -60,4 +60,12 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
         return CGSize(width: ConstantsCollectionView.productsCollectionItemWidth, height: frame.height * 0.9)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+    
+        
+    }
+    
+    
+    
 }

@@ -8,11 +8,16 @@
 import UIKit
 import UserNotifications
 
-class Notifications: NSObject, UNUserNotificationCenterDelegate {
+final class Notifications: NSObject, UNUserNotificationCenterDelegate {
     
     // MARK: - Properties
     
+    static let shared = Notifications()
     let notificationCenter = UNUserNotificationCenter.current()
+    
+    // MARK: - Initializer
+    
+     override init() {}
     
     // MARK: - Public methods
     
@@ -35,11 +40,6 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
     func cleanBadgesAtStarting() {
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
-    
-    @objc private func applicationDidBecomeActive(notification: NSNotification) {
-        UIApplication.shared.applicationIconBadgeNumber = 0
-    }
-    
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.banner, .list, .sound])
@@ -140,4 +140,8 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
          }
          return nil
      }
+    
+    @objc private func applicationDidBecomeActive(notification: NSNotification) {
+        UIApplication.shared.applicationIconBadgeNumber = 0
+    }
 }

@@ -24,6 +24,11 @@ protocol AddingNewProductViewModelProtocol: class {
     var indexOfFirstResponder: Int { get set }
     var dataForPickerView: [String] { get }
     var numberOfRowsInPickerView: Int { get }
+    var needUpdateTextFieldWithPickerView: ((_ type: PickerViewForKBType, _ text: String) -> Void)? { get set }
+    var stateForUpButton: Bool { get }
+    var stateForDownButton: Bool { get }
+    init(code: String)
+    func getProductInfoViewModel() -> ProductInfoViewModelProtocol
     func validation() -> Bool
     func calculateWaterRatio(row: Int)
     func createProductInFB()
@@ -31,18 +36,19 @@ protocol AddingNewProductViewModelProtocol: class {
     func calculationOfLowerResponder() -> Int
     func calculationOfUpperResponder() -> Int
     func updatePickerViewIfNeeded(index: Int, completion: @escaping () -> Void)
+    func pickerViewDidSelectAt(row: Int)
     func pickerViewDidSelected(completionCategory: @escaping () -> Void,
                                completionWaterRatio: @escaping () -> Void)
     
-    init(code: String)
 }
 
 final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
-    
+
     // MARK: - Initializers
     
     init(code: String) {
         self.codeLabelText = code
+        getCategories()
     }
     
     // MARK: - Properties
@@ -60,9 +66,29 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
     var needStirring: Bool = true
     var categories: [Category] = []
     var listOfWaterRatio = Inscriptions.variantsOfWaterRatio
+    var needUpdateTextFieldWithPickerView: ((PickerViewForKBType, String) -> Void)?
     var numberOfRowsInPickerView: Int {
         dataForPickerView.count
     }
+    var stateForUpButton: Bool {
+        indexOfFirstResponder != 0
+    }
+    var stateForDownButton: Bool {
+        indexOfFirstResponder != 5
+    }
+    var dataForPickerView: [String] {
+        switch indexOfFirstResponder {
+        case 0:
+            return categories.map{$0.name}
+        case 5:
+            return listOfWaterRatio
+        default:
+            return []
+        }
+    }
+    
+    private let firebaseService: FirebaseServiceProtocol = FirebaseService.shared
+    
     // MARK: - Methods
     
     func calculateWaterRatio(row: Int) {
@@ -79,33 +105,37 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
               let productWeight = textFromWeightTF,
               let _ = textFromWaterRatioTF else { return false }
         
-        guard productTitle != "",
-              productProducer != "",
-              productCookingTime != "",
-              productWeight != "" else { return false }
+        guard !productTitle.isEmpty,
+              !productProducer.isEmpty,
+              !productCookingTime.isEmpty,
+              !productWeight.isEmpty else { return false }
         
         guard let intCookingTime = Int(productCookingTime),
               let intWeight = Int(productWeight),
-              intCookingTime > 0, intCookingTime < 121,
-              intWeight > 0, intWeight < 1501,
+              (0...120).contains(intCookingTime),
+              (1...1500).contains(intWeight),
               productTitle.count < 50,
               productProducer.count < 50 else { return false }
         
-        completedProduct = Product(code: code, title: productTitle, producer: productProducer, category: category, weight: intWeight, cookingTime: intCookingTime, intoBoilingWater: true, needStirring: needStirring, waterRatio: waterRatio)
         
+        completedProduct = Product(code: code, title: productTitle,
+                                   producer: productProducer, category: category,
+                                   weight: intWeight, cookingTime: intCookingTime,
+                                   intoBoilingWater: true, needStirring: needStirring,
+                                   waterRatio: waterRatio)
         return true
     }
     
     
     func getCategories() {
-        FirebaseService.shared.fetchCategories { categories in
+        firebaseService.fetchCategories { categories in
             self.categories = categories
         }
     }
     
     func createProductInFB() {
         guard let product = completedProduct else { return }
-        FirebaseService.shared.saveProduct(product)
+        firebaseService.saveProduct(product)
     }
     
     func calculationOfLowerResponder() -> Int {
@@ -149,15 +179,23 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
         }
     }
     
-    
-    var dataForPickerView: [String] {
+    func pickerViewDidSelectAt(row: Int) {
         switch indexOfFirstResponder {
         case 0:
-            return categories.map{$0.name}
+            let text = categories[row].name
+            textFromCategoryTF = text
+            needUpdateTextFieldWithPickerView?(.category, text)
         case 5:
-            return listOfWaterRatio
+            let text = listOfWaterRatio[row]
+            textFromWaterRatioTF = text
+            calculateWaterRatio(row: row)
+            needUpdateTextFieldWithPickerView?(.waterRatio, text)
         default:
-            return []
+            break
         }
+    }
+    
+    func getProductInfoViewModel() -> ProductInfoViewModelProtocol {
+        ProductInfoViewModel(product: completedProduct)
     }
 }

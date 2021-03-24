@@ -24,8 +24,17 @@ enum PopOverTableSize: Int {
     case height = 160
 }
 
+enum PickerViewForKBType {
+    case category
+    case waterRatio
+}
+
 enum UIConstants {
     static let defaultCornerRadius: CGFloat = 10
-    static let buttonEnabledColor = UIColor.systemIndigo
+    static let buttonEnabledColor = VarkaColors.mainColor
     static let buttonDisabledColor = UIColor.systemGray2
+}
+
+enum VarkaColors {
+    static let mainColor: UIColor = .systemOrange
 }

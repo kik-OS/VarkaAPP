@@ -48,7 +48,7 @@ final class ProductInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        view.backgroundColor = .systemIndigo
+        view.backgroundColor = VarkaColors.mainColor
     }
     
     // MARK: - Actions
@@ -58,11 +58,13 @@ final class ProductInfoViewController: UIViewController {
         let timerVC = TimerViewController(nibName: nil, bundle: nil, viewModel: timerViewModel)
         timerVC.modalPresentationStyle = .overCurrentContext
         
-        Notifications().checkNotificationSettings { [weak self] in
+        
+        
+        Notifications.shared.checkNotificationSettings { [weak self] in
             let alert = Notifications().notificationsAreNotAvailableAlert()
             self?.present(alert, animated: true)
         }
-        Notifications().showTimerNotification(throughMinutes: 1/60)
+        Notifications.shared.showTimerNotification(throughMinutes: 1/60)
         present(timerVC, animated: true)
         
     }

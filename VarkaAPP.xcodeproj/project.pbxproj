@@ -30,12 +30,9 @@
 		E451D08425F4002F00890584 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08325F4002F00890584 /* Constants.swift */; };
 		E451D08A25F7370C00890584 /* AddingNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08925F7370C00890584 /* AddingNewProductViewController.swift */; };
 		E451D08D25F7372100890584 /* AddingNewProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D08C25F7372100890584 /* AddingNewProductViewModel.swift */; };
-		E451D09425F75B9F00890584 /* PopOverMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D09325F75B9F00890584 /* PopOverMenuTableViewController.swift */; };
-		E451D09825F774AE00890584 /* CellFromPopOverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451D09725F774AE00890584 /* CellFromPopOverTableViewCell.swift */; };
 		E466EE5F25FF771E004E18D1 /* CustomTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466EE5E25FF771E004E18D1 /* CustomTabBarViewModel.swift */; };
 		E466EE79260089AF004E18D1 /* ImageTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466EE78260089AF004E18D1 /* ImageTitles.swift */; };
 		E466EE7C26008BC4004E18D1 /* Inscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466EE7B26008BC4004E18D1 /* Inscriptions.swift */; };
-		E491966C25F8B71500395445 /* PopOverMenuTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491966B25F8B71500395445 /* PopOverMenuTableViewModel.swift */; };
 		E491967525F8E30000395445 /* RecentProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967325F8E30000395445 /* RecentProductCollectionViewCell.swift */; };
 		E491967925F8F5A200395445 /* RecentProductCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967825F8F5A200395445 /* RecentProductCollectionView.swift */; };
 		E491967F25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967E25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift */; };
@@ -82,12 +79,9 @@
 		E451D08325F4002F00890584 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E451D08925F7370C00890584 /* AddingNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewProductViewController.swift; sourceTree = "<group>"; };
 		E451D08C25F7372100890584 /* AddingNewProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewProductViewModel.swift; sourceTree = "<group>"; };
-		E451D09325F75B9F00890584 /* PopOverMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverMenuTableViewController.swift; sourceTree = "<group>"; };
-		E451D09725F774AE00890584 /* CellFromPopOverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFromPopOverTableViewCell.swift; sourceTree = "<group>"; };
 		E466EE5E25FF771E004E18D1 /* CustomTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewModel.swift; sourceTree = "<group>"; };
 		E466EE78260089AF004E18D1 /* ImageTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitles.swift; sourceTree = "<group>"; };
 		E466EE7B26008BC4004E18D1 /* Inscriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inscriptions.swift; sourceTree = "<group>"; };
-		E491966B25F8B71500395445 /* PopOverMenuTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverMenuTableViewModel.swift; sourceTree = "<group>"; };
 		E491967325F8E30000395445 /* RecentProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		E491967825F8F5A200395445 /* RecentProductCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionView.swift; sourceTree = "<group>"; };
 		E491967E25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionViewViewModel.swift; sourceTree = "<group>"; };
@@ -200,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				E49562CB25F246A90068F15A /* CustomTabBar */,
-				E491969425FB5BAC00395445 /* PopOverMenu */,
 				CE02BA0825F3AB1400788EE3 /* ProductInfo */,
 				E49562C925F245B40068F15A /* RecentProducts */,
 				CE20DE1625FCA74D00274A95 /* TimerSetting */,
@@ -292,24 +285,6 @@
 				E491967E25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift */,
 			);
 			path = RecentProductsCollectionView;
-			sourceTree = "<group>";
-		};
-		E491969425FB5BAC00395445 /* PopOverMenu */ = {
-			isa = PBXGroup;
-			children = (
-				E491966B25F8B71500395445 /* PopOverMenuTableViewModel.swift */,
-				E451D09325F75B9F00890584 /* PopOverMenuTableViewController.swift */,
-				E491969625FB5BCD00395445 /* PopOverMenuTableViewCell */,
-			);
-			path = PopOverMenu;
-			sourceTree = "<group>";
-		};
-		E491969625FB5BCD00395445 /* PopOverMenuTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				E451D09725F774AE00890584 /* CellFromPopOverTableViewCell.swift */,
-			);
-			path = PopOverMenuTableViewCell;
 			sourceTree = "<group>";
 		};
 		E49196C525FB9F4200395445 /* StorageManager */ = {
@@ -534,12 +509,9 @@
 				CE3F63B926011C7200968946 /* TimerPickerView.swift in Sources */,
 				E491969925FB5C2900395445 /* CGPath+Extension.swift in Sources */,
 				E466EE5F25FF771E004E18D1 /* CustomTabBarViewModel.swift in Sources */,
-				E451D09825F774AE00890584 /* CellFromPopOverTableViewCell.swift in Sources */,
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
 				CE20DE1925FCA7EF00274A95 /* TimerViewController.swift in Sources */,
-				E491966C25F8B71500395445 /* PopOverMenuTableViewModel.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
-				E451D09425F75B9F00890584 /* PopOverMenuTableViewController.swift in Sources */,
 				E466EE79260089AF004E18D1 /* ImageTitles.swift in Sources */,
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
 				CE3A168B25F9D7A000FFA849 /* Category.swift in Sources */,

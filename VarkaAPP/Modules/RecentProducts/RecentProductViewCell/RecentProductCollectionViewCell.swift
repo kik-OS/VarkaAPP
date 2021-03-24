@@ -54,7 +54,7 @@ class RecentProductCollectionViewCell: UICollectionViewCell {
         addSubview(mainImageView)
         addSubview(nameLabel)
         addSubview(producerLabel)
-        backgroundColor = .systemIndigo
+        backgroundColor = VarkaColors.mainColor
         configureConstraints()
     }
     

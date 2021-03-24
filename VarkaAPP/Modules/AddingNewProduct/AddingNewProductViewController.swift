@@ -11,46 +11,51 @@ final class AddingNewProductViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var codeLabel: UILabel!
-    @IBOutlet weak var categoryTF: UITextField!
-    @IBOutlet weak var titleProductTF: UITextField!
-    @IBOutlet weak var producerTF: UITextField!
-    @IBOutlet weak var cookingTimeTF: UITextField!
-    @IBOutlet weak var weightTF: UITextField!
-    @IBOutlet weak var waterRatioTF: UITextField!
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var mainScrollView: UIScrollView!
+    @IBOutlet weak private var codeLabel: UILabel!
+    @IBOutlet weak private var categoryTF: UITextField!
+    @IBOutlet weak private var titleProductTF: UITextField!
+    @IBOutlet weak private var producerTF: UITextField!
+    @IBOutlet weak private var cookingTimeTF: UITextField!
+    @IBOutlet weak private var weightTF: UITextField!
+    @IBOutlet weak private var waterRatioTF: UITextField!
+    @IBOutlet weak private var saveButton: UIButton!
+    @IBOutlet weak private var mainScrollView: UIScrollView!
     
     // MARK: - Properties
     
-    var viewModel: AddingNewProductViewModelProtocol! {
-        didSet {
-            viewModel.getCategories()
-        }
-    }
+    var viewModel: AddingNewProductViewModelProtocol!
     
     // MARK: - Private Properties
     
     private let pickerViewForKB = UIPickerView()
     private let doneButtonForKB = UIBarButtonItem()
+    private let downButtonForKB = UIBarButtonItem()
+    private let upButtonForKB = UIBarButtonItem()
     
-    // MARK: - Override methods
+    // MARK: - Lifecycle methods
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let productInfoVC = segue.destination as? ProductInfoViewController else { return }
-        productInfoVC.viewModel = ProductInfoViewModel(product: viewModel.completedProduct)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = VarkaColors.mainColor
+        codeLabel.text = viewModel.codeLabelText
+        addToolBar(to: categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF)
+        initializePickerView()
+        configureObservers()
+        configureGestureRecognizer()
+        setupViewModelBindings()
     }
     
     // MARK: - IB Actions
     
-    @IBAction func textFieldsEditingDidBegin(_ sender: UITextField) {
+    @IBAction private func textFieldsEditingDidBegin(_ sender: UITextField) {
         viewModel.indexOfFirstResponder = sender.tag
         viewModel.updatePickerViewIfNeeded(index: sender.tag) { [weak self] in
             self?.pickerViewForKB.reloadAllComponents()
         }
+        updateUpAndDownButtonsState()
     }
     
-    @IBAction func textFieldsEditingChanged(_ sender: UITextField) {
+    @IBAction private func textFieldsEditingChanged(_ sender: UITextField) {
         switch sender {
         case titleProductTF:
             viewModel.textFromTitleProductTF = sender.text
@@ -67,44 +72,48 @@ final class AddingNewProductViewController: UIViewController {
     }
     
     
-    @IBAction func needStirringSwitch(_ sender: UISwitch) {
+    @IBAction private func needStirringSwitch(_ sender: UISwitch) {
         viewModel.needStirring = sender.isOn
     }
     
     
-    @IBAction func closeButtonPressed() {
+    @IBAction private func closeButtonPressed() {
         dismiss(animated: true)
     }
     
-    @IBAction func saveButtonPressed() {
+    @IBAction private func saveButtonPressed() {
         viewModel.createProductInFB()
-        Notifications().showProductWasAddedNotification()
+        Notifications.shared.showProductWasAddedNotification()
         performSegue(withIdentifier: Inscriptions.unwindToProductInfoSegueID, sender: nil)
     }
     
-    // MARK: - Lifecycle methods
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        codeLabel.text = viewModel.codeLabelText
-        addToolBar(to: categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF)
-        initializePickerView()
-        configureObservers()
-        configureGestureRecognizer()
-    }
-    
     // MARK: - Private Methods
+    private func setupViewModelBindings() {
+        viewModel.needUpdateTextFieldWithPickerView = { [unowned self] type, text in
+            switch type {
+            case .category:
+                categoryTF.text = text
+            case .waterRatio:
+                waterRatioTF.text = text
+            }
+        }
+    }
     
     private func configureGestureRecognizer() {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(oneTouchOnScrollView))
-        recognizer.numberOfTapsRequired = 1
-        recognizer.numberOfTouchesRequired = 1
         mainScrollView.addGestureRecognizer(recognizer)
     }
     
     private func configureObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let productInfoVC = segue.destination as? ProductInfoViewController else { return }
+        productInfoVC.viewModel = viewModel.getProductInfoViewModel()
     }
 }
 
@@ -149,6 +158,11 @@ extension AddingNewProductViewController: UITextFieldDelegate {
         doneButtonForKB.isEnabled = state
     }
     
+    private func updateUpAndDownButtonsState() {
+        upButtonForKB.isEnabled = viewModel.stateForUpButton
+        downButtonForKB.isEnabled = viewModel.stateForDownButton
+    }
+    
     private func createToolBar() -> UIToolbar {
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
@@ -159,13 +173,11 @@ extension AddingNewProductViewController: UITextFieldDelegate {
         doneButtonForKB.style = .plain
         doneButtonForKB.action = #selector(didTapOnDoneButton)
         
-        let downButtonForKB = UIBarButtonItem()
         downButtonForKB.tintColor = .white
         downButtonForKB.action = #selector(didTapOnDownButton)
         downButtonForKB.image = UIImage(systemName: ImageTitles.toolBarDownButton)
         downButtonForKB.style = .plain
         
-        let upButtonForKB = UIBarButtonItem()
         upButtonForKB.tintColor = .white
         upButtonForKB.action = #selector(didTapOnUpButton)
         upButtonForKB.image = UIImage(systemName: ImageTitles.toolBarUpButton)
@@ -176,8 +188,8 @@ extension AddingNewProductViewController: UITextFieldDelegate {
         space.width = 14
         
         keyboardToolbar.items = [downButtonForKB, space, upButtonForKB, flexBarButton, doneButtonForKB]
-        keyboardToolbar.backgroundColor = .systemIndigo
-        keyboardToolbar.barTintColor = .systemIndigo
+        keyboardToolbar.backgroundColor = VarkaColors.mainColor
+        keyboardToolbar.barTintColor = VarkaColors.mainColor
         return keyboardToolbar
     }
     
@@ -190,13 +202,17 @@ extension AddingNewProductViewController: UITextFieldDelegate {
     }
     
     private func changedResponderForUpButton() {
-        let textFields = [categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF]
-        textFields[viewModel.calculationOfUpperResponder()]?.becomeFirstResponder()
+        let textFields: Set = [categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF]
+        let tag = viewModel.calculationOfUpperResponder()
+        guard let targetTF = textFields.first(where: { $0?.tag == tag}) else { return }
+        targetTF?.becomeFirstResponder()
     }
     
     private func changedResponderForDownButton() {
-        let textFields = [categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF]
-        textFields[viewModel.calculationOfLowerResponder()]?.becomeFirstResponder()
+        let textFields: Set = [categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF]
+        let tag = viewModel.calculationOfLowerResponder()
+        guard let targetTF = textFields.first(where: { $0?.tag == tag}) else { return }
+        targetTF?.becomeFirstResponder()
     }
 }
 
@@ -222,15 +238,9 @@ extension AddingNewProductViewController: UIPickerViewDelegate, UIPickerViewData
     }
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        viewModel.pickerViewDidSelected { [weak self] in
-            self?.categoryTF.text = self?.viewModel.categories[row].name
-            self?.viewModel.textFromCategoryTF = self?.viewModel.categories[row].name
-        } completionWaterRatio: { [weak self] in
-            self?.waterRatioTF.text = self?.viewModel.listOfWaterRatio[row]
-            self?.viewModel.textFromWaterRatioTF = self?.viewModel.listOfWaterRatio[row]
-            self?.viewModel.calculateWaterRatio(row: row)
-        }
+        viewModel.pickerViewDidSelectAt(row: row)
         updateSaveButtonsState()
     }
 }
+
 

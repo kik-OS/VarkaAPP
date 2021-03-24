@@ -12,11 +12,26 @@ protocol RecentProductCollectionViewViewModelProtocol: class {
     var productsCD: [ProductCD] { get }
     func fetchProductFromCoreData(completion: @escaping() -> Void)
     func cellViewModel(at indexPath: IndexPath) -> RecentProductCollectionViewCellViewModelProtocol?
+    
+    
+    
+    func convertFromProductCDToProduct(at indexPath: IndexPath)
+    func getProductInfoViewModel() -> ProductInfoViewModelProtocol
+    var productForInitializeProductInfo: Product? { get }
 }
 
 
 class RecentProductCollectionViewViewModel: RecentProductCollectionViewViewModelProtocol {
+    var productForInitializeProductInfo: Product?
     
+    func getProductInfoViewModel() -> ProductInfoViewModelProtocol {
+        ProductInfoViewModel(product: productForInitializeProductInfo)
+    }
+    func convertFromProductCDToProduct(at indexPath: IndexPath)  {
+        productForInitializeProductInfo = StorageManager.shared.convertFromProductCDToProduct(productCD: productsCD[indexPath.row])
+    
+    }
+        
     // MARK: - Properties
     
     var productsCD: [ProductCD] = []
@@ -25,6 +40,9 @@ class RecentProductCollectionViewViewModel: RecentProductCollectionViewViewModel
     }
     
     // MARK: - Methods
+    
+        
+    
     
     func fetchProductFromCoreData(completion: @escaping() -> Void) {
         productsCD = StorageManager.shared.fetchData()
