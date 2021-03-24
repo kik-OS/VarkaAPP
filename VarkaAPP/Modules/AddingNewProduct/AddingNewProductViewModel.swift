@@ -7,113 +7,193 @@
 
 import Foundation
 
-enum IncorrectMessages: String {
-    case incorrectTitle = "Что-то не так с названием, проверьте его"
-    case incorrectCookingTime = "Нам кажется, или время приготовления выбрано не верно"
-    case incorrectCategory = "Пожалуйста, выберите категорию продукта"
-    case incorrectProducer = "Производитель продукта, тоже очень важен"
-}
-
-protocol AddingNewProductViewModelProtocol {
+protocol AddingNewProductViewModelProtocol: class {
     var codeLabelText: String? { get set }
+    var textFromCategoryTF: String? { get set }
     var textFromTitleProductTF: String? { get set }
+    var textFromProducerTF: String? { get set }
     var textFromCookingTimeTF: String? { get set }
     var textFromWeightTF: String? { get set }
-    var textFromProducerTF: String? { get set }
-    var categorySelected: Bool { get set }
+    var textFromWaterRatioTF: String? { get set }
     var needStirring: Bool { get set }
-    var waterRatio: Double { get set }
-    var incorrectMessage: String { get }
-    var stringForWaterRatio: String { get }
-    var selectedCategory: String? { get set}
+    var waterRatio: Double { get }
     var completedProduct: Product? { get }
     var categories: [Category] { get }
+    var listOfWaterRatio: [String] { get }
+    var indexOfFirstResponder: Int { get set }
+    var dataForPickerView: [String] { get }
+    var numberOfRowsInPickerView: Int { get }
+    var needUpdateTextFieldWithPickerView: ((_ type: PickerViewForKBType, _ text: String) -> Void)? { get set }
+    var needUpdateFirstResponder: ((_ tag: Int) -> Void)? { get set }
+    var stateForUpButton: Bool { get }
+    var stateForDownButton: Bool { get }
+    init(code: String)
+    func getProductInfoViewModel() -> ProductInfoViewModelProtocol
     func validation() -> Bool
-    func initializeProduct()
+    func calculateWaterRatio(row: Int)
     func createProductInFB()
     func getCategories()
-    
-    init(code: String)
+    func calculationOfLowerResponder() -> Int
+    func calculationOfUpperResponder() -> Int
+    func updatePickerViewIfNeeded(index: Int, completion: @escaping () -> Void)
+    func pickerViewDidSelectAt(row: Int)
+    func didTapChangeResponderButton(type: ToolBarButtonsForKBType)
 }
 
 final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
     
+    // MARK: - Initializers
+    
     init(code: String) {
         self.codeLabelText = code
+        getCategories()
     }
     
     // MARK: - Properties
-    var completedProduct: Product?
-    var selectedCategory: String?
+    
     var codeLabelText: String?
+    var textFromCategoryTF: String?
     var textFromTitleProductTF: String?
-    var textFromCookingTimeTF: String?
     var textFromProducerTF: String?
-    var categorySelected: Bool = false
-    var needStirring: Bool = true
-    var waterRatio: Double = 1
+    var textFromCookingTimeTF: String?
     var textFromWeightTF: String?
-    var incorrectMessage: String = ""
+    var textFromWaterRatioTF: String?
+    var indexOfFirstResponder: Int = 0
+    var waterRatio: Double = 3
+    var completedProduct: Product?
+    var needStirring: Bool = true
     var categories: [Category] = []
-    var stringForWaterRatio: String {
-        "🍚 1 : \(Int(waterRatio))💧"
+    var listOfWaterRatio = Inscriptions.variantsOfWaterRatio
+    var needUpdateTextFieldWithPickerView: ((PickerViewForKBType, String) -> Void)?
+    var needUpdateFirstResponder: ((Int) -> Void)?
+    var numberOfRowsInPickerView: Int {
+        dataForPickerView.count
     }
+    var stateForUpButton: Bool {
+        indexOfFirstResponder != 0
+    }
+    var stateForDownButton: Bool {
+        indexOfFirstResponder != 5
+    }
+    var dataForPickerView: [String] {
+        switch indexOfFirstResponder {
+        case 0:
+            return categories.map{$0.name}
+        case 5:
+            return listOfWaterRatio
+        default:
+            return []
+        }
+    }
+    
+    private let firebaseService: FirebaseServiceProtocol = FirebaseService.shared
     
     // MARK: - Methods
     
+    func calculateWaterRatio(row: Int) {
+        waterRatio = Double(row + 1)
+    }
+    
     func validation() -> Bool {
-        guard categorySelected else {
-            incorrectMessage = IncorrectMessages.incorrectCategory.rawValue
-            return false }
-        guard let titleText = textFromTitleProductTF else {
-            incorrectMessage = IncorrectMessages.incorrectTitle.rawValue
-            return false }
-        guard let producerText = textFromProducerTF else {
-            incorrectMessage = IncorrectMessages.incorrectProducer.rawValue
-            return false }
-        guard let cookingTime = textFromCookingTimeTF else {
-            incorrectMessage = IncorrectMessages.incorrectCookingTime.rawValue
-            return false }
-        guard let intCookingTime = Int(cookingTime) else {
-            incorrectMessage = IncorrectMessages.incorrectCookingTime.rawValue
-            return false }
-        guard titleText.count >= 2 else {
-            incorrectMessage = IncorrectMessages.incorrectTitle.rawValue
-            return false }
-        guard producerText.count >= 2 else {
-            incorrectMessage = IncorrectMessages.incorrectProducer.rawValue
-            return false }
-        guard intCookingTime > 0 else {
-            incorrectMessage = IncorrectMessages.incorrectCookingTime.rawValue
-            return false }
+        guard let code = codeLabelText,
+              let _ = textFromCategoryTF,
+              let productTitle = textFromTitleProductTF,
+              let category = textFromCategoryTF,
+              let productProducer = textFromProducerTF,
+              let productCookingTime = textFromCookingTimeTF,
+              let productWeight = textFromWeightTF,
+              let _ = textFromWaterRatioTF else { return false }
+        
+        guard !productTitle.isEmpty,
+              !productProducer.isEmpty,
+              !productCookingTime.isEmpty,
+              !productWeight.isEmpty else { return false }
+        
+        guard let intCookingTime = Int(productCookingTime),
+              let intWeight = Int(productWeight),
+              (0...120).contains(intCookingTime),
+              (1...1500).contains(intWeight),
+              productTitle.count < 50,
+              productProducer.count < 50 else { return false }
+        
+        
+        completedProduct = Product(code: code, title: productTitle,
+                                   producer: productProducer, category: category,
+                                   weight: intWeight, cookingTime: intCookingTime,
+                                   intoBoilingWater: true, needStirring: needStirring,
+                                   waterRatio: waterRatio)
         return true
     }
     
+    
     func getCategories() {
-        FirebaseService.shared.fetchCategories { categories in
+        firebaseService.fetchCategories { categories in
             self.categories = categories
         }
     }
     
     func createProductInFB() {
         guard let product = completedProduct else { return }
-        FirebaseService.shared.saveProduct(product)
+        firebaseService.saveProduct(product)
     }
     
-    func initializeProduct() {
-        guard let barcode = codeLabelText else { return }
-        guard let title = textFromTitleProductTF else { return }
-        guard let producer = textFromProducerTF else { return }
-        guard let category = selectedCategory else { return }
-        guard let cookingTimeString = textFromCookingTimeTF else { return}
-        guard let cookingTimeInt = Int(cookingTimeString) else { return }
-        var weightInt: Int?
-        if let weightString = textFromWeightTF {
-            weightInt = Int(weightString) }
-        completedProduct = Product(code: barcode, title: title,
-                                   producer: producer, category: category,
-                                   weight: weightInt, cookingTime: cookingTimeInt,
-                                   intoBoilingWater: true, needStirring: needStirring,
-                                   waterRatio: waterRatio)
+    func calculationOfLowerResponder() -> Int {
+        switch indexOfFirstResponder {
+        case 0...4:
+            return indexOfFirstResponder + 1
+        default:
+            return indexOfFirstResponder
+        }
+    }
+    
+    func calculationOfUpperResponder() -> Int {
+        switch indexOfFirstResponder {
+        case 1...5:
+            return indexOfFirstResponder - 1
+        default:
+            return indexOfFirstResponder
+        }
+    }
+    
+    
+    func updatePickerViewIfNeeded(index: Int, completion: @escaping () -> Void) {
+        switch index {
+        case 0, 5:
+            DispatchQueue.main.async {
+                completion()
+            }
+        default:
+            break
+        }
+    }
+    
+    func pickerViewDidSelectAt(row: Int) {
+        switch indexOfFirstResponder {
+        case 0:
+            let text = categories[row].name
+            textFromCategoryTF = text
+            needUpdateTextFieldWithPickerView?(.category, text)
+        case 5:
+            let text = listOfWaterRatio[row]
+            textFromWaterRatioTF = text
+            calculateWaterRatio(row: row)
+            needUpdateTextFieldWithPickerView?(.waterRatio, text)
+        default:
+            break
+        }
+    }
+    
+    func didTapChangeResponderButton(type: ToolBarButtonsForKBType) {
+        switch type {
+        case .down:
+            needUpdateFirstResponder?(calculationOfLowerResponder())
+        case .up:
+            needUpdateFirstResponder?(calculationOfUpperResponder())
+        }
+    }
+    
+    
+    func getProductInfoViewModel() -> ProductInfoViewModelProtocol {
+        ProductInfoViewModel(product: completedProduct)
     }
 }

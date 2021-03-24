@@ -17,20 +17,19 @@ class RecentProductsViewController: UIViewController {
     // MARK: - Properties
     
     var recentProductCollectionView = RecentProductCollectionView()
+   
+   
     //    private var viewModel: RecentProductViewModelProtocol!
+    
+    
+    
     
     // MARK: - Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Временный метод для очистки coreData
-                let test: [ProductCD] = StorageManager.shared.fetchData()
-                for i in test {StorageManager.shared.deleteProductCD(i)}
-        
         view.addSubview(recentProductCollectionView)
         configureConstraints()
-        
     }
     
     

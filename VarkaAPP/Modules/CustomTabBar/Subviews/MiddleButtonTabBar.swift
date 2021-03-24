@@ -16,7 +16,7 @@ extension UIButton {
         middleButton.layer.borderWidth = 1
         middleButton.layer.cornerRadius = 34
         middleButton.clipsToBounds = true
-        middleButton.tintColor = .systemIndigo
+        middleButton.tintColor = VarkaColors.mainColor
         middleButton.translatesAutoresizingMaskIntoConstraints = false
         middleButton.setImage(UIImage(systemName: ImageTitles.tabBarMiddleButton), for: .normal)
         middleButton.setPreferredSymbolConfiguration(

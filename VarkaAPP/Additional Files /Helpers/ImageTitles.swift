@@ -9,10 +9,12 @@ import Foundation
 
 enum ImageTitles {
     
-  static let tabBarItemLeft = "pot.png"
-  static let tabBarItemRight = "box.png"
-    
-  static let tabBarMiddleButton = "barcode.viewfinder"
+    static let tabBarItemLeft = "pot.png"
+    static let tabBarItemRight = "box.png"
+    static let tabBarMiddleButton = "barcode.viewfinder"
+    static let timerNotificationContent = (title: "timer", type: "png")
+    static let toolBarDownButton = "arrow.down"
+    static let toolBarUpButton = "arrow.up"
     
     
 }

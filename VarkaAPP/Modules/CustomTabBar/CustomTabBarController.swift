@@ -29,6 +29,13 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         setupTabBarItems()
         setupViewModelBindings()
         
+        guard let addNewProductVC = self.storyboard?.instantiateViewController(
+            identifier: Inscriptions.addNewProductVCStoryBoardID
+        ) as? AddingNewProductViewController else { return }
+        addNewProductVC.viewModel = self.viewModel.getAddingNewProductViewModel(withCode: "12345")
+        addNewProductVC.modalPresentationStyle = .fullScreen
+        self.present(addNewProductVC, animated: true)
+        
     }
     
     // Изменение расстояния между tab bar items
@@ -48,7 +55,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     // MARK: - Private methods
     
     private func setupTabBarItems() {
-        tabBar.tintColor = .systemIndigo
+        tabBar.tintColor = VarkaColors.mainColor
         
         let productInfoViewModel = viewModel.getProductInfoViewModel(product: nil)
         let productInfoVC = ProductInfoViewController(nibName: nil,
@@ -68,7 +75,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     
     private func setupMiddleButton() {
         let middleButton = UIButton.setupMiddleButtonTabBar()
-         
+        
         middleButton.addTarget(self, action: #selector(centerButtonAction), for: .touchUpInside)
         
         view.addSubview(middleButton)
