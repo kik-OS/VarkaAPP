@@ -108,7 +108,7 @@ final class Notifications: NSObject, UNUserNotificationCenterDelegate {
         notificationCenter.add(request)
     }
     
-    func notificationsAreNotAvailableAlert() -> UIAlertController {
+    static func notificationsAreNotAvailableAlert() -> UIAlertController {
         let alert = UIAlertController(title: Inscriptions.titleNotificationsAreNotAvailableAlert,
                                       message: Inscriptions.messageNotificationsAreNotAvailableAlert,
                                       preferredStyle: .actionSheet)

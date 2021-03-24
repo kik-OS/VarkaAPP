@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol AddingNewProductViewModelProtocol: class {
     var codeLabelText: String? { get set }
     var textFromCategoryTF: String? { get set }
@@ -25,6 +24,7 @@ protocol AddingNewProductViewModelProtocol: class {
     var dataForPickerView: [String] { get }
     var numberOfRowsInPickerView: Int { get }
     var needUpdateTextFieldWithPickerView: ((_ type: PickerViewForKBType, _ text: String) -> Void)? { get set }
+    var needUpdateFirstResponder: ((_ tag: Int) -> Void)? { get set }
     var stateForUpButton: Bool { get }
     var stateForDownButton: Bool { get }
     init(code: String)
@@ -39,11 +39,13 @@ protocol AddingNewProductViewModelProtocol: class {
     func pickerViewDidSelectAt(row: Int)
     func pickerViewDidSelected(completionCategory: @escaping () -> Void,
                                completionWaterRatio: @escaping () -> Void)
+    func didTapChangeResponderButton(type: ToolBarButtonsForKBType)
+    
     
 }
 
 final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
-
+   
     // MARK: - Initializers
     
     init(code: String) {
@@ -67,6 +69,7 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
     var categories: [Category] = []
     var listOfWaterRatio = Inscriptions.variantsOfWaterRatio
     var needUpdateTextFieldWithPickerView: ((PickerViewForKBType, String) -> Void)?
+    var needUpdateFirstResponder: ((Int) -> Void)?
     var numberOfRowsInPickerView: Int {
         dataForPickerView.count
     }
@@ -193,6 +196,22 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
         default:
             break
         }
+    }
+    
+    func didTapChangeResponderButton(type: ToolBarButtonsForKBType) {
+        switch type {
+        case .down:
+            needUpdateFirstResponder?(calculationOfLowerResponder())
+        case .up:
+            needUpdateFirstResponder?(calculationOfUpperResponder())
+        }
+    }
+    
+    func didTapUpButton(completion: (Int) -> Void) {
+        completion(calculationOfUpperResponder())
+    }
+    func didTapDownButton(completion: (Int) -> Void) {
+        completion(calculationOfLowerResponder())
     }
     
     func getProductInfoViewModel() -> ProductInfoViewModelProtocol {

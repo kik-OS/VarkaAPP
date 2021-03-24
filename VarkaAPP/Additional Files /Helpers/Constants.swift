@@ -29,6 +29,11 @@ enum PickerViewForKBType {
     case waterRatio
 }
 
+enum ToolBarButtonsForKBType {
+    case up
+    case down
+}
+
 enum UIConstants {
     static let defaultCornerRadius: CGFloat = 10
     static let buttonEnabledColor = VarkaColors.mainColor

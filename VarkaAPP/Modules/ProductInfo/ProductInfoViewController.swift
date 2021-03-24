@@ -61,7 +61,7 @@ final class ProductInfoViewController: UIViewController {
         
         
         Notifications.shared.checkNotificationSettings { [weak self] in
-            let alert = Notifications().notificationsAreNotAvailableAlert()
+            let alert = Notifications.notificationsAreNotAvailableAlert()
             self?.present(alert, animated: true)
         }
         Notifications.shared.showTimerNotification(throughMinutes: 1/60)

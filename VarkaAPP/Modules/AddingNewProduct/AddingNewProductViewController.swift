@@ -97,6 +97,12 @@ final class AddingNewProductViewController: UIViewController {
                 waterRatioTF.text = text
             }
         }
+        
+        viewModel.needUpdateFirstResponder = { [unowned self] tag in
+            let textFields: Set = [categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF]
+            guard let targetTF = textFields.first(where: { $0?.tag == tag}) else { return }
+            targetTF?.becomeFirstResponder()
+        }
     }
     
     private func configureGestureRecognizer() {
@@ -118,7 +124,6 @@ final class AddingNewProductViewController: UIViewController {
 }
 
 
-
 //MARK: - Extensions
 
 extension AddingNewProductViewController: UITextFieldDelegate {
@@ -132,11 +137,11 @@ extension AddingNewProductViewController: UITextFieldDelegate {
     }
     
     @objc private func didTapOnUpButton() {
-        changedResponderForUpButton()
+        viewModel.didTapChangeResponderButton(type: .up)
     }
     
     @objc private func didTapOnDownButton() {
-        changedResponderForDownButton()
+        viewModel.didTapChangeResponderButton(type: .down)
     }
     
     @objc private func keyBoardDidShow(notification: Notification) {
@@ -200,20 +205,6 @@ extension AddingNewProductViewController: UITextFieldDelegate {
             textField.inputAccessoryView = keyboardToolbar
         }
     }
-    
-    private func changedResponderForUpButton() {
-        let textFields: Set = [categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF]
-        let tag = viewModel.calculationOfUpperResponder()
-        guard let targetTF = textFields.first(where: { $0?.tag == tag}) else { return }
-        targetTF?.becomeFirstResponder()
-    }
-    
-    private func changedResponderForDownButton() {
-        let textFields: Set = [categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF]
-        let tag = viewModel.calculationOfLowerResponder()
-        guard let targetTF = textFields.first(where: { $0?.tag == tag}) else { return }
-        targetTF?.becomeFirstResponder()
-    }
 }
 
 
@@ -242,5 +233,6 @@ extension AddingNewProductViewController: UIPickerViewDelegate, UIPickerViewData
         updateSaveButtonsState()
     }
 }
+
 
 
