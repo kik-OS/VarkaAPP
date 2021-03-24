@@ -37,15 +37,11 @@ protocol AddingNewProductViewModelProtocol: class {
     func calculationOfUpperResponder() -> Int
     func updatePickerViewIfNeeded(index: Int, completion: @escaping () -> Void)
     func pickerViewDidSelectAt(row: Int)
-    func pickerViewDidSelected(completionCategory: @escaping () -> Void,
-                               completionWaterRatio: @escaping () -> Void)
     func didTapChangeResponderButton(type: ToolBarButtonsForKBType)
-    
-    
 }
 
 final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
-   
+    
     // MARK: - Initializers
     
     init(code: String) {
@@ -159,17 +155,6 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
         }
     }
     
-    func pickerViewDidSelected(completionCategory: @escaping () -> Void,
-                               completionWaterRatio: @escaping () -> Void) {
-        switch indexOfFirstResponder {
-        case 0:
-            completionCategory()
-        case 5:
-            completionWaterRatio()
-        default:
-            break
-        }
-    }
     
     func updatePickerViewIfNeeded(index: Int, completion: @escaping () -> Void) {
         switch index {
@@ -207,12 +192,6 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
         }
     }
     
-    func didTapUpButton(completion: (Int) -> Void) {
-        completion(calculationOfUpperResponder())
-    }
-    func didTapDownButton(completion: (Int) -> Void) {
-        completion(calculationOfLowerResponder())
-    }
     
     func getProductInfoViewModel() -> ProductInfoViewModelProtocol {
         ProductInfoViewModel(product: completedProduct)
