@@ -28,6 +28,12 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         setupMiddleButton()
         setupTabBarItems()
         setupViewModelBindings()
+        
+        guard let addNewProductVC = self.storyboard?.instantiateViewController(
+            identifier: Inscriptions.addNewProductVCStoryBoardID
+        ) as? AddingNewProductViewController else { return }
+        addNewProductVC.viewModel = self.viewModel.getAddingNewProductViewModel(withCode: "123456789")
+        self.present(addNewProductVC, animated: true)
     }
     
     // Изменение расстояния между tab bar items
