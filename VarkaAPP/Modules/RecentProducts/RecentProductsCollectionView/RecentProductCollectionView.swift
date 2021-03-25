@@ -20,6 +20,7 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
     }
     
     
+    
     // MARK: - Initializer 
     
     init() {
@@ -61,11 +62,10 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
-    
-        
+        viewModel.didSelectItemAt(indexPath: indexPath)
     }
     
-    
-    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        true
+    }
 }

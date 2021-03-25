@@ -128,6 +128,12 @@ final class AddingNewProductViewController: UIViewController {
 
 extension AddingNewProductViewController: UITextFieldDelegate {
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        viewModel.didTapChangeResponderButton(type: .down)
+        return true
+    }
+    
     @objc private func oneTouchOnScrollView() {
         view.endEditing(true)
     }
@@ -156,7 +162,6 @@ extension AddingNewProductViewController: UITextFieldDelegate {
         (view as! UIScrollView).contentSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height)
     }
     
-    
     private func updateSaveButtonsState() {
         let state = viewModel.validation()
         saveButton.isEnabled = state
@@ -169,7 +174,7 @@ extension AddingNewProductViewController: UITextFieldDelegate {
     }
     
     private func createToolBar() -> UIToolbar {
-        let keyboardToolbar = UIToolbar()
+        let keyboardToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
         keyboardToolbar.sizeToFit()
         
         doneButtonForKB.tintColor = .white
@@ -195,6 +200,7 @@ extension AddingNewProductViewController: UITextFieldDelegate {
         keyboardToolbar.items = [downButtonForKB, space, upButtonForKB, flexBarButton, doneButtonForKB]
         keyboardToolbar.backgroundColor = VarkaColors.mainColor
         keyboardToolbar.barTintColor = VarkaColors.mainColor
+        keyboardToolbar.updateConstraintsIfNeeded()
         return keyboardToolbar
     }
     
@@ -202,6 +208,7 @@ extension AddingNewProductViewController: UITextFieldDelegate {
     private func addToolBar(to textFields: UITextField...) {
         let keyboardToolbar = createToolBar()
         textFields.forEach { textField in
+            textField.delegate = self
             textField.inputAccessoryView = keyboardToolbar
         }
     }
@@ -214,6 +221,7 @@ extension AddingNewProductViewController: UIPickerViewDelegate, UIPickerViewData
         categoryTF.inputView = pickerViewForKB
         waterRatioTF.inputView = pickerViewForKB
         pickerViewForKB.delegate = self
+        pickerViewForKB.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

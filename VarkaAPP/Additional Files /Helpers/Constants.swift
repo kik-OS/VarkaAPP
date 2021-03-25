@@ -41,5 +41,5 @@ enum UIConstants {
 }
 
 enum VarkaColors {
-    static let mainColor: UIColor = .systemOrange
+    static let mainColor: UIColor = .black
 }

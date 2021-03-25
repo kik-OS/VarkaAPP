@@ -96,7 +96,6 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
     
     func validation() -> Bool {
         guard let code = codeLabelText,
-              let _ = textFromCategoryTF,
               let productTitle = textFromTitleProductTF,
               let category = textFromCategoryTF,
               let productProducer = textFromProducerTF,
@@ -115,7 +114,6 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
               (1...1500).contains(intWeight),
               productTitle.count < 50,
               productProducer.count < 50 else { return false }
-        
         
         completedProduct = Product(code: code, title: productTitle,
                                    producer: productProducer, category: category,
