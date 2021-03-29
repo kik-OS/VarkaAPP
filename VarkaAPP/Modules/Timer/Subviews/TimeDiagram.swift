@@ -42,7 +42,7 @@ struct TimeDiagram: View {
                     .stroke(style: .init(lineWidth: 20, lineCap: .round,
                                          lineJoin: .round, miterLimit: 0,
                                          dash: [], dashPhase: 0))
-                    .foregroundColor(Color.init(.systemIndigo))
+                    .foregroundColor(Color.init(VarkaColors.mainColor))
             }
             .rotationEffect(.degrees(18))
             .scaleEffect(0.8)

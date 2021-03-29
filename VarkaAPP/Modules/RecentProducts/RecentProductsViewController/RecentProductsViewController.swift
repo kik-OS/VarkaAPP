@@ -11,18 +11,17 @@ protocol RecentProductCollectionViewDelegate {
     func presentInfoAboutProduct(product: Product)
 }
 
-class RecentProductsViewController: UIViewController {
+final class RecentProductsViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var recentProductLabel: UILabel!
-    @IBOutlet weak var nothingFoundLabel: UILabel!
+    @IBOutlet private weak var recentProductLabel: UILabel!
+    @IBOutlet private weak var nothingFoundLabel: UILabel!
     
     // MARK: - Properties
     
     var recentProductCollectionView = RecentProductCollectionView()
     var viewModel: RecentProductViewModelProtocol!
-    
     
     // MARK: - Lifecycle methods
     
@@ -33,7 +32,6 @@ class RecentProductsViewController: UIViewController {
         recentProductCollectionView.viewModel = viewModel.getRecentProductCollectionViewViewModel()
         recentProductCollectionView.viewModel.delegate = self
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,4 +60,3 @@ extension RecentProductsViewController: RecentProductCollectionViewDelegate {
         tabBarController?.selectedViewController = tabBarController?.viewControllers?.first
     }
 }
-

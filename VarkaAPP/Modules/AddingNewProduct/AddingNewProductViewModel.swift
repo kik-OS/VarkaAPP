@@ -193,8 +193,4 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
     func getProductInfoViewModel() -> ProductInfoViewModelProtocol {
         ProductInfoViewModel(product: completedProduct)
     }
-    
-    func getProductInfoViewModel() -> ProductInfoViewModelProtocol {
-        ProductInfoViewModel(product: completedProduct)
-    }
 }

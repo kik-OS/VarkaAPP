@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K9i-IV-iPe">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -35,7 +35,7 @@
                         <barButtonItem key="rightBarButtonItem" image="timer" catalog="system" id="URZ-Nx-ETA">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="timerBarButtonTapped:" destination="C3u-R3-MZb" id="G80-1I-JRH"/>
+                                <action selector="timerBarButtonTapped:" destination="C3u-R3-MZb" id="aJD-3R-exa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -342,26 +342,6 @@
                                 <rect key="frame" x="350" y="44" width="30" height="30"/>
                                 <connections>
                                     <action selector="closeButtonPressed" destination="7Z7-UH-SDU" eventType="touchUpInside" id="b4r-f1-paC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3F-mr-hrf">
-                                <rect key="frame" x="74" y="667.5" width="266" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
-                                <state key="normal" title="Сохранить">
-                                    <color key="titleColor" systemColor="systemIndigoColor"/>
-                                </state>
-                                <state key="disabled">
-                                    <color key="titleColor" systemColor="systemGray5Color"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="saveButtonPressed" destination="7Z7-UH-SDU" eventType="touchUpInside" id="tfJ-mi-w1A"/>
                                 </connections>
                             </button>
                         </subviews>

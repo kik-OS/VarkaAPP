@@ -220,8 +220,8 @@
 				E49562CB25F246A90068F15A /* CustomTabBar */,
 				CE02BA0825F3AB1400788EE3 /* ProductInfo */,
 				E49562C925F245B40068F15A /* RecentProducts */,
-				CE20DE1625FCA74D00274A95 /* Timer */,
 				E451D08825F736E500890584 /* AddingNewProduct */,
+				CE20DE1625FCA74D00274A95 /* Timer */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -342,17 +342,17 @@
 			isa = PBXGroup;
 			children = (
 				CE3A167B25F7925A00FFA849 /* Modules */,
-				E451D08625F400B700890584 /* Additional Files  */,
-				E495629225F20F7B0068F15A /* StoryBoard */,
 				CE02B9EB25F2AC6200788EE3 /* Models */,
+				E495629225F20F7B0068F15A /* Storyboards */,
 				CE02BA0325F3A8E600788EE3 /* Services */,
+				E451D08625F400B700890584 /* Additional Files  */,
 				E495629125F20F5E0068F15A /* Resources */,
-				E495629025F20F510068F15A /* SupportingFiles */,
+				E495629025F20F510068F15A /* Supporting Files */,
 			);
 			path = VarkaAPP;
 			sourceTree = "<group>";
 		};
-		E495629025F20F510068F15A /* SupportingFiles */ = {
+		E495629025F20F510068F15A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				E495628025F20F2A0068F15A /* VarkaAPP.xcdatamodeld */,
@@ -361,7 +361,7 @@
 				E495627925F20F2A0068F15A /* SceneDelegate.swift */,
 				E495627725F20F2A0068F15A /* AppDelegate.swift */,
 			);
-			path = SupportingFiles;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		E495629125F20F5E0068F15A /* Resources */ = {
@@ -374,13 +374,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		E495629225F20F7B0068F15A /* StoryBoard */ = {
+		E495629225F20F7B0068F15A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				E495627D25F20F2A0068F15A /* Main.storyboard */,
 				E495628525F20F2D0068F15A /* LaunchScreen.storyboard */,
 			);
-			path = StoryBoard;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		E49562C925F245B40068F15A /* RecentProducts */ = {
@@ -709,7 +709,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58287L88KM;
-				INFOPLIST_FILE = VarkaAPP/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = "VarkaAPP/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -730,7 +730,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58287L88KM;
-				INFOPLIST_FILE = VarkaAPP/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = "VarkaAPP/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

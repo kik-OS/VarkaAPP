@@ -45,7 +45,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         present(barCodeScannerVC, animated: true, completion: nil)
     }
     
-    @IBAction func timerBarButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction private func timerBarButtonTapped(_ sender: UIBarButtonItem) {
         let timerViewModel = viewModel.getTimerViewModel()
         let timerVC = TimerViewController(nibName: nil, bundle: nil, viewModel: timerViewModel)
         timerVC.modalPresentationStyle = .overCurrentContext
@@ -89,7 +89,6 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     }
     
     private func setupViewModelBindings() {
-        
         viewModel.productDidReceive = { [unowned self] productInfoViewModel in
             guard let productInfoVC = viewControllers?.first as? ProductInfoViewController else { return }
             productInfoVC.viewModel = productInfoViewModel

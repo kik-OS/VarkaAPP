@@ -11,16 +11,16 @@ final class ProductInfoViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var productStackView: UIStackView!
-    @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var barcodeLabel: UILabel!
-    @IBOutlet weak var producerLabel: UILabel!
-    @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
-    @IBOutlet weak var cookingTimeLabel: UILabel!
-    @IBOutlet weak var intoBoilingWaterLabel: UILabel!
-    @IBOutlet weak var needStirringLabel: UILabel!
+    @IBOutlet private weak var productStackView: UIStackView!
+    @IBOutlet private weak var infoLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var barcodeLabel: UILabel!
+    @IBOutlet private weak var producerLabel: UILabel!
+    @IBOutlet private weak var categoryLabel: UILabel!
+    @IBOutlet private weak var weightLabel: UILabel!
+    @IBOutlet private weak var cookingTimeLabel: UILabel!
+    @IBOutlet private weak var intoBoilingWaterLabel: UILabel!
+    @IBOutlet private weak var needStirringLabel: UILabel!
     
     // MARK: - Properties
     
@@ -57,8 +57,6 @@ final class ProductInfoViewController: UIViewController {
         let timerViewModel = viewModel.getTimerViewModel()
         let timerVC = TimerViewController(nibName: nil, bundle: nil, viewModel: timerViewModel)
         timerVC.modalPresentationStyle = .overCurrentContext
-        
-        
         
         Notifications.shared.checkNotificationSettings { [weak self] in
             let alert = Notifications.notificationsAreNotAvailableAlert()

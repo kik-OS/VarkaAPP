@@ -14,7 +14,7 @@ protocol RecentProductCollectionViewCellViewModelProtocol {
     init(product: ProductCD)
 }
 
-class RecentProductCollectionViewCellViewModel: RecentProductCollectionViewCellViewModelProtocol {
+final class RecentProductCollectionViewCellViewModel: RecentProductCollectionViewCellViewModelProtocol {
     
     // MARK: - Properties
     
