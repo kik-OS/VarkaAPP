@@ -5,20 +5,25 @@
 //  Created by Evgeny Novgorodov on 13.03.2021.
 //
 
-import UIKit
+import SwiftUI
 
 final class TimerViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var minutesPickerView: TimerPickerView!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet private weak var backgroundView: UIView!
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var pickerStackView: UIStackView!
+    @IBOutlet private weak var diagramStackView: UIStackView!
+    @IBOutlet private weak var minutesPickerView: TimerPickerView!
+    @IBOutlet private weak var minLabel: UILabel!
+    @IBOutlet private weak var startButton: UIButton!
+    @IBOutlet private weak var stopButton: UIButton!
     
     // MARK: - Properties
     
-    let viewModel: TimerViewModelProtocol
+    var viewModel: TimerViewModelProtocol
     
     // MARK: - Initializers
     
@@ -37,6 +42,7 @@ final class TimerViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        setupViewModelBindings()
     }
     
     // MARK: - Actions
@@ -45,12 +51,20 @@ final class TimerViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @IBAction func startButtonTapped() {
-        viewModel.startTimer()
+    @IBAction private func closeButtonTapped() {
+        dismiss(animated: true)
     }
     
-    @IBAction func closeButtonTapped() {
-        dismiss(animated: true)
+    @IBAction private func startButtonTapped() {
+        viewModel.startTimer()
+        showDiagram()
+        updateStatesOfButtons()
+    }
+    
+    @IBAction func stopButtonTapped() {
+        viewModel.stopTimer()
+        hideDiagram()
+        updateStatesOfButtons()
     }
     
     // MARK: - Setup UI
@@ -58,7 +72,11 @@ final class TimerViewController: UIViewController {
     private func setupUI() {
         contentView.layer.cornerRadius = UIConstants.defaultCornerRadius
         startButton.layer.cornerRadius = UIConstants.defaultCornerRadius
-        updateStartButton()
+        stopButton.layer.cornerRadius =  UIConstants.defaultCornerRadius
+        
+        updateStatesOfStackViews()
+        updateStatesOfButtons()
+        setTimeDiagramView()
         minutesPickerView.selectRow(viewModel.minutes, inComponent: 0, animated: false)
         
         let dismissByTapGR = UITapGestureRecognizer(target: self,
@@ -67,11 +85,54 @@ final class TimerViewController: UIViewController {
     }
     
     // MARK: - Private methods
-    private func updateStartButton() {
+    
+    private func setupViewModelBindings() {
+        viewModel.timerDidStep = { [unowned self] totalSeconds, remainingSeconds in
+            setTimeDiagramView(totalSeconds: totalSeconds, remainingSeconds: remainingSeconds)
+        }
+        
+        viewModel.timerDidStop = { [unowned self] in
+            hideDiagram()
+        }
+    }
+    
+    private func setTimeDiagramView(totalSeconds: Int? = nil, remainingSeconds: Int? = nil) {
+        let totalSeconds = totalSeconds ?? viewModel.timerTime.totalSeconds
+        let remainingSeconds = remainingSeconds ?? viewModel.timerTime.remainingSeconds
+        
+        let timeDiagramView = UIHostingController(rootView: TimeDiagram(
+            width: 200, height: 150,
+            totalSeconds: totalSeconds, remainingSeconds: remainingSeconds
+        ))
+        diagramStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        diagramStackView.addArrangedSubview(timeDiagramView.view)
+    }
+    
+    private func updateStatesOfButtons() {
+        startButton.isHidden = viewModel.isHiddenStartButton
+        stopButton.isHidden = viewModel.isHiddenStopButton
         startButton.isEnabled = viewModel.isEnabledStartButton
         startButton.backgroundColor = startButton.isEnabled
             ? UIConstants.buttonEnabledColor
             : UIConstants.buttonDisabledColor
+    }
+    
+    private func updateStatesOfStackViews() {
+        pickerStackView.isHidden = viewModel.isHiddenPickerStackView
+        diagramStackView.isHidden = viewModel.isHiddenDiagramStackView
+    }
+    
+    private func showDiagram() {
+        pickerStackView.disappear() { [weak self] in
+            self?.setTimeDiagramView()
+            self?.diagramStackView.appear()
+        }
+    }
+    
+    private func hideDiagram() {
+        diagramStackView.disappear() { [weak self] in
+            self?.pickerStackView.appear()
+        }
     }
 }
 
@@ -84,11 +145,11 @@ extension TimerViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        60
+        90
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        String(describing: row)
+        "\(row)"
     }
 }
 
@@ -98,6 +159,6 @@ extension TimerViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         viewModel.updateTimeTo(minutes: minutesPickerView.selectedRow(inComponent: 0))
-        updateStartButton()
+        updateStatesOfButtons()
     }
 }

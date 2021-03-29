@@ -108,8 +108,8 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
             self.present(alertController, animated: true)
         }
         
-        viewModel.timerDidStart = { [unowned self] timeTitle in
-            title = timeTitle
+        viewModel.timerDidStep = { [unowned self] time in
+            title = time
         }
     }
     

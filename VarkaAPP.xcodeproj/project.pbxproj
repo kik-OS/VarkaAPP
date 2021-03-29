@@ -15,6 +15,9 @@
 		CE02BA0C25F3AB6800788EE3 /* ProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE02BA0A25F3AB6800788EE3 /* ProductInfoViewController.xib */; };
 		CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */; };
 		CE02BA8325F7572300788EE3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA8225F7572300788EE3 /* Box.swift */; };
+		CE0CFFC5260FA2B400B9A9AA /* TimeDiagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CFFC4260FA2B400B9A9AA /* TimeDiagram.swift */; };
+		CE0CFFC9260FC01500B9A9AA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CFFC8260FC01500B9A9AA /* UIView+Extension.swift */; };
+		CE0CFFD22611993D00B9A9AA /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CFFD12611993D00B9A9AA /* TimerManager.swift */; };
 		CE20DE1925FCA7EF00274A95 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20DE1725FCA7EF00274A95 /* TimerViewController.swift */; };
 		CE20DE1A25FCA7EF00274A95 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE20DE1825FCA7EF00274A95 /* TimerViewController.xib */; };
 		CE2FF95B2603879600FDA68D /* CustomBarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FF95A2603879600FDA68D /* CustomBarcodeScannerViewController.swift */; };
@@ -63,6 +66,9 @@
 		CE02BA0A25F3AB6800788EE3 /* ProductInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductInfoViewController.xib; sourceTree = "<group>"; };
 		CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewModel.swift; sourceTree = "<group>"; };
 		CE02BA8225F7572300788EE3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		CE0CFFC4260FA2B400B9A9AA /* TimeDiagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeDiagram.swift; sourceTree = "<group>"; };
+		CE0CFFC8260FC01500B9A9AA /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		CE0CFFD12611993D00B9A9AA /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		CE20DE1725FCA7EF00274A95 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		CE20DE1825FCA7EF00274A95 /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
 		CE2FF95A2603879600FDA68D /* CustomBarcodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarcodeScannerViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 		CE02BA0325F3A8E600788EE3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CE0CFFD626122F6A00B9A9AA /* TimerManager */,
 				E49196C525FB9F4200395445 /* StorageManager */,
 				CE02BA0425F3A91700788EE3 /* FirebaseService */,
 			);
@@ -168,12 +175,29 @@
 			path = ProductInfo;
 			sourceTree = "<group>";
 		};
+		CE0CFFC3260FA29500B9A9AA /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				CE0CFFC4260FA2B400B9A9AA /* TimeDiagram.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		CE0CFFD626122F6A00B9A9AA /* TimerManager */ = {
+			isa = PBXGroup;
+			children = (
+				CE0CFFD12611993D00B9A9AA /* TimerManager.swift */,
+			);
+			path = TimerManager;
+			sourceTree = "<group>";
+		};
 		CE20DE1625FCA74D00274A95 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
 				CE20DE1725FCA7EF00274A95 /* TimerViewController.swift */,
 				CE3F63BB26011EAE00968946 /* TimerViewModel.swift */,
 				CE20DE1825FCA7EF00274A95 /* TimerViewController.xib */,
+				CE0CFFC3260FA29500B9A9AA /* Subviews */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -204,6 +228,7 @@
 		E451D07E25F3FF8100890584 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE0CFFC8260FC01500B9A9AA /* UIView+Extension.swift */,
 				CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */,
 				E491969825FB5C2900395445 /* CGPath+Extension.swift */,
 			);
@@ -505,10 +530,12 @@
 				E451D09825F774AE00890584 /* CellFromPopOverTableViewCell.swift in Sources */,
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
 				CE20DE1925FCA7EF00274A95 /* TimerViewController.swift in Sources */,
+				CE0CFFC5260FA2B400B9A9AA /* TimeDiagram.swift in Sources */,
 				E491966C25F8B71500395445 /* PopOverMenuTableViewModel.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
 				E451D09425F75B9F00890584 /* PopOverMenuTableViewController.swift in Sources */,
 				E466EE79260089AF004E18D1 /* ImageTitles.swift in Sources */,
+				CE0CFFD22611993D00B9A9AA /* TimerManager.swift in Sources */,
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
 				CE3A168B25F9D7A000FFA849 /* Category.swift in Sources */,
 				CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */,
@@ -522,6 +549,7 @@
 				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,
 				E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */,
 				E49196C725FB9F5D00395445 /* StorageManager.swift in Sources */,
+				CE0CFFC9260FC01500B9A9AA /* UIView+Extension.swift in Sources */,
 				E4AAA443260369B0006DF73A /* MiddleButtonTabBar.swift in Sources */,
 				CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */,
 				E451D08425F4002F00890584 /* Constants.swift in Sources */,
