@@ -50,11 +50,10 @@ class RecentProductCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         addSubview(mainImageView)
         addSubview(nameLabel)
         addSubview(producerLabel)
-        backgroundColor = .systemIndigo
+        backgroundColor = VarkaColors.mainColor
         configureConstraints()
     }
     
@@ -74,17 +73,17 @@ class RecentProductCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureConstraints() {
-        mainImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        mainImageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        mainImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        mainImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/3).isActive = true
-        
-        nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: mainImageView.bottomAnchor, constant: 12).isActive = true
-        
-        producerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        producerLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8).isActive = true
-        producerLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/2, constant: 10).isActive = true
+        NSLayoutConstraint.activate([
+            mainImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            mainImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            mainImageView.topAnchor.constraint(equalTo: topAnchor),
+            mainImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/3),
+            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            nameLabel.topAnchor.constraint(equalTo: mainImageView.bottomAnchor, constant: 12),
+            producerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            producerLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+            producerLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/2, constant: 10)
+        ])
     }
 }

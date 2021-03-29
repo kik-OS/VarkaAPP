@@ -55,7 +55,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     // MARK: - Private methods
     
     private func setupTabBarItems() {
-        tabBar.tintColor = .systemIndigo
+        tabBar.tintColor = VarkaColors.mainColor
         
         let productInfoViewModel = viewModel.getProductInfoViewModel(product: nil)
         let productInfoVC = ProductInfoViewController(nibName: nil,
@@ -65,8 +65,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         productInfoVC.tabBarItem.image = UIImage(named: ImageTitles.tabBarItemLeft)
         
         let recentProductsVC = RecentProductsViewController()
-        let recentProductCollectionViewViewModel = viewModel.getRecentProductCollectionViewViewModel()
-        recentProductsVC.recentProductCollectionView.viewModel = recentProductCollectionViewViewModel
+        recentProductsVC.viewModel = viewModel.getRecentProductViewModel()
         recentProductsVC.tabBarItem.title = Inscriptions.tabBarItemRightTitle
         recentProductsVC.tabBarItem.image = UIImage(named: ImageTitles.tabBarItemRight)
         
@@ -75,7 +74,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     
     private func setupMiddleButton() {
         let middleButton = UIButton.setupMiddleButtonTabBar()
-         
+        
         middleButton.addTarget(self, action: #selector(centerButtonAction), for: .touchUpInside)
         
         view.addSubview(middleButton)

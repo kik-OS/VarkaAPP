@@ -22,8 +22,9 @@ final class CustomBarcodeScannerViewController: BarcodeScannerViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messageViewController.regularTintColor = .systemIndigo
-        messageViewController.textLabel.textColor = .systemIndigo
-        headerViewController.closeButton.tintColor = .systemIndigo
+        modalPresentationStyle = .fullScreen
+        messageViewController.regularTintColor = VarkaColors.mainColor
+        messageViewController.textLabel.textColor = VarkaColors.mainColor
+        headerViewController.closeButton.tintColor = VarkaColors.mainColor
     }
 }

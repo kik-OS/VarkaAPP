@@ -11,85 +11,109 @@ final class AddingNewProductViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var codeLabel: UILabel!
-    @IBOutlet weak var categoryButton: UIButton!
-    @IBOutlet weak var titleProductTF: UITextField!
-    @IBOutlet weak var cookingTimeTF: UITextField!
-    @IBOutlet weak var producerTF: UITextField!
-    @IBOutlet weak var weightTF: UITextField!
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var waterRatioLabel: UILabel!
-    @IBOutlet weak var stepperRatio: UIStepper!
+    @IBOutlet weak private var codeLabel: UILabel!
+    @IBOutlet weak private var categoryTF: UITextField!
+    @IBOutlet weak private var titleProductTF: UITextField!
+    @IBOutlet weak private var producerTF: UITextField!
+    @IBOutlet weak private var cookingTimeTF: UITextField!
+    @IBOutlet weak private var weightTF: UITextField!
+    @IBOutlet weak private var waterRatioTF: UITextField!
+    @IBOutlet weak private var saveButton: UIButton!
+    @IBOutlet weak private var mainScrollView: UIScrollView!
     
     // MARK: - Properties
     
-    var viewModel: AddingNewProductViewModelProtocol! {
-        didSet {
-            viewModel.getCategories()
-        }
-    }
+    var viewModel: AddingNewProductViewModelProtocol!
     
-    // MARK: - Actions
+    // MARK: - Private Properties
     
-    @IBAction func weightProductEditingChanged() {
-        viewModel.textFromWeightTF = weightTF.text
-    }
-    @IBAction func stepperRatioTapped() {
-        viewModel.waterRatio = stepperRatio.value
-        waterRatioLabel.text = viewModel.stringForWaterRatio
-    }
-    @IBAction func needStirringSwitch(_ sender: UISwitch) {
-        viewModel.needStirring = sender.isOn
-    }
-    
-    @IBAction func titleProductEditingChanged() {
-        viewModel.textFromTitleProductTF = titleProductTF.text
-    }
-    @IBAction func cookingTimeEditingChanged() {
-        viewModel.textFromCookingTimeTF = cookingTimeTF.text
-    }
-    @IBAction func producerProductEditingChanged() {
-        viewModel.textFromProducerTF = producerTF.text
-    }
-    
-    @IBAction func closeButtonPressed() {
-        dismiss(animated: true)
-    }
-    
-    @IBAction func saveButtonPressed() {
-        viewModel.validation() ?
-            successfulValidation() :
-            showAlert()
-    }
+    private let pickerViewForKB = UIPickerView()
+    private let doneButtonForKB = UIBarButtonItem()
+    private let downButtonForKB = UIBarButtonItem()
+    private let upButtonForKB = UIBarButtonItem()
     
     // MARK: - Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupGestures()
+        view.backgroundColor = VarkaColors.mainColor
         codeLabel.text = viewModel.codeLabelText
+        addToolBar(to: categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF)
+        initializePickerView()
+        configureObservers()
+        configureGestureRecognizer()
+        setupViewModelBindings()
     }
     
-    // MARK: - Private methods
+    // MARK: - IB Actions
     
-    private func showAlert() {
-        let alert = UIAlertController(title: "Упс...",
-                                      message: viewModel.incorrectMessage,
-                                      preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) 
-        alert.addAction(okAction)
-        present(alert, animated: true)
+    @IBAction private func textFieldsEditingDidBegin(_ sender: UITextField) {
+        viewModel.indexOfFirstResponder = sender.tag
+        viewModel.updatePickerViewIfNeeded(index: sender.tag) { [weak self] in
+            self?.pickerViewForKB.reloadAllComponents()
+        }
+        updateUpAndDownButtonsState()
     }
     
+    @IBAction private func textFieldsEditingChanged(_ sender: UITextField) {
+        switch sender {
+        case titleProductTF:
+            viewModel.textFromTitleProductTF = sender.text
+        case producerTF:
+            viewModel.textFromProducerTF = sender.text
+        case cookingTimeTF:
+            viewModel.textFromCookingTimeTF = sender.text
+        case weightTF:
+            viewModel.textFromWeightTF = sender.text
+        default:
+            break
+        }
+        updateSaveButtonsState()
+    }
     
-    private func successfulValidation() {
-        viewModel.codeLabelText = codeLabel.text
-        viewModel.initializeProduct()
+    @IBAction private func needStirringSwitch(_ sender: UISwitch) {
+        viewModel.needStirring = sender.isOn
+    }
+    
+    @IBAction private func closeButtonPressed() {
+        dismiss(animated: true)
+    }
+    
+    @IBAction private func saveButtonPressed() {
         viewModel.createProductInFB()
-        performSegue(withIdentifier: "unwindToProductInfo", sender: nil)
+        Notifications.shared.showProductWasAddedNotification()
+        performSegue(withIdentifier: Inscriptions.unwindToProductInfoSegueID, sender: nil)
     }
     
-    // MARK: - Override methods
+    // MARK: - Private Methods
+    private func setupViewModelBindings() {
+        viewModel.needUpdateTextFieldWithPickerView = { [unowned self] type, text in
+            switch type {
+            case .category:
+                categoryTF.text = text
+            case .waterRatio:
+                waterRatioTF.text = text
+            }
+        }
+        
+        viewModel.needUpdateFirstResponder = { [unowned self] tag in
+            let textFields: Set = [categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF]
+            guard let targetTF = textFields.first(where: { $0?.tag == tag}) else { return }
+            targetTF?.becomeFirstResponder()
+        }
+    }
+    
+    private func configureGestureRecognizer() {
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(oneTouchOnScrollView))
+        mainScrollView.addGestureRecognizer(recognizer)
+    }
+    
+    private func configureObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let productInfoVC = segue.destination as? ProductInfoViewController else { return }
@@ -97,55 +121,117 @@ final class AddingNewProductViewController: UIViewController {
     }
 }
 
-//MARK: - PopOver Menu
-
-extension AddingNewProductViewController {
-    
-    private func setupGestures() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
-        tapGesture.numberOfTouchesRequired = 1
-        categoryButton.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc private func tapped() {
-        guard let popVC = storyboard?.instantiateViewController(identifier: Inscriptions.popVCStoryBoardID) as? PopOverMenuTableViewController else { return }
-        popVC.delegate = self
-        popVC.viewModel = PopOverMenuTableViewModel(categories: viewModel.categories)
-        popVC.modalPresentationStyle = .popover
-        
-        let popOverVC = popVC.popoverPresentationController
-        popOverVC?.delegate = self
-        popOverVC?.sourceView = self.categoryButton
-        popOverVC?.sourceRect = CGRect(x: self.categoryButton.bounds.midX / 2,
-                                       y: self.categoryButton.bounds.midY,
-                                       width: 0,
-                                       height: 0)
-        popVC.preferredContentSize = CGSize(width: PopOverTableSize.width.rawValue,
-                                            height: PopOverTableSize.height.rawValue)
-        self.present(popVC, animated: true)
-    }
-}
-
 //MARK: - Extensions
 
-extension AddingNewProductViewController: UIPopoverPresentationControllerDelegate {
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
-    }
-}
-
 extension AddingNewProductViewController: UITextFieldDelegate {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        viewModel.didTapChangeResponderButton(type: .down)
+        return true
+    }
+    
+    @objc private func oneTouchOnScrollView() {
         view.endEditing(true)
     }
+    
+    @objc private func didTapOnDoneButton() {
+        saveButtonPressed()
+    }
+    
+    @objc private func didTapOnUpButton() {
+        viewModel.didTapChangeResponderButton(type: .up)
+    }
+    
+    @objc private func didTapOnDownButton() {
+        viewModel.didTapChangeResponderButton(type: .down)
+    }
+    
+    @objc private func keyBoardDidShow(notification: Notification) {
+        guard let userInfo = notification.userInfo else {return}
+        let kbFrameSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        (view as! UIScrollView).contentSize = CGSize(width: view.bounds.size.width,
+                                                     height: view.bounds.size.height + kbFrameSize.height + 40)
+        (view as! UIScrollView).scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
+    }
+    
+    @objc private func keyBoardDidHide() {
+        (view as! UIScrollView).contentSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height)
+    }
+    
+    private func updateSaveButtonsState() {
+        let state = viewModel.validation()
+        saveButton.isEnabled = state
+        doneButtonForKB.isEnabled = state
+    }
+    
+    private func updateUpAndDownButtonsState() {
+        upButtonForKB.isEnabled = viewModel.stateForUpButton
+        downButtonForKB.isEnabled = viewModel.stateForDownButton
+    }
+    
+    private func createToolBar() -> UIToolbar {
+        let keyboardToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
+        keyboardToolbar.sizeToFit()
+        
+        doneButtonForKB.tintColor = .white
+        doneButtonForKB.isEnabled = false
+        doneButtonForKB.title = Inscriptions.titleOfDoneButtonForKB
+        doneButtonForKB.style = .plain
+        doneButtonForKB.action = #selector(didTapOnDoneButton)
+        
+        downButtonForKB.tintColor = .white
+        downButtonForKB.action = #selector(didTapOnDownButton)
+        downButtonForKB.image = UIImage(systemName: ImageTitles.toolBarDownButton)
+        downButtonForKB.style = .plain
+        
+        upButtonForKB.tintColor = .white
+        upButtonForKB.action = #selector(didTapOnUpButton)
+        upButtonForKB.image = UIImage(systemName: ImageTitles.toolBarUpButton)
+        upButtonForKB.style = .plain
+        
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space.width = 14
+        
+        keyboardToolbar.items = [downButtonForKB, space, upButtonForKB, flexBarButton, doneButtonForKB]
+        keyboardToolbar.backgroundColor = VarkaColors.mainColor
+        keyboardToolbar.barTintColor = VarkaColors.mainColor
+        keyboardToolbar.updateConstraintsIfNeeded()
+        return keyboardToolbar
+    }
+    
+    private func addToolBar(to textFields: UITextField...) {
+        let keyboardToolbar = createToolBar()
+        textFields.forEach { textField in
+            textField.delegate = self
+            textField.inputAccessoryView = keyboardToolbar
+        }
+    }
 }
 
-extension AddingNewProductViewController: PopOverMenuTableViewControllerDelegate {
-    func getSelectedItemFromPopOver(selectedCategory: String) {
-        categoryButton.setTitle(selectedCategory, for: .normal)
-        categoryButton.setTitleColor(.black, for: .normal)
-        viewModel.categorySelected = true
-        viewModel.selectedCategory = selectedCategory
+extension AddingNewProductViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    private func initializePickerView() {
+        categoryTF.inputView = pickerViewForKB
+        waterRatioTF.inputView = pickerViewForKB
+        pickerViewForKB.delegate = self
+        pickerViewForKB.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        viewModel.numberOfRowsInPickerView
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        viewModel.dataForPickerView[row]
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        viewModel.pickerViewDidSelectAt(row: row)
+        updateSaveButtonsState()
     }
 }

@@ -65,12 +65,21 @@ class StorageManager {
         saveContext()
     }
     
-   
+    func convertFromProductCDToProduct(productCD: ProductCD) -> Product? {
+        
+        guard let code = productCD.code,
+              let title = productCD.title,
+              let producer = productCD.producer,
+              let category = productCD.category else {return nil}
+        
+        return Product(code: code, title: title, producer: producer, category: category, weight: Int(productCD.weight), cookingTime: Int(productCD.cookingTime), intoBoilingWater: true, needStirring: productCD.needsStirring, waterRatio: productCD.waterRatio)
+    }
+    
     func deleteProductCD(_ productCD: ProductCD) {
         viewContext.delete(productCD)
         saveContext()
     }
-
+    
     // MARK: - Core Data Saving support
     func saveContext() {
         if viewContext.hasChanges {

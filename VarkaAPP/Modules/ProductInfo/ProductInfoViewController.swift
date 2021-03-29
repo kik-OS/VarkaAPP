@@ -48,7 +48,7 @@ final class ProductInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        view.backgroundColor = .systemIndigo
+        view.backgroundColor = VarkaColors.mainColor
     }
     
     // MARK: - Actions
@@ -57,7 +57,16 @@ final class ProductInfoViewController: UIViewController {
         let timerViewModel = viewModel.getTimerViewModel()
         let timerVC = TimerViewController(nibName: nil, bundle: nil, viewModel: timerViewModel)
         timerVC.modalPresentationStyle = .overCurrentContext
+        
+        
+        
+        Notifications.shared.checkNotificationSettings { [weak self] in
+            let alert = Notifications.notificationsAreNotAvailableAlert()
+            self?.present(alert, animated: true)
+        }
+        Notifications.shared.showTimerNotification(throughMinutes: 1/60)
         present(timerVC, animated: true)
+        
     }
     
     // MARK: - Private methods
@@ -86,4 +95,5 @@ final class ProductInfoViewController: UIViewController {
     }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {}
+    
 }
