@@ -6,20 +6,27 @@
 //
 
 import Firebase
+import FirebaseAuth
 import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let notifications = Notifications()
+    // MARK: - Proterties
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+    private let notifications = Notifications()
+    
+    // MARK: - Public methods
+    
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        
         notifications.notificationCenter.delegate = notifications
         notifications.requestAuthorization()
         notifications.cleanBadgesAtStarting()
         
+        authenticateAnonymously()
         return true
     }
     
@@ -27,5 +34,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+    
+    // MARK: - Private methods
+    
+    private func authenticateAnonymously() {
+        Auth.auth().signInAnonymously { authDataResult, error in
+            if let error = error {
+                print("Anonymously sign in error:", error.localizedDescription)
+                return
+            }
+            if let _ = authDataResult {
+                print("Anonymously sign in is successful!")
+            }
+        }
     }
 }
