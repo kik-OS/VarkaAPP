@@ -30,7 +30,7 @@ final class FirebaseService: FirebaseServiceProtocol {
     
     private let ref = Database.database().reference()
     
-    // MARK: - Initializer
+    // MARK: - Initializers
     
     private init() {}
     

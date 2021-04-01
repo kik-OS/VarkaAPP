@@ -16,16 +16,12 @@ protocol RecentProductCollectionViewViewModelProtocol: class {
     func didSelectItemAt(indexPath: IndexPath)
 }
 
-
-class RecentProductCollectionViewViewModel: RecentProductCollectionViewViewModelProtocol {
+final class RecentProductCollectionViewViewModel: RecentProductCollectionViewViewModelProtocol {
     
     func didSelectItemAt(indexPath: IndexPath) {
         guard let product = StorageManager.shared.convertFromProductCDToProduct(productCD: productsCD[indexPath.row]) else { return }
         delegate.presentInfoAboutProduct(product: product)
     }
-    
-    
-    
     
     // MARK: - Properties
     

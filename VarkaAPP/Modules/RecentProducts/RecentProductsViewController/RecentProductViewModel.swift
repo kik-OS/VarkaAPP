@@ -7,14 +7,12 @@
 
 import Foundation
 
-
 protocol RecentProductViewModelProtocol {
     func getProductInfoViewModel(product: Product?) -> ProductInfoViewModelProtocol
     func getRecentProductCollectionViewViewModel() -> RecentProductCollectionViewViewModelProtocol
-    
 }
 
-class RecentProductViewModel: RecentProductViewModelProtocol {
+final class RecentProductViewModel: RecentProductViewModelProtocol {
     func getRecentProductCollectionViewViewModel() -> RecentProductCollectionViewViewModelProtocol {
         RecentProductCollectionViewViewModel()
     }
@@ -22,7 +20,4 @@ class RecentProductViewModel: RecentProductViewModelProtocol {
     func getProductInfoViewModel(product: Product?) -> ProductInfoViewModelProtocol {
         ProductInfoViewModel(product: product)
     }
-    
-    
-  
 }

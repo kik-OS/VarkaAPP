@@ -127,7 +127,7 @@
                                         <color key="titleColor" systemColor="systemPinkColor"/>
                                     </state>
                                     <connections>
-                                        <action selector="setTimerTapped" destination="-1" eventType="touchUpInside" id="1kf-ac-C0I"/>
+                                        <action selector="setTimerButtonTapped" destination="-1" eventType="touchUpInside" id="KXb-y5-neg"/>
                                     </connections>
                                 </button>
                             </subviews>

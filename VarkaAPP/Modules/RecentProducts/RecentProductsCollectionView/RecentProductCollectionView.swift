@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+final class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Properties
     
@@ -18,8 +18,6 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
             }
         }
     }
-    
-    
     
     // MARK: - Initializer 
     
@@ -44,7 +42,6 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: - Methods
     
     internal func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,7 +55,7 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
     }
     
     internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ConstantsCollectionView.productsCollectionItemWidth, height: frame.height * 0.9)
+        CGSize(width: ConstantsCollectionView.productsCollectionItemWidth, height: frame.height * 0.9)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

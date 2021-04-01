@@ -12,7 +12,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     
     // MARK: - Properties
     
-    private var viewModel: CustomTabBarViewModelProtocol
+    var viewModel: CustomTabBarViewModelProtocol
     
     // MARK: - Initializers
     
@@ -28,12 +28,6 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         setupMiddleButton()
         setupTabBarItems()
         setupViewModelBindings()
-        
-        guard let addNewProductVC = self.storyboard?.instantiateViewController(
-            identifier: Inscriptions.addNewProductVCStoryBoardID
-        ) as? AddingNewProductViewController else { return }
-        addNewProductVC.viewModel = self.viewModel.getAddingNewProductViewModel(withCode: "123456789")
-        self.present(addNewProductVC, animated: true)
     }
     
     // Изменение расстояния между tab bar items
@@ -47,7 +41,15 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     @objc private func centerButtonAction(sender: UIButton) {
         sender.animationForMiddleButton()
         let barCodeScannerVC = CustomBarcodeScannerViewController(delegate: self)
+        barCodeScannerVC.modalPresentationStyle = .fullScreen
         present(barCodeScannerVC, animated: true, completion: nil)
+    }
+    
+    @IBAction private func timerBarButtonTapped(_ sender: UIBarButtonItem) {
+        let timerViewModel = viewModel.getTimerViewModel()
+        let timerVC = TimerViewController(nibName: nil, bundle: nil, viewModel: timerViewModel)
+        timerVC.modalPresentationStyle = .overCurrentContext
+        present(timerVC, animated: true)
     }
     
     // MARK: - Private methods
@@ -87,7 +89,6 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     }
     
     private func setupViewModelBindings() {
-        
         viewModel.productDidReceive = { [unowned self] productInfoViewModel in
             guard let productInfoVC = viewControllers?.first as? ProductInfoViewController else { return }
             productInfoVC.viewModel = productInfoViewModel
@@ -103,6 +104,10 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
                 self.present(addNewProductVC, animated: true)
             }
             self.present(alertController, animated: true)
+        }
+        
+        viewModel.timerDidStep = { [unowned self] time in
+            title = time
         }
     }
     
