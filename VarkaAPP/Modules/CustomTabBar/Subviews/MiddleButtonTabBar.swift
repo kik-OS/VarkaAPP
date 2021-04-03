@@ -14,14 +14,22 @@ extension UIButton {
         middleButton.backgroundColor = .white
         middleButton.layer.borderColor = UIColor.white.cgColor
         middleButton.layer.borderWidth = 1
-        middleButton.layer.cornerRadius = 34
-        middleButton.clipsToBounds = true
+        middleButton.layer.cornerRadius = 36
+        
+        //shadow
+        middleButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        middleButton.layer.shadowRadius = 5
+        middleButton.layer.shadowColor = UIColor.gray.cgColor
+        middleButton.layer.shadowOpacity = 0.5
+        
+//        middleButton.clipsToBounds = true
         middleButton.tintColor = VarkaColors.mainColor
         middleButton.translatesAutoresizingMaskIntoConstraints = false
         middleButton.setImage(UIImage(systemName: ImageTitles.tabBarMiddleButton), for: .normal)
         middleButton.setPreferredSymbolConfiguration(
             UIImage.SymbolConfiguration(pointSize: 35, weight: .thin), forImageIn: .normal
         )
+        
         middleButton.animationForMiddleButton()
         return middleButton
     }

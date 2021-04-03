@@ -82,9 +82,11 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         
         NSLayoutConstraint.activate([
             middleButton.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor),
-            middleButton.centerYAnchor.constraint(equalTo: tabBar.topAnchor),
-            middleButton.widthAnchor.constraint(equalToConstant: 68),
-            middleButton.heightAnchor.constraint(equalToConstant: 68)
+//            middleButton.centerYAnchor.constraint(equalTo: tabBar.topAnchor),
+            middleButton.centerYAnchor.constraint(equalTo: tabBar.topAnchor, constant: 10),
+            middleButton.widthAnchor.constraint(equalToConstant: 72),
+            middleButton.heightAnchor.constraint(equalToConstant: 72)
+            
         ])
     }
     

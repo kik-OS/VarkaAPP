@@ -71,6 +71,7 @@ final class TimerManager: TimerManagerProtocol {
         guard isActive, timerTime >= 0 else {
             isActive = false
             sender.invalidate()
+            
             return
         }
         barDelegate?.timerDidStep(time: stringTimerTime)
