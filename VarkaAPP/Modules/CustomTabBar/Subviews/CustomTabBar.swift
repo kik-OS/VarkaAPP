@@ -35,4 +35,16 @@ final class CustomTabBar: UITabBar {
         
         addShape(screenIsSquare: DevicesModel.checkSquareScreen())
     }
+    
+    
+//    override public func sizeThatFits(_ size: CGSize) -> CGSize {
+//        
+//        var sizeThatFits = super.sizeThatFits(size)
+//        
+//        if DevicesModel.checkSquareScreen() {
+//        
+//        sizeThatFits.height += 10
+//        }
+//        return sizeThatFits
+//       }
 }

@@ -13,6 +13,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     // MARK: - Properties
     
     var viewModel: CustomTabBarViewModelProtocol
+    private let middleButton = UIButton.setupMiddleButtonTabBar()
     
     // MARK: - Initializers
     
@@ -34,7 +35,11 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     override func viewDidLayoutSubviews() {
         tabBar.itemPositioning = .centered
         tabBar.itemSpacing = UIScreen.main.bounds.width / 2.5
+        middleButton.layer.cornerRadius = middleButton.frame.width / 2
     }
+    
+    
+   
     
     // MARK: - Actions
     
@@ -73,7 +78,6 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     }
     
     private func setupMiddleButton() {
-        let middleButton = UIButton.setupMiddleButtonTabBar()
         
         middleButton.addTarget(self, action: #selector(centerButtonAction), for: .touchUpInside)
         
@@ -82,11 +86,9 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         
         NSLayoutConstraint.activate([
             middleButton.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor),
-//            middleButton.centerYAnchor.constraint(equalTo: tabBar.topAnchor),
-            middleButton.centerYAnchor.constraint(equalTo: tabBar.topAnchor, constant: 10),
-            middleButton.widthAnchor.constraint(equalToConstant: 72),
-            middleButton.heightAnchor.constraint(equalToConstant: 72)
-            
+            middleButton.centerYAnchor.constraint(equalTo: tabBar.topAnchor, constant: CGFloat(viewModel.constantForMiddleButton)),
+            middleButton.widthAnchor.constraint(equalToConstant: CGFloat(viewModel.sizeForMiddleButton)),
+            middleButton.heightAnchor.constraint(equalToConstant: CGFloat(viewModel.sizeForMiddleButton))
         ])
     }
     
