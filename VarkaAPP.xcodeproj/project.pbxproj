@@ -54,7 +54,9 @@
 		E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562D825F2775E0068F15A /* RecentProductViewModel.swift */; };
 		E4AAA443260369B0006DF73A /* MiddleButtonTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AAA442260369B0006DF73A /* MiddleButtonTabBar.swift */; };
 		E4AAA4962603CC27006DF73A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AAA4952603CC27006DF73A /* Notifications.swift */; };
-		E4F44E832617977C00055ADC /* DeviceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E822617977C00055ADC /* DeviceModels.swift */; };
+		E4F44E86261A22C000055ADC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E85261A22C000055ADC /* Models.swift */; };
+		E4F44E8B261A25DE00055ADC /* UIDevice + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E8A261A25DE00055ADC /* UIDevice + Extension.swift */; };
+		E4F44E8E261A26A000055ADC /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E8D261A26A000055ADC /* DeviceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,7 +111,9 @@
 		E49562D825F2775E0068F15A /* RecentProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductViewModel.swift; sourceTree = "<group>"; };
 		E4AAA442260369B0006DF73A /* MiddleButtonTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleButtonTabBar.swift; sourceTree = "<group>"; };
 		E4AAA4952603CC27006DF73A /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		E4F44E822617977C00055ADC /* DeviceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModels.swift; sourceTree = "<group>"; };
+		E4F44E85261A22C000055ADC /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		E4F44E8A261A25DE00055ADC /* UIDevice + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice + Extension.swift"; sourceTree = "<group>"; };
+		E4F44E8D261A26A000055ADC /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 		CE02BA0325F3A8E600788EE3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E4F44E88261A235100055ADC /* DeviceManager */,
 				CE0CFFD626122F6A00B9A9AA /* TimerManager */,
 				E49196C525FB9F4200395445 /* StorageManager */,
 				CE02BA0425F3A91700788EE3 /* FirebaseService */,
@@ -251,6 +256,7 @@
 				CE0CFFC8260FC01500B9A9AA /* UIView+Extension.swift */,
 				CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */,
 				E491969825FB5C2900395445 /* CGPath+Extension.swift */,
+				E4F44E8A261A25DE00055ADC /* UIDevice + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -261,7 +267,7 @@
 				E451D08325F4002F00890584 /* Constants.swift */,
 				E466EE78260089AF004E18D1 /* ImageTitles.swift */,
 				E466EE7B26008BC4004E18D1 /* Inscriptions.swift */,
-				E4F44E822617977C00055ADC /* DeviceModels.swift */,
+				E4F44E85261A22C000055ADC /* Models.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -406,6 +412,14 @@
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
+		E4F44E88261A235100055ADC /* DeviceManager */ = {
+			isa = PBXGroup;
+			children = (
+				E4F44E8D261A26A000055ADC /* DeviceManager.swift */,
+			);
+			path = DeviceManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -536,12 +550,13 @@
 				E491967925F8F5A200395445 /* RecentProductCollectionView.swift in Sources */,
 				CE3F63B926011C7200968946 /* TimerPickerView.swift in Sources */,
 				E491969925FB5C2900395445 /* CGPath+Extension.swift in Sources */,
+				E4F44E8B261A25DE00055ADC /* UIDevice + Extension.swift in Sources */,
 				E466EE5F25FF771E004E18D1 /* CustomTabBarViewModel.swift in Sources */,
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
 				CE20DE1925FCA7EF00274A95 /* TimerViewController.swift in Sources */,
 				CE0CFFC5260FA2B400B9A9AA /* TimeDiagram.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
-				E4F44E832617977C00055ADC /* DeviceModels.swift in Sources */,
+				E4F44E86261A22C000055ADC /* Models.swift in Sources */,
 				E466EE79260089AF004E18D1 /* ImageTitles.swift in Sources */,
 				CE0CFFD22611993D00B9A9AA /* TimerManager.swift in Sources */,
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
@@ -558,6 +573,7 @@
 				E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */,
 				E49196C725FB9F5D00395445 /* StorageManager.swift in Sources */,
 				CE0CFFC9260FC01500B9A9AA /* UIView+Extension.swift in Sources */,
+				E4F44E8E261A26A000055ADC /* DeviceManager.swift in Sources */,
 				E4AAA443260369B0006DF73A /* MiddleButtonTabBar.swift in Sources */,
 				CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */,
 				E451D08425F4002F00890584 /* Constants.swift in Sources */,

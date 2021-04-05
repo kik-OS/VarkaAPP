@@ -32,10 +32,10 @@ final class CustomTabBarViewModel: CustomTabBarViewModelProtocol {
     var addingNewProductOffer: ((_ code: String) -> Void)?
     var timerDidStep: ((_ time: String) -> Void)?
     var constantForMiddleButton: Float {
-        DevicesModel.checkSquareScreen() ? 0 : 10
+        DeviceManager.checkSquareScreen() ? 0 : 10
     }
     var sizeForMiddleButton: Float {
-        DevicesModel.checkSquareScreen() ? 68 : 72
+        DeviceManager.checkSquareScreen() ? 68 : 72
     }
     
     private let firebaseService: FirebaseServiceProtocol = FirebaseService.shared

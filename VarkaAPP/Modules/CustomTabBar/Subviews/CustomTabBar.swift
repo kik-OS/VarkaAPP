@@ -33,7 +33,7 @@ final class CustomTabBar: UITabBar {
     
     override func draw(_ rect: CGRect) {
         
-        addShape(screenIsSquare: DevicesModel.checkSquareScreen())
+        addShape(screenIsSquare: DeviceManager.checkSquareScreen())
     }
     
     
