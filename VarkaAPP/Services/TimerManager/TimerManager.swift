@@ -38,6 +38,12 @@ final class TimerManager: TimerManagerProtocol {
     weak var barDelegate: TimerManagerBarDelegate?
     weak var timerViewDelegate: TimerManagerTimerViewDelegate?
     
+    private var timer = Timer()
+    /// Общее время таймера в секундах.
+    private var totalTime = 0
+    /// Текущее время таймера в секундах.
+    private var timerTime = 0
+    
     private var stringTimerTime: String {
         let minutes = timerTime / 60
         let seconds = timerTime - (minutes * 60)
@@ -48,12 +54,6 @@ final class TimerManager: TimerManagerProtocol {
             : "Готово!"
     }
     
-    /// Общее время таймера в секундах.
-    private var totalTime = 0
-    
-    /// Текущее время таймера в секундах.
-    private var timerTime = 0
-    
     // MARK: - Initializers
     
     private init() {}
@@ -63,10 +63,22 @@ final class TimerManager: TimerManagerProtocol {
     func start(forMinutes minutes: Int) {
         totalTime = minutes * 60
         timerTime = totalTime
-        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateTimer),
-                             userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer),
+                                     userInfo: nil, repeats: true)
         isActive = true
     }
+    
+    func stop() {
+        isActive = false
+        barDelegate?.timerDidStep(time: "")
+        timerViewDelegate?.timerDidStep(totalSeconds: totalTime, remainingSeconds: timerTime, isStopped: true)
+    }
+    
+    func getTimerTime() -> (totalSeconds: Int, remainingSeconds: Int) {
+        (totalTime, timerTime)
+    }
+    
+    // MARK: - Private methods
     
     @objc private func updateTimer(sender: Timer) {
         var backgroundTask = UIApplication.shared.beginBackgroundTask()
@@ -88,15 +100,5 @@ final class TimerManager: TimerManagerProtocol {
                 backgroundTask = UIBackgroundTaskIdentifier.invalid
             }
         }
-    }
-    
-    func stop() {
-        isActive = false
-        barDelegate?.timerDidStep(time: "")
-        timerViewDelegate?.timerDidStep(totalSeconds: totalTime, remainingSeconds: timerTime, isStopped: true)
-    }
-    
-    func getTimerTime() -> (totalSeconds: Int, remainingSeconds: Int) {
-        (totalTime, timerTime)
     }
 }
