@@ -39,6 +39,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>FirebaseAuth.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 		<key>FirebaseCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -66,6 +71,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+		<key>GTMSessionFetcher.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
 		</dict>
 		<key>GoogleAppMeasurement.xcscheme</key>
 		<dict>

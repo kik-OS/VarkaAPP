@@ -14,7 +14,8 @@ protocol CustomTabBarViewModelProtocol: class {
     var addingNewProductOffer: ((_ code: String) -> Void)? { get set }
     /// Вызывается при каждом шаге таймера.
     var timerDidStep: ((_ time: String) -> Void)? { get set }
-    
+    var constantForMiddleButton: Float { get }
+    var sizeForMiddleButton: Float { get }
     func findProduct(byCode code: String)
     func getProductInfoViewModel(product: Product?) -> ProductInfoViewModelProtocol
     func getRecentProductViewModel() -> RecentProductViewModelProtocol
@@ -25,12 +26,17 @@ protocol CustomTabBarViewModelProtocol: class {
 final class CustomTabBarViewModel: CustomTabBarViewModelProtocol {
     
     
-    
     // MARK: - Properties
     
     var productDidReceive: ((_ productInfoViewModel: ProductInfoViewModelProtocol) -> Void)?
     var addingNewProductOffer: ((_ code: String) -> Void)?
     var timerDidStep: ((_ time: String) -> Void)?
+    var constantForMiddleButton: Float {
+        DeviceManager.checkSquareScreen() ? 0 : 10
+    }
+    var sizeForMiddleButton: Float {
+        DeviceManager.checkSquareScreen() ? 68 : 72
+    }
     
     private let firebaseService: FirebaseServiceProtocol = FirebaseService.shared
     
