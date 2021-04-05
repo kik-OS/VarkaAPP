@@ -10,7 +10,7 @@ import UIKit
 struct DeviceManager {
     
     static func checkSquareScreen() -> Bool {
-        let notSquareScreenDevices : [Models] = [.iPhoneX, .iPhoneXS, .iPhoneXSMax,
+        let notSquareScreenDevices : [DeviceModel] = [.iPhoneX, .iPhoneXS, .iPhoneXSMax,
                                                 .iPhoneXR, .iPhone11, .iPhone11Pro,
                                                 .iPhone11ProMax, .iPhone12, .iPhone12Mini,
                                                 .iPhone12Pro, .iPhone12ProMax]

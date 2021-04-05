@@ -54,7 +54,7 @@
 		E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562D825F2775E0068F15A /* RecentProductViewModel.swift */; };
 		E4AAA443260369B0006DF73A /* MiddleButtonTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AAA442260369B0006DF73A /* MiddleButtonTabBar.swift */; };
 		E4AAA4962603CC27006DF73A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AAA4952603CC27006DF73A /* Notifications.swift */; };
-		E4F44E86261A22C000055ADC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E85261A22C000055ADC /* Models.swift */; };
+		E4F44E86261A22C000055ADC /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E85261A22C000055ADC /* DeviceModel.swift */; };
 		E4F44E8B261A25DE00055ADC /* UIDevice + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E8A261A25DE00055ADC /* UIDevice + Extension.swift */; };
 		E4F44E8E261A26A000055ADC /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E8D261A26A000055ADC /* DeviceManager.swift */; };
 /* End PBXBuildFile section */
@@ -111,7 +111,7 @@
 		E49562D825F2775E0068F15A /* RecentProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductViewModel.swift; sourceTree = "<group>"; };
 		E4AAA442260369B0006DF73A /* MiddleButtonTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleButtonTabBar.swift; sourceTree = "<group>"; };
 		E4AAA4952603CC27006DF73A /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		E4F44E85261A22C000055ADC /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		E4F44E85261A22C000055ADC /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 		E4F44E8A261A25DE00055ADC /* UIDevice + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice + Extension.swift"; sourceTree = "<group>"; };
 		E4F44E8D261A26A000055ADC /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -267,7 +267,7 @@
 				E451D08325F4002F00890584 /* Constants.swift */,
 				E466EE78260089AF004E18D1 /* ImageTitles.swift */,
 				E466EE7B26008BC4004E18D1 /* Inscriptions.swift */,
-				E4F44E85261A22C000055ADC /* Models.swift */,
+				E4F44E85261A22C000055ADC /* DeviceModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -556,7 +556,7 @@
 				CE20DE1925FCA7EF00274A95 /* TimerViewController.swift in Sources */,
 				CE0CFFC5260FA2B400B9A9AA /* TimeDiagram.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
-				E4F44E86261A22C000055ADC /* Models.swift in Sources */,
+				E4F44E86261A22C000055ADC /* DeviceModel.swift in Sources */,
 				E466EE79260089AF004E18D1 /* ImageTitles.swift in Sources */,
 				CE0CFFD22611993D00B9A9AA /* TimerManager.swift in Sources */,
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
