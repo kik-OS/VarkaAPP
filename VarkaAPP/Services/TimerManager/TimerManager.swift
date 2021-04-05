@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol TimerManagerBarDelegate: class {
     func timerDidStep(time: String)
@@ -62,21 +63,31 @@ final class TimerManager: TimerManagerProtocol {
     func start(forMinutes minutes: Int) {
         totalTime = minutes * 60
         timerTime = totalTime
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer),
+        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateTimer),
                              userInfo: nil, repeats: true)
         isActive = true
     }
     
     @objc private func updateTimer(sender: Timer) {
+        var backgroundTask = UIApplication.shared.beginBackgroundTask()
+        
         guard isActive, timerTime >= 0 else {
             isActive = false
             sender.invalidate()
-            
+            backgroundTask = UIBackgroundTaskIdentifier.invalid
             return
         }
+        
         barDelegate?.timerDidStep(time: stringTimerTime)
         timerViewDelegate?.timerDidStep(totalSeconds: totalTime, remainingSeconds: timerTime, isStopped: false)
         timerTime -= 1
+        
+        if backgroundTask != UIBackgroundTaskIdentifier.invalid {
+            if UIApplication.shared.applicationState == .active {
+                UIApplication.shared.endBackgroundTask(backgroundTask)
+                backgroundTask = UIBackgroundTaskIdentifier.invalid
+            }
+        }
     }
     
     func stop() {
