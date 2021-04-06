@@ -63,15 +63,22 @@ final class TimerManager: TimerManagerProtocol {
     func start(forMinutes minutes: Int) {
         totalTime = minutes * 60
         timerTime = totalTime
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer),
-                                     userInfo: nil, repeats: true)
+        let newTimer = Timer.scheduledTimer(timeInterval: 1,
+                                            target: self,
+                                            selector: #selector(updateTimer),
+                                            userInfo: nil,
+                                            repeats: true)
+        RunLoop.current.add(newTimer, forMode: .common)
+        timer = newTimer
         isActive = true
     }
     
     func stop() {
         isActive = false
         barDelegate?.timerDidStep(time: "")
-        timerViewDelegate?.timerDidStep(totalSeconds: totalTime, remainingSeconds: timerTime, isStopped: true)
+        timerViewDelegate?.timerDidStep(totalSeconds: totalTime,
+                                        remainingSeconds: timerTime,
+                                        isStopped: true)
     }
     
     func getTimerTime() -> (totalSeconds: Int, remainingSeconds: Int) {
@@ -91,7 +98,9 @@ final class TimerManager: TimerManagerProtocol {
         }
         
         barDelegate?.timerDidStep(time: stringTimerTime)
-        timerViewDelegate?.timerDidStep(totalSeconds: totalTime, remainingSeconds: timerTime, isStopped: false)
+        timerViewDelegate?.timerDidStep(totalSeconds: totalTime,
+                                        remainingSeconds: timerTime,
+                                        isStopped: false)
         timerTime -= 1
         
         if backgroundTask != UIBackgroundTaskIdentifier.invalid {
