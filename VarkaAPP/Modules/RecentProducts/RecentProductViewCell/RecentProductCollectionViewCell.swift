@@ -31,7 +31,7 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
     let nameLabel: UILabel = {
        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .yellow
+        label.textColor = VarkaColors.mainColor
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -40,7 +40,7 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
     let producerLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 10, weight: .medium)
-         label.textColor = .yellow
+        label.textColor = VarkaColors.mainColor
          label.numberOfLines = 0
          label.translatesAutoresizingMaskIntoConstraints = false
          return label
@@ -53,7 +53,7 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
         addSubview(mainImageView)
         addSubview(nameLabel)
         addSubview(producerLabel)
-        backgroundColor = VarkaColors.mainColor
+        backgroundColor = .white
         configureConstraints()
     }
     

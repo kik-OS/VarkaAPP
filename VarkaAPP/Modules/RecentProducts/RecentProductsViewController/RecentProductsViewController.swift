@@ -16,8 +16,7 @@ final class RecentProductsViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet private weak var recentProductLabel: UILabel!
-    @IBOutlet private weak var nothingFoundLabel: UILabel!
-    
+    @IBOutlet weak var nothingFoundStack: UIStackView!
     // MARK: - Properties
     
     var recentProductCollectionView = RecentProductCollectionView()
@@ -31,12 +30,16 @@ final class RecentProductsViewController: UIViewController {
         configureConstraints()
         recentProductCollectionView.viewModel = viewModel.getRecentProductCollectionViewViewModel()
         recentProductCollectionView.viewModel.delegate = self
+        view.backgroundColor = VarkaColors.mainColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         recentProductCollectionView.viewModel.fetchProductFromCoreData { [ weak self] in
             self?.recentProductCollectionView.reloadData()
+            guard let isHidden = self?.recentProductCollectionView.viewModel.contentIsEmpty() else {return}
+            self?.recentProductCollectionView.isHidden = isHidden
+            self?.nothingFoundStack.isHidden = !isHidden
         }
     }
     
@@ -47,7 +50,9 @@ final class RecentProductsViewController: UIViewController {
             recentProductCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             recentProductCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             recentProductCollectionView.topAnchor.constraint(equalTo: recentProductLabel.bottomAnchor, constant: 10),
-            recentProductCollectionView.heightAnchor.constraint(equalToConstant: 350)
+//            recentProductCollectionView.heightAnchor.constraint(equalToConstant: 450)
+            
+            recentProductCollectionView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height / 4)
         ])
     }
 }

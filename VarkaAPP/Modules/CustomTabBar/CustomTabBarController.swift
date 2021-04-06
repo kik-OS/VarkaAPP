@@ -29,6 +29,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         setupMiddleButton()
         setupTabBarItems()
         setupViewModelBindings()
+        delegate = self
     }
     
     // Изменение расстояния между tab bar items
@@ -125,13 +126,20 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
             okActionCompletion()
         }
         let cancelAction = UIAlertAction(title: Inscriptions.barCodeAlertButtonCancelTitle,
-                                         style: .cancel) { _ in }
+                                         style: .default) { _ in }
         
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         return alertController
     }
+    
+    
+    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+            return TabBarTransition(viewControllers: tabBarController.viewControllers)
+        }
 }
+
+
 
 // MARK: - Extensions
 
