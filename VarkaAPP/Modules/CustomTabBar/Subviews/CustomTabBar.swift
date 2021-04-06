@@ -17,11 +17,11 @@ final class CustomTabBar: UITabBar {
         shapeLayer.strokeColor = UIColor.lightGray.cgColor
         shapeLayer.fillColor = UIColor.white.cgColor
         shapeLayer.lineWidth = 0.2
-        
+        shapeLayer.shadowRadius = 9
+        shapeLayer.shadowOpacity = 0.3
         shapeLayer.shadowOffset = CGSize(width: 0, height: 0)
-        shapeLayer.shadowRadius = 5
-        shapeLayer.shadowColor = UIColor.gray.cgColor
-        shapeLayer.shadowOpacity = 0.5
+        
+        
         
         if let oldShapeLayer = self.shapeLayer {
             layer.replaceSublayer(oldShapeLayer, with: shapeLayer)

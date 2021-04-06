@@ -49,10 +49,9 @@ final class RecentProductsViewController: UIViewController {
         NSLayoutConstraint.activate([
             recentProductCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             recentProductCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            recentProductCollectionView.topAnchor.constraint(equalTo: recentProductLabel.bottomAnchor, constant: 10),
-//            recentProductCollectionView.heightAnchor.constraint(equalToConstant: 450)
-            
-            recentProductCollectionView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height / 4)
+            recentProductCollectionView.topAnchor.constraint(equalTo: recentProductLabel.bottomAnchor,
+                                                             constant: 10),
+            recentProductCollectionView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height / 5)
         ])
     }
 }

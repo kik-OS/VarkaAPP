@@ -11,6 +11,7 @@ protocol RecentProductCollectionViewCellViewModelProtocol {
     var productTitle: String? { get }
     var productProducer: String? { get }
     var productImage: String { get }
+    var productCookingTime: String?  { get }
     init(product: ProductCD)
 }
 
@@ -27,7 +28,11 @@ final class RecentProductCollectionViewCellViewModel: RecentProductCollectionVie
     }
     
     var productImage: String {
-        "rice.png"
+        "pngegg.png"
+    }
+    
+    var productCookingTime: String? {
+        "\(product.cookingTime) мин."
     }
     
     private let product: ProductCD

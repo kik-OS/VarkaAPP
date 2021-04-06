@@ -32,7 +32,7 @@ final class RecentProductCollectionView: UICollectionView, UICollectionViewDeleg
         
         translatesAutoresizingMaskIntoConstraints = false
         layout.minimumLineSpacing = ConstantsCollectionView.productsCollectionMinimumLineSpacing
-        contentInset = UIEdgeInsets(top: 0, left: ConstantsCollectionView.leftDistanceToView, bottom: 0, right: ConstantsCollectionView.rightDistanceToView)
+        contentInset = UIEdgeInsets(top: 20, left: ConstantsCollectionView.leftDistanceToView, bottom: 0, right: ConstantsCollectionView.rightDistanceToView)
         
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
@@ -56,7 +56,7 @@ final class RecentProductCollectionView: UICollectionView, UICollectionViewDeleg
     }
     
     internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: frame.width * 0.8, height: frame.height * 0.9)
+        CGSize(width: frame.width * 0.7, height: frame.height * 0.8)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
