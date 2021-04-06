@@ -17,16 +17,6 @@ struct TimeDiagram: View {
         (0.4 + CGFloat(remainingSeconds) / CGFloat(totalSeconds) * 0.6)
     }
     
-    private var stringTimerTime: String {
-        let minutes = remainingSeconds / 60
-        let seconds = remainingSeconds - (minutes * 60)
-        let stringSeconds = seconds < 10 ? "0\(seconds)" : "\(seconds)"
-        
-        return remainingSeconds > 0
-            ? "\(minutes):\(stringSeconds)"
-            : "Готово!"
-    }
-    
     var body: some View {
         ZStack {
             ZStack {
@@ -47,7 +37,7 @@ struct TimeDiagram: View {
             .rotationEffect(.degrees(18))
             .scaleEffect(0.8)
             
-            Text(stringTimerTime)
+            Text(remainingSeconds.getStringTimeOfTimer())
                 .font(.title)
         }
         .padding(.bottom, -50)
