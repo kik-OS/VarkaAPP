@@ -88,7 +88,7 @@ final class CustomTabBarViewModel: CustomTabBarViewModelProtocol {
 
 extension CustomTabBarViewModel: TimerManagerBarDelegate {
     
-    func timerDidStep(time: String) {
-        timerDidStep?(time)
+    func timerDidStep(remainingSeconds: Int) {
+        timerDidStep?(remainingSeconds.getStringTimeOfTimer())
     }
 }

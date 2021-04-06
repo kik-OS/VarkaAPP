@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol TimerManagerBarDelegate: class {
-    func timerDidStep(time: String)
+    func timerDidStep(remainingSeconds: Int)
 }
 
 protocol TimerManagerTimerViewDelegate: class {
@@ -44,16 +44,6 @@ final class TimerManager: TimerManagerProtocol {
     /// Текущее время таймера в секундах.
     private var timerTime = 0
     
-    private var stringTimerTime: String {
-        let minutes = timerTime / 60
-        let seconds = timerTime - (minutes * 60)
-        let stringSeconds = seconds < 10 ? "0\(seconds)" : "\(seconds)"
-        
-        return timerTime > 0
-            ? "\(minutes):\(stringSeconds)"
-            : "Готово!"
-    }
-    
     // MARK: - Initializers
     
     private init() {}
@@ -75,7 +65,7 @@ final class TimerManager: TimerManagerProtocol {
     
     func stop() {
         isActive = false
-        barDelegate?.timerDidStep(time: "")
+        barDelegate?.timerDidStep(remainingSeconds: timerTime)
         timerViewDelegate?.timerDidStep(totalSeconds: totalTime,
                                         remainingSeconds: timerTime,
                                         isStopped: true)
@@ -97,7 +87,7 @@ final class TimerManager: TimerManagerProtocol {
             return
         }
         
-        barDelegate?.timerDidStep(time: stringTimerTime)
+        barDelegate?.timerDidStep(remainingSeconds: timerTime)
         timerViewDelegate?.timerDidStep(totalSeconds: totalTime,
                                         remainingSeconds: timerTime,
                                         isStopped: false)

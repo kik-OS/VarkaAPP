@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 extension UIDevice {
     
     var typeOfCurrentModel: DeviceModel {
@@ -16,7 +15,7 @@ extension UIDevice {
         
         let modelCode = withUnsafePointer(to: &systemInfo.machine) {
             $0.withMemoryRebound(to: CChar.self, capacity: 1) { ptr in
-               String.init(validatingUTF8: ptr)
+                String.init(validatingUTF8: ptr)
             }
         }
         
@@ -75,4 +74,3 @@ extension UIDevice {
         return .unrecognized
     }
 }
-
