@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,7 +22,7 @@
                     <rect key="frame" x="0.0" y="298.5" width="414" height="597.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="JDB-dK-nnW">
-                            <rect key="frame" x="20" y="181" width="374" height="119.5"/>
+                            <rect key="frame" x="20" y="165" width="374" height="119.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4Q-qs-puE">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -98,19 +99,44 @@
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Макароны" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mvY-T6-69h">
-                            <rect key="frame" x="20" y="140" width="374" height="41"/>
+                            <rect key="frame" x="20" y="124" width="374" height="41"/>
                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instruction" translatesAutoresizingMaskIntoConstraints="NO" id="K8p-K0-nhq">
+                            <rect key="frame" x="20" y="284.5" width="374" height="128"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qi1-SK-15c">
+                            <rect key="frame" x="20" y="51" width="119" height="32"/>
+                            <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                            <state key="normal" title="Завести таймер">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="mvY-T6-69h" secondAttribute="trailing" constant="20" id="0gP-YM-oW1"/>
                         <constraint firstItem="JDB-dK-nnW" firstAttribute="top" secondItem="mvY-T6-69h" secondAttribute="bottom" id="By7-De-bkF"/>
                         <constraint firstAttribute="trailing" secondItem="JDB-dK-nnW" secondAttribute="trailing" constant="20" id="FVU-WK-zDb"/>
+                        <constraint firstItem="qi1-SK-15c" firstAttribute="top" secondItem="1wC-mF-1Gn" secondAttribute="top" constant="51" id="LW8-Gc-jeT"/>
+                        <constraint firstItem="K8p-K0-nhq" firstAttribute="top" secondItem="JDB-dK-nnW" secondAttribute="bottom" id="MUz-Ct-Uue"/>
                         <constraint firstItem="JDB-dK-nnW" firstAttribute="leading" secondItem="1wC-mF-1Gn" secondAttribute="leading" constant="20" id="Qd1-CW-GbF"/>
+                        <constraint firstItem="K8p-K0-nhq" firstAttribute="leading" secondItem="1wC-mF-1Gn" secondAttribute="leading" constant="20" id="ScN-nH-Fg9"/>
                         <constraint firstItem="mvY-T6-69h" firstAttribute="leading" secondItem="1wC-mF-1Gn" secondAttribute="leading" constant="20" id="aa7-AE-Dem"/>
+                        <constraint firstAttribute="trailing" secondItem="K8p-K0-nhq" secondAttribute="trailing" constant="20" id="jPw-MZ-SIX"/>
+                        <constraint firstItem="K8p-K0-nhq" firstAttribute="height" secondItem="1wC-mF-1Gn" secondAttribute="height" multiplier="0.214226" id="nQV-du-D7n"/>
+                        <constraint firstItem="qi1-SK-15c" firstAttribute="leading" secondItem="1wC-mF-1Gn" secondAttribute="leading" constant="20" id="tLd-Rp-tqc"/>
                         <constraint firstItem="JDB-dK-nnW" firstAttribute="height" secondItem="1wC-mF-1Gn" secondAttribute="height" multiplier="1:5" id="xSo-Wu-j1d"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -120,7 +146,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngegg" translatesAutoresizingMaskIntoConstraints="NO" id="hYY-fG-4LU">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pelmPlate" translatesAutoresizingMaskIntoConstraints="NO" id="hYY-fG-4LU">
                     <rect key="frame" x="124" y="110.5" width="346" height="336"/>
                 </imageView>
             </subviews>
@@ -130,10 +156,11 @@
                 <constraint firstAttribute="bottom" secondItem="1wC-mF-1Gn" secondAttribute="bottom" id="053-tV-Brg"/>
                 <constraint firstItem="hYY-fG-4LU" firstAttribute="width" secondItem="1wC-mF-1Gn" secondAttribute="width" multiplier="0.835749" id="5cb-li-QBZ"/>
                 <constraint firstItem="1wC-mF-1Gn" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="2:3" id="Dgl-oL-ytm"/>
-                <constraint firstItem="mvY-T6-69h" firstAttribute="top" secondItem="hYY-fG-4LU" secondAttribute="bottom" constant="-8" id="FPZ-22-shX"/>
+                <constraint firstItem="mvY-T6-69h" firstAttribute="top" secondItem="hYY-fG-4LU" secondAttribute="bottom" constant="-24" id="FPZ-22-shX"/>
                 <constraint firstAttribute="trailing" secondItem="hYY-fG-4LU" secondAttribute="trailing" constant="-56" id="HuO-Nt-Li4"/>
                 <constraint firstItem="hYY-fG-4LU" firstAttribute="centerY" secondItem="1wC-mF-1Gn" secondAttribute="top" constant="-20" id="J7C-BH-CR0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1wC-mF-1Gn" secondAttribute="trailing" id="JvT-Sd-Xzd"/>
+                <constraint firstItem="hYY-fG-4LU" firstAttribute="leading" secondItem="qi1-SK-15c" secondAttribute="trailing" constant="-15" id="hmt-S8-mfi"/>
                 <constraint firstItem="1wC-mF-1Gn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kdY-nc-gIu"/>
                 <constraint firstItem="hYY-fG-4LU" firstAttribute="height" secondItem="1wC-mF-1Gn" secondAttribute="height" multiplier="0.562343" id="l4a-u8-yde"/>
             </constraints>
@@ -141,6 +168,13 @@
         </view>
     </objects>
     <resources>
-        <image name="pngegg" width="468" height="468"/>
+        <image name="instruction" width="2688" height="512"/>
+        <image name="pelmPlate" width="468" height="468"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
