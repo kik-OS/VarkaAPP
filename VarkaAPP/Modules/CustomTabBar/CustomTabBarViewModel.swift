@@ -16,6 +16,7 @@ protocol CustomTabBarViewModelProtocol: class {
     var timerDidStep: ((_ time: String) -> Void)? { get set }
     var constantForMiddleButton: Float { get }
     var sizeForMiddleButton: Float { get }
+    
     func findProduct(byCode code: String)
     func getProductInfoViewModel(product: Product?) -> ProductInfoViewModelProtocol
     func getRecentProductViewModel() -> RecentProductViewModelProtocol
@@ -88,7 +89,7 @@ final class CustomTabBarViewModel: CustomTabBarViewModelProtocol {
 
 extension CustomTabBarViewModel: TimerManagerBarDelegate {
     
-    func timerDidStep(remainingSeconds: Int) {
-        timerDidStep?(remainingSeconds.getStringTimeOfTimer())
+    func timerDidStep(remainingSeconds: Int, isStopped: Bool) {
+        timerDidStep?(isStopped ? "" : remainingSeconds.getStringTimeOfTimer())
     }
 }

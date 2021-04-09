@@ -5,8 +5,6 @@
 //  Created by Evgeny Novgorodov on 06.04.2021.
 //
 
-import Foundation
-
 extension Int {
     
     func getStringTimeOfTimer() -> String {
