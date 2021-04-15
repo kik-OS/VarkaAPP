@@ -25,7 +25,8 @@ final class RecentProductCollectionView: UICollectionView, UICollectionViewDeleg
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
-        backgroundColor = VarkaColors.mainColor
+        backgroundColor = .clear
+        
         delegate = self
         dataSource = self
         register(RecentProductCollectionViewCell.self, forCellWithReuseIdentifier: RecentProductCollectionViewCell.reuseID)

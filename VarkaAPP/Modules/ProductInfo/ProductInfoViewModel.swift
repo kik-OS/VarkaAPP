@@ -14,6 +14,7 @@ protocol ProductInfoViewModelProtocol {
     var intoBoilingWater: String { get }
     var needStirring: String { get }
     var isHiddenProductStackView: Bool { get }
+    var productImage: String { get }
     
     init(product: Product?)
     
@@ -21,10 +22,17 @@ protocol ProductInfoViewModelProtocol {
 }
 
 final class ProductInfoViewModel: ProductInfoViewModelProtocol {
+   
+    
     
     // MARK: - Properties
     
     var product: Box<Product?> = Box(nil)
+    
+    var productImage: String {
+         let productImage = product.value?.category ?? ""
+        return "\(productImage).png"
+    }
     
     var weight: String {
         guard let weight = product.value?.weight else {
@@ -51,7 +59,8 @@ final class ProductInfoViewModel: ProductInfoViewModelProtocol {
     }
     
     var isHiddenProductStackView: Bool {
-        product.value == nil
+        return product.value == nil
+        
     }
     
     // MARK: - Initializers

@@ -28,7 +28,7 @@ final class RecentProductCollectionViewCellViewModel: RecentProductCollectionVie
     }
     
     var productImage: String {
-        "pelmPlate.png"
+        "\(product.category ?? "").png"
     }
     
     var productCookingTime: String? {

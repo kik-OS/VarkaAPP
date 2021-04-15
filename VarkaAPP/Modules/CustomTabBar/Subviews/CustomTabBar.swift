@@ -16,9 +16,9 @@ final class CustomTabBar: UITabBar {
         shapeLayer.path = CGPath.createTabBarPath(frame: frame, screenIsSquare: screenIsSquare)
         shapeLayer.strokeColor = UIColor.lightGray.cgColor
         shapeLayer.fillColor = UIColor.white.cgColor
-        shapeLayer.lineWidth = 0.2
-        shapeLayer.shadowRadius = 9
-        shapeLayer.shadowOpacity = 0.3
+        shapeLayer.lineWidth = 0
+        shapeLayer.shadowRadius = 5
+        shapeLayer.shadowOpacity = 0.1
         shapeLayer.shadowOffset = CGSize(width: 0, height: 0)
         
         
@@ -35,16 +35,4 @@ final class CustomTabBar: UITabBar {
         
         addShape(screenIsSquare: DeviceManager.checkSquareScreen())
     }
-    
-    
-//    override public func sizeThatFits(_ size: CGSize) -> CGSize {
-//        
-//        var sizeThatFits = super.sizeThatFits(size)
-//        
-//        if DevicesModel.checkSquareScreen() {
-//        
-//        sizeThatFits.height += 10
-//        }
-//        return sizeThatFits
-//       }
 }

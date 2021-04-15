@@ -30,6 +30,25 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         setupTabBarItems()
         setupViewModelBindings()
         delegate = self
+        
+//
+//
+//        let z: [Product] = [Product(code: "31243432424" , title: "Название1" , producer: "Производитель1", category: "Бобовые", weight: 200, cookingTime: 10, intoBoilingWater: true, needStirring: true, waterRatio: 2),
+//                            Product(code: "3124343241" , title: "Название1" , producer: "Производитель1", category: "Бобовые", weight: 200, cookingTime: 10, intoBoilingWater: true, needStirring: true, waterRatio: 2),
+//                            Product(code: "31243432422" , title: "Название1" , producer: "Производитель1", category: "Вареники", weight: 200, cookingTime: 10, intoBoilingWater: true, needStirring: true, waterRatio: 2),
+//                            Product(code: "31243432423" , title: "Название1" , producer: "Производитель1", category: "Гречка", weight: 200, cookingTime: 10, intoBoilingWater: true, needStirring: true, waterRatio: 2),
+//                            Product(code: "312434324244" , title: "Название1" , producer: "Производитель1", category: "Каши", weight: 200, cookingTime: 10, intoBoilingWater: true, needStirring: true, waterRatio: 2),
+//                            Product(code: "31243432425" , title: "Название1" , producer: "Производитель1", category: "Макароны", weight: 200, cookingTime: 10, intoBoilingWater: true, needStirring: true, waterRatio: 2),
+//                            Product(code: "31243432426" , title: "Название1" , producer: "Производитель1", category: "Пельмени", weight: 200, cookingTime: 10, intoBoilingWater: true, needStirring: true, waterRatio: 2),
+//                            Product(code: "31243432427" , title: "Название1" , producer: "Производитель1", category: "Рис", weight: 200, cookingTime: 10, intoBoilingWater: true, needStirring: true, waterRatio: 2),
+//                            Product(code: "31243432428" , title: "Название1" , producer: "Производитель1", category: "Спагетти", weight: 200, cookingTime: 10, intoBoilingWater: true, needStirring: true, waterRatio: 2)
+//        ]
+//
+//        z.forEach {StorageManager.shared.saveProductCD(product: $0) }
+//
+        
+        
+        
     }
     
     // Изменение расстояния между tab bar items
@@ -39,8 +58,6 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         middleButton.layer.cornerRadius = middleButton.frame.width / 2
     }
     
-    
-   
     
     // MARK: - Actions
     
@@ -63,7 +80,10 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     private func setupTabBarItems() {
         tabBar.tintColor = VarkaColors.mainColor
         
-        let productInfoViewModel = viewModel.getProductInfoViewModel(product: nil)
+//        let productInfoViewModel = viewModel.getProductInfoViewModel(product: nil)
+        
+        let productInfoViewModel = ProductInfoViewModel(product: Product(code: "123455", title: "Название", producer: "Производитель", category: "Макароны", weight: 100, cookingTime: 20, intoBoilingWater: true, needStirring: true, waterRatio: 3))
+        
         let productInfoVC = ProductInfoViewController(nibName: nil,
                                                       bundle: nil,
                                                       viewModel: productInfoViewModel)

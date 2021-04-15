@@ -30,7 +30,7 @@ final class RecentProductsViewController: UIViewController {
         configureConstraints()
         recentProductCollectionView.viewModel = viewModel.getRecentProductCollectionViewViewModel()
         recentProductCollectionView.viewModel.delegate = self
-        view.backgroundColor = VarkaColors.mainColor
+        addVerticalGradientLayer(topColor: #colorLiteral(red: 0.9470130801, green: 0.8945655227, blue: 0.7866981626, alpha: 1) , bottomColor: .white)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +54,16 @@ final class RecentProductsViewController: UIViewController {
             recentProductCollectionView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height / 5)
         ])
     }
+    
+    func addVerticalGradientLayer(topColor: UIColor, bottomColor: UIColor) {
+           let gradient = CAGradientLayer()
+           gradient.frame = view.bounds
+           gradient.colors = [topColor.cgColor, bottomColor.cgColor]
+           gradient.locations = [0.0, 1.0]
+           gradient.startPoint = CGPoint(x: 0, y: 0)
+           gradient.endPoint = CGPoint(x: 0, y: 1)
+           view.layer.insertSublayer(gradient, at: 0)
+       }
 }
 
 extension RecentProductsViewController: RecentProductCollectionViewDelegate {

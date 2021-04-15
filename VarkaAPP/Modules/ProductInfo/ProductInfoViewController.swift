@@ -11,6 +11,7 @@ final class ProductInfoViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet private weak var productImage: UIImageView!
     @IBOutlet private weak var productStackView: UIStackView!
     @IBOutlet private weak var infoLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -49,6 +50,17 @@ final class ProductInfoViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         view.backgroundColor = VarkaColors.mainColor
+        
+        setupViewModelBindings()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        productImage.layer.shadowRadius = 5
+        productImage.layer.shadowOpacity = 0.2
+        productImage.layer.shadowOffset = CGSize(width: 5, height: 8)
+        productImage.clipsToBounds = false
     }
     
     // MARK: - Actions
@@ -76,20 +88,23 @@ final class ProductInfoViewController: UIViewController {
     
     private func setupViewModelBindings() {
         viewModel.product.bind { [unowned self] product in
-            guard !viewModel.isHiddenProductStackView else { return }
+//            guard !viewModel.isHiddenProductStackView else { return }
             
-            titleLabel.text = product?.title
-            barcodeLabel.text = product?.code
-            producerLabel.text = product?.producer
-            categoryLabel.text = product?.category
-            weightLabel.text = viewModel.weight
-            cookingTimeLabel.text = viewModel.cookingTime
-            intoBoilingWaterLabel.text = viewModel.intoBoilingWater
-            needStirringLabel.text = viewModel.needStirring
-            productStackView.isHidden = false
-            infoLabel.isHidden = true
+            productImage.image = UIImage(named: viewModel.productImage)
+//            titleLabel.text = product?.title
+//            barcodeLabel.text = product?.code
+//            producerLabel.text = product?.producer
+//            categoryLabel.text = product?.category
+//            weightLabel.text = viewModel.weight
+//            cookingTimeLabel.text = viewModel.cookingTime
+//            intoBoilingWaterLabel.text = viewModel.intoBoilingWater
+//            needStirringLabel.text = viewModel.needStirring
+//            productStackView.isHidden = false
+//            infoLabel.isHidden = true
         }
     }
+    
+    
     
     @IBAction func unwind(segue: UIStoryboardSegue) {}
     
