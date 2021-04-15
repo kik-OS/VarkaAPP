@@ -8,6 +8,7 @@
 import Firebase
 import FirebaseAuth
 import UserNotifications
+import BackgroundTasks
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         notifications.cleanBadgesAtStarting()
         
         authenticateAnonymously()
+        registerBackgroundTask()
         return true
     }
     
@@ -47,6 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let _ = authDataResult {
                 print("Anonymously sign in is successful!")
             }
+        }
+    }
+    
+    private func registerBackgroundTask() {
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.Kik-OS.VarkaAPP.timer",
+                                        using: .global(qos: .userInteractive)) { bgTask in
+            TimerManager.shared.handleBackgroundTask(bgTask as! BGProcessingTask)
         }
     }
 }

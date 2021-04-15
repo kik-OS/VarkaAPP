@@ -27,6 +27,7 @@ protocol TimerManagerProtocol {
     func getTimerTime() -> (totalSeconds: Int, remainingSeconds: Int)
     func saveTime()
     func readSavedTime()
+    func handleBackgroundTask(_ task: BGProcessingTask)
 }
 
 final class TimerManager: TimerManagerProtocol {
@@ -47,15 +48,12 @@ final class TimerManager: TimerManagerProtocol {
     private var totalTime = 0
     /// Текущее время таймера в секундах.
     private var timerTime = 0
+    /// Время бэкграунд таймера в секундах.
+    private var bgTimerTime = 0 // TEMP
     
     // MARK: - Initializers
     
-    private init() {
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.Kik-OS.VarkaAPP.timer",
-                                        using: .global(qos: .userInteractive)) { bgTask in
-            self.handleBackgroundTask(bgTask as! BGProcessingTask)
-        }
-    }
+    private init() {}
     
     // MARK: - Public methods
     
@@ -134,28 +132,38 @@ final class TimerManager: TimerManagerProtocol {
         }
     }
     
-    private func handleBackgroundTask(_ task: BGProcessingTask) {
+    func handleBackgroundTask(_ task: BGProcessingTask) {
         task.expirationHandler = {
-            print("bgTask has expired!")
-            task.setTaskCompleted(success: true)
+            print("Background task has expired!")
+            task.setTaskCompleted(success: false)
         }
-        print("bgTask did start")
+        
+        print("Background task did start")
+        bgTimerTime = timerTime
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            print(self.timerTime, "!!!!!!!!!")
+            guard self.isActive, self.bgTimerTime >= 0 else {
+                self.isActive = false
+                timer.invalidate()
+                task.setTaskCompleted(success: true)
+                return
+            }
+            
+            print("Background timer:", self.bgTimerTime)
+            self.bgTimerTime -= 1
         }
         
-        scheduleBackgroundTask()
+//        scheduleBackgroundTask()
     }
     
     private func scheduleBackgroundTask() {
-        let countdownTask = BGProcessingTaskRequest(identifier: "com.Kik-OS.VarkaAPP.timer")
-        countdownTask.earliestBeginDate = Date(timeIntervalSinceNow: 1)
-        countdownTask.requiresExternalPower = false
-        countdownTask.requiresNetworkConnectivity = false
+        let bgTaskRequest = BGProcessingTaskRequest(identifier: "com.Kik-OS.VarkaAPP.timer")
+        bgTaskRequest.earliestBeginDate = Date(timeIntervalSinceNow: 1)
+        bgTaskRequest.requiresExternalPower = false
+        bgTaskRequest.requiresNetworkConnectivity = false
         
         do {
-            try BGTaskScheduler.shared.submit(countdownTask)
+            try BGTaskScheduler.shared.submit(bgTaskRequest)
         } catch {
             print("Unable to submit task: \(error.localizedDescription)")
         }
