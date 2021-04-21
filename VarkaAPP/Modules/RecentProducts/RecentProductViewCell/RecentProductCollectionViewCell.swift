@@ -8,7 +8,7 @@
 import UIKit
 
 final class RecentProductCollectionViewCell: UICollectionViewCell {
-
+    
     // MARK: - Properties
     
     var viewModel: RecentProductCollectionViewCellViewModelProtocol! {
@@ -17,10 +17,14 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
             nameLabel.text = viewModel.productTitle
             producerLabel.text = viewModel.productProducer
             cookingTimeLabel.text = viewModel.productCookingTime
+            barcodeLabel.text = viewModel.productBarcode
+            weightLabel.text = viewModel.productWeight
         }
     }
     
     static let reuseID = "RecentProductCollectionViewCell"
+    
+    
     
     let mainImageView: UIImageView = {
         let imageView = UIImageView()
@@ -34,9 +38,18 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
     }()
     
     let nameLabel: UILabel = {
-       let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .systemIndigo
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir Next Regular", size: 22)
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let barcodeLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir Next Regular", size: 15)
+        label.textColor = .black
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -44,32 +57,33 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
     
     let producerLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        label.textColor = .systemIndigo
-         label.numberOfLines = 0
-         label.translatesAutoresizingMaskIntoConstraints = false
-         return label
-     }()
+        label.font = UIFont(name: "Avenir Next Regular", size: 15)
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let weightLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir Next Regular", size: 15)
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     let cookingTimeLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+        label.font = UIFont(name: "Avenir Next Regular", size: 18)
         label.textColor = VarkaColors.mainColor
-         label.numberOfLines = 0
-         label.translatesAutoresizingMaskIntoConstraints = false
-         return label
-     }()
+        label.numberOfLines = 0
+        label.textAlignment = .right
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-//    let startCooking: UILabel = {
-//        let label = UILabel()
-//        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-//        label.textColor = .systemGray
-//         label.numberOfLines = 0
-//         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "Начать готовить"
-//        label.textAlignment = .center
-//         return label
-//     }()
+    
     
     
     // MARK: - Initializer
@@ -80,7 +94,8 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
         addSubview(nameLabel)
         addSubview(producerLabel)
         addSubview(cookingTimeLabel)
-//        addSubview(startCooking)
+        addSubview(barcodeLabel)
+        addSubview(weightLabel)
         backgroundColor = .white
         configureConstraints()
     }
@@ -93,11 +108,12 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.cornerRadius = 20
-        self.layer.shadowRadius = 9
-        self.layer.shadowOpacity = 0.3
-        self.layer.shadowOffset = CGSize(width: 5, height: 8)
-        self.clipsToBounds = false
+        layer.cornerRadius = 20
+        layer.shadowRadius = 5
+        layer.shadowOpacity = 0.3
+        layer.shadowOffset = CGSize(width: 3, height: 5)
+        layer.shadowColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        clipsToBounds = false
     }
     
     private func configureConstraints() {
@@ -109,17 +125,21 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             nameLabel.topAnchor.constraint(equalTo: mainImageView.bottomAnchor, constant: 12),
+            barcodeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            barcodeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
+            barcodeLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/2, constant: 10),
             producerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            producerLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+            producerLabel.topAnchor.constraint(equalTo: barcodeLabel.bottomAnchor, constant: 4),
             producerLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/2, constant: 10),
+            weightLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            weightLabel.topAnchor.constraint(equalTo: producerLabel.bottomAnchor, constant: 4),
+            weightLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/2, constant: 10),
             cookingTimeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            cookingTimeLabel.topAnchor.constraint(equalTo: producerLabel.bottomAnchor, constant: 8),
-            cookingTimeLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/2, constant: 10),
-//            startCooking.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-//            startCooking.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20),
-//            startCooking.topAnchor.constraint(equalTo: cookingTimeLabel.bottomAnchor, constant: 30),
-//            startCooking.centerXAnchor.constraint(equalTo: centerXAnchor)
-//
+            cookingTimeLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            cookingTimeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            
+            
         ])
     }
+    
 }

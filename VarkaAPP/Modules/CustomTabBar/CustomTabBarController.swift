@@ -45,13 +45,8 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
 //        ]
 //
 //        z.forEach {StorageManager.shared.saveProductCD(product: $0) }
-//
-        
-        
-        
+
     }
-    
-    // Изменение расстояния между tab bar items
     override func viewDidLayoutSubviews() {
         tabBar.itemPositioning = .centered
         tabBar.itemSpacing = UIScreen.main.bounds.width / 2.5
@@ -80,10 +75,10 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     private func setupTabBarItems() {
         tabBar.tintColor = VarkaColors.mainColor
         
-//        let productInfoViewModel = viewModel.getProductInfoViewModel(product: nil)
+        let productInfoViewModel = viewModel.getProductInfoViewModel(product: nil)
         
-        let productInfoViewModel = ProductInfoViewModel(product: Product(code: "123455", title: "Название", producer: "Производитель", category: "Макароны", weight: 100, cookingTime: 20, intoBoilingWater: true, needStirring: true, waterRatio: 3))
-        
+//        let productInfoViewModel = ProductInfoViewModel(product: Product(code: "123455", title: "Название", producer: "Производитель", category: "Макароны", weight: 100, cookingTime: 20, intoBoilingWater: true, needStirring: true, waterRatio: 3))
+//
         let productInfoVC = ProductInfoViewController(nibName: nil,
                                                       bundle: nil,
                                                       viewModel: productInfoViewModel)

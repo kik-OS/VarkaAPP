@@ -15,6 +15,8 @@
                 <outlet property="cookingTimeLabel" destination="vNy-Od-jrf" id="ywj-Fs-qaJ"/>
                 <outlet property="firstStepLabel" destination="ENx-4Z-kK5" id="Gjk-VZ-p6k"/>
                 <outlet property="fourthStepLabel" destination="gmL-2o-bdI" id="yrv-zP-CCP"/>
+                <outlet property="infoStackView" destination="dTe-Du-bbv" id="2Jr-nI-XP5"/>
+                <outlet property="instructionImage" destination="K8p-K0-nhq" id="FF2-zR-y2V"/>
                 <outlet property="producerLabel" destination="0P2-9c-6DX" id="gbM-AY-Mp2"/>
                 <outlet property="productImage" destination="hYY-fG-4LU" id="mgg-xw-Ozh"/>
                 <outlet property="secondStepLabel" destination="lNl-A1-m1i" id="7GC-83-us5"/>
@@ -22,6 +24,9 @@
                 <outlet property="titleLabel" destination="XC8-qQ-tk6" id="fAv-OH-Vmm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="weightLabel" destination="IAK-Fv-nzM" id="1pL-xV-rMv"/>
+                <outletCollection property="productInfoStackView" destination="JDB-dK-nnW" collectionClass="NSMutableArray" id="t7F-SH-JjX"/>
+                <outletCollection property="productInfoStackView" destination="OEb-0Y-aAe" collectionClass="NSMutableArray" id="dh3-UF-ZhO"/>
+                <outletCollection property="productInfoStackView" destination="ecH-lG-fIn" collectionClass="NSMutableArray" id="jhI-ld-TaF"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -32,7 +37,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wC-mF-1Gn">
                     <rect key="frame" x="0.0" y="298.5" width="414" height="597.5"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="JDB-dK-nnW">
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="JDB-dK-nnW">
                             <rect key="frame" x="20" y="165" width="374" height="119.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4Q-qs-puE">
@@ -127,13 +132,24 @@
                                 </stackView>
                             </subviews>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Макароны" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mvY-T6-69h">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Упс..." textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mvY-T6-69h">
                             <rect key="frame" x="20" y="124" width="374" height="41"/>
                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OEb-0Y-aAe">
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dTe-Du-bbv" userLabel="Stack View Error">
+                            <rect key="frame" x="20" y="185" width="374" height="90.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Попробуйте что-нибудь отсканировать или выбрать из недавних и продукт появится" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eeJ-yp-LZm">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="90.5"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OEb-0Y-aAe">
                             <rect key="frame" x="20" y="0.0" width="114" height="124"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhY-n9-yEj">
@@ -142,7 +158,7 @@
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qi1-SK-15c">
                                     <rect key="frame" x="0.0" y="41.5" width="114" height="41.5"/>
-                                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                    <color key="backgroundColor" red="0.24904501439999999" green="0.77563565970000004" blue="0.18292564150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                                     <state key="normal" title="Завести таймер">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -167,13 +183,13 @@
                                 <constraint firstItem="uhY-n9-yEj" firstAttribute="height" secondItem="hd8-ko-xGb" secondAttribute="height" id="gj2-qY-xtE"/>
                             </constraints>
                         </stackView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instruction" translatesAutoresizingMaskIntoConstraints="NO" id="K8p-K0-nhq">
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instruction" translatesAutoresizingMaskIntoConstraints="NO" id="K8p-K0-nhq">
                             <rect key="frame" x="15" y="299.5" width="384" height="71"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="K8p-K0-nhq" secondAttribute="height" multiplier="374:69" id="Xms-NR-WYy"/>
                             </constraints>
                         </imageView>
-                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ecH-lG-fIn">
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ecH-lG-fIn">
                             <rect key="frame" x="15" y="378.5" width="384" height="71"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Объем воды к продукту 3:1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENx-4Z-kK5">
@@ -208,6 +224,8 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="mvY-T6-69h" secondAttribute="trailing" constant="20" id="0gP-YM-oW1"/>
                         <constraint firstItem="ecH-lG-fIn" firstAttribute="top" secondItem="K8p-K0-nhq" secondAttribute="bottom" constant="8" id="6PO-MQ-792"/>
+                        <constraint firstItem="dTe-Du-bbv" firstAttribute="top" secondItem="mvY-T6-69h" secondAttribute="bottom" constant="20" id="8eL-pI-Cfw"/>
+                        <constraint firstAttribute="trailing" secondItem="dTe-Du-bbv" secondAttribute="trailing" constant="20" id="A2d-kF-uoi"/>
                         <constraint firstItem="ecH-lG-fIn" firstAttribute="leading" secondItem="1wC-mF-1Gn" secondAttribute="leading" constant="15" id="B1e-u5-Ieu"/>
                         <constraint firstItem="JDB-dK-nnW" firstAttribute="top" secondItem="mvY-T6-69h" secondAttribute="bottom" id="By7-De-bkF"/>
                         <constraint firstItem="OEb-0Y-aAe" firstAttribute="top" secondItem="1wC-mF-1Gn" secondAttribute="top" id="C6W-rw-tgb"/>
@@ -221,6 +239,7 @@
                         <constraint firstAttribute="trailing" secondItem="K8p-K0-nhq" secondAttribute="trailing" constant="15" id="jPw-MZ-SIX"/>
                         <constraint firstItem="mvY-T6-69h" firstAttribute="top" secondItem="OEb-0Y-aAe" secondAttribute="bottom" id="nZ6-3Z-tew"/>
                         <constraint firstAttribute="trailing" secondItem="ecH-lG-fIn" secondAttribute="trailing" constant="15" id="osL-h7-EDj"/>
+                        <constraint firstItem="dTe-Du-bbv" firstAttribute="leading" secondItem="1wC-mF-1Gn" secondAttribute="leading" constant="20" id="x8k-Un-Klb"/>
                         <constraint firstItem="JDB-dK-nnW" firstAttribute="height" secondItem="1wC-mF-1Gn" secondAttribute="height" multiplier="1:5" id="xSo-Wu-j1d"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -230,7 +249,11 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Каши" translatesAutoresizingMaskIntoConstraints="NO" id="hYY-fG-4LU">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfZ-7P-sm8">
+                    <rect key="frame" x="0.0" y="842" width="414" height="54"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plate" translatesAutoresizingMaskIntoConstraints="NO" id="hYY-fG-4LU">
                     <rect key="frame" x="124" y="110.5" width="346" height="336"/>
                 </imageView>
             </subviews>
@@ -244,8 +267,12 @@
                 <constraint firstAttribute="trailing" secondItem="hYY-fG-4LU" secondAttribute="trailing" constant="-56" id="HuO-Nt-Li4"/>
                 <constraint firstItem="hYY-fG-4LU" firstAttribute="centerY" secondItem="1wC-mF-1Gn" secondAttribute="top" constant="-20" id="J7C-BH-CR0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1wC-mF-1Gn" secondAttribute="trailing" id="JvT-Sd-Xzd"/>
+                <constraint firstAttribute="bottom" secondItem="mfZ-7P-sm8" secondAttribute="bottom" id="KSx-I1-YdO"/>
+                <constraint firstItem="mfZ-7P-sm8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RJj-pQ-0cM"/>
+                <constraint firstItem="mfZ-7P-sm8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="SFz-eb-7AJ"/>
                 <constraint firstItem="1wC-mF-1Gn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kdY-nc-gIu"/>
                 <constraint firstItem="hYY-fG-4LU" firstAttribute="height" secondItem="1wC-mF-1Gn" secondAttribute="height" multiplier="0.562343" id="l4a-u8-yde"/>
+                <constraint firstItem="mfZ-7P-sm8" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.06" id="rF4-If-7h8"/>
                 <constraint firstItem="hYY-fG-4LU" firstAttribute="leading" secondItem="OEb-0Y-aAe" secondAttribute="trailing" constant="-10" id="zLs-39-Qqg"/>
             </constraints>
             <point key="canvasLocation" x="126.08695652173914" y="64.955357142857139"/>
@@ -253,15 +280,12 @@
     </objects>
     <resources>
         <image name="instruction" width="2688" height="512"/>
-        <image name="Каши" width="702" height="702"/>
+        <image name="plate" width="1404" height="1404"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

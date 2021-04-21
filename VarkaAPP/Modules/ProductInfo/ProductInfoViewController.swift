@@ -11,9 +11,11 @@ final class ProductInfoViewController: UIViewController {
     
     // MARK: - Outlets
     
+    
+    @IBOutlet private var productInfoStackView: [UIStackView]!
+    @IBOutlet private weak var instructionImage: UIImageView!
     @IBOutlet private weak var productImage: UIImageView!
-    @IBOutlet private weak var productStackView: UIStackView!
-    @IBOutlet private weak var infoLabel: UILabel!
+    @IBOutlet private weak var infoStackView: UIStackView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var barcodeLabel: UILabel!
     @IBOutlet private weak var producerLabel: UILabel!
@@ -53,13 +55,12 @@ final class ProductInfoViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         view.backgroundColor = VarkaColors.mainColor
-        
         setupViewModelBindings()
+//        addVerticalGradientLayer(topColor: VarkaColors.mainColor, bottomColor: .white)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         productImage.layer.shadowRadius = 5
         productImage.layer.shadowOpacity = 0.2
         productImage.layer.shadowOffset = CGSize(width: 5, height: 8)
@@ -91,8 +92,10 @@ final class ProductInfoViewController: UIViewController {
     
     private func setupViewModelBindings() {
         viewModel.product.bind { [unowned self] product in
-//            guard !viewModel.isHiddenProductStackView else { return }
-            
+            guard !viewModel.isHiddenProductStackView else { return }
+            infoStackView.isHidden = true
+            productInfoStackView.forEach {$0.isHidden = false}
+            instructionImage.isHidden = false
             productImage.image = UIImage(named: viewModel.productImage)
             titleLabel.text = product?.title
             barcodeLabel.text = product?.code
@@ -103,15 +106,18 @@ final class ProductInfoViewController: UIViewController {
             firstStepLabel.text = viewModel.firstStep
             secondStepLabel.text = viewModel.secondStep
             thirdStepLabel.text = viewModel.thirdStep
-//            intoBoilingWaterLabel.text = viewModel.intoBoilingWater
-//            needStirringLabel.text = viewModel.needStirring
-//            productStackView.isHidden = false
-//            infoLabel.isHidden = true
         }
     }
     
-    
-    
+    func addVerticalGradientLayer(topColor: UIColor, bottomColor: UIColor) {
+           let gradient = CAGradientLayer()
+           gradient.frame = view.bounds
+           gradient.colors = [topColor.cgColor, bottomColor.cgColor]
+           gradient.locations = [0.0, 1.0]
+           gradient.startPoint = CGPoint(x: 0, y: 0)
+           gradient.endPoint = CGPoint(x: 0, y: 1)
+           view.layer.insertSublayer(gradient, at: 0)
+       }
+
     @IBAction func unwind(segue: UIStoryboardSegue) {}
-    
 }
