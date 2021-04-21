@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import BackgroundTasks
 
 protocol TimerManagerBarDelegate: class {
     func timerDidStep(remainingSeconds: Int, isStopped: Bool)
@@ -27,7 +26,6 @@ protocol TimerManagerProtocol {
     func getTimerTime() -> (totalSeconds: Int, remainingSeconds: Int)
     func saveTime()
     func readSavedTime()
-    func handleBackgroundTask(_ task: BGProcessingTask)
 }
 
 final class TimerManager: TimerManagerProtocol {
@@ -48,8 +46,6 @@ final class TimerManager: TimerManagerProtocol {
     private var totalTime = 0
     /// Текущее время таймера в секундах.
     private var timerTime = 0
-    /// Время бэкграунд таймера в секундах.
-    private var bgTimerTime = 0 // TEMP
     
     // MARK: - Initializers
     
@@ -62,7 +58,7 @@ final class TimerManager: TimerManagerProtocol {
         timerTime = totalTime
         let newTimer = Timer.scheduledTimer(timeInterval: 1,
                                             target: self,
-                                            selector: #selector(updateTimer),
+                                            selector: #selector(stepTimer),
                                             userInfo: nil,
                                             repeats: true)
         RunLoop.current.add(newTimer, forMode: .common)
@@ -72,10 +68,7 @@ final class TimerManager: TimerManagerProtocol {
     
     func stop() {
         isActive = false
-        barDelegate?.timerDidStep(remainingSeconds: timerTime, isStopped: true)
-        timerViewDelegate?.timerDidStep(totalSeconds: totalTime,
-                                        remainingSeconds: timerTime,
-                                        isStopped: true)
+        updateTimers(remainingTime: timerTime, isStopped: true)
     }
     
     func getTimerTime() -> (totalSeconds: Int, remainingSeconds: Int) {
@@ -83,9 +76,6 @@ final class TimerManager: TimerManagerProtocol {
     }
     
     func saveTime() {
-        if isActive {
-            scheduleBackgroundTask()
-        }
         savedTime = isActive
             ? (timerTime: timerTime, time: CFAbsoluteTimeGetCurrent())
             : nil
@@ -96,19 +86,22 @@ final class TimerManager: TimerManagerProtocol {
         
         let elapsedTimeByTimer = savedTime.timerTime - timerTime
         let elapsedTimeAccurately = CFAbsoluteTimeGetCurrent() - savedTime.time
-        print("По таймеру прошло \(elapsedTimeByTimer) секунд")
-        print("Точно прошло \(String(format: "%.5f", elapsedTimeAccurately)) секунд")
         
-        let delta = Int(elapsedTimeAccurately.rounded()) - elapsedTimeByTimer
-        if delta > 1 {
-            print("Подвожу таймер на \(delta) секунд")
-            timerTime = timerTime - delta
+        let isOverTime = elapsedTimeAccurately > Double(savedTime.timerTime) && isActive
+        if isOverTime {
+            isActive = false
+            updateTimers(remainingTime: 0, isStopped: false)
+        } else if isActive {
+            let delta = Int(elapsedTimeAccurately.rounded()) - elapsedTimeByTimer
+            if delta > 1 {
+                timerTime = timerTime - delta
+            }
         }
     }
     
     // MARK: - Private methods
     
-    @objc private func updateTimer(sender: Timer) {
+    @objc private func stepTimer(sender: Timer) {
         var backgroundTask = UIApplication.shared.beginBackgroundTask()
         
         guard isActive, timerTime >= 0 else {
@@ -118,10 +111,7 @@ final class TimerManager: TimerManagerProtocol {
             return
         }
         
-        barDelegate?.timerDidStep(remainingSeconds: timerTime, isStopped: false)
-        timerViewDelegate?.timerDidStep(totalSeconds: totalTime,
-                                        remainingSeconds: timerTime,
-                                        isStopped: false)
+        updateTimers(remainingTime: timerTime, isStopped: false)
         timerTime -= 1
         
         if backgroundTask != UIBackgroundTaskIdentifier.invalid {
@@ -132,40 +122,8 @@ final class TimerManager: TimerManagerProtocol {
         }
     }
     
-    func handleBackgroundTask(_ task: BGProcessingTask) {
-        task.expirationHandler = {
-            print("Background task has expired!")
-            task.setTaskCompleted(success: false)
-        }
-        
-        print("Background task did start")
-        bgTimerTime = timerTime
-        
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            guard self.isActive, self.bgTimerTime >= 0 else {
-                self.isActive = false
-                timer.invalidate()
-                task.setTaskCompleted(success: true)
-                return
-            }
-            
-            print("Background timer:", self.bgTimerTime)
-            self.bgTimerTime -= 1
-        }
-        
-//        scheduleBackgroundTask()
-    }
-    
-    private func scheduleBackgroundTask() {
-        let bgTaskRequest = BGProcessingTaskRequest(identifier: "com.Kik-OS.VarkaAPP.timer")
-        bgTaskRequest.earliestBeginDate = Date(timeIntervalSinceNow: 1)
-        bgTaskRequest.requiresExternalPower = false
-        bgTaskRequest.requiresNetworkConnectivity = false
-        
-        do {
-            try BGTaskScheduler.shared.submit(bgTaskRequest)
-        } catch {
-            print("Unable to submit task: \(error.localizedDescription)")
-        }
+    private func updateTimers(remainingTime: Int, isStopped: Bool) {
+        barDelegate?.timerDidStep(remainingSeconds: remainingTime, isStopped: isStopped)
+        timerViewDelegate?.timerDidStep(totalSeconds: totalTime, remainingSeconds: remainingTime, isStopped: isStopped)
     }
 }
