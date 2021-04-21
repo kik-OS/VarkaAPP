@@ -5,10 +5,7 @@
 //  Created by Никита Гвоздиков on 04.04.2021.
 //
 
-import Foundation
-
 enum DeviceModel  {
-    
     case simulator
     case iPhone4
     case iPhone4S

@@ -5,7 +5,6 @@
 //  Created by Evgeny Novgorodov on 29.03.2021.
 //
 
-import Foundation
 import UIKit
 
 protocol TimerManagerBarDelegate: class {

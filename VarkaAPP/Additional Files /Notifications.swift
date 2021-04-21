@@ -25,7 +25,7 @@ final class Notifications: NSObject, UNUserNotificationCenterDelegate {
         notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in }
     }
     
-    ///Вызывается для проверки настроек уведомлений у пользователя. Если уведомления выключены, вызывается замыкание.
+    /// Вызывается для проверки настроек уведомлений у пользователя. Если уведомления выключены, вызывается замыкание.
     func checkNotificationSettings(completion: @escaping () -> Void) {
         notificationCenter.getNotificationSettings { (settings) in
             if settings.authorizationStatus == .denied ||
@@ -95,7 +95,6 @@ final class Notifications: NSObject, UNUserNotificationCenterDelegate {
         notificationCenter.add(request)
         notificationCenter.setNotificationCategories([category])
     }
-    
     
     func showProductWasAddedNotification() {
         let content = UNMutableNotificationContent()

@@ -5,10 +5,7 @@
 //  Created by Никита Гвоздиков on 16.03.2021.
 //
 
-import Foundation
-
 enum Inscriptions {
-    
     static let addNewProductVCStoryBoardID = "addNewProductVC"
     static let unwindToProductInfoSegueID = "unwindToProductInfo"
     
@@ -51,9 +48,4 @@ enum Inscriptions {
     static let variantsOfWaterRatio = ["🍚 1 : 1💧", "🍚 1 : 2💧", "🍚 1 : 3💧", "🍚 1 : 4💧", "🍚 1 : 5💧"]
     
     static let titleOfDoneButtonForKB = "Сохранить"
-    
-    
-    
-    
-    
 }
