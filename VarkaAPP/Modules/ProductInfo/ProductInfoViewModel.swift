@@ -11,10 +11,12 @@ protocol ProductInfoViewModelProtocol {
     var product: Box<Product?> { get }
     var weight: String { get }
     var cookingTime: String { get }
-    var intoBoilingWater: String { get }
-    var needStirring: String { get }
     var isHiddenProductStackView: Bool { get }
     var productImage: String { get }
+    var firstStep: String { get }
+    var secondStep: String { get }
+    var thirdStep: String { get }
+    
     
     init(product: Product?)
     
@@ -22,15 +24,13 @@ protocol ProductInfoViewModelProtocol {
 }
 
 final class ProductInfoViewModel: ProductInfoViewModelProtocol {
-   
-    
     
     // MARK: - Properties
     
     var product: Box<Product?> = Box(nil)
     
     var productImage: String {
-         let productImage = product.value?.category ?? ""
+        let productImage = product.value?.category ?? ""
         return "\(productImage).png"
     }
     
@@ -38,18 +38,12 @@ final class ProductInfoViewModel: ProductInfoViewModelProtocol {
         guard let weight = product.value?.weight else {
             return "Н/Д"
         }
-        return "\(weight) гр"
+        return "\(weight) г."
     }
     
     var cookingTime: String {
         let cookingTime = (product.value?.cookingTime ?? 0)
-        return "\(cookingTime) мин"
-    }
-    
-    var intoBoilingWater: String {
-        product.value?.intoBoilingWater ?? false
-            ? "Необходимо бросать в кипящую воду"
-            : "Можно бросать в холодную воду"
+        return "\(cookingTime) мин."
     }
     
     var needStirring: String {
@@ -60,7 +54,21 @@ final class ProductInfoViewModel: ProductInfoViewModelProtocol {
     
     var isHiddenProductStackView: Bool {
         return product.value == nil
-        
+    }
+    
+    var firstStep: String {
+        let waterRatio = product.value?.waterRatio ?? 1
+        return "Объем воды к продукту \(Int(waterRatio)):1"
+    }
+    
+    var secondStep: String {
+        product.value?.intoBoilingWater ?? false
+            ? "Поместите продукт в кипящую воду"
+            : "Поместите продукт в холодную воду"
+    }
+    
+    var thirdStep: String {
+        "Заведите таймер. Варите \(cookingTime)"
     }
     
     // MARK: - Initializers

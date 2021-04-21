@@ -20,8 +20,11 @@ final class ProductInfoViewController: UIViewController {
     @IBOutlet private weak var categoryLabel: UILabel!
     @IBOutlet private weak var weightLabel: UILabel!
     @IBOutlet private weak var cookingTimeLabel: UILabel!
-    @IBOutlet private weak var intoBoilingWaterLabel: UILabel!
-    @IBOutlet private weak var needStirringLabel: UILabel!
+    @IBOutlet private weak var firstStepLabel: UILabel!
+    @IBOutlet private weak var secondStepLabel: UILabel!
+    @IBOutlet private weak var thirdStepLabel: UILabel!
+    @IBOutlet private weak var fourthStepLabel: UILabel!
+    
     
     // MARK: - Properties
     
@@ -91,12 +94,15 @@ final class ProductInfoViewController: UIViewController {
 //            guard !viewModel.isHiddenProductStackView else { return }
             
             productImage.image = UIImage(named: viewModel.productImage)
-//            titleLabel.text = product?.title
-//            barcodeLabel.text = product?.code
-//            producerLabel.text = product?.producer
-//            categoryLabel.text = product?.category
-//            weightLabel.text = viewModel.weight
-//            cookingTimeLabel.text = viewModel.cookingTime
+            titleLabel.text = product?.title
+            barcodeLabel.text = product?.code
+            producerLabel.text = product?.producer
+            categoryLabel.text = product?.category
+            weightLabel.text = viewModel.weight
+            cookingTimeLabel.text = viewModel.cookingTime
+            firstStepLabel.text = viewModel.firstStep
+            secondStepLabel.text = viewModel.secondStep
+            thirdStepLabel.text = viewModel.thirdStep
 //            intoBoilingWaterLabel.text = viewModel.intoBoilingWater
 //            needStirringLabel.text = viewModel.needStirring
 //            productStackView.isHidden = false

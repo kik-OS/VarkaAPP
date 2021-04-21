@@ -30,7 +30,7 @@ final class RecentProductsViewController: UIViewController {
         configureConstraints()
         recentProductCollectionView.viewModel = viewModel.getRecentProductCollectionViewViewModel()
         recentProductCollectionView.viewModel.delegate = self
-        addVerticalGradientLayer(topColor: #colorLiteral(red: 0.9470130801, green: 0.8945655227, blue: 0.7866981626, alpha: 1) , bottomColor: .white)
+//        addVerticalGradientLayer(topColor: #colorLiteral(red: 0.9470130801, green: 0.8945655227, blue: 0.7866981626, alpha: 1) , bottomColor: .white)
     }
     
     override func viewWillAppear(_ animated: Bool) {
