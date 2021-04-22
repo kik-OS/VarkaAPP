@@ -36,8 +36,8 @@ enum ToolBarButtonsForKBType {
 
 enum UIConstants {
     static let defaultCornerRadius: CGFloat = 10
-    static let buttonEnabledColor = VarkaColors.mainColor
-    static let buttonDisabledColor = UIColor.systemGray2
+    static let startTimerButtonEnabledColor = VarkaColors.mainColor
+    static let startTimerButtonDisabledColor = UIColor.systemGray2
 }
 
 enum VarkaColors {
