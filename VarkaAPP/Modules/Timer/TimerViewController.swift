@@ -93,6 +93,10 @@ final class TimerViewController: UIViewController {
         viewModel.timerDidStop = { [unowned self] in
             hideDiagram()
         }
+        
+        viewModel.timerDidExpired = { [unowned self] in
+            stopButton.isHidden = true
+        }
     }
     
     private func setTimeDiagramView(totalSeconds: Int? = nil, remainingSeconds: Int? = nil) {

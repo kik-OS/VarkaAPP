@@ -22,6 +22,8 @@ protocol TimerViewModelProtocol {
     var timerDidStep: ((_ totalSeconds: Int, _ remainingSeconds: Int) -> Void)? { get set }
     /// Вызывается при остановке таймера пользователем.
     var timerDidStop: (() -> Void)? { get set }
+    /// Вызывается при истечении времени таймера.
+    var timerDidExpired: (() -> Void)? { get set }
     
     init(minutes: Int)
     
@@ -63,6 +65,7 @@ final class TimerViewModel: TimerViewModelProtocol {
     var setupPickerView: (() -> Void)?
     var timerDidStep: ((_ totalSeconds: Int, _ remainingSeconds: Int) -> Void)?
     var timerDidStop: (() -> Void)?
+    var timerDidExpired: (() -> Void)?
     
     private var timerManager: TimerManagerProtocol = TimerManager.shared
         
@@ -94,5 +97,9 @@ extension TimerViewModel: TimerManagerTimerViewDelegate {
         isStopped
             ? timerDidStop?()
             : timerDidStep?(totalSeconds, remainingSeconds)
+    }
+    
+    func timerHasExpired() {
+        timerDidExpired?()
     }
 }

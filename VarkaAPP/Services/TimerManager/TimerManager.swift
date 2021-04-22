@@ -13,6 +13,7 @@ protocol TimerManagerBarDelegate: class {
 
 protocol TimerManagerTimerViewDelegate: class {
     func timerDidStep(totalSeconds: Int, remainingSeconds: Int, isStopped: Bool)
+    func timerHasExpired()
 }
 
 protocol TimerManagerProtocol {
@@ -90,6 +91,7 @@ final class TimerManager: TimerManagerProtocol {
         if isOverTime {
             isActive = false
             updateTimers(remainingTime: 0, isStopped: false)
+            timerViewDelegate?.timerHasExpired()
         } else if isActive {
             let delta = Int(elapsedTimeAccurately.rounded()) - elapsedTimeByTimer
             if delta > 1 {
@@ -111,6 +113,9 @@ final class TimerManager: TimerManagerProtocol {
         }
         
         updateTimers(remainingTime: timerTime, isStopped: false)
+        if timerTime == 0 {
+            timerViewDelegate?.timerHasExpired()
+        }
         timerTime -= 1
         
         if backgroundTask != UIBackgroundTaskIdentifier.invalid {
