@@ -71,9 +71,6 @@ final class AddingNewProductViewController: UIViewController {
         updateSaveButtonsState()
     }
     
-    @IBAction private func needStirringSwitch(_ sender: UISwitch) {
-        viewModel.needStirring = sender.isOn
-    }
     
     @IBAction private func closeButtonPressed() {
         dismiss(animated: true)

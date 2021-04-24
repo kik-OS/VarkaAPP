@@ -29,17 +29,15 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         setupMiddleButton()
         setupTabBarItems()
         setupViewModelBindings()
+        delegate = self
     }
     
-    // Изменение расстояния между tab bar items
     override func viewDidLayoutSubviews() {
         tabBar.itemPositioning = .centered
         tabBar.itemSpacing = UIScreen.main.bounds.width / 2.5
         middleButton.layer.cornerRadius = middleButton.frame.width / 2
     }
     
-    
-   
     
     // MARK: - Actions
     
@@ -61,29 +59,23 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     
     private func setupTabBarItems() {
         tabBar.tintColor = VarkaColors.mainColor
-        
         let productInfoViewModel = viewModel.getProductInfoViewModel(product: nil)
         let productInfoVC = ProductInfoViewController(nibName: nil,
                                                       bundle: nil,
                                                       viewModel: productInfoViewModel)
         productInfoVC.tabBarItem.title = Inscriptions.tabBarItemLeftTitle
         productInfoVC.tabBarItem.image = UIImage(named: ImageTitles.tabBarItemLeft)
-        
         let recentProductsVC = RecentProductsViewController()
         recentProductsVC.viewModel = viewModel.getRecentProductViewModel()
         recentProductsVC.tabBarItem.title = Inscriptions.tabBarItemRightTitle
         recentProductsVC.tabBarItem.image = UIImage(named: ImageTitles.tabBarItemRight)
-        
         viewControllers = [productInfoVC, recentProductsVC]
     }
     
     private func setupMiddleButton() {
-        
         middleButton.addTarget(self, action: #selector(centerButtonAction), for: .touchUpInside)
-        
         view.addSubview(middleButton)
         view.layoutIfNeeded()
-        
         NSLayoutConstraint.activate([
             middleButton.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor),
             middleButton.centerYAnchor.constraint(equalTo: tabBar.topAnchor, constant: CGFloat(viewModel.constantForMiddleButton)),
@@ -109,7 +101,6 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
             }
             self.present(alertController, animated: true)
         }
-        
         viewModel.timerDidStep = { [unowned self] time in
             title = time
         }
@@ -119,18 +110,18 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         let alertController = UIAlertController(title: Inscriptions.barCodeAlertTitle,
                                                 message: Inscriptions.barCodeAlertMessage,
                                                 preferredStyle: .alert)
-        
         let okAction = UIAlertAction(title: Inscriptions.barCodeAlertButtonOkTitle,
-                                     style: .default) { _ in
-            okActionCompletion()
-        }
+                                     style: .default) { _ in okActionCompletion() }
         let cancelAction = UIAlertAction(title: Inscriptions.barCodeAlertButtonCancelTitle,
-                                         style: .cancel) { _ in }
-        
+                                         style: .default) { _ in }
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         return alertController
     }
+    
+    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+            return TabBarTransition(viewControllers: tabBarController.viewControllers)
+        }
 }
 
 // MARK: - Extensions

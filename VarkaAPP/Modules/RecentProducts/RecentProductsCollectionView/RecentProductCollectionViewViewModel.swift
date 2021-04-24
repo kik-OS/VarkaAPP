@@ -14,9 +14,13 @@ protocol RecentProductCollectionViewViewModelProtocol: class {
     func fetchProductFromCoreData(completion: @escaping() -> Void)
     func cellViewModel(at indexPath: IndexPath) -> RecentProductCollectionViewCellViewModelProtocol?
     func didSelectItemAt(indexPath: IndexPath)
+    func contentIsEmpty() -> Bool
 }
 
 final class RecentProductCollectionViewViewModel: RecentProductCollectionViewViewModelProtocol {
+    func contentIsEmpty() -> Bool {
+        numberOfItemsInSection == 0
+    }
     
     func didSelectItemAt(indexPath: IndexPath) {
         guard let product = StorageManager.shared.convertFromProductCDToProduct(productCD: productsCD[indexPath.row]) else { return }

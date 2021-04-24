@@ -16,8 +16,7 @@ final class RecentProductsViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet private weak var recentProductLabel: UILabel!
-    @IBOutlet private weak var nothingFoundLabel: UILabel!
-    
+    @IBOutlet weak var nothingFoundStack: UIStackView!
     // MARK: - Properties
     
     var recentProductCollectionView = RecentProductCollectionView()
@@ -31,12 +30,17 @@ final class RecentProductsViewController: UIViewController {
         configureConstraints()
         recentProductCollectionView.viewModel = viewModel.getRecentProductCollectionViewViewModel()
         recentProductCollectionView.viewModel.delegate = self
+        view.backgroundColor = .white
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         recentProductCollectionView.viewModel.fetchProductFromCoreData { [ weak self] in
             self?.recentProductCollectionView.reloadData()
+            guard let isHidden = self?.recentProductCollectionView.viewModel.contentIsEmpty() else {return}
+            self?.recentProductCollectionView.isHidden = isHidden
+            self?.nothingFoundStack.isHidden = !isHidden
         }
     }
     
@@ -46,10 +50,22 @@ final class RecentProductsViewController: UIViewController {
         NSLayoutConstraint.activate([
             recentProductCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             recentProductCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            recentProductCollectionView.topAnchor.constraint(equalTo: recentProductLabel.bottomAnchor, constant: 10),
-            recentProductCollectionView.heightAnchor.constraint(equalToConstant: 350)
+            recentProductCollectionView.topAnchor.constraint(equalTo: recentProductLabel.bottomAnchor,
+                                                             constant: 10),
+            recentProductCollectionView.bottomAnchor.constraint(equalTo: view.centerYAnchor,
+                                                                constant: view.frame.height / 5)
         ])
     }
+    
+    func addVerticalGradientLayer(topColor: UIColor, bottomColor: UIColor) {
+           let gradient = CAGradientLayer()
+           gradient.frame = view.bounds
+           gradient.colors = [topColor.cgColor, bottomColor.cgColor]
+           gradient.locations = [0.0, 1.0]
+           gradient.startPoint = CGPoint(x: 0, y: 0)
+           gradient.endPoint = CGPoint(x: 0, y: 1)
+           view.layer.insertSublayer(gradient, at: 0)
+       }
 }
 
 extension RecentProductsViewController: RecentProductCollectionViewDelegate {
