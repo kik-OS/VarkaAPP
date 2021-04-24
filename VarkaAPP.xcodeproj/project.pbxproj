@@ -59,6 +59,7 @@
 		E4F44E86261A22C000055ADC /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E85261A22C000055ADC /* DeviceModel.swift */; };
 		E4F44E8B261A25DE00055ADC /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E8A261A25DE00055ADC /* UIDevice+Extension.swift */; };
 		E4F44E8E261A26A000055ADC /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E8D261A26A000055ADC /* DeviceManager.swift */; };
+		E4F44F53261C516C00055ADC /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44F52261C516B00055ADC /* Transition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 		E4F44E85261A22C000055ADC /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 		E4F44E8A261A25DE00055ADC /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		E4F44E8D261A26A000055ADC /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
+		E4F44F52261C516B00055ADC /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +286,7 @@
 			children = (
 				CE02BA8225F7572300788EE3 /* Box.swift */,
 				E4AAA4952603CC27006DF73A /* Notifications.swift */,
+				E4F44F52261C516B00055ADC /* Transition.swift */,
 				E451D07E25F3FF8100890584 /* Extensions */,
 				E451D08225F4001400890584 /* Helpers */,
 			);
@@ -580,6 +583,7 @@
 				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,
 				E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */,
 				E49196C725FB9F5D00395445 /* StorageManager.swift in Sources */,
+				E4F44F53261C516C00055ADC /* Transition.swift in Sources */,
 				CE0CFFC9260FC01500B9A9AA /* UIView+Extension.swift in Sources */,
 				E4F44E8E261A26A000055ADC /* DeviceManager.swift in Sources */,
 				E4AAA443260369B0006DF73A /* MiddleButtonTabBar.swift in Sources */,

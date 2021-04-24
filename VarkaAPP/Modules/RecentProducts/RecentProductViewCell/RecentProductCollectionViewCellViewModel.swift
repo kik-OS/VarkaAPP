@@ -11,10 +11,20 @@ protocol RecentProductCollectionViewCellViewModelProtocol {
     var productTitle: String? { get }
     var productProducer: String? { get }
     var productImage: String { get }
+    var productCookingTime: String?  { get }
+    var productBarcode: String { get }
+    var productWeight: String { get }
     init(product: ProductCD)
 }
 
 final class RecentProductCollectionViewCellViewModel: RecentProductCollectionViewCellViewModelProtocol {
+    var productWeight: String {
+        "\(product.weight) грамм"
+    }
+    
+    var productBarcode: String {
+        product.code ?? ""
+    }
     
     // MARK: - Properties
     
@@ -27,7 +37,11 @@ final class RecentProductCollectionViewCellViewModel: RecentProductCollectionVie
     }
     
     var productImage: String {
-        "rice.png"
+        "\(product.category ?? "").png"
+    }
+    
+    var productCookingTime: String? {
+        "\(product.cookingTime) мин."
     }
     
     private let product: ProductCD
