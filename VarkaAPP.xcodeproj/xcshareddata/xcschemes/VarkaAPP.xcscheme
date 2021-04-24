@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6AE4A3D573DED275B034E20506596C62"
-               BuildableName = "FirebaseAuth.framework"
-               BlueprintName = "FirebaseAuth"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "E495627325F20F2A0068F15A"
+               BuildableName = "VarkaAPP.app"
+               BlueprintName = "VarkaAPP"
+               ReferencedContainer = "container:VarkaAPP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,23 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E495627325F20F2A0068F15A"
+            BuildableName = "VarkaAPP.app"
+            BlueprintName = "VarkaAPP"
+            ReferencedContainer = "container:VarkaAPP.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,6 +64,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E495627325F20F2A0068F15A"
+            BuildableName = "VarkaAPP.app"
+            BlueprintName = "VarkaAPP"
+            ReferencedContainer = "container:VarkaAPP.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

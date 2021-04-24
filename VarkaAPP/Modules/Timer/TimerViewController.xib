@@ -54,7 +54,7 @@
                                 <action selector="stopButtonTapped" destination="-1" eventType="touchUpInside" id="nMc-Pd-i8M"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cT9-PW-pFs">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cT9-PW-pFs" customClass="StartTimerButton" customModule="VarkaAPP" customModuleProvider="target">
                             <rect key="frame" x="103.5" y="224.5" width="207" height="36"/>
                             <color key="backgroundColor" systemColor="systemIndigoColor"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
@@ -65,6 +65,7 @@
                                 <action selector="startButtonTapped" destination="-1" eventType="touchUpInside" id="3ia-cW-1r5"/>
                             </connections>
                         </button>
+
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="-35" translatesAutoresizingMaskIntoConstraints="NO" id="3s3-kJ-waH">
                             <rect key="frame" x="146" y="58.5" width="122" height="150"/>
                             <subviews>

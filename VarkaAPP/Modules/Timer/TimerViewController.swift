@@ -71,7 +71,6 @@ final class TimerViewController: UIViewController {
     
     private func setupUI() {
         contentView.layer.cornerRadius = UIConstants.defaultCornerRadius
-        startButton.layer.cornerRadius = UIConstants.defaultCornerRadius
         stopButton.layer.cornerRadius =  UIConstants.defaultCornerRadius
         
         updateStatesOfStackViews()
@@ -94,6 +93,10 @@ final class TimerViewController: UIViewController {
         viewModel.timerDidStop = { [unowned self] in
             hideDiagram()
         }
+        
+        viewModel.timerDidExpired = { [unowned self] in
+            stopButton.isHidden = true
+        }
     }
     
     private func setTimeDiagramView(totalSeconds: Int? = nil, remainingSeconds: Int? = nil) {
@@ -112,9 +115,6 @@ final class TimerViewController: UIViewController {
         startButton.isHidden = viewModel.isHiddenStartButton
         stopButton.isHidden = viewModel.isHiddenStopButton
         startButton.isEnabled = viewModel.isEnabledStartButton
-        startButton.backgroundColor = startButton.isEnabled
-            ? UIConstants.buttonEnabledColor
-            : UIConstants.buttonDisabledColor
     }
     
     private func updateStatesOfStackViews() {
