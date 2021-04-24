@@ -45,7 +45,7 @@
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1q-co-HOT">
                             <rect key="frame" x="103.5" y="224.5" width="207" height="36"/>
-                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <color key="backgroundColor" red="0.2569527626" green="0.79925453660000001" blue="0.1886040866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                             <state key="normal" title="Стоп">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,17 +63,6 @@
                             </state>
                             <connections>
                                 <action selector="startButtonTapped" destination="-1" eventType="touchUpInside" id="3ia-cW-1r5"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfU-57-Lsg">
-                            <rect key="frame" x="358" y="16" width="40" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="40" id="KFD-d5-zkT"/>
-                                <constraint firstAttribute="height" constant="40" id="wSZ-kS-px3"/>
-                            </constraints>
-                            <state key="normal" title="Close" image="closeButton"/>
-                            <connections>
-                                <action selector="closeButtonTapped" destination="-1" eventType="touchUpInside" id="NZ1-3C-oBJ"/>
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="-35" translatesAutoresizingMaskIntoConstraints="NO" id="3s3-kJ-waH">
@@ -100,22 +89,28 @@
                                 <constraint firstAttribute="height" constant="150" id="FXf-pb-at4"/>
                             </constraints>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zl3-qS-rxT">
+                            <rect key="frame" x="368" y="14" width="30" height="30"/>
+                            <connections>
+                                <action selector="closeButtonTapped" destination="-1" eventType="touchUpInside" id="6si-h4-pQY"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="b1q-co-HOT" firstAttribute="centerX" secondItem="kXW-ev-aFe" secondAttribute="centerX" id="1mc-eM-3Re"/>
-                        <constraint firstItem="KfU-57-Lsg" firstAttribute="top" secondItem="kXW-ev-aFe" secondAttribute="top" constant="16" id="Af9-mE-mBY"/>
                         <constraint firstItem="4DD-LA-e2I" firstAttribute="centerX" secondItem="kXW-ev-aFe" secondAttribute="centerX" id="Afr-x5-cUL"/>
                         <constraint firstItem="b1q-co-HOT" firstAttribute="width" secondItem="kXW-ev-aFe" secondAttribute="width" multiplier="0.5" id="CGQ-aq-cfN"/>
+                        <constraint firstAttribute="trailing" secondItem="zl3-qS-rxT" secondAttribute="trailing" constant="16" id="CZw-sf-Xv2"/>
                         <constraint firstItem="cT9-PW-pFs" firstAttribute="top" secondItem="3s3-kJ-waH" secondAttribute="bottom" constant="16" id="LD3-kf-TVf"/>
                         <constraint firstItem="4DD-LA-e2I" firstAttribute="top" secondItem="kXW-ev-aFe" secondAttribute="top" constant="16" id="MzR-la-a4f"/>
                         <constraint firstItem="b1q-co-HOT" firstAttribute="centerY" secondItem="cT9-PW-pFs" secondAttribute="centerY" id="O79-Hk-UpF"/>
                         <constraint firstItem="3s3-kJ-waH" firstAttribute="top" secondItem="4DD-LA-e2I" secondAttribute="bottom" constant="16" id="QfL-0h-1DO"/>
                         <constraint firstItem="3s3-kJ-waH" firstAttribute="centerX" secondItem="kXW-ev-aFe" secondAttribute="centerX" id="XRs-Tb-EE2"/>
-                        <constraint firstAttribute="trailing" secondItem="KfU-57-Lsg" secondAttribute="trailing" constant="16" id="Y9r-Ua-R5X"/>
                         <constraint firstItem="cT9-PW-pFs" firstAttribute="centerX" secondItem="kXW-ev-aFe" secondAttribute="centerX" id="bnX-y7-jAK"/>
                         <constraint firstItem="LnF-iJ-zck" firstAttribute="centerX" secondItem="kXW-ev-aFe" secondAttribute="centerX" id="jJf-iu-3LK"/>
                         <constraint firstItem="cT9-PW-pFs" firstAttribute="top" secondItem="LnF-iJ-zck" secondAttribute="bottom" constant="16" id="kdr-Ik-9Z9"/>
+                        <constraint firstItem="zl3-qS-rxT" firstAttribute="top" secondItem="kXW-ev-aFe" secondAttribute="top" constant="14" id="pVC-gZ-Gmr"/>
                         <constraint firstItem="cT9-PW-pFs" firstAttribute="width" secondItem="kXW-ev-aFe" secondAttribute="width" multiplier="0.5" id="rfg-lS-Dce"/>
                         <constraint firstAttribute="bottom" secondItem="cT9-PW-pFs" secondAttribute="bottom" constant="50" id="sjI-wx-vo5"/>
                         <constraint firstItem="LnF-iJ-zck" firstAttribute="top" secondItem="4DD-LA-e2I" secondAttribute="bottom" constant="16" id="ygQ-Rj-ddH"/>
@@ -139,15 +134,11 @@
         </view>
     </objects>
     <resources>
-        <image name="closeButton" width="200" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

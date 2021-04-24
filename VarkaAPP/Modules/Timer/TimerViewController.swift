@@ -40,9 +40,9 @@ final class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
         setupViewModelBindings()
+        setShadow()
     }
     
     // MARK: - Actions
@@ -133,6 +133,13 @@ final class TimerViewController: UIViewController {
         diagramStackView.disappear() { [weak self] in
             self?.pickerStackView.appear()
         }
+    }
+    
+    private func setShadow() {
+        view.layer.shadowRadius = 5
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        view.layer.shadowColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
     }
 }
 

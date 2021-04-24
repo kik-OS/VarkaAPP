@@ -26,6 +26,7 @@ final class ProductInfoViewController: UIViewController {
     @IBOutlet private weak var secondStepLabel: UILabel!
     @IBOutlet private weak var thirdStepLabel: UILabel!
     @IBOutlet private weak var fourthStepLabel: UILabel!
+    @IBOutlet weak var timerButton: UIButton!
     
     
     // MARK: - Properties
@@ -56,7 +57,7 @@ final class ProductInfoViewController: UIViewController {
         setupNavigationBar()
         view.backgroundColor = VarkaColors.mainColor
         setupViewModelBindings()
-//        addVerticalGradientLayer(topColor: VarkaColors.mainColor, bottomColor: .white)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +66,8 @@ final class ProductInfoViewController: UIViewController {
         productImage.layer.shadowOpacity = 0.2
         productImage.layer.shadowOffset = CGSize(width: 5, height: 8)
         productImage.clipsToBounds = false
+        timerButton.layer.borderWidth = 1
+        timerButton.layer.borderColor = VarkaColors.mainColor.cgColor
     }
     
     // MARK: - Actions
@@ -109,15 +112,5 @@ final class ProductInfoViewController: UIViewController {
         }
     }
     
-    func addVerticalGradientLayer(topColor: UIColor, bottomColor: UIColor) {
-           let gradient = CAGradientLayer()
-           gradient.frame = view.bounds
-           gradient.colors = [topColor.cgColor, bottomColor.cgColor]
-           gradient.locations = [0.0, 1.0]
-           gradient.startPoint = CGPoint(x: 0, y: 0)
-           gradient.endPoint = CGPoint(x: 0, y: 1)
-           view.layer.insertSublayer(gradient, at: 0)
-       }
-
     @IBAction func unwind(segue: UIStoryboardSegue) {}
 }

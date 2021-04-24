@@ -42,4 +42,5 @@ enum UIConstants {
 
 enum VarkaColors {
     static let mainColor: UIColor = #colorLiteral(red: 0.2607818842, green: 0.7992512584, blue: 0.1885845959, alpha: 1)
+    
 }

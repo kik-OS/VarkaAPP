@@ -31,7 +31,7 @@ final class RecentProductsViewController: UIViewController {
         recentProductCollectionView.viewModel = viewModel.getRecentProductCollectionViewViewModel()
         recentProductCollectionView.viewModel.delegate = self
         view.backgroundColor = .white
-        recentProductLabel.textColor = VarkaColors.mainColor
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +52,8 @@ final class RecentProductsViewController: UIViewController {
             recentProductCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             recentProductCollectionView.topAnchor.constraint(equalTo: recentProductLabel.bottomAnchor,
                                                              constant: 10),
-            recentProductCollectionView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height / 5)
+            recentProductCollectionView.bottomAnchor.constraint(equalTo: view.centerYAnchor,
+                                                                constant: view.frame.height / 5)
         ])
     }
     

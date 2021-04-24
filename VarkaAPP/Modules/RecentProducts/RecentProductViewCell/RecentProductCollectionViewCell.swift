@@ -24,8 +24,6 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
     
     static let reuseID = "RecentProductCollectionViewCell"
     
-    
-    
     let mainImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +38,7 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Avenir Next Regular", size: 22)
-        label.textColor = .black
+        label.textColor = VarkaColors.mainColor
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -49,7 +47,7 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
     let barcodeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Avenir Next Regular", size: 15)
-        label.textColor = .black
+        label.textColor = .systemGray
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -58,7 +56,7 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
     let producerLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Avenir Next Regular", size: 15)
-        label.textColor = .black
+        label.textColor = .systemGray
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -67,7 +65,7 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
     let weightLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Avenir Next Regular", size: 15)
-        label.textColor = .black
+        label.textColor = .systemGray
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -82,9 +80,6 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    
-    
     
     // MARK: - Initializer
     
@@ -110,8 +105,8 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         layer.cornerRadius = 20
         layer.shadowRadius = 5
-        layer.shadowOpacity = 0.3
-        layer.shadowOffset = CGSize(width: 3, height: 5)
+        layer.shadowOpacity = 0.4
+        layer.shadowOffset = CGSize(width: 3, height: 0)
         layer.shadowColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         clipsToBounds = false
     }
@@ -137,9 +132,6 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
             cookingTimeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             cookingTimeLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             cookingTimeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
-            
-            
         ])
     }
-    
 }
