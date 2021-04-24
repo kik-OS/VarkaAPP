@@ -20,7 +20,6 @@ extension UIDevice {
         }
         
         let modelMap : [String: DeviceModel] = [
-            
             "i386"       : .simulator,
             "x86_64"     : .simulator,
             "iPhone3,1"  : .iPhone4,
