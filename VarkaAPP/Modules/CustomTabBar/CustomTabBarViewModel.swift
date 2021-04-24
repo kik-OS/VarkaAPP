@@ -12,23 +12,39 @@ protocol CustomTabBarViewModelProtocol: class {
     var productDidReceive: ((_ productInfoViewModel: ProductInfoViewModelProtocol) -> Void)? { get set }
     /// Вызывается для предложения добавить товар. В параметр передаётся бар-код, полученный от сканера.
     var addingNewProductOffer: ((_ code: String) -> Void)? { get set }
-    
+    /// Вызывается при каждом шаге таймера.
+    var timerDidStep: ((_ time: String) -> Void)? { get set }
+    var constantForMiddleButton: Float { get }
+    var sizeForMiddleButton: Float { get }
     func findProduct(byCode code: String)
     func getProductInfoViewModel(product: Product?) -> ProductInfoViewModelProtocol
     func getRecentProductViewModel() -> RecentProductViewModelProtocol
     func getAddingNewProductViewModel(withCode code: String) -> AddingNewProductViewModelProtocol
+    func getTimerViewModel() -> TimerViewModelProtocol
 }
 
 final class CustomTabBarViewModel: CustomTabBarViewModelProtocol {
-    
     
     
     // MARK: - Properties
     
     var productDidReceive: ((_ productInfoViewModel: ProductInfoViewModelProtocol) -> Void)?
     var addingNewProductOffer: ((_ code: String) -> Void)?
+    var timerDidStep: ((_ time: String) -> Void)?
+    var constantForMiddleButton: Float {
+        DeviceManager.checkSquareScreen() ? 0 : 10
+    }
+    var sizeForMiddleButton: Float {
+        DeviceManager.checkSquareScreen() ? 68 : 72
+    }
     
     private let firebaseService: FirebaseServiceProtocol = FirebaseService.shared
+    
+    // MARK: - Initializers
+    
+    init() {
+        TimerManager.shared.barDelegate = self
+    }
     
     // MARK: - Public methods
     
@@ -59,9 +75,20 @@ final class CustomTabBarViewModel: CustomTabBarViewModelProtocol {
         AddingNewProductViewModel(code: code)
     }
     
+    func getTimerViewModel() -> TimerViewModelProtocol {
+        TimerViewModel()
+    }
+    
     // MARK: - Private methods
     
     private func createProductInCoreData(product: Product) {
         StorageManager.shared.saveProductCD(product: product)
+    }
+}
+
+extension CustomTabBarViewModel: TimerManagerBarDelegate {
+    
+    func timerDidStep(time: String) {
+        timerDidStep?(time)
     }
 }

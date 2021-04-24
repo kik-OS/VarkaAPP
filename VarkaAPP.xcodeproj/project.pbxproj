@@ -15,6 +15,9 @@
 		CE02BA0C25F3AB6800788EE3 /* ProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE02BA0A25F3AB6800788EE3 /* ProductInfoViewController.xib */; };
 		CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */; };
 		CE02BA8325F7572300788EE3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02BA8225F7572300788EE3 /* Box.swift */; };
+		CE0CFFC5260FA2B400B9A9AA /* TimeDiagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CFFC4260FA2B400B9A9AA /* TimeDiagram.swift */; };
+		CE0CFFC9260FC01500B9A9AA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CFFC8260FC01500B9A9AA /* UIView+Extension.swift */; };
+		CE0CFFD22611993D00B9A9AA /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CFFD12611993D00B9A9AA /* TimerManager.swift */; };
 		CE20DE1925FCA7EF00274A95 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20DE1725FCA7EF00274A95 /* TimerViewController.swift */; };
 		CE20DE1A25FCA7EF00274A95 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE20DE1825FCA7EF00274A95 /* TimerViewController.xib */; };
 		CE2FF95B2603879600FDA68D /* CustomBarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FF95A2603879600FDA68D /* CustomBarcodeScannerViewController.swift */; };
@@ -51,6 +54,10 @@
 		E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49562D825F2775E0068F15A /* RecentProductViewModel.swift */; };
 		E4AAA443260369B0006DF73A /* MiddleButtonTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AAA442260369B0006DF73A /* MiddleButtonTabBar.swift */; };
 		E4AAA4962603CC27006DF73A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AAA4952603CC27006DF73A /* Notifications.swift */; };
+		E4F44E86261A22C000055ADC /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E85261A22C000055ADC /* DeviceModel.swift */; };
+		E4F44E8B261A25DE00055ADC /* UIDevice + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E8A261A25DE00055ADC /* UIDevice + Extension.swift */; };
+		E4F44E8E261A26A000055ADC /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E8D261A26A000055ADC /* DeviceManager.swift */; };
+		E4F44F53261C516C00055ADC /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44F52261C516B00055ADC /* Transition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +71,9 @@
 		CE02BA0A25F3AB6800788EE3 /* ProductInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductInfoViewController.xib; sourceTree = "<group>"; };
 		CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewModel.swift; sourceTree = "<group>"; };
 		CE02BA8225F7572300788EE3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		CE0CFFC4260FA2B400B9A9AA /* TimeDiagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeDiagram.swift; sourceTree = "<group>"; };
+		CE0CFFC8260FC01500B9A9AA /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		CE0CFFD12611993D00B9A9AA /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		CE20DE1725FCA7EF00274A95 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		CE20DE1825FCA7EF00274A95 /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
 		CE2FF95A2603879600FDA68D /* CustomBarcodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarcodeScannerViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +112,10 @@
 		E49562D825F2775E0068F15A /* RecentProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductViewModel.swift; sourceTree = "<group>"; };
 		E4AAA442260369B0006DF73A /* MiddleButtonTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleButtonTabBar.swift; sourceTree = "<group>"; };
 		E4AAA4952603CC27006DF73A /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		E4F44E85261A22C000055ADC /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		E4F44E8A261A25DE00055ADC /* UIDevice + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice + Extension.swift"; sourceTree = "<group>"; };
+		E4F44E8D261A26A000055ADC /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
+		E4F44F52261C516B00055ADC /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +159,8 @@
 		CE02BA0325F3A8E600788EE3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E4F44E88261A235100055ADC /* DeviceManager */,
+				CE0CFFD626122F6A00B9A9AA /* TimerManager */,
 				E49196C525FB9F4200395445 /* StorageManager */,
 				CE02BA0425F3A91700788EE3 /* FirebaseService */,
 			);
@@ -170,14 +186,31 @@
 			path = ProductInfo;
 			sourceTree = "<group>";
 		};
-		CE20DE1625FCA74D00274A95 /* TimerSetting */ = {
+		CE0CFFC3260FA29500B9A9AA /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				CE0CFFC4260FA2B400B9A9AA /* TimeDiagram.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		CE0CFFD626122F6A00B9A9AA /* TimerManager */ = {
+			isa = PBXGroup;
+			children = (
+				CE0CFFD12611993D00B9A9AA /* TimerManager.swift */,
+			);
+			path = TimerManager;
+			sourceTree = "<group>";
+		};
+		CE20DE1625FCA74D00274A95 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
 				CE20DE1725FCA7EF00274A95 /* TimerViewController.swift */,
 				CE3F63BB26011EAE00968946 /* TimerViewModel.swift */,
 				CE20DE1825FCA7EF00274A95 /* TimerViewController.xib */,
+				CE0CFFC3260FA29500B9A9AA /* Subviews */,
 			);
-			path = TimerSetting;
+			path = Timer;
 			sourceTree = "<group>";
 		};
 		CE2FF94426032FBC00FDA68D /* Subviews */ = {
@@ -196,8 +229,8 @@
 				E49562CB25F246A90068F15A /* CustomTabBar */,
 				CE02BA0825F3AB1400788EE3 /* ProductInfo */,
 				E49562C925F245B40068F15A /* RecentProducts */,
-				CE20DE1625FCA74D00274A95 /* TimerSetting */,
 				E451D08825F736E500890584 /* AddingNewProduct */,
+				CE20DE1625FCA74D00274A95 /* Timer */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -222,8 +255,10 @@
 		E451D07E25F3FF8100890584 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE0CFFC8260FC01500B9A9AA /* UIView+Extension.swift */,
 				CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */,
 				E491969825FB5C2900395445 /* CGPath+Extension.swift */,
+				E4F44E8A261A25DE00055ADC /* UIDevice + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -234,6 +269,7 @@
 				E451D08325F4002F00890584 /* Constants.swift */,
 				E466EE78260089AF004E18D1 /* ImageTitles.swift */,
 				E466EE7B26008BC4004E18D1 /* Inscriptions.swift */,
+				E4F44E85261A22C000055ADC /* DeviceModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -244,6 +280,7 @@
 				CE02BA8225F7572300788EE3 /* Box.swift */,
 				CE3F63B826011C7200968946 /* TimerPickerView.swift */,
 				E4AAA4952603CC27006DF73A /* Notifications.swift */,
+				E4F44F52261C516B00055ADC /* Transition.swift */,
 				E451D07E25F3FF8100890584 /* Extensions */,
 				E451D08225F4001400890584 /* Helpers */,
 			);
@@ -317,17 +354,17 @@
 			isa = PBXGroup;
 			children = (
 				CE3A167B25F7925A00FFA849 /* Modules */,
-				E451D08625F400B700890584 /* Additional Files  */,
-				E495629225F20F7B0068F15A /* StoryBoard */,
 				CE02B9EB25F2AC6200788EE3 /* Models */,
+				E495629225F20F7B0068F15A /* Storyboards */,
 				CE02BA0325F3A8E600788EE3 /* Services */,
+				E451D08625F400B700890584 /* Additional Files  */,
 				E495629125F20F5E0068F15A /* Resources */,
-				E495629025F20F510068F15A /* SupportingFiles */,
+				E495629025F20F510068F15A /* Supporting Files */,
 			);
 			path = VarkaAPP;
 			sourceTree = "<group>";
 		};
-		E495629025F20F510068F15A /* SupportingFiles */ = {
+		E495629025F20F510068F15A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				E495628025F20F2A0068F15A /* VarkaAPP.xcdatamodeld */,
@@ -336,7 +373,7 @@
 				E495627925F20F2A0068F15A /* SceneDelegate.swift */,
 				E495627725F20F2A0068F15A /* AppDelegate.swift */,
 			);
-			path = SupportingFiles;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		E495629125F20F5E0068F15A /* Resources */ = {
@@ -349,13 +386,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		E495629225F20F7B0068F15A /* StoryBoard */ = {
+		E495629225F20F7B0068F15A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				E495627D25F20F2A0068F15A /* Main.storyboard */,
 				E495628525F20F2D0068F15A /* LaunchScreen.storyboard */,
 			);
-			path = StoryBoard;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		E49562C925F245B40068F15A /* RecentProducts */ = {
@@ -376,6 +413,14 @@
 				CE2FF94426032FBC00FDA68D /* Subviews */,
 			);
 			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		E4F44E88261A235100055ADC /* DeviceManager */ = {
+			isa = PBXGroup;
+			children = (
+				E4F44E8D261A26A000055ADC /* DeviceManager.swift */,
+			);
+			path = DeviceManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,11 +553,15 @@
 				E491967925F8F5A200395445 /* RecentProductCollectionView.swift in Sources */,
 				CE3F63B926011C7200968946 /* TimerPickerView.swift in Sources */,
 				E491969925FB5C2900395445 /* CGPath+Extension.swift in Sources */,
+				E4F44E8B261A25DE00055ADC /* UIDevice + Extension.swift in Sources */,
 				E466EE5F25FF771E004E18D1 /* CustomTabBarViewModel.swift in Sources */,
 				CE02BA0625F3A94500788EE3 /* FirebaseService.swift in Sources */,
 				CE20DE1925FCA7EF00274A95 /* TimerViewController.swift in Sources */,
+				CE0CFFC5260FA2B400B9A9AA /* TimeDiagram.swift in Sources */,
 				E495627A25F20F2A0068F15A /* SceneDelegate.swift in Sources */,
+				E4F44E86261A22C000055ADC /* DeviceModel.swift in Sources */,
 				E466EE79260089AF004E18D1 /* ImageTitles.swift in Sources */,
+				CE0CFFD22611993D00B9A9AA /* TimerManager.swift in Sources */,
 				E49562D125F247990068F15A /* CustomTabBar.swift in Sources */,
 				CE3A168B25F9D7A000FFA849 /* Category.swift in Sources */,
 				CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */,
@@ -526,6 +575,9 @@
 				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,
 				E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */,
 				E49196C725FB9F5D00395445 /* StorageManager.swift in Sources */,
+				E4F44F53261C516C00055ADC /* Transition.swift in Sources */,
+				CE0CFFC9260FC01500B9A9AA /* UIView+Extension.swift in Sources */,
+				E4F44E8E261A26A000055ADC /* DeviceManager.swift in Sources */,
 				E4AAA443260369B0006DF73A /* MiddleButtonTabBar.swift in Sources */,
 				CE02B9ED25F2ACA000788EE3 /* Product.swift in Sources */,
 				E451D08425F4002F00890584 /* Constants.swift in Sources */,
@@ -681,8 +733,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58287L88KM;
-				INFOPLIST_FILE = VarkaAPP/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				INFOPLIST_FILE = "VarkaAPP/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -702,8 +754,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58287L88KM;
-				INFOPLIST_FILE = VarkaAPP/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				INFOPLIST_FILE = "VarkaAPP/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

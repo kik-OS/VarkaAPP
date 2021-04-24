@@ -11,15 +11,15 @@ final class AddingNewProductViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak private var codeLabel: UILabel!
-    @IBOutlet weak private var categoryTF: UITextField!
-    @IBOutlet weak private var titleProductTF: UITextField!
-    @IBOutlet weak private var producerTF: UITextField!
-    @IBOutlet weak private var cookingTimeTF: UITextField!
-    @IBOutlet weak private var weightTF: UITextField!
-    @IBOutlet weak private var waterRatioTF: UITextField!
-    @IBOutlet weak private var saveButton: UIButton!
-    @IBOutlet weak private var mainScrollView: UIScrollView!
+    @IBOutlet private weak var codeLabel: UILabel!
+    @IBOutlet private weak var categoryTF: UITextField!
+    @IBOutlet private weak var titleProductTF: UITextField!
+    @IBOutlet private weak var producerTF: UITextField!
+    @IBOutlet private weak var cookingTimeTF: UITextField!
+    @IBOutlet private weak var weightTF: UITextField!
+    @IBOutlet private weak var waterRatioTF: UITextField!
+    @IBOutlet private weak var saveButton: UIButton!
+    @IBOutlet private weak var mainScrollView: UIScrollView!
     
     // MARK: - Properties
     
@@ -72,11 +72,6 @@ final class AddingNewProductViewController: UIViewController {
     }
     
     
-    @IBAction private func needStirringSwitch(_ sender: UISwitch) {
-        viewModel.needStirring = sender.isOn
-    }
-    
-    
     @IBAction private func closeButtonPressed() {
         dismiss(animated: true)
     }
@@ -123,11 +118,9 @@ final class AddingNewProductViewController: UIViewController {
     }
 }
 
-
 //MARK: - Extensions
 
 extension AddingNewProductViewController: UITextFieldDelegate {
-    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         viewModel.didTapChangeResponderButton(type: .down)
@@ -204,7 +197,6 @@ extension AddingNewProductViewController: UITextFieldDelegate {
         return keyboardToolbar
     }
     
-    
     private func addToolBar(to textFields: UITextField...) {
         let keyboardToolbar = createToolBar()
         textFields.forEach { textField in
@@ -213,7 +205,6 @@ extension AddingNewProductViewController: UITextFieldDelegate {
         }
     }
 }
-
 
 extension AddingNewProductViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -241,6 +232,3 @@ extension AddingNewProductViewController: UIPickerViewDelegate, UIPickerViewData
         updateSaveButtonsState()
     }
 }
-
-
-

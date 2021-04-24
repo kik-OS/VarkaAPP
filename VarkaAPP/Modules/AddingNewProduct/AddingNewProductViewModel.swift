@@ -27,7 +27,9 @@ protocol AddingNewProductViewModelProtocol: class {
     var needUpdateFirstResponder: ((_ tag: Int) -> Void)? { get set }
     var stateForUpButton: Bool { get }
     var stateForDownButton: Bool { get }
+  
     init(code: String)
+  
     func getProductInfoViewModel() -> ProductInfoViewModelProtocol
     func validation() -> Bool
     func calculateWaterRatio(row: Int)
@@ -123,7 +125,6 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
         return true
     }
     
-    
     func getCategories() {
         firebaseService.fetchCategories { categories in
             self.categories = categories
@@ -152,7 +153,6 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
             return indexOfFirstResponder
         }
     }
-    
     
     func updatePickerViewIfNeeded(index: Int, completion: @escaping () -> Void) {
         switch index {
@@ -189,7 +189,6 @@ final class AddingNewProductViewModel: AddingNewProductViewModelProtocol {
             needUpdateFirstResponder?(calculationOfUpperResponder())
         }
     }
-    
     
     func getProductInfoViewModel() -> ProductInfoViewModelProtocol {
         ProductInfoViewModel(product: completedProduct)

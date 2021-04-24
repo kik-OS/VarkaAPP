@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+final class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Properties
     
@@ -19,22 +19,21 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
         }
     }
     
-    
-    
     // MARK: - Initializer 
     
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
-        backgroundColor = .systemGray
+        backgroundColor = .clear
+        
         delegate = self
         dataSource = self
         register(RecentProductCollectionViewCell.self, forCellWithReuseIdentifier: RecentProductCollectionViewCell.reuseID)
         
         translatesAutoresizingMaskIntoConstraints = false
         layout.minimumLineSpacing = ConstantsCollectionView.productsCollectionMinimumLineSpacing
-        contentInset = UIEdgeInsets(top: 0, left: ConstantsCollectionView.leftDistanceToView, bottom: 0, right: ConstantsCollectionView.rightDistanceToView)
+        contentInset = UIEdgeInsets(top: 20, left: ConstantsCollectionView.leftDistanceToView, bottom: 0, right: ConstantsCollectionView.rightDistanceToView)
         
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
@@ -48,7 +47,7 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
     // MARK: - Methods
     
     internal func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.numberOfItemsInSection
+        return viewModel.numberOfItemsInSection
     }
     
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -58,14 +57,16 @@ class RecentProductCollectionView: UICollectionView, UICollectionViewDelegate, U
     }
     
     internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ConstantsCollectionView.productsCollectionItemWidth, height: frame.height * 0.9)
+        CGSize(width: frame.width * 0.7, height: frame.height * 0.8)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.didSelectItemAt(indexPath: indexPath)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         true
     }
+    
 }

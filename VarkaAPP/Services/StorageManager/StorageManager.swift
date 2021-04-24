@@ -6,14 +6,16 @@
 //
 
 import Foundation
-
 import CoreData
 
-class StorageManager {
+final class StorageManager {
+    
+    // MARK: - Static properties
     
     static let shared = StorageManager()
     
     // MARK: - Core Data stack
+    
     private let persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "VarkaAPP")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -28,9 +30,12 @@ class StorageManager {
         persistentContainer.viewContext
     }
     
+    // MARK: - Initializers
+    
     private init() {}
     
-    // MARK: - Public Methods
+    // MARK: - Public methods
+    
     func fetchData() -> [ProductCD] {
         let fetchRequest: NSFetchRequest<ProductCD> = ProductCD.fetchRequest()
         
@@ -42,10 +47,7 @@ class StorageManager {
         }
     }
     
-    // Save data
     func saveProductCD(product: Product) {
-        
-        
         let productCD = ProductCD(context: viewContext)
         productCD.code = product.code
         productCD.title = product.title
@@ -66,7 +68,6 @@ class StorageManager {
     }
     
     func convertFromProductCDToProduct(productCD: ProductCD) -> Product? {
-        
         guard let code = productCD.code,
               let title = productCD.title,
               let producer = productCD.producer,
@@ -81,6 +82,7 @@ class StorageManager {
     }
     
     // MARK: - Core Data Saving support
+    
     func saveContext() {
         if viewContext.hasChanges {
             do {

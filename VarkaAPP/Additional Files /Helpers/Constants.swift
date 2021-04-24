@@ -10,7 +10,7 @@ import UIKit
 struct ConstantsCollectionView {
     static let leftDistanceToView: CGFloat = 40
     static let rightDistanceToView: CGFloat = 40
-    static let productsCollectionMinimumLineSpacing: CGFloat = 10
+    static let productsCollectionMinimumLineSpacing: CGFloat = 15
     static let productsCollectionItemWidth = (UIScreen.main.bounds.width - ConstantsCollectionView.leftDistanceToView - ConstantsCollectionView.rightDistanceToView - (ConstantsCollectionView.productsCollectionMinimumLineSpacing / 2)) / 2
 }
 
@@ -41,5 +41,6 @@ enum UIConstants {
 }
 
 enum VarkaColors {
-    static let mainColor: UIColor = .black
+    static let mainColor: UIColor = #colorLiteral(red: 0.2607818842, green: 0.7992512584, blue: 0.1885845959, alpha: 1)
+    
 }
