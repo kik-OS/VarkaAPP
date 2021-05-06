@@ -4,7 +4,7 @@ import AVFoundation
 // MARK: - Delegates
 
 /// Delegate to handle the captured code.
-public protocol BarcodeScannerCodeDelegate: class {
+public protocol BarcodeScannerCodeDelegate: AnyObject {
   func scanner(
     _ controller: BarcodeScannerViewController,
     didCaptureCode code: String,
@@ -13,12 +13,12 @@ public protocol BarcodeScannerCodeDelegate: class {
 }
 
 /// Delegate to report errors.
-public protocol BarcodeScannerErrorDelegate: class {
+public protocol BarcodeScannerErrorDelegate: AnyObject {
   func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error)
 }
 
 /// Delegate to dismiss barcode scanner when the close button has been pressed.
-public protocol BarcodeScannerDismissalDelegate: class {
+public protocol BarcodeScannerDismissalDelegate: AnyObject {
   func scannerDidDismiss(_ controller: BarcodeScannerViewController)
 }
 

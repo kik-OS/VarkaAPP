@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RecentProductCollectionViewViewModelProtocol: class {
+protocol RecentProductCollectionViewViewModelProtocol: AnyObject {
     var numberOfItemsInSection: Int { get }
     var productsCD: [ProductCD] { get }
     var delegate: RecentProductCollectionViewDelegate! { get set }
@@ -38,7 +38,7 @@ final class RecentProductCollectionViewViewModel: RecentProductCollectionViewVie
     // MARK: - Methods
     
     func fetchProductFromCoreData(completion: @escaping() -> Void) {
-        productsCD = StorageManager.shared.fetchData()
+        productsCD = StorageManager.shared.fetchData().sorted(by: {$0.date ?? Date() > $1.date ?? Date()})
         DispatchQueue.main.async {
             completion()
         }

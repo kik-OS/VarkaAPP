@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol TimerManagerBarDelegate: class {
+protocol TimerManagerBarDelegate: AnyObject {
     func timerDidStep(remainingSeconds: Int, isStopped: Bool)
 }
 
-protocol TimerManagerTimerViewDelegate: class {
+protocol TimerManagerTimerViewDelegate: AnyObject {
     func timerDidStep(totalSeconds: Int, remainingSeconds: Int, isStopped: Bool)
     func timerHasExpired()
 }

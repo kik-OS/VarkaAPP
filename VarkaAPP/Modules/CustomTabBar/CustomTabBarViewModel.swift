@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CustomTabBarViewModelProtocol: class {
+protocol CustomTabBarViewModelProtocol: AnyObject {
     /// Вызывается в случае успешного получения продукта из базы. В параметр передаётся ProductInfoViewModel с полученным из базы продуктом.
     var productDidReceive: ((_ productInfoViewModel: ProductInfoViewModelProtocol) -> Void)? { get set }
     /// Вызывается для предложения добавить товар. В параметр передаётся бар-код, полученный от сканера.

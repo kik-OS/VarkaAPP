@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AddingNewProductViewModelProtocol: class {
+protocol AddingNewProductViewModelProtocol: AnyObject {
     var codeLabelText: String? { get set }
     var textFromCategoryTF: String? { get set }
     var textFromTitleProductTF: String? { get set }

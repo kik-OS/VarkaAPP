@@ -5,7 +5,6 @@
 //  Created by Никита Гвоздиков on 12.03.2021.
 //
 
-import Foundation
 import CoreData
 
 final class StorageManager {
@@ -48,6 +47,7 @@ final class StorageManager {
     }
     
     func saveProductCD(product: Product) {
+        fetchData().forEach { if $0.code == product.code {deleteProductCD($0)} }
         let productCD = ProductCD(context: viewContext)
         productCD.code = product.code
         productCD.title = product.title
@@ -56,7 +56,6 @@ final class StorageManager {
         productCD.cookingTime = Int64(product.cookingTime)
         productCD.waterRatio = product.waterRatio
         productCD.date = Date()
-        
         if let productWeight = product.weight,
            let productNeedStirring = product.needStirring,
            let productIntoBoilingWater = product.intoBoilingWater {
@@ -71,9 +70,12 @@ final class StorageManager {
         guard let code = productCD.code,
               let title = productCD.title,
               let producer = productCD.producer,
-              let category = productCD.category else {return nil}
-        
-        return Product(code: code, title: title, producer: producer, category: category, weight: Int(productCD.weight), cookingTime: Int(productCD.cookingTime), intoBoilingWater: true, needStirring: productCD.needsStirring, waterRatio: productCD.waterRatio)
+              let category = productCD.category else { return nil }
+        return Product(code: code, title: title, producer: producer,
+                       category: category, weight: Int(productCD.weight),
+                       cookingTime: Int(productCD.cookingTime),
+                       intoBoilingWater: true, needStirring: productCD.needsStirring,
+                       waterRatio: productCD.waterRatio)
     }
     
     func deleteProductCD(_ productCD: ProductCD) {
@@ -88,8 +90,8 @@ final class StorageManager {
             do {
                 try viewContext.save()
             } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
