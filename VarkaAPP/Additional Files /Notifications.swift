@@ -107,6 +107,10 @@ final class Notifications: NSObject, UNUserNotificationCenterDelegate {
         notificationCenter.add(request)
     }
     
+    func cancelTimerNotification() {
+        notificationCenter.removeAllPendingNotificationRequests()
+    }
+    
     static func notificationsAreNotAvailableAlert() -> UIAlertController {
         let alert = UIAlertController(title: Inscriptions.titleNotificationsAreNotAvailableAlert,
                                       message: Inscriptions.messageNotificationsAreNotAvailableAlert,

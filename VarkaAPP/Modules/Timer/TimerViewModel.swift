@@ -84,10 +84,12 @@ final class TimerViewModel: TimerViewModelProtocol {
     
     func startTimer() {
         timerManager.start(forMinutes: minutes)
+        Notifications.shared.showTimerNotification(throughMinutes: Double(minutes))
     }
     
     func stopTimer() {
         timerManager.stop()
+        Notifications.shared.cancelTimerNotification()
     }
 }
 
