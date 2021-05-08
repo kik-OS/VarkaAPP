@@ -109,8 +109,6 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         layer.cornerRadius = 20
         layer.shadowRadius = 5
-        
-        layer.shadowRadius = 5
         layer.shadowOpacity = 0.3
         layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         layer.shadowOffset = CGSize(width: 0, height: 0)

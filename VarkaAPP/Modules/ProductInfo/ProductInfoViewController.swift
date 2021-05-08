@@ -126,7 +126,7 @@ extension ProductInfoViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: instructionCollectionView.frame.height, height: instructionCollectionView.frame.height)
+        CGSize(width: instructionCollectionView.frame.width * 0.9, height: instructionCollectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
