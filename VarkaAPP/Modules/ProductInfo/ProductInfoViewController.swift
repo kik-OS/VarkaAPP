@@ -12,8 +12,7 @@ final class ProductInfoViewController: UIViewController {
     // MARK: - Outlets
     
     
-    @IBOutlet private var productInfoStackView: [UIStackView]!
-    @IBOutlet private weak var instructionImage: UIImageView!
+    @IBOutlet private weak var instructionCollectionView: UICollectionView!
     @IBOutlet private weak var productImage: UIImageView!
     @IBOutlet private weak var infoStackView: UIStackView!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -22,10 +21,7 @@ final class ProductInfoViewController: UIViewController {
     @IBOutlet private weak var categoryLabel: UILabel!
     @IBOutlet private weak var weightLabel: UILabel!
     @IBOutlet private weak var cookingTimeLabel: UILabel!
-    @IBOutlet private weak var firstStepLabel: UILabel!
-    @IBOutlet private weak var secondStepLabel: UILabel!
-    @IBOutlet private weak var thirdStepLabel: UILabel!
-    @IBOutlet private weak var fourthStepLabel: UILabel!
+    @IBOutlet private var productInfoStackView: [UIStackView]!
     @IBOutlet weak var timerButton: UIButton!
     
     
@@ -57,7 +53,7 @@ final class ProductInfoViewController: UIViewController {
         setupNavigationBar()
         view.backgroundColor = VarkaColors.mainColor
         setupViewModelBindings()
-        
+        setupCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,7 +83,7 @@ final class ProductInfoViewController: UIViewController {
     
     // MARK: - Private methods
     
-   private func setupNavigationBar() {
+    private func setupNavigationBar() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
@@ -97,8 +93,8 @@ final class ProductInfoViewController: UIViewController {
         viewModel.product.bind { [unowned self] product in
             guard !viewModel.isHiddenProductStackView else { return }
             infoStackView.isHidden = true
+            instructionCollectionView.isHidden = false
             productInfoStackView.forEach {$0.isHidden = false}
-            instructionImage.isHidden = false
             productImage.image = UIImage(named: viewModel.productImage)
             titleLabel.text = product?.title
             barcodeLabel.text = product?.code
@@ -106,11 +102,45 @@ final class ProductInfoViewController: UIViewController {
             categoryLabel.text = product?.category
             weightLabel.text = viewModel.weight
             cookingTimeLabel.text = viewModel.cookingTime
-            firstStepLabel.text = viewModel.firstStep
-            secondStepLabel.text = viewModel.secondStep
-            thirdStepLabel.text = viewModel.thirdStep
+            //            firstStepLabel.text = viewModel.firstStep
+            //            secondStepLabel.text = viewModel.secondStep
+            //            thirdStepLabel.text = viewModel.thirdStep
         }
     }
     
+    private func setupCollectionView() {
+        instructionCollectionView.register(UINib(nibName: Inscriptions.productInfoCollectionViewReuseID, bundle: nil), forCellWithReuseIdentifier: Inscriptions.productInfoCollectionViewReuseID)
+        instructionCollectionView.backgroundColor = .clear
+        instructionCollectionView.showsHorizontalScrollIndicator = false
+    }
+    
     @IBAction func unwind(segue: UIStoryboardSegue) {}
+}
+
+
+// MARK: - Extension
+
+extension ProductInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        5
+    }
+    
+    internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: instructionCollectionView.frame.height, height: instructionCollectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = instructionCollectionView.dequeueReusableCell(withReuseIdentifier: Inscriptions.productInfoCollectionViewReuseID, for: indexPath) as? ProductInfoCollectionViewCell
+        
+        return cell ?? UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        CGFloat(10)
+    }
+    
 }

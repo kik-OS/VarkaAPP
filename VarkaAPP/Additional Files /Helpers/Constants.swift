@@ -10,7 +10,7 @@ import UIKit
 struct ConstantsCollectionView {
     static let leftDistanceToView: CGFloat = 40
     static let rightDistanceToView: CGFloat = 40
-    static let productsCollectionMinimumLineSpacing: CGFloat = 15
+    static let productsCollectionMinimumLineSpacing: CGFloat = 20
     static let productsCollectionItemWidth = (UIScreen.main.bounds.width - ConstantsCollectionView.leftDistanceToView - ConstantsCollectionView.rightDistanceToView - (ConstantsCollectionView.productsCollectionMinimumLineSpacing / 2)) / 2
 }
 

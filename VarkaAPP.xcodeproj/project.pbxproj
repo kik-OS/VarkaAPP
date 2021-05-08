@@ -60,6 +60,8 @@
 		E4F44E8B261A25DE00055ADC /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E8A261A25DE00055ADC /* UIDevice+Extension.swift */; };
 		E4F44E8E261A26A000055ADC /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44E8D261A26A000055ADC /* DeviceManager.swift */; };
 		E4F44F53261C516C00055ADC /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F44F52261C516B00055ADC /* Transition.swift */; };
+		E4F648F02646642B004A3430 /* ProductInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F648EE2646642B004A3430 /* ProductInfoCollectionViewCell.swift */; };
+		E4F648F12646642B004A3430 /* ProductInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F648EF2646642B004A3430 /* ProductInfoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +122,8 @@
 		E4F44E8A261A25DE00055ADC /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		E4F44E8D261A26A000055ADC /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		E4F44F52261C516B00055ADC /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		E4F648EE2646642B004A3430 /* ProductInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4F648EF2646642B004A3430 /* ProductInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductInfoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,7 @@
 				CE02BA0925F3AB6800788EE3 /* ProductInfoViewController.swift */,
 				CE02BA7B25F73E2100788EE3 /* ProductInfoViewModel.swift */,
 				CE02BA0A25F3AB6800788EE3 /* ProductInfoViewController.xib */,
+				E4F648F226466436004A3430 /* ProductInfoCollectionViewCell */,
 			);
 			path = ProductInfo;
 			sourceTree = "<group>";
@@ -429,6 +434,15 @@
 			path = DeviceManager;
 			sourceTree = "<group>";
 		};
+		E4F648F226466436004A3430 /* ProductInfoCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E4F648EE2646642B004A3430 /* ProductInfoCollectionViewCell.swift */,
+				E4F648EF2646642B004A3430 /* ProductInfoCollectionViewCell.xib */,
+			);
+			path = ProductInfoCollectionViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -494,6 +508,7 @@
 				E4109EAC2605DB9500A1E01E /* nom.wav in Resources */,
 				CE20DE1A25FCA7EF00274A95 /* TimerViewController.xib in Resources */,
 				E495628425F20F2D0068F15A /* Assets.xcassets in Resources */,
+				E4F648F12646642B004A3430 /* ProductInfoCollectionViewCell.xib in Resources */,
 				E4109EA42604B22F00A1E01E /* timer.png in Resources */,
 				E4109EA92605D7A300A1E01E /* not.wav in Resources */,
 				CE3A168025F7957E00FFA849 /* RecentProductsViewController.xib in Resources */,
@@ -582,6 +597,7 @@
 				CE3F63BC26011EAE00968946 /* TimerViewModel.swift in Sources */,
 				E49562C725F245AF0068F15A /* RecentProductsViewController.swift in Sources */,
 				E49562D925F2775E0068F15A /* RecentProductViewModel.swift in Sources */,
+				E4F648F02646642B004A3430 /* ProductInfoCollectionViewCell.swift in Sources */,
 				E49196C725FB9F5D00395445 /* StorageManager.swift in Sources */,
 				E4F44F53261C516C00055ADC /* Transition.swift in Sources */,
 				CE0CFFC9260FC01500B9A9AA /* UIView+Extension.swift in Sources */,

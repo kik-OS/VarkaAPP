@@ -9,6 +9,8 @@ enum Inscriptions {
     static let addNewProductVCStoryBoardID = "addNewProductVC"
     static let unwindToProductInfoSegueID = "unwindToProductInfo"
     
+    static let productInfoCollectionViewReuseID = "ProductInfoCollectionViewCell"
+    
     static let tabBarItemLeftTitle = "Как варить"
     static let tabBarItemRightTitle = "Недавние"
     

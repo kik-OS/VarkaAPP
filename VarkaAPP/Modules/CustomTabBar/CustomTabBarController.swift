@@ -30,6 +30,8 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         setupTabBarItems()
         setupViewModelBindings()
         delegate = self
+        StorageManager.shared.saveProductCD(product: Product(code: "21121", title: "Hhbhsx", producer: "dcdcd", category: "Макароны", weight: 20, cookingTime: 40, intoBoilingWater: true, needStirring: true, waterRatio: 3))
+        StorageManager.shared.saveProductCD(product: Product(code: "33321", title: "Hhbhsx", producer: "dcdcd", category: "Вареники", weight: 20, cookingTime: 40, intoBoilingWater: true, needStirring: true, waterRatio: 3))
     }
     
     override func viewDidLayoutSubviews() {
