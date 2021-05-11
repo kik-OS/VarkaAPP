@@ -7,7 +7,21 @@
 
 import UIKit
 
-class ProductInfoCollectionViewCell: UICollectionViewCell {
+final class ProductInfoCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet private weak var numberOfCardLabel: UILabel!
+    @IBOutlet private weak var instructionLabel: UILabel!
+    @IBOutlet private weak var instructionImage: UIImageView!
+    @IBOutlet private weak var nextLabel: UILabel!
+    
+    var viewModel: ProductInfoCollectionViewCellViewModelProtocol! {
+        didSet {
+            numberOfCardLabel.text = viewModel?.numberOfCard
+            instructionImage.image = UIImage(named: viewModel.instrImage)
+            instructionLabel.text = viewModel.getInstrLabel()
+            nextLabel.isHidden = viewModel.isShowNextLabel
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

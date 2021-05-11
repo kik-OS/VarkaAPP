@@ -22,21 +22,21 @@
                             <constraint firstAttribute="width" secondItem="Q65-Ji-L5U" secondAttribute="height" multiplier="1:1" id="Qu9-oz-2Gb"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zT5-q1-4WG">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zT5-q1-4WG">
                         <rect key="frame" x="353" y="8" width="10" height="23.5"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Подготовьте продукты. Начинаем готовить" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tdo-Jh-RJl">
-                        <rect key="frame" x="158" y="39.5" width="197" height="79"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="251" text="Подготовьте продукты. Начинаем готовить" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tdo-Jh-RJl">
+                        <rect key="frame" x="158" y="39.5" width="188" height="76.5"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Далее ➔" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VJq-Pu-GOK">
-                        <rect key="frame" x="318.5" y="126.5" width="44.5" height="15.5"/>
-                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="→" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VJq-Pu-GOK">
+                        <rect key="frame" x="350" y="124" width="13" height="18"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -46,7 +46,7 @@
             <constraints>
                 <constraint firstItem="VJq-Pu-GOK" firstAttribute="top" secondItem="Tdo-Jh-RJl" secondAttribute="bottom" constant="8" id="2Tr-o1-byc"/>
                 <constraint firstItem="zT5-q1-4WG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="2zp-Va-gwx"/>
-                <constraint firstAttribute="trailing" secondItem="Tdo-Jh-RJl" secondAttribute="trailing" constant="16" id="5Pl-Pb-aJk"/>
+                <constraint firstAttribute="trailing" secondItem="Tdo-Jh-RJl" secondAttribute="trailing" constant="25" id="5Pl-Pb-aJk"/>
                 <constraint firstItem="Tdo-Jh-RJl" firstAttribute="top" secondItem="zT5-q1-4WG" secondAttribute="bottom" constant="8" id="7yJ-Ev-cWR"/>
                 <constraint firstItem="Q65-Ji-L5U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Dtw-wH-26W"/>
                 <constraint firstItem="Q65-Ji-L5U" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="Ljz-K6-Bbh"/>
@@ -57,7 +57,13 @@
                 <constraint firstAttribute="trailing" secondItem="zT5-q1-4WG" secondAttribute="trailing" constant="8" id="lX9-W1-1Ba"/>
             </constraints>
             <size key="customSize" width="371" height="150"/>
-            <point key="canvasLocation" x="244.20289855072465" y="69.642857142857139"/>
+            <connections>
+                <outlet property="instructionImage" destination="Q65-Ji-L5U" id="jO3-Yx-I8M"/>
+                <outlet property="instructionLabel" destination="Tdo-Jh-RJl" id="oRP-tQ-DGS"/>
+                <outlet property="nextLabel" destination="VJq-Pu-GOK" id="Mqg-P8-vxk"/>
+                <outlet property="numberOfCardLabel" destination="zT5-q1-4WG" id="tsq-1d-WIQ"/>
+            </connections>
+            <point key="canvasLocation" x="177.536231884058" y="38.839285714285715"/>
         </collectionViewCell>
     </objects>
     <resources>

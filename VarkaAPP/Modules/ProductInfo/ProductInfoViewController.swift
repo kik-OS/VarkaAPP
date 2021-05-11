@@ -64,6 +64,8 @@ final class ProductInfoViewController: UIViewController {
         productImage.clipsToBounds = false
         timerButton.layer.borderWidth = 1
         timerButton.layer.borderColor = VarkaColors.mainColor.cgColor
+        instructionCollectionView.reloadData()
+        
     }
     
     // MARK: - Actions
@@ -102,14 +104,13 @@ final class ProductInfoViewController: UIViewController {
             categoryLabel.text = product?.category
             weightLabel.text = viewModel.weight
             cookingTimeLabel.text = viewModel.cookingTime
-            //            firstStepLabel.text = viewModel.firstStep
-            //            secondStepLabel.text = viewModel.secondStep
-            //            thirdStepLabel.text = viewModel.thirdStep
+       
         }
     }
     
     private func setupCollectionView() {
-        instructionCollectionView.register(UINib(nibName: Inscriptions.productInfoCollectionViewReuseID, bundle: nil), forCellWithReuseIdentifier: Inscriptions.productInfoCollectionViewReuseID)
+        instructionCollectionView.register(UINib(nibName: Inscriptions.productInfoCollectionViewReuseID, bundle: nil),
+                                           forCellWithReuseIdentifier: Inscriptions.productInfoCollectionViewReuseID)
         instructionCollectionView.backgroundColor = .clear
         instructionCollectionView.showsHorizontalScrollIndicator = false
     }
@@ -122,19 +123,35 @@ final class ProductInfoViewController: UIViewController {
 
 extension ProductInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        7
     }
     
     internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: instructionCollectionView.frame.width * 0.9, height: instructionCollectionView.frame.height)
+        CGSize(width: view.frame.width - 40 , height: instructionCollectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        targetContentOffset.pointee = scrollView.contentOffset
+//        var indexes = self.instructionCollectionView.indexPathsForVisibleItems
+//        indexes.sort()
+//        var index = indexes.first!
+//        let cell = self.instructionCollectionView.cellForItem(at: index)!
+//        let position = self.instructionCollectionView.contentOffset.x - cell.frame.origin.x
+//        if position > cell.frame.size.width/2{
+//           index.row = index.row+1
+//        }
+//        self.instructionCollectionView.scrollToItem(at: index, at: .left, animated: true )
+//    }
+ 
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = instructionCollectionView.dequeueReusableCell(withReuseIdentifier: Inscriptions.productInfoCollectionViewReuseID, for: indexPath) as? ProductInfoCollectionViewCell
+        let cell = instructionCollectionView.dequeueReusableCell(withReuseIdentifier: Inscriptions.productInfoCollectionViewReuseID,
+                                                                 for: indexPath) as? ProductInfoCollectionViewCell
+        cell?.viewModel = viewModel.cellViewModel(at: indexPath)
         
         return cell ?? UICollectionViewCell()
     }

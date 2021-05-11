@@ -38,6 +38,7 @@
 		E466EE5F25FF771E004E18D1 /* CustomTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466EE5E25FF771E004E18D1 /* CustomTabBarViewModel.swift */; };
 		E466EE79260089AF004E18D1 /* ImageTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466EE78260089AF004E18D1 /* ImageTitles.swift */; };
 		E466EE7C26008BC4004E18D1 /* Inscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466EE7B26008BC4004E18D1 /* Inscriptions.swift */; };
+		E48FFE0D26479C9600E4D413 /* ProductInfoCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48FFE0C26479C9600E4D413 /* ProductInfoCollectionViewCellViewModel.swift */; };
 		E491967525F8E30000395445 /* RecentProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967325F8E30000395445 /* RecentProductCollectionViewCell.swift */; };
 		E491967925F8F5A200395445 /* RecentProductCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967825F8F5A200395445 /* RecentProductCollectionView.swift */; };
 		E491967F25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491967E25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift */; };
@@ -98,6 +99,7 @@
 		E466EE5E25FF771E004E18D1 /* CustomTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewModel.swift; sourceTree = "<group>"; };
 		E466EE78260089AF004E18D1 /* ImageTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitles.swift; sourceTree = "<group>"; };
 		E466EE7B26008BC4004E18D1 /* Inscriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inscriptions.swift; sourceTree = "<group>"; };
+		E48FFE0C26479C9600E4D413 /* ProductInfoCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		E491967325F8E30000395445 /* RecentProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		E491967825F8F5A200395445 /* RecentProductCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionView.swift; sourceTree = "<group>"; };
 		E491967E25FA8ABF00395445 /* RecentProductCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCollectionViewViewModel.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				E4F648EE2646642B004A3430 /* ProductInfoCollectionViewCell.swift */,
+				E48FFE0C26479C9600E4D413 /* ProductInfoCollectionViewCellViewModel.swift */,
 				E4F648EF2646642B004A3430 /* ProductInfoCollectionViewCell.xib */,
 			);
 			path = ProductInfoCollectionViewCell;
@@ -608,6 +611,7 @@
 				E495628225F20F2A0068F15A /* VarkaAPP.xcdatamodeld in Sources */,
 				CE3A168F25F9D9BB00FFA849 /* DateFormatter+Extension.swift in Sources */,
 				E451D08A25F7370C00890584 /* AddingNewProductViewController.swift in Sources */,
+				E48FFE0D26479C9600E4D413 /* ProductInfoCollectionViewCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
