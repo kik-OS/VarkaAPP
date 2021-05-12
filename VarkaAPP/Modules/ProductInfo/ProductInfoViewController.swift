@@ -21,6 +21,7 @@ final class ProductInfoViewController: UIViewController {
     @IBOutlet private weak var categoryLabel: UILabel!
     @IBOutlet private weak var weightLabel: UILabel!
     @IBOutlet private weak var cookingTimeLabel: UILabel!
+    @IBOutlet private weak var viewWithContent: UIView!
     @IBOutlet private var productInfoStackView: [UIStackView]!
     @IBOutlet weak var timerButton: UIButton!
     
@@ -51,7 +52,7 @@ final class ProductInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        view.backgroundColor = VarkaColors.mainColor
+        view.backgroundColor = #colorLiteral(red: 0.9691635604, green: 0.9691635604, blue: 0.9691635604, alpha: 1)
         setupViewModelBindings()
         setupCollectionView()
     }
@@ -59,13 +60,23 @@ final class ProductInfoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         productImage.layer.shadowRadius = 5
-        productImage.layer.shadowOpacity = 0.2
+        productImage.layer.shadowOpacity = 0.3
+        productImage.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         productImage.layer.shadowOffset = CGSize(width: 5, height: 8)
         productImage.clipsToBounds = false
-        timerButton.layer.borderWidth = 1
-        timerButton.layer.borderColor = VarkaColors.mainColor.cgColor
-        instructionCollectionView.reloadData()
         
+        timerButton.layer.cornerRadius = timerButton.frame.height / 2
+        timerButton.layer.shadowRadius = 8
+        timerButton.layer.shadowOpacity = 0.3
+        timerButton.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        
+        viewWithContent.layer.shadowRadius = 5
+        viewWithContent.layer.shadowOpacity = 0.2
+        viewWithContent.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        viewWithContent.clipsToBounds = false
+        
+        timerButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        instructionCollectionView.reloadData()
     }
     
     // MARK: - Actions
@@ -115,6 +126,13 @@ final class ProductInfoViewController: UIViewController {
         instructionCollectionView.showsHorizontalScrollIndicator = false
     }
     
+    private func setShadow() {
+        viewWithContent.layer.shadowRadius = 5
+        viewWithContent.layer.shadowOpacity = 0.2
+        viewWithContent.layer.shadowOffset = CGSize(width: 0, height: 0)
+        viewWithContent.layer.shadowColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+    }
+    
     @IBAction func unwind(segue: UIStoryboardSegue) {}
 }
 
@@ -133,20 +151,6 @@ extension ProductInfoViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
-    
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        targetContentOffset.pointee = scrollView.contentOffset
-//        var indexes = self.instructionCollectionView.indexPathsForVisibleItems
-//        indexes.sort()
-//        var index = indexes.first!
-//        let cell = self.instructionCollectionView.cellForItem(at: index)!
-//        let position = self.instructionCollectionView.contentOffset.x - cell.frame.origin.x
-//        if position > cell.frame.size.width/2{
-//           index.row = index.row+1
-//        }
-//        self.instructionCollectionView.scrollToItem(at: index, at: .left, animated: true )
-//    }
- 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = instructionCollectionView.dequeueReusableCell(withReuseIdentifier: Inscriptions.productInfoCollectionViewReuseID,

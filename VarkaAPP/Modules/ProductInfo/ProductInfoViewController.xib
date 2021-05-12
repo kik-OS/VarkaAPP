@@ -20,6 +20,7 @@
                 <outlet property="timerButton" destination="qi1-SK-15c" id="46G-6b-p4o"/>
                 <outlet property="titleLabel" destination="XC8-qQ-tk6" id="fAv-OH-Vmm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewWithContent" destination="1wC-mF-1Gn" id="H1F-HA-V2c"/>
                 <outlet property="weightLabel" destination="IAK-Fv-nzM" id="1pL-xV-rMv"/>
                 <outletCollection property="productInfoStackView" destination="JDB-dK-nnW" collectionClass="NSMutableArray" id="t7F-SH-JjX"/>
                 <outletCollection property="productInfoStackView" destination="OEb-0Y-aAe" collectionClass="NSMutableArray" id="dh3-UF-ZhO"/>
@@ -145,32 +146,27 @@
                                 </label>
                             </subviews>
                         </stackView>
-                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OEb-0Y-aAe">
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OEb-0Y-aAe">
                             <rect key="frame" x="20" y="0.0" width="114" height="124"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhY-n9-yEj">
-                                    <rect key="frame" x="0.0" y="0.0" width="114" height="41.5"/>
+                                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhY-n9-yEj">
+                                    <rect key="frame" x="0.0" y="0.0" width="114" height="45.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qi1-SK-15c">
-                                    <rect key="frame" x="0.0" y="41.5" width="114" height="41.5"/>
-                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
-                                    <state key="normal" title="Завести таймер">
-                                        <color key="titleColor" red="0.2569527626" green="0.79925453660000001" blue="0.1886040866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <rect key="frame" x="0.0" y="45.5" width="114" height="33"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                    <state key="normal" title="Таймер⏱">
+                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
                                     </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="8"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="setTimerButtonTapped" destination="-1" eventType="touchUpInside" id="h3q-mH-Hgz"/>
                                     </connections>
                                 </button>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hd8-ko-xGb">
-                                    <rect key="frame" x="0.0" y="83" width="114" height="41"/>
+                                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hd8-ko-xGb">
+                                    <rect key="frame" x="0.0" y="78.5" width="114" height="45.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                             </subviews>
@@ -178,7 +174,7 @@
                                 <constraint firstItem="uhY-n9-yEj" firstAttribute="height" secondItem="hd8-ko-xGb" secondAttribute="height" id="gj2-qY-xtE"/>
                             </constraints>
                         </stackView>
-                        <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Drt-Ec-Bkt">
+                        <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Drt-Ec-Bkt">
                             <rect key="frame" x="0.0" y="312.5" width="414" height="143.5"/>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QLQ-QI-eTt">
                                 <size key="itemSize" width="128" height="128"/>
