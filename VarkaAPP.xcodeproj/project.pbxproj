@@ -29,6 +29,7 @@
 		CE50DD7D260276A700E33695 /* FirebaseServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50DD7C260276A700E33695 /* FirebaseServiceError.swift */; };
 		CE895476263151DF0082D200 /* StartTimerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE895475263151DF0082D200 /* StartTimerButton.swift */; };
 		CEEEE96F261C3DE0004333A4 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEEE96E261C3DE0004333A4 /* Int+Extension.swift */; };
+		E402E8D62654124F006A41DD /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E402E8D52654124F006A41DD /* UIButton+Extension.swift */; };
 		E4109EA42604B22F00A1E01E /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = E4109EA32604B22F00A1E01E /* timer.png */; };
 		E4109EA92605D7A300A1E01E /* not.wav in Resources */ = {isa = PBXBuildFile; fileRef = E4109EA82605D7A300A1E01E /* not.wav */; };
 		E4109EAC2605DB9500A1E01E /* nom.wav in Resources */ = {isa = PBXBuildFile; fileRef = E4109EAB2605DB9500A1E01E /* nom.wav */; };
@@ -90,6 +91,7 @@
 		CE50DD7C260276A700E33695 /* FirebaseServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServiceError.swift; sourceTree = "<group>"; };
 		CE895475263151DF0082D200 /* StartTimerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTimerButton.swift; sourceTree = "<group>"; };
 		CEEEE96E261C3DE0004333A4 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		E402E8D52654124F006A41DD /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		E4109EA32604B22F00A1E01E /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer.png; sourceTree = "<group>"; };
 		E4109EA82605D7A300A1E01E /* not.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = not.wav; sourceTree = "<group>"; };
 		E4109EAB2605DB9500A1E01E /* nom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = nom.wav; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				CEEEE96E261C3DE0004333A4 /* Int+Extension.swift */,
 				CE3A168E25F9D9BB00FFA849 /* DateFormatter+Extension.swift */,
 				E4F44E8A261A25DE00055ADC /* UIDevice+Extension.swift */,
+				E402E8D52654124F006A41DD /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				CE3A168B25F9D7A000FFA849 /* Category.swift in Sources */,
 				CE02BA7C25F73E2100788EE3 /* ProductInfoViewModel.swift in Sources */,
 				E466EE7C26008BC4004E18D1 /* Inscriptions.swift in Sources */,
+				E402E8D62654124F006A41DD /* UIButton+Extension.swift in Sources */,
 				CE2FF95B2603879600FDA68D /* CustomBarcodeScannerViewController.swift in Sources */,
 				E491967525F8E30000395445 /* RecentProductCollectionViewCell.swift in Sources */,
 				CE02BA0B25F3AB6800788EE3 /* ProductInfoViewController.swift in Sources */,

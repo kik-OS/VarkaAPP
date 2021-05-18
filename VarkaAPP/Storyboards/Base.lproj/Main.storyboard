@@ -58,50 +58,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="9l5-lN-5R8">
-                                <rect key="frame" x="20" y="68.999999999999972" width="350" height="496.33333333333326"/>
+                                <rect key="frame" x="20" y="68.999999999999972" width="350" height="474.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nkA-jn-YUm">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="428.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="406.33333333333331"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="PcZ-wc-V84">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="51.333333333333336"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cz-La-o4u">
-                                                        <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 4607114691306" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="498-Wo-fVB">
-                                                        <rect key="frame" x="0.0" y="21.333333333333329" width="350" height="30"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
-                                                        <color key="textColor" red="0.2569527626" green="0.79925453660000001" blue="0.1886040866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="5"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="498-Wo-fVB" secondAttribute="trailing" id="eUI-Ui-gem"/>
-                                                    <constraint firstItem="498-Wo-fVB" firstAttribute="leading" secondItem="PcZ-wc-V84" secondAttribute="leading" id="hgZ-Sm-aUR"/>
-                                                </constraints>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4607114691306" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="498-Wo-fVB">
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="30.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                                <color key="textColor" red="0.2569527626" green="0.79925453660000001" blue="0.1886040866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9Um-aB-Lec">
-                                                <rect key="frame" x="0.0" y="59.333333333333343" width="350" height="54.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="38.333333333333329" width="350" height="54.666666666666671"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Категория продукта*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVb-W3-ag6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="168.33333333333334" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Категория продукта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVb-W3-ag6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="144.33333333333334" height="20.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                        <color key="textColor" red="0.2569527626" green="0.79925453660000001" blue="0.1886040866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Выбрать категорию" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C2H-PC-HAl">
-                                                        <rect key="frame" x="0.0" y="20.333333333333314" width="350" height="34"/>
+                                                        <rect key="frame" x="0.0" y="20.666666666666671" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                         <connections>
@@ -121,16 +105,16 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ik7-0I-tXu">
-                                                <rect key="frame" x="0.0" y="121.66666666666664" width="350" height="54.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="101.00000000000001" width="350" height="54.666666666666671"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название продукта*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tI-8E-wwt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="163" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название продукта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tI-8E-wwt">
+                                                        <rect key="frame" x="0.0" y="0.0" width="137.33333333333334" height="20.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                        <color key="textColor" red="0.2569527626" green="0.79925453660000001" blue="0.1886040866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Рис Жасмин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Opw-DD-c1S">
-                                                        <rect key="frame" x="0.0" y="20.333333333333343" width="350" height="34"/>
+                                                        <rect key="frame" x="0.0" y="20.666666666666657" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="yes" textContentType="organization"/>
                                                         <connections>
@@ -145,16 +129,16 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PvP-pf-Ksb">
-                                                <rect key="frame" x="0.0" y="184" width="350" height="54.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="163.66666666666666" width="350" height="54.666666666666657"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Производитель*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeR-lL-AWr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Производитель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeR-lL-AWr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="109.66666666666667" height="20.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                        <color key="textColor" red="0.2569527626" green="0.79925453660000001" blue="0.1886040866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Мистраль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YaD-L5-W2x">
-                                                        <rect key="frame" x="0.0" y="20.333333333333314" width="350" height="34"/>
+                                                        <rect key="frame" x="0.0" y="20.666666666666686" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="yes" textContentType="organization"/>
                                                         <connections>
@@ -169,16 +153,16 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Jqq-kg-byN">
-                                                <rect key="frame" x="0.0" y="246.33333333333334" width="350" height="54.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="226.33333333333331" width="350" height="54.666666666666686"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время пригтовления(мин.)*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPh-PR-CfT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="222.66666666666666" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время пригтовления(мин.)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPh-PR-CfT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="189.33333333333334" height="20.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                        <color key="textColor" red="0.2569527626" green="0.79925453660000001" blue="0.1886040866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="15" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rwY-qc-xSG">
-                                                        <rect key="frame" x="0.0" y="20.333333333333371" width="350" height="34"/>
+                                                        <rect key="frame" x="0.0" y="20.666666666666686" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                         <connections>
@@ -193,16 +177,16 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="zvM-9o-epV">
-                                                <rect key="frame" x="0.0" y="308.66666666666669" width="350" height="54.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="289" width="350" height="54.666666666666686"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество(грамм.)* " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1k-7a-6GR">
-                                                        <rect key="frame" x="0.0" y="0.0" width="173.66666666666666" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество(грамм.)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1k-7a-6GR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="140.66666666666666" height="20.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                        <color key="textColor" red="0.2569527626" green="0.79925453660000001" blue="0.1886040866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="400" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dGI-iU-gH8">
-                                                        <rect key="frame" x="0.0" y="20.333333333333314" width="350" height="34"/>
+                                                        <rect key="frame" x="0.0" y="20.666666666666686" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                         <connections>
@@ -216,17 +200,17 @@
                                                     <constraint firstAttribute="trailing" secondItem="dGI-iU-gH8" secondAttribute="trailing" id="Kfc-08-hgW"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="lYC-Ac-eHB">
-                                                <rect key="frame" x="0.0" y="371" width="350" height="57.333333333333314"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lYC-Ac-eHB">
+                                                <rect key="frame" x="0.0" y="351.66666666666669" width="350" height="54.666666666666686"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Соотношение продукта к воде*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfB-42-qcA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Соотношение продукта к воде" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfB-42-qcA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                        <color key="textColor" red="0.2569527626" green="0.79925453660000001" blue="0.1886040866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Выбрать" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vWR-vs-Heh">
-                                                        <rect key="frame" x="0.0" y="23.333333333333314" width="350" height="34"/>
+                                                        <rect key="frame" x="0.0" y="20.666666666666629" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                         <connections>
@@ -244,11 +228,11 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="9Um-aB-Lec" firstAttribute="leading" secondItem="nkA-jn-YUm" secondAttribute="leading" id="3nO-Ar-Uhe"/>
+                                            <constraint firstAttribute="trailing" secondItem="498-Wo-fVB" secondAttribute="trailing" id="60M-8T-Ovm"/>
                                             <constraint firstItem="lYC-Ac-eHB" firstAttribute="leading" secondItem="nkA-jn-YUm" secondAttribute="leading" id="9n7-kc-2Vh"/>
+                                            <constraint firstItem="498-Wo-fVB" firstAttribute="leading" secondItem="nkA-jn-YUm" secondAttribute="leading" id="Ha4-7X-REb"/>
                                             <constraint firstAttribute="trailing" secondItem="zvM-9o-epV" secondAttribute="trailing" id="IZA-En-1sV"/>
-                                            <constraint firstItem="PcZ-wc-V84" firstAttribute="leading" secondItem="nkA-jn-YUm" secondAttribute="leading" id="NJF-Mu-oRZ"/>
                                             <constraint firstItem="zvM-9o-epV" firstAttribute="leading" secondItem="nkA-jn-YUm" secondAttribute="leading" id="RPJ-aQ-HAw"/>
-                                            <constraint firstAttribute="trailing" secondItem="PcZ-wc-V84" secondAttribute="trailing" id="U4w-6e-bw7"/>
                                             <constraint firstAttribute="trailing" secondItem="9Um-aB-Lec" secondAttribute="trailing" id="Vbd-Ki-3Nl"/>
                                             <constraint firstAttribute="trailing" secondItem="lYC-Ac-eHB" secondAttribute="trailing" id="XGv-3F-ZVB"/>
                                             <constraint firstItem="Ik7-0I-tXu" firstAttribute="leading" secondItem="nkA-jn-YUm" secondAttribute="leading" id="Zfo-wQ-iHq"/>
@@ -262,7 +246,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KA8-oT-Cf8">
-                                        <rect key="frame" x="0.0" y="454.33333333333337" width="350" height="42"/>
+                                        <rect key="frame" x="0.0" y="432.33333333333331" width="350" height="42"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3F-mr-hrf">
                                                 <rect key="frame" x="100" y="0.0" width="150" height="42"/>
@@ -304,7 +288,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="azP-E7-7oK"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="azP-E7-7oK" firstAttribute="trailing" secondItem="PT2-Dh-npl" secondAttribute="trailing" constant="10" id="3bl-ic-oeR"/>
                             <constraint firstItem="9l5-lN-5R8" firstAttribute="centerX" secondItem="q42-Nc-QYf" secondAttribute="centerX" id="4bX-UE-FwR"/>
@@ -335,14 +319,8 @@
     </scenes>
     <resources>
         <image name="timer" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

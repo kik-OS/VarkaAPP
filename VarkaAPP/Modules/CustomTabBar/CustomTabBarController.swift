@@ -30,8 +30,14 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         setupTabBarItems()
         setupViewModelBindings()
         delegate = self
-        StorageManager.shared.saveProductCD(product: Product(code: "21121", title: "Hhbhsx", producer: "dcdcd", category: "Макароны", weight: 20, cookingTime: 40, intoBoilingWater: true, needStirring: true, waterRatio: 3))
-        StorageManager.shared.saveProductCD(product: Product(code: "33321", title: "Hhbhsx", producer: "dcdcd", category: "Вареники", weight: 20, cookingTime: 40, intoBoilingWater: true, needStirring: true, waterRatio: 3))
+        
+        
+
+        StorageManager.shared.saveProductCD(product: Product(code: "21121909098", title: "Бабочка", producer: "Макфа", category: "Макароны", weight: 20, cookingTime: 100, intoBoilingWater: true, needStirring: true, waterRatio: 3))
+        StorageManager.shared.saveProductCD(product: Product(code: "3332156464", title: "Вареники с куринной грудкой", producer: "ВкусВилл", category: "Вареники", weight: 1000, cookingTime: 7, intoBoilingWater: true, needStirring: true, waterRatio: 5))
+        StorageManager.shared.saveProductCD(product: Product(code: "21121453543", title: "Рассыпчатая", producer: "Макфа", category: "Гречка", weight: 500, cookingTime: 20, intoBoilingWater: true, needStirring: true, waterRatio: 3))
+        StorageManager.shared.saveProductCD(product: Product(code: "333219090", title: "Нут", producer: "Макфа", category: "Бобовые", weight: 200, cookingTime: 40, intoBoilingWater: true, needStirring: true, waterRatio: 3))
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -99,6 +105,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
                     identifier: Inscriptions.addNewProductVCStoryBoardID
                 ) as? AddingNewProductViewController else { return }
                 addNewProductVC.viewModel = self.viewModel.getAddingNewProductViewModel(withCode: code)
+                addNewProductVC.modalPresentationStyle = .fullScreen
                 self.present(addNewProductVC, animated: true)
             }
             self.present(alertController, animated: true)
@@ -115,15 +122,15 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         let okAction = UIAlertAction(title: Inscriptions.barCodeAlertButtonOkTitle,
                                      style: .default) { _ in okActionCompletion() }
         let cancelAction = UIAlertAction(title: Inscriptions.barCodeAlertButtonCancelTitle,
-                                         style: .default) { _ in }
-        alertController.addAction(okAction)
+                                         style: .destructive) { _ in }
         alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
         return alertController
     }
     
     func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-            return TabBarTransition(viewControllers: tabBarController.viewControllers)
-        }
+        return TabBarTransition(viewControllers: tabBarController.viewControllers)
+    }
 }
 
 // MARK: - Extensions

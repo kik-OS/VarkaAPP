@@ -41,9 +41,9 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Avenir Next Regular", size: 22)
+        label.font = UIFont(name: "Avenir Next Regular", size: 20)
         label.textColor = VarkaColors.mainColor
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -52,7 +52,7 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont(name: "Avenir Next Regular", size: 15)
         label.textColor = .systemGray
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -61,7 +61,7 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont(name: "Avenir Next Regular", size: 15)
         label.textColor = .systemGray
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -70,7 +70,7 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont(name: "Avenir Next Regular", size: 15)
         label.textColor = .systemGray
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -79,7 +79,7 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont(name: "Avenir Next Regular", size: 18)
         label.textColor = VarkaColors.mainColor
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -123,7 +123,7 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
             mainImageView.topAnchor.constraint(equalTo: topAnchor, constant: -25),
             mainImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/1.7),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             nameLabel.topAnchor.constraint(equalTo: mainImageView.bottomAnchor, constant: 12),
             barcodeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             barcodeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),

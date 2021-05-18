@@ -36,7 +36,6 @@ final class AddingNewProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = VarkaColors.mainColor
         codeLabel.text = viewModel.codeLabelText
         addToolBar(to: categoryTF, titleProductTF, producerTF, cookingTimeTF, weightTF, waterRatioTF)
         initializePickerView()
