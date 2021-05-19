@@ -28,10 +28,8 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        
-        
         imageView.layer.shadowRadius = 5
-        imageView.layer.shadowOpacity = 0.3
+        imageView.layer.shadowOpacity = 0.2
         imageView.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         imageView.layer.shadowOffset = CGSize(width: 4, height: 4)
         
@@ -109,10 +107,9 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         layer.cornerRadius = 20
         layer.shadowRadius = 5
-        layer.shadowOpacity = 0.3
+        layer.shadowOpacity = 0.2
         layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         layer.shadowOffset = CGSize(width: 0, height: 0)
-        
         clipsToBounds = false
     }
     

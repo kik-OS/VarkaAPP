@@ -23,19 +23,13 @@ final class ProductInfoCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+        layer.shadowRadius = 5
+        layer.shadowOpacity = 0.2
+        layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.cornerRadius = 10
-        layer.borderWidth = 0.3
-        layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-        
         clipsToBounds = false
     }
-    
 }

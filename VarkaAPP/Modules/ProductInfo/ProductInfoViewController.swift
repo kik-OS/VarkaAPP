@@ -55,29 +55,20 @@ final class ProductInfoViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setupViewModelBindings()
         setupCollectionView()
-       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         layersConfigure()
         instructionCollectionView.reloadData()
-       
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         timerButton.pulsate()
-//        animateCollectionView()
-        }
-    
-    override func viewWillLayoutSubviews() {
-        UIView.animate(withDuration: 1, animations: {
-                self.productImage.frame.size.width += 40
-                self.productImage.frame.size.height += 40
-            })
-        animateCollectionView()
+        instructionCollectionView.shakeView()
     }
+    
     
     // MARK: - Actions
     
@@ -115,7 +106,6 @@ final class ProductInfoViewController: UIViewController {
             categoryLabel.text = product?.category
             weightLabel.text = viewModel.weight
             cookingTimeLabel.text = viewModel.cookingTime
-       
         }
     }
     
@@ -131,28 +121,20 @@ final class ProductInfoViewController: UIViewController {
         viewWithContent.layer.shadowOpacity = 0.2
         viewWithContent.layer.shadowOffset = CGSize(width: 0, height: 0)
         viewWithContent.layer.shadowColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-//        timerButton.layer.cornerRadius = timerButton.frame.height / 2
-//        timerButton.layer.shadowRadius = 8
-//        timerButton.layer.shadowOpacity = 0.3
-//        timerButton.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         timerButton.layer.cornerRadius = timerButton.frame.height / 2
-        timerButton.layer.borderWidth = 0.3
-        timerButton.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+//        timerButton.layer.borderWidth = 0.3
+//        timerButton.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        timerButton.layer.shadowRadius = 5
+        timerButton.layer.shadowOpacity = 0.2
+        timerButton.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         timerButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        viewWithContent.layer.shadowRadius = 5
+        viewWithContent.layer.shadowOpacity = 0.2
+        viewWithContent.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        viewWithContent.layer.shadowOffset = CGSize(width: 0, height: 0)
+        viewWithContent.clipsToBounds = false
+        instructionCollectionView.clipsToBounds = false
         
-        viewWithContent.layer.borderWidth = 0.3
-        viewWithContent.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-        
-    }
-    
-    private func animateCollectionView() {
-            let animation = CAKeyframeAnimation()
-            animation.keyPath = "position.x"
-            animation.values = [0, 10, -10, 10, -5, 5, -5, 0 ]
-            animation.keyTimes = [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1]
-            animation.duration = 0.5
-            animation.isAdditive = true
-        instructionCollectionView.layer.add(animation, forKey: "shake")
     }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {}

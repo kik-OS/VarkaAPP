@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,11 +17,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="371" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bs-9y-dRM">
+                        <rect key="frame" x="0.0" y="0.0" width="371" height="150"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instr1" translatesAutoresizingMaskIntoConstraints="NO" id="Q65-Ji-L5U">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Q65-Ji-L5U" secondAttribute="height" multiplier="1:1" id="Qu9-oz-2Gb"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zT5-q1-4WG">
                         <rect key="frame" x="353" y="8" width="10" height="23.5"/>
@@ -49,12 +64,16 @@
                 <constraint firstAttribute="trailing" secondItem="Tdo-Jh-RJl" secondAttribute="trailing" constant="25" id="5Pl-Pb-aJk"/>
                 <constraint firstItem="Tdo-Jh-RJl" firstAttribute="top" secondItem="zT5-q1-4WG" secondAttribute="bottom" constant="8" id="7yJ-Ev-cWR"/>
                 <constraint firstItem="Q65-Ji-L5U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Dtw-wH-26W"/>
+                <constraint firstAttribute="trailing" secondItem="4bs-9y-dRM" secondAttribute="trailing" id="FKC-f2-W6G"/>
+                <constraint firstItem="4bs-9y-dRM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Jv9-U2-S2L"/>
                 <constraint firstItem="Q65-Ji-L5U" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="Ljz-K6-Bbh"/>
                 <constraint firstItem="Q65-Ji-L5U" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Vr7-ga-GYT"/>
                 <constraint firstItem="Tdo-Jh-RJl" firstAttribute="leading" secondItem="Q65-Ji-L5U" secondAttribute="trailing" constant="8" id="XVo-fP-plt"/>
+                <constraint firstAttribute="bottom" secondItem="4bs-9y-dRM" secondAttribute="bottom" id="ZBK-gE-Il3"/>
                 <constraint firstAttribute="trailing" secondItem="VJq-Pu-GOK" secondAttribute="trailing" constant="8" id="Zjh-qn-shX"/>
                 <constraint firstAttribute="bottom" secondItem="VJq-Pu-GOK" secondAttribute="bottom" constant="8" id="c8b-lq-u1c"/>
                 <constraint firstAttribute="trailing" secondItem="zT5-q1-4WG" secondAttribute="trailing" constant="8" id="lX9-W1-1Ba"/>
+                <constraint firstItem="4bs-9y-dRM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lq7-ud-a8X"/>
             </constraints>
             <size key="customSize" width="371" height="150"/>
             <connections>
@@ -68,5 +87,8 @@
     </objects>
     <resources>
         <image name="instr1" width="500" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
