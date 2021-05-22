@@ -75,8 +75,8 @@ final class RecentProductCollectionViewCell: UICollectionViewCell {
     
     let cookingTimeLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Avenir Next Regular", size: 18)
-        label.textColor = VarkaColors.mainColor
+        label.font = UIFont(name: "Avenir Next Regular", size: 15)
+        label.textColor = .systemGray
         label.numberOfLines = 1
         label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false

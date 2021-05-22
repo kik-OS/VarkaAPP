@@ -41,7 +41,7 @@ final class RecentProductCollectionViewCellViewModel: RecentProductCollectionVie
     }
     
     var productCookingTime: String? {
-        "\(product.cookingTime) мин."
+        "\(product.cookingTime)мин.⏱"
     }
     
     private let product: ProductCD

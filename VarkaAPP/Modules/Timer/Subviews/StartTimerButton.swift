@@ -11,7 +11,7 @@ final class StartTimerButton: UIButton {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        layer.cornerRadius = UIConstants.defaultCornerRadius
+        layer.cornerRadius = layer.frame.height / 2
         clipsToBounds = true
         titleLabel?.textColor = .white
     }

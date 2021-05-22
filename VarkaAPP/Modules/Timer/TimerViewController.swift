@@ -71,13 +71,12 @@ final class TimerViewController: UIViewController {
     
     private func setupUI() {
         contentView.layer.cornerRadius = UIConstants.defaultCornerRadius
-        stopButton.layer.cornerRadius =  UIConstants.defaultCornerRadius
-        
+        stopButton.layer.cornerRadius = stopButton.frame.height / 2
+        stopButton.backgroundColor = VarkaColors.mainColor
         updateStatesOfStackViews()
         updateStatesOfButtons()
         setTimeDiagramView()
         minutesPickerView.selectRow(viewModel.minutes, inComponent: 0, animated: false)
-        
         let dismissByTapGR = UITapGestureRecognizer(target: self,
                                                     action: #selector(dismissByTapAction))
         backgroundView.addGestureRecognizer(dismissByTapGR)
@@ -102,7 +101,6 @@ final class TimerViewController: UIViewController {
     private func setTimeDiagramView(totalSeconds: Int? = nil, remainingSeconds: Int? = nil) {
         let totalSeconds = totalSeconds ?? viewModel.timerTime.totalSeconds
         let remainingSeconds = remainingSeconds ?? viewModel.timerTime.remainingSeconds
-        
         let timeDiagramView = UIHostingController(rootView: TimeDiagram(
             width: 200, height: 150,
             totalSeconds: totalSeconds, remainingSeconds: remainingSeconds
@@ -139,7 +137,7 @@ final class TimerViewController: UIViewController {
         view.layer.shadowRadius = 5
         view.layer.shadowOpacity = 0.2
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
-        view.layer.shadowColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        view.layer.shadowColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
     }
 }
 

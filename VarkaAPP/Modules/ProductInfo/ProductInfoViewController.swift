@@ -11,7 +11,6 @@ final class ProductInfoViewController: UIViewController {
     
     // MARK: - Outlets
     
-    
     @IBOutlet private weak var instructionCollectionView: UICollectionView!
     @IBOutlet private weak var productImage: UIImageView!
     @IBOutlet private weak var infoStackView: UIStackView!
@@ -52,9 +51,9 @@ final class ProductInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setupViewModelBindings()
         setupCollectionView()
+        addVerticalGradientLayer(topColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), bottomColor: #colorLiteral(red: 0.8979474902, green: 0.9020553231, blue: 0.8977640867, alpha: 1))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,6 +86,16 @@ final class ProductInfoViewController: UIViewController {
     
     // MARK: - Private methods
     
+    private func addVerticalGradientLayer(topColor: UIColor, bottomColor: UIColor) {
+        let gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [topColor.cgColor, bottomColor.cgColor]
+        gradient.locations = [0.0, 1.0]
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 0, y: 1)
+        view.layer.insertSublayer(gradient, at: 0)
+    }
+    
     private func setupNavigationBar() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -117,13 +126,7 @@ final class ProductInfoViewController: UIViewController {
     }
     
     private func layersConfigure() {
-        viewWithContent.layer.shadowRadius = 5
-        viewWithContent.layer.shadowOpacity = 0.2
-        viewWithContent.layer.shadowOffset = CGSize(width: 0, height: 0)
-        viewWithContent.layer.shadowColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         timerButton.layer.cornerRadius = timerButton.frame.height / 2
-//        timerButton.layer.borderWidth = 0.3
-//        timerButton.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         timerButton.layer.shadowRadius = 5
         timerButton.layer.shadowOpacity = 0.2
         timerButton.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
@@ -133,8 +136,12 @@ final class ProductInfoViewController: UIViewController {
         viewWithContent.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         viewWithContent.layer.shadowOffset = CGSize(width: 0, height: 0)
         viewWithContent.clipsToBounds = false
+        productImage.layer.shadowRadius = 5
+        productImage.layer.shadowOpacity = 0.2
+        productImage.layer.shadowColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        productImage.layer.shadowOffset = CGSize(width: 0, height: 0)
+        productImage.clipsToBounds = false
         instructionCollectionView.clipsToBounds = false
-        
     }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {}

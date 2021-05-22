@@ -16,9 +16,6 @@ extension UIButton {
         middleButton.layer.shadowRadius = 4
         middleButton.layer.shadowOpacity = 0.2
         middleButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-        middleButton.layer.borderWidth = 0.1
-        middleButton.layer.borderColor = #colorLiteral(red: 0.4756349325, green: 0.4756467342, blue: 0.4756404161, alpha: 1)
-        middleButton.layer.shadowColor = #colorLiteral(red: 0.4756349325, green: 0.4756467342, blue: 0.4756404161, alpha: 1)
         middleButton.tintColor = .white
         middleButton.translatesAutoresizingMaskIntoConstraints = false
         middleButton.setImage(UIImage(systemName: ImageTitles.tabBarMiddleButton), for: .normal)

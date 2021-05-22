@@ -30,7 +30,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         setupTabBarItems()
         setupViewModelBindings()
         delegate = self
-        
+    
         
 
         StorageManager.shared.saveProductCD(product: Product(code: "21121909098", title: "Бабочка", producer: "Макфа", category: "Макароны", weight: 20, cookingTime: 100, intoBoilingWater: true, needStirring: true, waterRatio: 3))
